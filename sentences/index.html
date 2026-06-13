@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Let's Build Sentences - Digital Playground for Learning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdcbc",
+                    "inverse-primary": "#ffb86b",
+                    "background": "#fbf9f8",
+                    "on-tertiary-fixed": "#2a1700",
+                    "primary-container": "#f69600",
+                    "surface-container-high": "#eae8e7",
+                    "surface-container-highest": "#e4e2e1",
+                    "primary": "#895100",
+                    "on-secondary-fixed": "#1a1a2e",
+                    "on-primary-fixed": "#2c1700",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#683d00",
+                    "primary-fixed-dim": "#ffb86b",
+                    "inverse-surface": "#303030",
+                    "secondary": "#5d5c74",
+                    "surface-white": "#FFFFFF",
+                    "on-secondary-container": "#63627a",
+                    "secondary-container": "#e2e0fc",
+                    "on-surface": "#1b1c1c",
+                    "inverse-on-surface": "#f3f0f0",
+                    "tertiary-container": "#e49e3c",
+                    "secondary-fixed": "#e2e0fc",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "outline": "#877461",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#5f3700",
+                    "tertiary-fixed-dim": "#ffb95c",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#dac2ad",
+                    "surface-dim": "#dcd9d9",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#fbf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c6c4df",
+                    "tertiary": "#855400",
+                    "surface-tint": "#895100",
+                    "accent-soft-gold": "#FFF1D6",
+                    "surface-container": "#f0eded",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#544434",
+                    "on-secondary-fixed-variant": "#45455b",
+                    "surface-variant": "#e4e2e1",
+                    "on-background": "#1b1c1c",
+                    "background-cream": "#FFFAF2",
+                    "surface-container-low": "#f6f3f2",
+                    "tertiary-fixed": "#ffddb7",
+                    "surface": "#fbf9f8",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "48px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-lg": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .squishy-button {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .squishy-button:active {
+            transform: scale(0.92);
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px -15px rgba(93, 92, 116, 0.1);
+        }
+        .bento-card {
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px -12px rgba(137, 81, 0, 0.12);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background-cream text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 bg-background-cream/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-margin-desktop py-4 w-full max-w-7xl mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">Let's Build Apps</div>
+<div class="hidden md:flex items-center gap-base">
+<a class="text-primary border-b-2 border-primary font-bold pb-1 font-label-lg text-label-lg transition-colors duration-200" href="#home">Home</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200 px-4" href="#features">Features</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200 px-4" href="#about">About</a>
+</div>
+<a class="bg-primary-container text-on-primary text-label-lg font-label-lg px-6 py-3 rounded-full squishy-button shadow-lg" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051">Get Started</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-12 pb-24 md:pt-24 md:pb-32 px-margin-mobile md:px-margin-desktop" id="home">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-md items-center">
+<div class="z-10 text-center md:text-left">
+<span class="inline-block px-4 py-1.5 rounded-full bg-accent-soft-gold text-primary font-label-sm text-label-sm mb-6">Designed for Little Hands</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight mb-6">
+                    Master Sentences <br/> Through <span class="text-primary-container">Playful Writing.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-lg">
+                    A calm, focused playground where children learn to build sentences by handwriting. No ads, no distractions—just pure learning joy.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a class="bg-primary-container text-on-primary font-headline-md text-headline-md py-4 px-8 rounded-2xl squishy-button flex items-center justify-center gap-2 shadow-xl" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051">
+<span class="material-symbols-outlined">download</span>
+                        Download Now
+                    </a>
+<a class="bg-surface-white border-2 border-outline-variant text-primary font-headline-md text-headline-md py-4 px-8 rounded-2xl squishy-button flex items-center justify-center gap-2" href="#features">
+                        See Features
+                    </a>
+</div>
+</div>
+<div class="relative mt-12 md:mt-0">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary-fixed rounded-full blur-3xl opacity-30"></div>
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-secondary-fixed rounded-full blur-3xl opacity-20"></div>
+<div class="relative bg-surface-white rounded-[2.5rem] p-4 soft-shadow border border-surface-container-highest">
+<img alt="Child learning" class="rounded-[2rem] w-full object-cover aspect-[4/3]" data-alt="A close-up shot of a young child smiling while using a digital tablet to trace letters and form words. The environment is a cozy, brightly lit playroom with soft cream walls and wooden toys in the background. The lighting is warm and natural, creating a safe and encouraging atmosphere. The color palette is dominated by warm oranges and soft whites, matching a professional educational app brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ5nq-MoVzqYubrcFNXSEjK3yEsIiUb5UJVQMoFMySqJDuv0lOcLFEnVnFiLcbhZfDNysG-WjeXpIGE-fmWFXArzhtz7TjoD-_2Bk2jYBHSSktz5aYRcW10NT_23pFZCQO_3cx5fqq0GPLQPf13pPX8uDl_yVxnUo-BWBW6GPJD3i1zh7EV3Tt-wi4PI0ZuM1w4BQMB9q17LUZtZ-SOjSbr4viVzjMv4Vpp4vC4Ov9RE1kI9Pkhk_zunxNb1eL0Itvc2Ct9RQYjbXp"/>
+<div class="absolute -bottom-6 -right-6 glass-panel p-6 rounded-2xl soft-shadow border border-white/50">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Smart Feedback</div>
+<div class="font-label-sm text-label-sm text-secondary">Real-time handwriting help</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Features Section -->
+<section class="py-24 bg-background px-margin-mobile md:px-margin-desktop" id="features">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Why Children Love It</h2>
+<p class="font-body-md text-body-md text-secondary max-w-2xl mx-auto">Designed from the ground up to respect a child's pace and cognitive development.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-md auto-rows-[200px]">
+<!-- Large Feature -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-white rounded-[2rem] p-10 soft-shadow bento-card border border-surface-container-high flex flex-col justify-between">
+<div>
+<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center text-primary mb-8">
+<span class="material-symbols-outlined" style="font-size: 32px;">edit_note</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Tactile Handwriting</h3>
+<p class="font-body-md text-body-md text-secondary">Instead of just tapping buttons, children physically trace letters to construct sentences, reinforcing motor skills and memory retention in an organic, flowing way.</p>
+</div>
+<div class="mt-8 flex gap-4">
+<div class="h-12 w-full bg-surface-container rounded-full animate-pulse"></div>
+<div class="h-12 w-1/2 bg-primary-fixed rounded-full"></div>
+</div>
+</div>
+<!-- Voice Support -->
+<div class="md:col-span-1 md:row-span-2 bg-secondary-container rounded-[2rem] p-10 soft-shadow bento-card border border-white/20 flex flex-col items-center text-center">
+<div class="w-20 h-20 bg-surface-white rounded-full flex items-center justify-center text-primary-container shadow-inner mb-6">
+<span class="material-symbols-outlined" data-weight="fill" style="font-size: 40px;">record_voice_over</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-secondary-fixed mb-4">Hear Every Word</h3>
+<p class="font-body-md text-body-md text-on-secondary-fixed-variant">Integrated voice support reads sentences back to children, bridging the gap between written and spoken language for better comprehension.</p>
+<div class="mt-auto w-full pt-8">
+<div class="flex justify-center gap-1">
+<div class="w-2 h-8 bg-primary-container rounded-full"></div>
+<div class="w-2 h-12 bg-primary-container rounded-full"></div>
+<div class="w-2 h-10 bg-primary-container rounded-full"></div>
+<div class="w-2 h-14 bg-primary-container rounded-full"></div>
+<div class="w-2 h-8 bg-primary-container rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Child-Friendly UI -->
+<div class="md:col-span-1 md:row-span-1 bg-surface-white rounded-[2rem] p-8 soft-shadow bento-card border border-surface-container-high flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary-container" style="font-size: 48px;">grid_view</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Safe Boxes</h4>
+<p class="font-label-sm text-label-sm text-secondary">Intuitive letter boxes guide writing without frustration.</p>
+</div>
+</div>
+<!-- Progress -->
+<div class="md:col-span-1 md:row-span-1 bg-tertiary-fixed rounded-[2rem] p-8 soft-shadow bento-card border border-white/20 flex flex-col justify-center">
+<div class="font-label-sm text-label-sm text-on-tertiary-fixed mb-2 uppercase tracking-wider font-bold">Progress</div>
+<div class="font-headline-md text-headline-md text-on-tertiary-fixed mb-4">98% Success Rate</div>
+<div class="w-full bg-white/30 h-3 rounded-full overflow-hidden">
+<div class="w-[98%] h-full bg-primary-container"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Calming Environment Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop overflow-hidden" id="about">
+<div class="max-w-7xl mx-auto bg-surface-white rounded-[3rem] soft-shadow overflow-hidden border border-surface-container-high">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="p-12 md:p-20 flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">A Breath of Fresh Air in Education</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-8">
+                        We believe learning happens best in a state of calm. "Let's Build Sentences" features a minimalist, "Digital Playground" aesthetic—a sophisticated take on child-friendly design that avoids over-stimulation.
+                    </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Soft, pastel palette to reduce cognitive load</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">No gamification "dark patterns" or timers</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">100% focused on the writing experience</span>
+</li>
+</ul>
+<div class="p-6 bg-background-cream rounded-2xl border border-primary-fixed">
+<p class="font-body-md text-body-md italic text-primary">"The transition from letters to full sentences is often a struggle. This app makes it feel like building with blocks—natural and rewarding."</p>
+</div>
+</div>
+<div class="relative min-h-[400px]">
+<img alt="Calm learning environment" class="absolute inset-0 w-full h-full object-cover" data-alt="A serene indoor setting featuring a minimalist wooden desk and a comfortable soft-textured chair. Natural sunlight streams through a large window, illuminating a digital tablet and a set of simple, colorful physical blocks. The aesthetic is clean and organized, conveying a sense of tranquility and focused learning. The scene reflects high-quality whitespace and a limited, vibrant color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBft_LD_S01R2N3SR3kFl-cvgwY5lthU5-5nnBqWst3idOPllbNNH8A9vGV6Y6y7NArlW7F3KI_rjA8ZlSb7nDloJHsnogDKiNCJTxRbUa0dBmvFRtCryYWmxC8lqTGCRX8IU9HhW9H7Nv6uMEGiGQVosnLLAX-ZNyaZmcCa5CrfVVH727-_fYPLgwwmnchDzbbl8fuA1uhyKwq0zBCCrqK28SPVFu3HsrlKm4WqYP97UDut1FPAhrlR4S6LcRG6ciS66sojaXCMIi2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Download CTA -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto text-center bg-primary-container rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 left-0 w-full h-full opacity-10">
+<div class="absolute top-0 left-10 w-24 h-24 border-8 border-white rounded-full"></div>
+<div class="absolute bottom-10 right-10 w-32 h-32 border-8 border-white rounded-xl rotate-45"></div>
+</div>
+<h2 class="font-display-lg text-display-lg text-white mb-8 relative z-10">Ready to start building?</h2>
+<p class="font-body-lg text-body-lg text-white/90 mb-12 max-w-xl mx-auto relative z-10">
+                Give your child the gift of confident handwriting and sentence construction. Join thousands of happy learners today.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
+<a class="bg-white text-primary-container font-headline-md text-headline-md py-5 px-10 rounded-2xl squishy-button shadow-xl flex items-center justify-center gap-3" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051">
+<span class="material-symbols-outlined">apps</span>
+                    App Store
+                </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-xl w-full max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-2">Let's Build Apps</div>
+<p class="text-secondary font-body-md text-body-md">© 2024 Let's Build Apps. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="text-secondary font-body-md text-body-md hover:text-primary-container underline transition-all" href="mailto:support@letsbuildapps.io">Support</a>
+<a class="text-secondary font-body-md text-body-md hover:text-primary-container underline transition-all" href="../privacy/">Terms of Service</a>
+<a class="text-secondary font-body-md text-body-md hover:text-primary-container underline transition-all" href="mailto:support@letsbuildapps.io">Contact Us</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary hover:bg-primary-container hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary hover:bg-primary-container hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">mail</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

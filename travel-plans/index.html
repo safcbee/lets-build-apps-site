@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Let's Build Travel Plans - Collaborative Family Trip Planning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdcbc",
+                        "inverse-primary": "#ffb86b",
+                        "background": "#fbf9f8",
+                        "on-tertiary-fixed": "#2a1700",
+                        "primary-container": "#f69600",
+                        "surface-container-high": "#eae8e7",
+                        "on-tertiary-container": "#5c3900",
+                        "surface-container-highest": "#e4e2e1",
+                        "primary": "#895100",
+                        "on-secondary-fixed": "#1a1a2e",
+                        "on-primary-fixed": "#2c1700",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#683d00",
+                        "primary-fixed-dim": "#ffb86b",
+                        "inverse-surface": "#303030",
+                        "secondary": "#5d5c74",
+                        "surface-white": "#FFFFFF",
+                        "on-secondary-container": "#63627a",
+                        "secondary-container": "#e2e0fc",
+                        "on-surface": "#1b1c1c",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary-container": "#e49e3c",
+                        "secondary-fixed": "#e2e0fc",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "outline": "#877461",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#5f3700",
+                        "tertiary-fixed-dim": "#ffb95c",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#dac2ad",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fbf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c6c4df",
+                        "tertiary": "#855400",
+                        "surface-tint": "#895100",
+                        "accent-soft-gold": "#FFF1D6",
+                        "surface-container": "#f0eded",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#544434",
+                        "on-secondary-fixed-variant": "#45455b",
+                        "surface-variant": "#e4e2e1",
+                        "on-background": "#1b1c1c",
+                        "background-cream": "#FFFAF2",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-fixed": "#ffddb7",
+                        "surface": "#fbf9f8",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "48px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 4px 20px rgba(93, 92, 116, 0.1);
+        }
+        .squishy-btn:active {
+            transform: scale(0.96);
+            filter: brightness(0.9);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-cream text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-background-cream fixed top-0 w-full z-50 transition-all duration-300">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-7xl mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">Let's Build Apps</div>
+<div class="hidden md:flex items-center gap-8 font-label-lg text-label-lg">
+<a class="text-primary border-b-2 border-primary font-bold pb-1 transition-colors duration-200" href="#home">Home</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="../">Apps</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="../privacy/">Privacy</a>
+</div>
+<button class="squishy-btn bg-primary text-on-primary px-6 py-2 rounded-full font-label-lg transition-all">Get Started</button>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-lg" id="home">
+<div class="flex-1 space-y-md">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-accent-soft-gold text-primary rounded-full font-label-sm">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>NEW: COLLABORATIVE TRIPS</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-secondary-fixed leading-tight">
+                    Every family adventure <br/>
+<span class="text-primary-container">perfectly planned.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Stop juggling spreadsheets and chaotic group chats. Build shared itineraries that everyone loves, from toddlers to grandparents.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="squishy-btn bg-primary text-on-primary h-[56px] px-8 rounded-xl font-label-lg shadow-lg flex items-center justify-center gap-2">
+                        Start Planning Now
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="squishy-btn bg-surface-white text-primary h-[56px] px-8 rounded-xl font-label-lg border-2 border-primary/10 hover:bg-background-cream transition-all flex items-center justify-center gap-2">
+                        View Demo
+                        <span class="material-symbols-outlined">play_circle</span>
+</button>
+</div>
+<div class="flex items-center gap-4 pt-6 text-on-surface-variant">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface-white object-cover" data-alt="A close-up portrait of a smiling woman with a warm, friendly expression, set against a soft-focus outdoor garden background. The lighting is golden and natural, emphasizing the soft minimalism and approachable family tone of the travel app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF9mhd8aGemkE0bbrmce_BgaVGcGRn9yLQmJg-z4C8KslTBefkrfkAAPJ5EVa3daOFBEicC9cldbQyDdDwTJgeIbVI_4N6Bf5uCUX85Ibqb9-ZbJ93dbsGnlWX5efNqmGiE0-mOSHY60R1D7QqBB2cAofLTmGdOJsDwpqf4O6xkjlgC2o9WqarSL6flMV6LiL7EmRyianvVGxcO0RSnohL8FBnE7sDHwecXF2vEkz4kEFrIsCgylGIKgtdMHHEsy9ddb6nlN70J-n3"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-white object-cover" data-alt="A portrait of a cheerful man with kind eyes, looking directly into the camera. The style is modern and clean with bright, even lighting that fits the digital playground aesthetic of the educational family app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0UJEGzwO2LDbC7sjCZ34QpDxs8CEoNgCNaEZy9Q4ecKUpAdFPtU13bc-_-gPLeSvUndFErFJcsv-ABFCUdxkHuaxlc5p6sFeCMawCSI8Zgu_opugjn_p6L3-xAtZmShhzyRYRZFBLjZdt4cODCG1cIbaaaKmoyrwIlSgi5JQwkurNbkbOpOquRl2NyrmIYTLRZ-jUF9ZfBJx6p-NQcCnUITu8hEpY2fubNS7S87uWwGFUMqnkn3SciZFnLjxMJGYHqcv2K-Nf94qU"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-white object-cover" data-alt="A vibrant and clear photo of a joyful professional woman in a bright environment. The overall image quality is high with rich, warm tones that reflect the brand's optimistic and dependable personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGVO-faFPT931wAA1zVbtNlodd-8FnpemRz7VeJMcdlWuGtZEq2gvksbN5Kj5bAdBWjhKBn-IwVLQngPG9dpYL0cF3HXD2tam8adCNyUpfd3Y7ohJ-jI8ki8cnD3dMN5QE21BA_rMwCNXlWgWMF_qFleCcqQkfl2DfO-RiX50PkRpV_bqguAwMuSQ35BrlO8V0vFe4SQyy3rw_ZhMAFF1cnrd069tof1_5bCXiegMofFphign57YGKNg3IDe1ELk4eO_l_CGuZEtCE"/>
+<div class="w-10 h-10 rounded-full border-2 border-surface-white bg-primary-container text-on-primary flex items-center justify-center font-label-sm">+4k</div>
+</div>
+<span class="font-label-sm">Joined by 4,000+ happy families this month</span>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="relative z-10 w-full h-[500px] bg-surface-white rounded-[2rem] overflow-hidden soft-shadow border-8 border-surface-container">
+<img class="w-full h-full object-cover" data-alt="A breathtaking landscape of rolling green hills overlooking a calm blue lake at sunset. The sky is filled with soft orange and purple hues, creating a sense of wonder and curiosity. This panoramic view represents the adventurous and organized spirit of high-end family travel planning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3zq0zjC8C1vDui87Oe7ZxFVPjoEiGyrDI2HPZmv_WYzkDG2lhhAUSZl1dHglK8CcPUe1AUEXM3738LkKHFbyzpC3gefOwtNnR4aBMr6wZoDbcWbMt0d5ZEJsYhU-GNEE3LpH4AhtQMguprcG2sWFLUITc_AWhS0UaI4JjMHH-9Z93jGWwV7yXdWUm6Im-EP5-YjReDaNE6NQbBWx-FwVVqbSLNCl0Od-oWetXZGbx0h7-MuTN_98LrgQjzRlCTBKuaHfJn7F0LLr5"/>
+<!-- UI Mockup Overlay -->
+<div class="absolute bottom-6 left-6 right-6 bg-surface-white/90 backdrop-blur-md p-md rounded-2xl border border-white/20">
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">Summer in Tuscany</h3>
+<span class="text-primary-container font-bold">Aug 12-19</span>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-accent-soft-gold rounded-full text-label-sm text-primary">Map View</span>
+<span class="px-3 py-1 bg-secondary-container rounded-full text-label-sm text-on-secondary-container">3 Shared Docs</span>
+</div>
+</div>
+</div>
+<!-- Floating Decorative Elements -->
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-primary-fixed rounded-full opacity-50 blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-tertiary-fixed rounded-full opacity-30 blur-3xl"></div>
+</div>
+</section>
+<!-- Bento Features Grid -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl bg-surface-container-low/50" id="features">
+<div class="max-w-7xl mx-auto">
+<div class="mb-lg text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Planning made playful</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                        We've built the ultimate utility for family travel. Simple enough for the kids to contribute, powerful enough for the designated trip lead.
+                    </p>
+</div>
+<div class="bento-grid flex flex-col md:grid md:grid-cols-12 gap-6">
+<!-- Feature Card 1: Map Integration -->
+<div class="md:col-span-8 bg-surface-white p-lg rounded-[2rem] soft-shadow flex flex-col md:flex-row gap-lg group hover:translate-y-[-4px] transition-transform">
+<div class="flex-1 space-y-4">
+<div class="w-12 h-12 rounded-2xl bg-primary-container/10 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">map</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Live Interactive Maps</h3>
+<p class="text-on-surface-variant font-body-md">Visualize your journey in real-time. Drop pins for hotels, snacks, and "must-sees" and see the optimal route unfold automatically.</p>
+</div>
+<div class="flex-1 bg-surface-container rounded-2xl overflow-hidden min-h-[200px]">
+<img class="w-full h-full object-cover" data-alt="A stylized digital map layout featuring colorful markers and a winding travel route across a vibrant city landscape. The map uses soft pastel colors and clear iconography, creating a child-friendly yet sophisticated visual for family trip planning." data-location="Paris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbDqtAKIze2t81IugzO1GF7yc7F3Skix22xv8E4i3YVxvP8YFbNX1yPWJ72RrSW5KO5pi2x53qXf32gseKgfqBRBwceWmzJKTnKPidfUIWFpg0dXExzT0_75A4ZokZSbgIljvRUZKuH_RgU7o0Zy0kq3Uyp4ht5SfcHggMYrxLN3ZUZmPztagWZgSDJQaMJT5zJvcJliwmgl7QE5KMLEYI8wIPAwsu-sveWjAhX6QT8y8qRF4JQ1c1Pauo7YXnRCKi7nVVePXvtn5W"/>
+</div>
+</div>
+<!-- Feature Card 2: Collaboration -->
+<div class="md:col-span-4 bg-surface-white p-lg rounded-[2rem] soft-shadow flex flex-col justify-between group hover:translate-y-[-4px] transition-transform">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Everyone's Invited</h3>
+<p class="text-on-surface-variant font-body-md">Share links via text. No accounts needed for guests to vote on activities or add their photos.</p>
+</div>
+<div class="pt-md">
+<div class="flex items-center gap-2 p-3 bg-background-cream rounded-xl">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="text-label-sm font-semibold">4 Editors Active Now</span>
+</div>
+</div>
+</div>
+<!-- Feature Card 3: Clutter-Free -->
+<div class="md:col-span-4 bg-primary-container p-lg rounded-[2rem] soft-shadow text-on-primary group hover:translate-y-[-4px] transition-transform">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-2xl bg-white/20 text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white">Clutter-Free Flow</h3>
+<p class="opacity-90 font-body-md">Smart organization that hides the noise. See only what you need for the current day of your trip.</p>
+</div>
+</div>
+<!-- Feature Card 4: Shared Itineraries -->
+<div class="md:col-span-8 bg-surface-white p-lg rounded-[2rem] soft-shadow flex flex-col md:flex-row-reverse gap-lg group hover:translate-y-[-4px] transition-transform">
+<div class="flex-1 space-y-4">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Living Itineraries</h3>
+<p class="text-on-surface-variant font-body-md">Changes update for everyone instantly. Flight delays? One tap to shift your entire day's schedule.</p>
+</div>
+<div class="flex-1 bg-accent-soft-gold/30 rounded-2xl p-md flex flex-col justify-center items-center">
+<div class="w-full space-y-3">
+<div class="h-10 bg-white rounded-lg flex items-center px-4 justify-between border-l-4 border-primary shadow-sm">
+<span class="text-label-sm">10:00 AM - Museum Visit</span>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+<div class="h-10 bg-white rounded-lg flex items-center px-4 justify-between border-l-4 border-primary-container shadow-sm">
+<span class="text-label-sm">12:30 PM - Family Lunch</span>
+<span class="material-symbols-outlined text-primary-container text-sm">schedule</span>
+</div>
+<div class="h-10 bg-white rounded-lg flex items-center px-4 justify-between border-l-4 border-secondary shadow-sm">
+<span class="text-label-sm">03:00 PM - Park Walk</span>
+<span class="material-symbols-outlined text-secondary text-sm">more_horiz</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof / Progress Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-center gap-xl">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg mb-6">Designed for real family logistics</h2>
+<div class="space-y-base">
+<div class="space-y-2">
+<div class="flex justify-between text-label-lg font-bold">
+<span>Stress-free coordination</span>
+<span>98%</span>
+</div>
+<div class="h-3 bg-secondary-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98%] rounded-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-label-lg font-bold">
+<span>Budget transparency</span>
+<span>85%</span>
+</div>
+<div class="h-3 bg-secondary-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-label-lg font-bold">
+<span>Kid-approved activities</span>
+<span>92%</span>
+</div>
+<div class="h-3 bg-secondary-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-surface-white p-lg rounded-[2rem] soft-shadow border border-outline-variant">
+<span class="material-symbols-outlined text-primary-container text-[48px]">format_quote</span>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-6">
+                        "Finally, an app that doesn't feel like a chore to use. We planned our entire three-week Europe trip in one evening while the kids voted on attractions. Truly life-changing for travel-loving families."
+                    </p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a serene woman in her late 30s, smiling warmly. The photograph is high-quality, with shallow depth of field and soft, natural morning light, capturing a sense of reliability and family-centric calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIAFjn90oy4le02wCiqaiiFV-lhi7RMcVvbSjEgZl2ZucEK-uovv6DjvxtaZSr2ylrS622ryWPnQffOyOT1VY_Anw8MHRR7H7a2ki2JVfC3b0Ltambv7QftmS8qmTZW9b5Pg1e2bbTt4z6jpIBKQXBxXkCbJ-G4Zeartln6Eh62-px7WiIY50ID3DbXNm-dGBtRmwPUhPwPk9S-mXsMgQCB9G0OpCUkLNm6JtmBZFAig-C27VwHOZYeYbJrEGSZ4ioCeajgU2zFZ7v"/>
+<div>
+<p class="font-bold">Sarah Jenkins</p>
+<p class="text-label-sm text-on-surface-variant">Mother of 3 &amp; Travel Blogger</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl">
+<div class="max-w-5xl mx-auto bg-on-secondary-fixed rounded-[3rem] p-lg md:p-xl text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-display-lg text-display-lg text-white mb-6">Ready to build your next memory?</h2>
+<p class="font-body-lg text-body-lg text-white/80 max-w-xl mx-auto mb-lg">
+                        Join thousands of families who are planning smarter, together. Free to start, forever easy to use.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="squishy-btn bg-primary text-on-primary h-[64px] px-10 rounded-2xl font-label-lg shadow-xl text-lg">
+                            Get the App - It's Free
+                        </button>
+<button class="squishy-btn bg-white/10 text-white h-[64px] px-10 rounded-2xl font-label-lg border border-white/20 hover:bg-white/20 transition-all text-lg">
+                            Explore Templates
+                        </button>
+</div>
+</div>
+<!-- Abstract Background Blobs -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary-container/20 rounded-full blur-[80px]"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/30 rounded-full blur-[100px]"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-xl w-full max-w-7xl mx-auto gap-lg">
+<div class="space-y-4 text-center md:text-left">
+<div class="font-headline-md text-headline-md font-bold text-primary">Let's Build Apps</div>
+<p class="text-secondary font-body-md">Building digital playgrounds for modern families.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-body-md text-secondary">
+<a class="hover:text-primary-container underline transition-all" href="mailto:support@letsbuildapps.io">Support</a>
+<a class="hover:text-primary-container underline transition-all" href="../privacy/">Terms of Service</a>
+<a class="hover:text-primary-container underline transition-all" href="mailto:support@letsbuildapps.io">Contact Us</a>
+</div>
+<p class="font-body-md text-secondary text-center md:text-right">
+                © 2024 Let's Build Apps. All rights reserved.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('bg-white/80', 'backdrop-blur-md', 'soft-shadow');
+                header.classList.remove('bg-background-cream');
+            } else {
+                header.classList.remove('bg-white/80', 'backdrop-blur-md', 'soft-shadow');
+                header.classList.add('bg-background-cream');
+            }
+        });
+
+        // Interactive micro-animation for cards
+        document.querySelectorAll('.bento-grid > div').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.transform = 'scale(1.2) rotate(5deg)';
+                    icon.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body></html>
