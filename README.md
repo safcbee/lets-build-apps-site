@@ -26,6 +26,14 @@ Then open:
 http://localhost:8000/
 ```
 
+## Tests
+
+Run the static homepage search regression test:
+
+```sh
+node tests/home-search.test.mjs
+```
+
 ## GitHub Pages Deployment
 
 1. Commit this folder to a GitHub repository.
