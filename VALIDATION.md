@@ -19,7 +19,10 @@ Source screenshots are stored in `assets/stitch-screenshots/` and the original e
 - Navigation changes were limited to replacing inert Stitch placeholder links with static site destinations.
 - App collection card titles and route icons link to the matching app pages without changing visual styling.
 - Privacy close link now uses a relative `../` path so it works under GitHub Pages project sites.
-- Footer support/contact links use `mailto:support@letsbuildapps.io`; legal links point to the Privacy Policy route.
+- Footer support/contact links use `mailto:support@leary.cloud`; legal links point to the Privacy Policy route.
+- The homepage header title now reads and links as `Let's Build Apps`; the inactive bell and profile image controls were removed.
+- The former configuration navigation label now reads `Privacy`, and the reporting navigation item was removed.
+- Privacy Policy effective date and footer copyright now reflect 2026.
 
 ## Verification Checklist
 
@@ -27,6 +30,10 @@ Source screenshots are stored in `assets/stitch-screenshots/` and the original e
 - All required routes returned pages in the browser preview: `/`, `/sentences/`, `/countdowns/`, `/good-habits/`, `/perfect-coffee/`, `/travel-plans/`, and `/privacy/`.
 - Browser route sweep found page titles/headings on every route and no broken loaded images.
 - Top navigation links and collection app links resolve without dead `href="#"` placeholders.
+- Every app page has a header `Let's Build Apps` link back to the site root.
+- Every page has a working route to `/privacy/` or the equivalent relative Privacy route.
+- Published pages contain no stale contact-domain references or removed navigation labels.
+- Published pages show `© 2026 Let's Build Apps. All rights reserved.` wherever a copyright footer is present.
 - Filesystem scan found no `href="#"` or absolute root-only `href="/"` placeholders in published pages.
 - No backend, analytics, tracking, cookies, auth, or server-side logic was introduced.
 

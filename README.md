@@ -29,7 +29,7 @@ http://localhost:8000/
 ## GitHub Pages Deployment
 
 1. Commit this folder to a GitHub repository.
-2. In GitHub, open `Settings` -> `Pages`.
+2. In GitHub, open the repository configuration area and choose `Pages`.
 3. Set `Source` to `Deploy from a branch`.
 4. Choose the branch that contains these files.
 5. Choose `/ (root)` as the publishing folder.
@@ -42,4 +42,3 @@ http://localhost:8000/
 - Changes were limited to route structure and navigation links.
 - No backend, analytics, tracking, cookies, authentication, or server-side logic was added.
 - External Google Fonts, Material Symbols, Tailwind CDN, and Stitch-generated image URLs remain as exported to preserve the rendered appearance.
-
