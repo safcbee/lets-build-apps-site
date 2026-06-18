@@ -1,65 +1,18 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import vm from 'node:vm';
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const visibleText = html
+  .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+  .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/\s+/g, ' ');
 
-assert.match(html, /data-app-search/, 'homepage search input exposes a search hook');
-assert.match(html, /data-app-search-item/, 'app cards expose searchable item hooks');
+assert.doesNotMatch(html, /data-app-search|Search apps/i, 'V5 production homepage has no dead search control');
+assert.match(visibleText, /Beautiful tools for real family life\./, 'root homepage is the approved V5 hero');
+assert.match(html, /href=["']#products["']/, 'homepage has a products anchor CTA');
+assert.match(html, /href=["']#testflight["']/, 'homepage has a TestFlight anchor CTA');
 
-const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)]
-  .map((match) => match[1])
-  .join('\n');
-
-const listeners = {};
-const input = {
-  value: '',
-  addEventListener(type, handler) {
-    listeners[type] = handler;
-  },
-};
-
-function makeCard(searchText) {
-  return {
-    dataset: { appSearchText: searchText },
-    hidden: false,
-    style: { display: '' },
-  };
+for (const id of ['sentences', 'countdowns', 'travel-plans', 'good-habits', 'perfect-coffee']) {
+  assert.match(html, new RegExp(`id=["']${id}["']`), `homepage exposes ${id} product section`);
 }
-
-const cards = [
-  makeCard('lets build sentences education handwriting'),
-  makeCard('lets build countdowns family timer'),
-  makeCard('lets build perfect coffee lifestyle brew'),
-];
-
-const context = {
-  window: {},
-  tailwind: {},
-  document: {
-    querySelector(selector) {
-      return selector === '[data-app-search]' ? input : null;
-    },
-    querySelectorAll(selector) {
-      if (selector === '[data-app-search-item]') return cards;
-      if (selector === '.soft-shadow') return [];
-      return [];
-    },
-  },
-};
-
-vm.createContext(context);
-vm.runInContext(scripts, context);
-
-assert.equal(typeof context.window.applyAppSearchFilter, 'function');
-context.window.applyAppSearchFilter('coffee');
-assert.equal(cards[0].hidden, true, 'non-matching cards are hidden');
-assert.equal(cards[1].hidden, true, 'non-matching cards are hidden');
-assert.equal(cards[2].hidden, false, 'matching card remains visible');
-
-context.window.applyAppSearchFilter('');
-assert.deepEqual(cards.map((card) => card.hidden), [false, false, false], 'empty search shows all cards');
-
-input.value = 'timer';
-listeners.input();
-assert.deepEqual(cards.map((card) => card.hidden), [true, false, true], 'typing filters cards');

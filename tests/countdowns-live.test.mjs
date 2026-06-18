@@ -5,13 +5,8 @@ const appStoreUrl = 'https://apps.apple.com/gb/app/lets-build-countdowns/id67777
 const home = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const countdowns = readFileSync(new URL('../countdowns/index.html', import.meta.url), 'utf8');
 
-const productFamily = home.slice(
-  home.indexOf('<!-- Available Now Section -->'),
-  home.indexOf('<!-- Ecosystem Section -->'),
-);
-
-assert.match(productFamily, /Let's Build Countdowns/, 'Countdowns appears in the available products');
-assert.match(productFamily, /Available on App Store/, 'Countdowns has an available status');
+assert.match(home, /id=["']countdowns["']/, 'Countdowns appears as a product-led homepage section');
+assert.match(home, /Available on App Store/, 'Countdowns has an available status');
 assert.match(home, /href="\.\/countdowns\/"/, 'homepage Countdowns card links to the Countdowns page');
 assert.doesNotMatch(home, /Coming Soon/, 'homepage no longer separates active products into Coming Soon');
 assert.doesNotMatch(home, /Future Projects/, 'homepage no longer contains placeholder future projects');

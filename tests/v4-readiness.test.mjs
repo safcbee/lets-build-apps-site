@@ -60,14 +60,20 @@ function visibleText(html) {
     .replace(/\s+/g, ' ');
 }
 
+function textPattern(value) {
+  return new RegExp(value
+    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    .replace(/'/g, "['’]"));
+}
+
 const home = read('index.html');
 const homeText = visibleText(home);
 
 for (const product of products) {
-  assert.match(homeText, new RegExp(product.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${product.name} appears on the homepage`);
+  assert.match(homeText, textPattern(product.name), `${product.name} appears on the homepage`);
   assert.match(homeText, new RegExp(product.status.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${product.name} has a homepage status pill`);
   assert.match(homeText, new RegExp(product.primary.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${product.name} has a homepage primary CTA`);
-  assert.match(home, new RegExp(`href=["']\\.\\/${product.page.replace('/index.html', '/')}["']`), `${product.name} has a Learn More link`);
+  assert.match(home, new RegExp(`href=["']\\.\\/${product.page.replace('/index.html', '/')}["']`), `${product.name} has a product page link`);
 
   const html = read(product.page);
   const text = visibleText(html);
@@ -103,4 +109,4 @@ const portaflow = read('portaflow/index.html');
 assert.match(portaflow, /http-equiv=["']refresh["']/i, 'Portaflow legacy route redirects');
 assert.match(portaflow, /url=\.\.\/perfect-coffee\//i, 'Portaflow redirects to Perfect Coffee');
 
-assert.match(home, /overflow-x-hidden|body class="[^"]*overflow-x-hidden/, 'homepage includes horizontal-overflow protection for mobile rendering');
+assert.match(home, /overflow-x\s*:\s*hidden|overflow-x-hidden|body class="[^"]*overflow-x-hidden/, 'homepage includes horizontal-overflow protection for mobile rendering');

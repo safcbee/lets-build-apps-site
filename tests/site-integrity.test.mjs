@@ -37,7 +37,7 @@ function visibleText(html) {
 
 for (const page of pages) {
   const html = read(page);
-  assert.match(html, /Let's Build Apps|Let&apos;s Build Apps/, `${page} keeps site branding`);
+  assert.match(html, /Let(?:'|&apos;|’)s Build Apps/, `${page} keeps site branding`);
 
   for (const match of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
     const target = match[1];
@@ -74,8 +74,8 @@ for (const page of appPages) {
 const home = read('index.html');
 assert.match(home, /mailto:support@leary\.cloud/, 'homepage links to support');
 assert.match(home, /href=["']\.\/privacy\/["']/, 'homepage links to Privacy');
-assert.match(home, /mailto:privacy@leary\.cloud/, 'homepage exposes privacy contact');
-assert.equal((visibleText(home).match(/\bLearn More\b/g) || []).length, 5, 'homepage has a visible Learn More link for each product card');
+assert.match(home, /Beautiful tools for real family life\./, 'homepage uses the promoted V5 experience');
+assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 5, 'homepage has a visible product page link for each product section');
 
 const privacy = read('privacy/index.html');
 assert.match(privacy, /Effective:\s*February 2026/, 'privacy policy effective date is February 2026');
@@ -86,6 +86,7 @@ const allText = pages.map((page) => visibleText(read(page))).join(' ');
 assert.doesNotMatch(allText, /support@letsbuildapps\.io/i, 'old support email is removed');
 assert.doesNotMatch(allText, /Portaflow cards|Portaflow navigation/i, 'Portaflow does not appear as primary product content');
 assert.doesNotMatch(allText, /Future Projects|Concept Stage|Coming Soon/i, 'placeholder homepage sections are removed');
+assert.doesNotMatch(home, /V5 experimental|Production V4|View V4 page/i, 'production homepage has no preview or V4 promotion copy');
 
 const portaflow = read('portaflow/index.html');
 assert.match(portaflow, /http-equiv=["']refresh["']/i, 'Portaflow legacy route redirects');
