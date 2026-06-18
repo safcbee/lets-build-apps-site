@@ -28,10 +28,11 @@ http://localhost:8000/
 
 ## Tests
 
-Run the static homepage search regression test:
+Run the static regression tests:
 
 ```sh
 node tests/home-search.test.mjs
+node tests/countdowns-live.test.mjs
 ```
 
 ## GitHub Pages Deployment
