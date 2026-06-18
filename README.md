@@ -11,6 +11,14 @@ Static website assembled from the Google Stitch export in `stitch_bambino_app_da
 - Let's Build Perfect Coffee: `perfect-coffee/index.html`
 - Let's Build Travel Plans: `travel-plans/index.html`
 - Privacy Policy: `privacy/index.html`
+- Legacy Portaflow migration: `portaflow/index.html`
+
+## Reports
+
+- Audit Report: `reports/audit-report.md`
+- Implementation Report: `reports/implementation-report.md`
+- Portfolio Alignment Report: `reports/portfolio-alignment-report.md`
+- Validation Report: `reports/validation-report.md`
 
 ## Local Preview
 
@@ -34,6 +42,7 @@ Run the static regression tests:
 node tests/home-search.test.mjs
 node tests/countdowns-live.test.mjs
 node tests/no-fake-social-proof.test.mjs
+node tests/site-integrity.test.mjs
 ```
 
 ## GitHub Pages Deployment
@@ -49,6 +58,6 @@ node tests/no-fake-social-proof.test.mjs
 
 - The generated Stitch `code.html` files were copied into static routes with their embedded Tailwind configuration and page-local styles intact.
 - Supplied `screen.png` files were copied to `assets/stitch-screenshots/` for visual validation references.
-- Changes were limited to route structure and navigation links.
+- Changes preserve the Stitch visual language while aligning portfolio positioning, navigation, support/privacy access, and legacy Portaflow migration.
 - No backend, analytics, tracking, cookies, authentication, or server-side logic was added.
 - External Google Fonts, Material Symbols, Tailwind CDN, and Stitch-generated image URLs remain as exported to preserve the rendered appearance.
