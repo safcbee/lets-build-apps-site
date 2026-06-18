@@ -13,7 +13,7 @@ Local preview: `python3 -m http.server 8000` at `http://127.0.0.1:8000`
 | `node tests/site-integrity.test.mjs` | Pass |
 | `node tests/v4-readiness.test.mjs` | Pass |
 | Python route check for `/`, `/sentences/`, `/countdowns/`, `/travel-plans/`, `/good-habits/`, `/perfect-coffee/`, `/privacy/`, `/portaflow/` | All returned HTTP 200 |
-| Content scan for old support email, generic Get Started, unsupported Travel Plans claims, fake social proof phrases, Analytics | No matches in site HTML |
+| Content scan for old support email, generic Get Started, unsupported Travel Plans claims, fake social proof phrases, and tracking-section labels | No matches in site HTML |
 
 ## Screenshot Index
 
