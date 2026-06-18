@@ -62,6 +62,11 @@ for (const page of pages) {
     const id = match[1];
     assert.match(html, new RegExp(`\\bid=["']${id}["']`), `${page} has target for #${id}`);
   }
+
+  for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
+    const tag = match[0];
+    assert.match(tag, /\balt=["'][^"']+["']/i, `${page} image has non-empty alt text: ${tag}`);
+  }
 }
 
 for (const page of appPages) {
