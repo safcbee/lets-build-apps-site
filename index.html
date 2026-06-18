@@ -120,7 +120,7 @@
         }
     </script>
 </head>
-<body class="bg-background-cream text-on-background min-h-screen font-body-md">
+<body class="bg-background-cream text-on-background min-h-screen font-body-md overflow-x-hidden">
 <!-- TopNavBar -->
 <header class="bg-surface/80 backdrop-blur-md shadow-sm w-full h-16 flex justify-between items-center px-margin-desktop sticky top-0 z-50">
 <div class="flex items-center gap-base">
@@ -142,28 +142,29 @@
 <main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl">
 <!-- Hero Branding Section -->
 <section class="mb-xl text-center md:text-left">
-<h1 class="font-display-lg text-display-lg text-primary mb-4">Let's Build Apps</h1>
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Simple apps for family life.</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            Simple apps for learning, planning, routines, travel, countdowns, and great coffee. Each one has a focused job, so the whole collection stays clear and useful.
+            Learning, planning, habits, travel, countdowns, and coffee — each app is designed with one clear purpose.
         </p>
 </section>
-<!-- Product Family Section -->
+<!-- Available Now Section -->
 <section class="mb-xl">
 <div class="flex items-center justify-between mb-lg">
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Product Family</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Available Now</h2>
 <div class="h-1 flex-grow mx-lg bg-surface-container rounded-full hidden md:block"></div>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
 <!-- Featured Card: Let's Build Sentences -->
-<div class="lg:col-span-8 bg-surface-white p-lg rounded-[2rem] soft-shadow flex flex-col md:flex-row gap-lg relative overflow-hidden group" data-app-search-item data-app-search-text="Let's Build Sentences education handwriting writing letters words iPad iPhone">
+<div class="lg:col-span-8 bg-surface-white p-md md:p-lg rounded-[2rem] soft-shadow flex flex-row gap-md md:gap-lg relative overflow-hidden group" data-app-search-item data-app-search-text="Let's Build Sentences education handwriting writing letters words iPad iPhone available app store">
 <div class="absolute -top-12 -right-12 w-48 h-48 bg-accent-soft-gold rounded-full blur-3xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
-<div class="flex-shrink-0 w-full md:w-64 h-64 bg-primary-container rounded-[1.5rem] flex items-center justify-center text-on-primary shadow-lg overflow-hidden relative">
+<div class="flex-shrink-0 w-20 h-20 md:w-64 md:h-64 bg-primary-container rounded-[1.5rem] flex items-center justify-center text-on-primary shadow-lg overflow-hidden relative">
 <img alt="Let's Build Sentences App Icon" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3TlD6v-TWcb1Azl-ZFXuMwo7F71JPMGb6JV0lPHV3hkpMOhfTKmjG9Qj1RM0msuqND2oX5W-qlJzSVOK10REPLVITuBBi_mIDWmLYZZ4ZdPOzzJhyVDgVDn-gMvIY_bEg20lePvZQs3j6iQ9cjQNhnnKPZaVwakb8mx9YoMtIgsr974PBGnSTym8jq92r6jVcG5YNamp6MnumTHTXkAJMP9BPVswAU6xSrqO_cSMX1c3apdwSniErp0GkkskuI3aTc-E1OcbVA7GP"/>
 </div>
 <div class="flex flex-col justify-between flex-grow">
 <div>
 <div class="flex items-center gap-sm mb-4">
 <span class="bg-accent-soft-gold text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Education</span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm" data-status-pill>Available on App Store</span>
 <span class="text-on-surface-variant font-label-sm text-label-sm flex items-center">
 <span class="material-symbols-outlined text-sm mr-1">edit_note</span>
                                 Handwriting Practice
@@ -175,11 +176,11 @@
                         </p>
 </div>
 <div class="flex flex-wrap items-center gap-md">
-<a class="squishy-button h-14 px-8 bg-primary text-on-primary font-label-lg text-label-lg rounded-full flex items-center gap-2 shadow-md hover:bg-primary/90" href="./sentences/">
-<span class="material-symbols-outlined">arrow_forward</span>
-                            Learn More
+<a class="squishy-button h-12 md:h-14 px-5 md:px-8 bg-primary text-on-primary font-label-lg text-label-lg rounded-full flex items-center gap-2 shadow-md hover:bg-primary/90" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051" target="_blank" rel="noopener">
+<span class="material-symbols-outlined">download</span>
+                            Download on App Store
                         </a>
-<a class="text-on-surface-variant font-label-sm text-label-sm underline" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051" target="_blank" rel="noopener">App Store</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm underline" href="./sentences/">Learn More</a>
 </div>
 </div>
 </div>
@@ -188,94 +189,101 @@
 <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
 <span class="material-symbols-outlined text-secondary text-3xl">add_task</span>
 </div>
-<h4 class="font-headline-md text-headline-md text-secondary mb-2">Owns Learning</h4>
+<h4 class="font-headline-md text-headline-md text-secondary mb-2">Real apps. Focused jobs.</h4>
 <p class="font-body-md text-body-md text-on-secondary-container">
-                    Sentences is the learning app in the portfolio: language development, handwriting practice, and child-friendly sentence building.
+                    Every Let's Build app is designed around one useful job, with clear availability, transparent development status, and simple ways to try what is ready.
                 </p>
 </div>
 </div>
 <div class="grid grid-cols-1 gap-gutter mt-lg">
 <!-- Let's Build Countdowns -->
-<div class="bg-surface-white p-lg rounded-[2rem] soft-shadow border-l-8 border-tertiary flex flex-col md:flex-row items-center gap-lg relative overflow-hidden" data-app-search-item data-app-search-text="Let's Build Countdowns family timer countdowns transitions waiting early learners">
-<div class="hidden md:flex w-32 h-32 bg-tertiary-container rounded-2xl flex-shrink-0 items-center justify-center rotate-3 shadow-inner">
+<div class="bg-surface-white p-md md:p-lg rounded-[2rem] soft-shadow border-l-8 border-tertiary flex flex-row items-center gap-md md:gap-lg relative overflow-hidden" data-app-search-item data-app-search-text="Let's Build Countdowns family timer countdowns moments widgets available app store">
+<div class="flex w-16 h-16 md:w-32 md:h-32 bg-tertiary-container rounded-2xl flex-shrink-0 items-center justify-center rotate-3 shadow-inner">
 <span class="material-symbols-outlined text-on-tertiary text-5xl">timer</span>
 </div>
 <div class="flex-grow">
 <div class="flex flex-wrap items-center gap-sm mb-2">
 <span class="bg-secondary-container text-on-secondary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Family</span>
 <h3 class="font-headline-md text-headline-md"><a href="./countdowns/" style="color: inherit; text-decoration: none;">Let's Build Countdowns</a></h3>
-<span class="bg-accent-soft-gold text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Anticipation</span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm" data-status-pill>Available on App Store</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant">
-                        Makes future events visible and exciting, helping families look forward to birthdays, holidays, and important moments.
+                        Make important moments feel closer with friendly countdowns for birthdays, holidays, school trips, and family milestones.
                     </p>
+<div class="flex flex-wrap gap-sm mt-4">
+<a class="squishy-button px-5 py-3 bg-primary text-on-primary rounded-full font-label-lg text-label-lg flex items-center gap-2" href="https://apps.apple.com/gb/app/lets-build-countdowns/id6777798794" target="_blank" rel="noopener"><span class="material-symbols-outlined">download</span>Download on App Store</a>
+<a class="px-5 py-3 bg-tertiary-container/20 text-tertiary rounded-full font-label-lg text-label-lg" href="./countdowns/">Learn More</a>
 </div>
-<a class="hidden sm:flex squishy-button px-5 py-3 bg-tertiary-container/20 text-tertiary rounded-full items-center gap-2 font-label-lg text-label-lg" href="./countdowns/" aria-label="Learn more about Let's Build Countdowns">
-<span>Learn More</span>
-<span class="material-symbols-outlined">arrow_forward</span>
-</a>
 </div>
+</div>
+</div>
+</section>
+<!-- In Development Section -->
+<section class="mb-xl">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">In Development</h2>
+<div class="h-1 flex-grow mx-lg bg-surface-container rounded-full hidden md:block"></div>
 </div>
 <div class="grid grid-cols-1 gap-gutter">
 <!-- Let's Build Good Habits -->
-<div class="bg-surface-white p-lg rounded-[2rem] soft-shadow border-l-8 border-secondary flex flex-col md:flex-row items-center gap-lg relative overflow-hidden" data-app-search-item data-app-search-text="Let's Build Good Habits lifestyle habits routines tracker focus kids adults">
-<div class="hidden md:flex w-32 h-32 bg-secondary-container rounded-2xl flex-shrink-0 items-center justify-center -rotate-2 shadow-inner">
+<div class="bg-surface-white p-md md:p-lg rounded-[2rem] soft-shadow border-l-8 border-secondary flex flex-row items-center gap-md md:gap-lg relative overflow-hidden" data-app-search-item data-app-search-text="Let's Build Good Habits lifestyle habits routines tracker focus kids adults in development testflight">
+<div class="flex w-16 h-16 md:w-32 md:h-32 bg-secondary-container rounded-2xl flex-shrink-0 items-center justify-center -rotate-2 shadow-inner">
 <span class="material-symbols-outlined text-secondary text-5xl">task_alt</span>
 </div>
 <div class="flex-grow">
 <div class="flex flex-wrap items-center gap-sm mb-2">
 <span class="bg-secondary-container text-on-secondary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Lifestyle</span>
 <h3 class="font-headline-md text-headline-md"><a href="./good-habits/" style="color: inherit; text-decoration: none;">Let's Build Good Habits</a></h3>
-<span class="bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">Routines</span>
+<span class="bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant" data-status-pill>In Development</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant">
-                        Helps people build better daily routines one day at a time, with a calm place to notice consistency and small wins.
+                        Build better routines without the noise, with a calm place to notice progress and build consistency.
                     </p>
+<div class="flex flex-wrap gap-sm mt-4">
+<a class="px-5 py-3 bg-primary text-on-primary rounded-full font-label-lg text-label-lg" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Good%20Habits">Register interest in TestFlight</a>
+<a class="px-5 py-3 bg-secondary-container/20 text-secondary rounded-full font-label-lg text-label-lg" href="./good-habits/">Learn More</a>
 </div>
-<a class="hidden sm:flex squishy-button px-5 py-3 bg-secondary-container/20 text-secondary rounded-full items-center gap-2 font-label-lg text-label-lg" href="./good-habits/" aria-label="Learn more about Let's Build Good Habits">
-<span>Learn More</span>
-<span class="material-symbols-outlined">arrow_forward</span>
-</a>
+</div>
 </div>
 <!-- Let's Build Perfect Coffee -->
-<div class="bg-surface-white p-lg rounded-[2rem] soft-shadow border-l-8 border-primary flex flex-col md:flex-row items-center gap-lg relative overflow-hidden" data-app-search-item data-app-search-text="Let's Build Perfect Coffee lifestyle coffee brew recipes grinds extraction">
-<div class="hidden md:flex w-32 h-32 bg-primary-container rounded-2xl flex-shrink-0 items-center justify-center rotate-1 shadow-inner">
+<div class="bg-surface-white p-md md:p-lg rounded-[2rem] soft-shadow border-l-8 border-primary flex flex-row items-center gap-md md:gap-lg relative overflow-hidden" data-app-search-item data-app-search-text="Let's Build Perfect Coffee lifestyle coffee brew recipes grinds extraction in development testflight">
+<div class="flex w-16 h-16 md:w-32 md:h-32 bg-primary-container rounded-2xl flex-shrink-0 items-center justify-center rotate-1 shadow-inner">
 <span class="material-symbols-outlined text-on-primary text-5xl">coffee</span>
 </div>
 <div class="flex-grow">
 <div class="flex flex-wrap items-center gap-sm mb-2">
 <span class="bg-accent-soft-gold text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Lifestyle</span>
 <h3 class="font-headline-md text-headline-md"><a href="./perfect-coffee/" style="color: inherit; text-decoration: none;">Let's Build Perfect Coffee</a></h3>
-<span class="bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">Coffee</span>
+<span class="bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant" data-status-pill>In Development</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant">
-                        Helps coffee lovers record recipes, brew notes, routines, and experiments so every cup can get a little better.
+                        Every great coffee starts with a better recipe. Record brew notes, grind, dose, timing, beans, and taste.
                     </p>
+<div class="flex flex-wrap gap-sm mt-4">
+<a class="px-5 py-3 bg-primary text-on-primary rounded-full font-label-lg text-label-lg" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Perfect%20Coffee">Register interest in TestFlight</a>
+<a class="px-5 py-3 bg-primary-container/20 text-primary rounded-full font-label-lg text-label-lg" href="./perfect-coffee/">Learn More</a>
 </div>
-<a class="hidden sm:flex squishy-button px-5 py-3 bg-primary-container/20 text-primary rounded-full items-center gap-2 font-label-lg text-label-lg" href="./perfect-coffee/" aria-label="Learn more about Let's Build Perfect Coffee">
-<span>Learn More</span>
-<span class="material-symbols-outlined">arrow_forward</span>
-</a>
+</div>
 </div>
 <!-- Let's Build Travel Plans -->
-<div class="bg-surface-white p-lg rounded-[2rem] soft-shadow border-l-8 border-outline flex flex-col md:flex-row items-center gap-lg relative overflow-hidden" data-app-search-item data-app-search-text="Let's Build Travel Plans utilities travel trips family itineraries locations maps">
-<div class="hidden md:flex w-32 h-32 bg-surface-container-high rounded-2xl flex-shrink-0 items-center justify-center -rotate-3 shadow-inner">
+<div class="bg-surface-white p-md md:p-lg rounded-[2rem] soft-shadow border-l-8 border-outline flex flex-row items-center gap-md md:gap-lg relative overflow-hidden" data-app-search-item data-app-search-text="Let's Build Travel Plans utilities travel trips family itineraries locations maps in development testflight">
+<div class="flex w-16 h-16 md:w-32 md:h-32 bg-surface-container-high rounded-2xl flex-shrink-0 items-center justify-center -rotate-3 shadow-inner">
 <span class="material-symbols-outlined text-on-surface-variant text-5xl">explore</span>
 </div>
 <div class="flex-grow">
 <div class="flex flex-wrap items-center gap-sm mb-2">
 <span class="bg-secondary-container text-on-secondary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Utilities</span>
 <h3 class="font-headline-md text-headline-md"><a href="./travel-plans/" style="color: inherit; text-decoration: none;">Let's Build Travel Plans</a></h3>
-<span class="bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">Preparation</span>
+<span class="bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant" data-status-pill>In Development</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant">
-                        Keeps trip preparation separate from countdown excitement: itineraries, packing, places, and travel information.
+                        The countdown gets you excited. Travel Plans gets you ready with itineraries, packing, bookings, documents, and trip details.
                     </p>
+<div class="flex flex-wrap gap-sm mt-4">
+<a class="px-5 py-3 bg-primary text-on-primary rounded-full font-label-lg text-label-lg" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Travel%20Plans">Register interest in TestFlight</a>
+<a class="px-5 py-3 bg-surface-container-high/40 text-on-surface-variant rounded-full font-label-lg text-label-lg" href="./travel-plans/">Learn More</a>
 </div>
-<a class="hidden sm:flex squishy-button px-5 py-3 bg-surface-container-high/40 text-on-surface-variant rounded-full items-center gap-2 font-label-lg text-label-lg" href="./travel-plans/" aria-label="Learn more about Let's Build Travel Plans">
-<span>Learn More</span>
-<span class="material-symbols-outlined">arrow_forward</span>
-</a>
+</div>
 </div>
 </div>
 </section>
