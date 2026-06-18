@@ -75,6 +75,7 @@ const home = read('index.html');
 assert.match(home, /mailto:support@leary\.cloud/, 'homepage links to support');
 assert.match(home, /href=["']\.\/privacy\/["']/, 'homepage links to Privacy');
 assert.match(home, /mailto:privacy@leary\.cloud/, 'homepage exposes privacy contact');
+assert.equal((visibleText(home).match(/\bLearn More\b/g) || []).length, 5, 'homepage has a visible Learn More link for each product card');
 
 const privacy = read('privacy/index.html');
 assert.match(privacy, /Effective:\s*February 2026/, 'privacy policy effective date is February 2026');
