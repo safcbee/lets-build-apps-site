@@ -33,6 +33,7 @@ Run the static regression tests:
 ```sh
 node tests/home-search.test.mjs
 node tests/countdowns-live.test.mjs
+node tests/no-fake-social-proof.test.mjs
 ```
 
 ## GitHub Pages Deployment
