@@ -21,7 +21,7 @@ const products = [
   {
     name: "Let's Build Travel Plans",
     page: 'travel-plans/index.html',
-    status: 'In Development',
+    status: 'Preparing for Screenshots',
     primary: 'Register interest in TestFlight',
     testFlightSubject: 'TestFlight%20Interest%20-%20Let%27s%20Build%20Travel%20Plans',
   },
