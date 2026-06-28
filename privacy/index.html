@@ -6,7 +6,6 @@
 <title>Privacy Policy - Let's Build Apps</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
 <style>
         .material-symbols-outlined {
@@ -131,8 +130,8 @@
 <a class="font-headline-md text-headline-md text-primary" href="../">Let's Build Apps</a>
 </div>
 <a class="squishy-button flex items-center gap-2 text-secondary font-label-lg px-4 py-2 hover:bg-accent-soft-gold rounded-full transition-all" href="../">
-<span class="material-symbols-outlined">close</span>
-<span>Close</span>
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
 </a>
 </header>
 <!-- Content Canvas -->
@@ -156,7 +155,7 @@
 <div>
 <h3 class="font-headline-md text-headline-md mb-2">Our Commitment</h3>
 <p class="text-on-surface-variant leading-relaxed">
-                            At <span class="font-semibold text-primary">Let's Build Apps</span>, we believe that your digital footprints are your own. Our apps are designed to work without advertising, tracking, account requirements, or server-side profiles. We prioritize your children's safety and your peace of mind.
+                            At <span class="font-semibold text-primary">Let's Build Apps</span>, we believe that your digital footprints are your own. Our apps are designed to work without advertising, tracking, account requirements, or server-side profiles. We prioritize privacy and peace of mind across the app family.
                         </p>
 </div>
 </div>
@@ -171,6 +170,9 @@
 <p class="text-on-surface-variant font-body-md">
                         We do <span class="font-bold">not</span> collect, sell, or track personal information, usage data, or device identifiers. App data stays on your device, or in your own Apple iCloud account where an app offers sync.
                     </p>
+<p class="text-on-surface-variant font-body-md mt-3">
+                        When using the bean scanner in Let's Build Better Coffee, the barcode is sent to Open Food Facts (openfoodfacts.org) to retrieve product information. No personal data accompanies this request.
+                    </p>
 </div>
 <!-- Third Parties Card -->
 <div class="bg-surface-white tonal-layer rounded-[2rem] p-md border border-outline-variant/20">
@@ -183,20 +185,20 @@
                     </p>
 </div>
 </div>
-<!-- Children's Privacy Specifics -->
+<!-- Family Privacy Details -->
 <div class="bg-surface-white tonal-layer rounded-[2rem] p-md md:p-lg border border-outline-variant/20 relative overflow-hidden">
 <!-- Subtle Pattern Overlay -->
 <div class="absolute top-0 right-0 p-4 opacity-10">
-<span class="material-symbols-outlined text-[120px]">child_care</span>
+<span class="material-symbols-outlined text-[120px]">verified_user</span>
 </div>
 <div class="relative z-10">
 <h3 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">verified_user</span>
-                        COPPA & GDPR Compliance
+	                        Family Privacy
                     </h3>
 <div class="space-y-4 text-on-surface-variant">
 <p>
-                            Since we do not collect personal data through these apps, they are designed to avoid behavioral tracking, advertising profiles, and child-directed data collection.
+	                            Because some apps are made for family use, they are designed to avoid behavioral tracking, advertising profiles, and child-directed data collection.
                         </p>
 <ul class="space-y-3">
 <li class="flex items-start gap-3">
@@ -241,18 +243,4 @@
             Designed with love for privacy-conscious families.
         </p>
 </footer>
-<!-- Interactive Atmospheric Micro-interaction -->
-<div class="fixed pointer-events-none w-64 h-64 rounded-full bg-primary-container/5 blur-3xl -z-10 transition-opacity duration-500 opacity-0" id="cursor-glow"></div>
-<script>
-        document.addEventListener('mousemove', (e) => {
-            const glow = document.getElementById('cursor-glow');
-            glow.style.opacity = '1';
-            glow.style.left = `${e.clientX - 128}px`;
-            glow.style.top = `${e.clientY - 128}px`;
-        });
-        
-        document.addEventListener('mouseleave', () => {
-            document.getElementById('cursor-glow').style.opacity = '0';
-        });
-    </script>
 </body></html>

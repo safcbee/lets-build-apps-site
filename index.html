@@ -10,14 +10,14 @@
   color-scheme: light;
   --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
-  --paper: #fffaf2;
-  --paper-soft: #f8f0e6;
-  --ink: #17120e;
-  --muted: #6c5e52;
-  --line: rgba(54, 40, 27, .14);
-  --amber: #9b5e00;
-  --amber-strong: #724000;
-  --gold: #f7ad2d;
+  --paper: #f8fbf7;
+  --paper-soft: #edf4f8;
+  --ink: #151719;
+  --muted: #56636a;
+  --line: rgba(31, 66, 85, .14);
+  --amber: #a65318;
+  --amber-strong: #77380d;
+  --gold: #e7a33a;
   --cream: #fff4dc;
   --lilac: #e7e3ff;
   --sage: #dcead9;
@@ -42,7 +42,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    linear-gradient(180deg, rgba(255, 250, 242, .94), rgba(255, 250, 242, 1) 28%),
+    linear-gradient(180deg, rgba(248, 251, 247, .94), rgba(248, 251, 247, 1) 28%),
     var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -55,8 +55,8 @@ body::before {
   pointer-events: none;
   opacity: .28;
   background-image:
-    linear-gradient(rgba(114, 64, 0, .08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(114, 64, 0, .08) 1px, transparent 1px);
+	    linear-gradient(rgba(31, 66, 85, .07) 1px, transparent 1px),
+	    linear-gradient(90deg, rgba(166, 83, 24, .07) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, #000, transparent 72%);
   z-index: -2;
@@ -90,7 +90,7 @@ img { display: block; max-width: 100%; }
   top: 0;
   z-index: 10;
   backdrop-filter: blur(18px);
-  background: rgba(255, 250, 242, .78);
+	  background: rgba(248, 251, 247, .82);
   border-bottom: 1px solid var(--line);
 }
 
@@ -646,8 +646,8 @@ h1, h2, h3 {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity .7s ease, transform .7s ease;
 }
 
@@ -822,13 +822,13 @@ h1, h2, h3 {
       <div class="hero-trust" aria-label="Trust signals">
         <div class="trust-chip"><strong>Real apps</strong><span>Verified App Store links where live.</span></div>
         <div class="trust-chip"><strong>Screenshot-led</strong><span>Real product surfaces come first.</span></div>
-        <div class="trust-chip"><strong>Privacy-first</strong><span>No tracking, accounts, or backend needed.</span></div>
+        <div class="trust-chip"><strong>Privacy-first</strong><span>No tracking, advertising, or account requirement.</span></div>
       </div>
     </div>
     <div class="device-stage reveal" aria-label="Floating product screenshots">
       <figure class="phone hero-a"><img src="./assets/product-evidence-v4/sentences/iphone-1-portrait-intro.png" alt="Let’s Build Sentences screenshot"></figure>
       <figure class="phone hero-b"><img src="./assets/product-evidence-v4/countdowns/01-hero-your-moments-next-up.png" alt="Let’s Build Countdowns screenshot"></figure>
-      <figure class="phone hero-c"><img src="./assets/product-evidence-v4/perfect-coffee/dashboard.png" alt="Let’s Build Perfect Coffee dashboard screenshot"></figure>
+      <figure class="phone hero-c"><img src="./assets/product-evidence-v4/perfect-coffee/dashboard.png" alt="Let’s Build Better Coffee dashboard screenshot"></figure>
       <figure class="phone hero-d"><img src="./assets/product-evidence-v4/sentences/iphone-2-portrait-trace-off.png" alt="Let’s Build Sentences tracing screenshot"></figure>
       <div class="stage-caption">
         <strong>A family of focused apps.</strong>
@@ -839,9 +839,9 @@ h1, h2, h3 {
 
   <section class="site-shell section" id="products">
     <div class="section-heading reveal">
-      <span class="eyebrow">Product stories</span>
-      <h2>Show the moment. Then explain the app.</h2>
-      <p>Each section is built like a small product launch: one emotion, one product surface, one honest next step.</p>
+      <span class="eyebrow">Product family</span>
+      <h2>Focused apps for moments that matter.</h2>
+      <p>Each app has a clear job, honest availability, and product evidence where a public build or preview exists.</p>
     </div>
 
     <article class="product-story reveal" id="sentences">
@@ -921,7 +921,7 @@ h1, h2, h3 {
     <article class="product-story reverse reveal" id="good-habits">
       <div class="product-copy">
         <div class="status-row">
-          <span class="pill dark">In Development</span>
+          <span class="pill dark">On TestFlight</span>
           <span class="pill">Let’s Build Good Habits</span>
         </div>
         <h3>Small routines. Big changes.</h3>
@@ -948,22 +948,22 @@ h1, h2, h3 {
       <div class="product-copy">
         <div class="status-row">
           <span class="pill dark">In Development</span>
-          <span class="pill">Let’s Build Perfect Coffee</span>
+          <span class="pill">Let’s Build Better Coffee</span>
         </div>
         <h3>Every great coffee starts with a better recipe.</h3>
-        <p>Perfect Coffee turns daily experiments into a simple journal for beans, grind, dose, timing, taste, and repeatable recipes.</p>
+        <p>Better Coffee turns daily experiments into a simple journal for beans, grind, dose, timing, taste, and repeatable recipes.</p>
         <div class="feature-line">
           <span>Brew recipes</span>
           <span>Grind notes</span>
           <span>Taste journal</span>
         </div>
         <div class="product-actions">
-          <a class="button button-primary" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Perfect%20Coffee">Register interest in TestFlight</a>
+          <a class="button button-primary" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Better%20Coffee">Coming soon to the App Store</a>
           <a class="button button-secondary" href="./perfect-coffee/">View product page</a>
         </div>
       </div>
-      <div class="showcase coffee-board" aria-label="Perfect Coffee screenshots and recipe notes">
-        <figure class="phone"><img src="./assets/product-evidence-v4/perfect-coffee/dashboard.png" alt="Perfect Coffee dashboard"></figure>
+      <div class="showcase coffee-board" aria-label="Better Coffee screenshots and recipe notes">
+        <figure class="phone"><img src="./assets/product-evidence-v4/perfect-coffee/dashboard.png" alt="Better Coffee dashboard"></figure>
         <div class="coffee-notes">
           <div class="coffee-card"><strong>Dial it in</strong><span>Keep dose, yield, and grind notes together.</span></div>
           <div class="coffee-card"><strong>Remember taste</strong><span>Capture what worked and what to change next.</span></div>

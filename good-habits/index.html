@@ -6,7 +6,6 @@
 <title>Let's Build Good Habits | Distraction-Free Habit Tracking</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
@@ -120,13 +119,13 @@
             transform: translateY(-4px);
             box-shadow: 0 20px 25px -5px rgba(93, 92, 116, 0.1), 0 10px 10px -5px rgba(93, 92, 116, 0.04);
         }
-        .gradient-mesh {
-            background: radial-gradient(at 0% 0%, #FFF1D6 0%, transparent 50%),
-                        radial-gradient(at 100% 0%, #f69600 0%, transparent 50%),
-                        radial-gradient(at 100% 100%, #ffdcbc 0%, transparent 50%);
-            opacity: 0.15;
-            filter: blur(80px);
-        }
+	        .gradient-mesh {
+	            background-image:
+	                linear-gradient(rgba(137, 81, 0, 0.08) 1px, transparent 1px),
+	                linear-gradient(90deg, rgba(93, 92, 116, 0.08) 1px, transparent 1px);
+	            background-size: 40px 40px;
+	            opacity: 0.35;
+	        }
     </style>
 </head>
 <body class="bg-background-cream text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
@@ -143,7 +142,7 @@
 <a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200" href="#testflight">TestFlight</a>
 <a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200" href="mailto:support@leary.cloud">Support</a>
 </div>
-<a class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-lg text-label-lg transition-all Active: opacity-80 scale-95 hover:bg-primary-container" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Good%20Habits">
+<a class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-lg text-label-lg transition-all active:opacity-80 active:scale-95 hover:bg-primary-container" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Good%20Habits">
                 Register interest
             </a>
 </div>
@@ -159,7 +158,7 @@
 <div class="space-y-md">
 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-soft-gold text-primary font-label-sm text-label-sm border border-primary-fixed">
 <span class="material-symbols-outlined text-[18px]">verified</span>
-                        Family-First Habit Building
+                        Quiet Habit Building
                     </span>
 <span class="inline-flex w-fit items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant" data-status-pill>In Development</span>
 <h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">
@@ -178,10 +177,10 @@
                         </a>
 </div>
 </div>
-<div class="relative group">
-<div class="absolute -inset-4 bg-primary-fixed/20 rounded-[2rem] blur-2xl group-hover:bg-primary-fixed/30 transition-all duration-700"></div>
-<div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-surface-white">
-<img alt="Parent and child using a tablet" class="w-full h-auto object-cover aspect-[4/3]" data-alt="A warm, brightly lit lifestyle photograph of a parent and a young child sitting together on a soft cream-colored sofa. They are both looking at a minimalist tablet interface with focused, happy expressions. The room is filled with soft morning sunlight, emphasizing a calm and productive atmosphere. The interior features natural wood textures and soft fabrics, echoing the brand's optimistic and dependable personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHDecGxLy5JOtb8HKL3PDTS5S2Vmr-tKo7rV85cqNSLEeWCNiJMiyIig7AtchoFvx4BMB8Me-1G3-o6xud_-Bm5mkcLknvdye9T4AazQm-AN3w39-92E0V_fetjNE5dWq-efTIN_YWooQwS-q-6_eUQUbZ71TJoWIF3exj0EEgwoYTMs8Rdf_odYykyEptMyM7sveBz6gEB_lwCCorvgwQng9cno8xtnak9eWjnzcg6i9J8jOXvqLMnRWm0RCeh5fl0sk_CIN6rNrA"/>
+<div class="relative">
+<div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-surface-white bg-surface-white p-md">
+<img alt="Let's Build Good Habits visual preview" class="rounded-[1.5rem] w-full h-auto object-cover border border-outline-variant/20" src="../assets/product-evidence-v4/good-habits/visual-preview.jpg"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-4 text-center">Visual preview only while final public screenshots are in development.</p>
 </div>
 </div>
 </div>
@@ -225,7 +224,7 @@
 <section class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto py-xl">
 <div class="bg-surface-white rounded-[2.5rem] p-lg md:p-xl bento-card border border-outline-variant/30">
 <h2 class="font-headline-lg text-headline-lg mb-6">Why we built this</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Many habit apps become pressure systems full of streak anxiety, notifications, and social comparison. Good Habits should feel calmer: a simple place to notice progress and build consistency.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Many habit apps become pressure systems full of streak anxiety, constant nudges, and social comparison. Good Habits should feel calmer: a simple place to notice progress and build consistency.</p>
 </div>
 </section>
 <!-- TestFlight Interest Section -->
@@ -233,7 +232,7 @@
 <div class="max-w-4xl mx-auto rounded-[2.5rem] bg-secondary-container text-on-secondary-fixed p-lg md:p-xl text-center relative overflow-hidden">
 <div class="relative z-10 space-y-md">
 <h2 class="font-headline-lg text-headline-lg">Help shape Let's Build Good Habits</h2>
-<p class="font-body-lg text-body-lg text-on-secondary-fixed-variant max-w-xl mx-auto">Want to try upcoming versions before release? Register your interest in TestFlight and help improve the app before it reaches everyone.</p>
+<p class="font-body-lg text-body-lg text-on-secondary-fixed-variant max-w-xl mx-auto">Want to hear when preview builds are available? Register your interest and help shape the app before release.</p>
 <a class="bg-primary text-on-primary h-[56px] px-10 rounded-full font-label-lg text-label-lg transition-transform active:scale-95 hover:bg-primary-container inline-flex items-center justify-center" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Good%20Habits">
                             Register interest in TestFlight
                         </a>
@@ -243,8 +242,8 @@
 <!-- Bento Grid Features -->
 <section class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto py-xl" id="features">
 <div class="text-center mb-lg">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Designed for Focus</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Everything you need, nothing you don't.</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Planned for Focus</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A simple direction for calm routine tracking.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
 <!-- Bento Item 1: Wide Feature -->
@@ -272,7 +271,9 @@
 <h3 class="font-headline-md text-headline-md">Positive Reinforcement</h3>
 <p class="font-body-md text-body-md text-on-surface-variant">Gentle visual cues make small wins easy to notice without turning routines into noisy competition.</p>
 <div class="pt-4">
-<img alt="Star reward" class="w-32 h-32 mx-auto rounded-2xl shadow-lg" data-alt="A close-up digital 3D rendering of a soft, golden star badge with rounded corners and a slight glow. The background is a clean, minimalist off-white surface. The lighting is diffused and professional, highlighting the star's tactile texture and vibrant primary-container orange accents, symbolizing achievement and positive reinforcement for children's habits." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD06pRy6DLIcHwdwuNWUWCg43pHL23ganoFXEr5GER3lZVxG2Rpdd80yjugXjWK_uyjKRZTQMLKT1zdnexwvcV8VHBxw7iU4TiTxnS-XcnSlqMcr6VRaTry00Es9qisdYSp-pdhZ4bK8uBG_qJmopWJBmP6p9TOoheMNrvLmVnZHGmwwkyHVUHWLxWom8XRlsaIx9UlCtwE3v2nE9SPlcMfNge3OGY0555f6c4Kv5ncZIfpqHdSvcgcQjemlW2DQVJ1NxPDycAmzHss"/>
+<div class="w-32 h-32 mx-auto rounded-2xl shadow-lg bg-accent-soft-gold border border-primary-fixed flex items-center justify-center" aria-hidden="true">
+<span class="material-symbols-outlined text-primary text-[64px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
 </div>
 </div>
 <!-- Bento Item 3: Compact Feature -->
@@ -281,7 +282,7 @@
 <span class="material-symbols-outlined">visibility_off</span>
 </div>
 <h3 class="font-headline-md text-headline-md">Zero Distractions</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">No ads, no social feeds, and no noisy notifications. Just pure focus.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">No ads, no social feeds, and no public leaderboards. Just quiet focus.</p>
 </div>
 <!-- Bento Item 4: Bottom Feature -->
 <div class="md:col-span-2 lg:col-span-3 bg-surface-white rounded-[1.5rem] p-lg bento-card border border-outline-variant/30 flex flex-col md:flex-row items-center gap-lg">
@@ -298,7 +299,7 @@
 <div class="bg-surface-white p-3 rounded-lg flex items-center justify-between border border-outline-variant/20">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded-full bg-primary-fixed"></div>
-<span class="font-label-lg text-label-lg">Leo's Morning</span>
+<span class="font-label-lg text-label-lg">Morning routine</span>
 </div>
 <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 </div>
@@ -318,7 +319,7 @@
 <section class="bg-surface-white py-xl mt-xl">
 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-xl items-center">
 <div class="relative">
-<img alt="App Interface on Phone" class="rounded-[3rem] shadow-2xl border-8 border-on-surface w-full max-w-[360px] mx-auto" data-alt="A professional studio product shot showing a high-end smartphone displaying a minimalist habit tracker app. The screen shows large, rounded progress bars in vibrant primary orange and soft gold against a clean white background. The smartphone is held by a hand in a bright, airy environment with a soft-focus background of a tidy home office. The overall image has a light-mode, serene, and highly productive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVmSlgD8XN-SpxS1fraAJnP43y6Vt5hw5jdyBerczc4QvthRA6WYo_EbBsx7U0WxpiA9InB9UJ_T70Ak5gSROJ3LNLGe26yKurhP8qqlBcBBxxg3vROa_ZUzk9mHuSuowSg7ts1p38qi8pPO6AKkzAPe-op7avXy9yKUQ_zjXHNHFmHiC0nHTZAigyGRLX-ko52va2txb7wwZJk7Bi8x7B-OoUYBURW7UFsqXtRik2tabrzc3ZCe1UXDX3RXtMbZ1J_6Em-vDmTtyE"/>
+<img alt="Let's Build Good Habits visual preview" class="rounded-[3rem] shadow-2xl border-8 border-on-surface w-full max-w-[360px] mx-auto" src="../assets/product-evidence-v4/good-habits/visual-preview.jpg"/>
 <div class="absolute -bottom-6 -right-6 bg-primary-container p-6 rounded-2xl text-on-primary shadow-xl hidden lg:block">
 <div class="text-display-lg font-extrabold">Daily</div>
 <div class="font-label-lg">Routine View</div>
@@ -355,15 +356,14 @@
 <!-- CTA Section -->
 <section class="py-xl px-margin-mobile">
 <div class="max-w-4xl mx-auto rounded-[2.5rem] bg-on-secondary-fixed text-surface-white p-lg md:p-xl text-center relative overflow-hidden">
-<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary-container via-transparent to-transparent"></div>
 <div class="relative z-10 space-y-md">
-<h2 class="font-headline-lg text-headline-lg">Ready to start building?</h2>
+<h2 class="font-headline-lg text-headline-lg">Interested in shaping it?</h2>
 <p class="font-body-lg text-body-lg text-secondary-fixed-dim max-w-xl mx-auto">
                         A quiet place to shape routines, keep track of small wins, and build consistency without pressure.
                     </p>
 <div class="flex flex-col sm:flex-row justify-center gap-4 pt-6">
 <a class="bg-primary text-on-primary h-[56px] px-10 rounded-full font-label-lg text-label-lg transition-transform active:scale-95 hover:bg-primary-container flex items-center justify-center" href="#features">
-                            Explore Routines
+                            See the Direction
                         </a>
 <a class="bg-surface-white/10 backdrop-blur-md text-surface-white border border-surface-white/20 h-[56px] px-10 rounded-full font-label-lg text-label-lg transition-transform active:scale-95 hover:bg-surface-white/20 flex items-center justify-center" href="mailto:support@leary.cloud">
                             Contact Support
