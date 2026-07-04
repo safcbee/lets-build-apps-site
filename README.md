@@ -1,30 +1,34 @@
 # Let's Build Apps Static Website
 
-Static website assembled from the Google Stitch export in `stitch_bambino_app_dashboard/`.
+Static website for `apps.leary.cloud`.
 
-## Pages
+## Repository Structure
 
-- Home / app collection: `index.html`
-- Let's Build Sentences: `sentences/index.html`
-- Let's Build Countdowns: `countdowns/index.html`
-- Let's Build Good Habits: `good-habits/index.html`
-- Let's Build Perfect Coffee: `perfect-coffee/index.html`
-- Let's Build Travel Plans: `travel-plans/index.html`
-- Privacy Policy: `privacy/index.html`
-- Legacy Portaflow migration: `portaflow/index.html`
+- `public/` — **published website artifact only**. GitHub Pages should serve this folder via the Pages GitHub Actions workflow. Only production routes, `CNAME`, and required production assets belong here.
+- `internal/` — non-published working material and notes. Do not copy this into `public/`.
+- `tests/` — local validation scripts. Tests are not part of the published website.
+- `reports/`, `stitch_bambino_app_dashboard/`, `v4/`, `v5/`, and root planning Markdown files are historical/internal working material and must stay out of `public/`.
 
-## Reports
+## Published Pages
 
-- Audit Report: `reports/audit-report.md`
-- Implementation Report: `reports/implementation-report.md`
-- Portfolio Alignment Report: `reports/portfolio-alignment-report.md`
-- Validation Report: `reports/validation-report.md`
+These are the intended public routes under `public/`:
+
+- Home / app collection: `public/index.html`
+- Let's Build Sentences: `public/sentences/index.html`
+- Let's Build Countdowns: `public/countdowns/index.html`
+- Let's Build Good Habits: `public/good-habits/index.html`
+- Let's Build Better Coffee: `public/perfect-coffee/index.html`
+- Let's Build Travel Plans: `public/travel-plans/index.html`
+- General Privacy Policy: `public/privacy/index.html`
+- Travel Plans Privacy Policy: `public/travel-plans/privacy/index.html`
+- Legacy Portaflow migration: `public/portaflow/index.html`
 
 ## Local Preview
 
-From this folder:
+Preview the actual published artifact from `public/`:
 
 ```sh
+cd public
 python3 -m http.server 8000
 ```
 
@@ -36,7 +40,13 @@ http://localhost:8000/
 
 ## Tests
 
-Run the static regression tests:
+Run the publish-surface guard:
+
+```sh
+node tests/publish-surface.test.mjs
+```
+
+Run the existing static regression tests:
 
 ```sh
 node tests/home-search.test.mjs
@@ -47,17 +57,19 @@ node tests/site-integrity.test.mjs
 
 ## GitHub Pages Deployment
 
-1. Commit this folder to a GitHub repository.
-2. In GitHub, open the repository configuration area and choose `Pages`.
-3. Set `Source` to `Deploy from a branch`.
-4. Choose the branch that contains these files.
-5. Choose `/ (root)` as the publishing folder.
-6. Save and wait for GitHub Pages to publish the site.
+This repo now includes `.github/workflows/pages.yml`, which deploys the contents of `public/` as the GitHub Pages artifact.
+
+Required GitHub repository setting before publishing:
+
+1. Open the repository on GitHub.
+2. Go to **Settings → Pages**.
+3. Set **Build and deployment → Source** to **GitHub Actions**.
+4. Do **not** use branch-root publishing for this repo, because root contains internal working material.
+
+Do not push/deploy without owner approval.
 
 ## Preservation Notes
 
-- The generated Stitch `code.html` files were copied into static routes with their embedded Tailwind configuration and page-local styles intact.
-- Supplied `screen.png` files were copied to `assets/stitch-screenshots/` for visual validation references.
-- Changes preserve the Stitch visual language while aligning portfolio positioning, navigation, support/privacy access, and legacy Portaflow migration.
-- No backend, analytics, tracking, cookies, authentication, or server-side logic was added.
-- External Google Fonts, Material Symbols, Tailwind CDN, and Stitch-generated image URLs remain as exported to preserve the rendered appearance.
+- Production copy, privacy/legal wording, branding, and portfolio content were not intentionally rewritten for the publish-surface change.
+- `public/` is a copied production artifact. Internal reports, Stitch exports, preview versions, tests, and planning notes must remain outside it.
+- `CNAME` is included in `public/` so the GitHub Pages artifact keeps `apps.leary.cloud`.

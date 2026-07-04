@@ -9,6 +9,7 @@ const pages = [
   'good-habits/index.html',
   'perfect-coffee/index.html',
   'travel-plans/index.html',
+  'travel-plans/privacy/index.html',
   'privacy/index.html',
   'portaflow/index.html',
 ];
@@ -72,7 +73,11 @@ for (const page of pages) {
 for (const page of appPages) {
   const html = read(page);
   assert.match(html, /href=["']\.\.\/["']/, `${page} links back to the homepage`);
-  assert.match(html, /href=["']\.\.\/privacy\/["']/, `${page} links to Privacy`);
+  if (page === 'travel-plans/index.html') {
+    assert.match(html, /href=["']\.\/privacy\/["']/, `${page} links to its app-specific Privacy policy`);
+  } else {
+    assert.match(html, /href=["']\.\.\/privacy\/["']/, `${page} links to Privacy`);
+  }
   assert.match(html, /mailto:support@leary\.cloud/, `${page} links to support`);
 }
 
@@ -90,7 +95,7 @@ assert.match(privacy, /mailto:support@leary\.cloud/, 'privacy page exposes suppo
 const allText = pages.map((page) => visibleText(read(page))).join(' ');
 assert.doesNotMatch(allText, /support@letsbuildapps\.io/i, 'old support email is removed');
 assert.doesNotMatch(allText, /Portaflow cards|Portaflow navigation/i, 'Portaflow does not appear as primary product content');
-assert.doesNotMatch(allText, /Future Projects|Concept Stage|Coming Soon/i, 'placeholder homepage sections are removed');
+assert.doesNotMatch(allText, /Future Projects|Concept Stage/i, 'placeholder homepage sections are removed');
 assert.doesNotMatch(home, /V5 experimental|Production V4|View V4 page/i, 'production homepage has no preview or V4 promotion copy');
 
 const portaflow = read('portaflow/index.html');

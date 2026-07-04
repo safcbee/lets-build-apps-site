@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Let's Build Better Coffee | Precision Brewing Utility</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdcbc",
+                    "inverse-primary": "#ffb86b",
+                    "background": "#fbf9f8",
+                    "on-tertiary-fixed": "#2a1700",
+                    "primary-container": "#f69600",
+                    "surface-container-high": "#eae8e7",
+                    "surface-container-highest": "#e4e2e1",
+                    "primary": "#895100",
+                    "on-secondary-fixed": "#1a1a2e",
+                    "on-primary-fixed": "#2c1700",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#683d00",
+                    "primary-fixed-dim": "#ffb86b",
+                    "inverse-surface": "#303030",
+                    "secondary": "#5d5c74",
+                    "surface-white": "#FFFFFF",
+                    "on-secondary-container": "#63627a",
+                    "secondary-container": "#e2e0fc",
+                    "on-surface": "#1b1c1c",
+                    "inverse-on-surface": "#f3f0f0",
+                    "tertiary-container": "#e49e3c",
+                    "secondary-fixed": "#e2e0fc",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "outline": "#877461",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#5f3700",
+                    "tertiary-fixed-dim": "#ffb95c",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#dac2ad",
+                    "surface-dim": "#dcd9d9",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#fbf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c6c4df",
+                    "tertiary": "#855400",
+                    "surface-tint": "#895100",
+                    "accent-soft-gold": "#FFF1D6",
+                    "surface-container": "#f0eded",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#544434",
+                    "on-secondary-fixed-variant": "#45455b",
+                    "surface-variant": "#e4e2e1",
+                    "on-background": "#1b1c1c",
+                    "background-cream": "#FFFAF2",
+                    "surface-container-low": "#f6f3f2",
+                    "tertiary-fixed": "#ffddb7",
+                    "surface": "#fbf9f8",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "48px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-lg": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .squishy-active:active {
+            transform: scale(0.96);
+            transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px -15px rgba(93, 92, 116, 0.1);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .coffee-gradient {
+            background: linear-gradient(135deg, #FFFAF2 0%, #FFF1D6 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-cream text-on-surface selection:bg-primary-container selection:text-white overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="bg-background-cream dark:bg-on-tertiary-fixed fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 w-full max-w-7xl mx-auto left-1/2 -translate-x-1/2">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">coffee</span>
+            <a class="text-primary dark:text-primary-fixed-dim" href="../">Let's Build Apps</a>
+        </div>
+<div class="hidden md:flex items-center gap-base">
+<a class="font-label-lg text-label-lg text-primary dark:text-inverse-primary border-b-2 border-primary font-bold pb-1 hover:text-primary-container transition-colors duration-200" href="../">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-colors duration-200 ml-gutter" href="#features">Features</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-colors duration-200 ml-gutter" href="../privacy/">Privacy</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-colors duration-200 ml-gutter" href="#testflight">TestFlight</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-surface-variant hover:text-primary-container transition-colors duration-200 ml-gutter" href="mailto:support@leary.cloud">Support</a>
+</div>
+<a class="bg-primary text-on-primary font-label-lg text-label-lg px-6 py-3 rounded-full squishy-active hover:bg-primary-container transition-all" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Better%20Coffee">
+            Register interest
+        </a>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-xl overflow-hidden" id="home">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-lg">
+<div class="flex-1 space-y-md text-center md:text-left z-10">
+<div class="inline-flex items-center gap-xs bg-accent-soft-gold text-primary px-4 py-1.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+                    THE CONNOISSEUR'S UTILITY
+                </div>
+<span class="inline-flex w-fit items-center gap-xs bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full font-label-sm text-label-sm border border-outline-variant" data-status-pill>In Development</span>
+<h1 class="font-display-lg text-display-lg text-on-surface">
+                    Better Coffee is <br/>
+<span class="text-primary-container">Built, Not Found.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    A focused utility for coffee enthusiasts who treat brewing as a craft. Keep recipes, brew notes, grind details, and experiments in one place.
+                </p>
+<div class="flex flex-col sm:flex-row items-center gap-gutter pt-base">
+<a class="w-full sm:w-auto h-[56px] px-8 bg-primary text-white rounded-xl font-label-lg text-label-lg squishy-active shadow-lg shadow-primary/20 hover:bg-primary-container flex items-center justify-center" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Better%20Coffee">
+                        Coming soon to the App Store
+                    </a>
+<a class="w-full sm:w-auto h-[56px] px-8 border-2 border-outline-variant text-primary rounded-xl font-label-lg text-label-lg squishy-active hover:bg-white transition-colors flex items-center justify-center" href="mailto:support@leary.cloud">
+                        Contact Support
+                    </a>
+</div>
+</div>
+<div class="flex-1 relative w-full">
+<div class="relative z-10 rounded-3xl overflow-hidden soft-shadow bg-surface-white p-4 border border-outline-variant/30">
+<div class="grid grid-cols-2 gap-md">
+<img alt="Let's Build Better Coffee dashboard screenshot" class="rounded-2xl w-full shadow-lg border border-outline-variant/20" src="../assets/product-evidence-v4/perfect-coffee/dashboard.png"/>
+<img alt="Let's Build Better Coffee new shot screenshot" class="rounded-2xl w-full shadow-lg border border-outline-variant/20" src="../assets/product-evidence-v4/perfect-coffee/new-shot.png"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-4 text-center">Real app screenshots from the coffee app evidence set.</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Product Evidence Section -->
+<section class="py-xl bg-surface-white" id="availability">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto space-y-lg">
+<div class="text-center max-w-3xl mx-auto">
+<span class="inline-block px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm mb-4" data-status-pill>In Development</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Every great coffee starts with a better recipe.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Better Coffee is not currently listed on the App Store, and no public TestFlight link has been verified. Interest opens an email to support.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg items-start">
+<div class="bg-background-cream rounded-3xl p-md soft-shadow border border-outline-variant/30">
+<div class="grid grid-cols-2 gap-md">
+<img alt="Let's Build Better Coffee dashboard screenshot" class="rounded-[1.5rem] w-full shadow-lg border border-outline-variant/20" src="../assets/product-evidence-v4/perfect-coffee/dashboard.png"/>
+<img alt="Let's Build Better Coffee new shot screenshot" class="rounded-[1.5rem] w-full shadow-lg border border-outline-variant/20" src="../assets/product-evidence-v4/perfect-coffee/new-shot.png"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-4">Real app screenshots from the coffee app evidence set.</p>
+</div>
+<div class="grid gap-md">
+<div class="bg-background-cream rounded-3xl p-md soft-shadow border border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md mb-4">Availability</h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li><strong class="text-on-surface">App Store:</strong> No verified public listing.</li>
+<li><strong class="text-on-surface">TestFlight:</strong> No public invite link verified.</li>
+<li><strong class="text-on-surface">Support:</strong> <a class="underline text-primary" href="mailto:support@leary.cloud">support@leary.cloud</a></li>
+</ul>
+</div>
+<div class="bg-background-cream rounded-3xl p-md soft-shadow border border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md mb-4">Key verified features</h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li>Brew recipes and coffee journal history.</li>
+<li>Grind notes, dose notes, timing notes, and taste notes.</li>
+<li>Favourite beans and bean management.</li>
+<li>Brewing experiments and lightweight dial-in guidance.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Built Section -->
+<section class="py-xl bg-background-cream">
+<div class="px-margin-mobile md:px-margin-desktop max-w-5xl mx-auto">
+<div class="bg-surface-white rounded-[2rem] p-lg md:p-xl soft-shadow">
+<h2 class="font-headline-lg text-headline-lg mb-6">Why we built this</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Coffee improvement depends on remembering what changed: beans, grind, dose, time, method, and taste. Better Coffee is designed to make experiments easy to record and repeat.</p>
+</div>
+</div>
+</section>
+<!-- TestFlight Interest Section -->
+<section class="py-xl bg-background-cream" id="testflight">
+<div class="px-margin-mobile md:px-margin-desktop max-w-5xl mx-auto">
+<div class="bg-on-secondary-fixed text-white rounded-[2rem] p-lg md:p-xl text-center space-y-md relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-6">Help shape Let's Build Better Coffee</h2>
+<p class="font-body-lg text-body-lg opacity-80 max-w-xl mx-auto mb-lg">Want to hear when preview builds are available? Register your interest and help shape the app before release.</p>
+<a class="px-10 py-4 bg-primary-container text-on-tertiary-fixed rounded-full font-headline-md text-headline-md squishy-active hover:brightness-110 transition-all inline-flex" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Better%20Coffee">
+                            Coming soon to the App Store
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Features -->
+<section class="py-xl bg-surface-white" id="features">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="text-center mb-xl space-y-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Precision Control Tools</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Master the variables that define your daily ritual.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[280px]">
+<!-- Recipe Logging -->
+<div class="md:col-span-8 bg-background-cream rounded-3xl p-md flex flex-col md:flex-row items-center gap-lg soft-shadow overflow-hidden group">
+<div class="flex-1 space-y-sm">
+<span class="material-symbols-outlined text-4xl text-primary-container">menu_book</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Recipe Logging</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Document beans, brew methods, ratios, and recipe notes so repeatable cups are easier to find again.</p>
+</div>
+<div class="flex-1 h-full w-full rounded-2xl bg-white p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<div class="space-y-sm">
+<div class="h-4 w-2/3 bg-surface-container rounded"></div>
+<div class="h-4 w-full bg-surface-container-high rounded"></div>
+<div class="h-4 w-1/2 bg-surface-container rounded"></div>
+<div class="pt-md grid grid-cols-2 gap-sm">
+<div class="h-12 bg-primary-fixed rounded-lg"></div>
+<div class="h-12 bg-accent-soft-gold rounded-lg"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Grind Controls -->
+<div class="md:col-span-4 bg-on-secondary-fixed text-white rounded-3xl p-md flex flex-col justify-between soft-shadow relative overflow-hidden">
+<div class="z-10">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim">tune</span>
+<h3 class="font-headline-md text-headline-md mt-sm">Grind Tracker</h3>
+<p class="font-body-md text-body-md text-surface-variant/80 mt-xs">Keep grind notes beside each recipe so small adjustments stay connected to the cup they produced.</p>
+</div>
+<div class="z-10 mt-md h-2 bg-surface-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-3/4"></div>
+</div>
+</div>
+<!-- Extraction Timer -->
+<div class="md:col-span-4 bg-tertiary-fixed text-on-tertiary-fixed rounded-3xl p-md flex flex-col justify-center items-center text-center soft-shadow group">
+<div class="w-24 h-24 rounded-full border-4 border-on-tertiary-fixed/20 flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl animate-pulse">timer</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Brew Timing</h3>
+<p class="font-body-md text-body-md opacity-80 mt-xs">Keep time notes close to each recipe without turning the ritual into a spreadsheet.</p>
+</div>
+<!-- Recipe Note Overview -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant/30 rounded-3xl p-md flex flex-col md:flex-row gap-lg soft-shadow">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recipe Note Overview</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Keep recipes, taste notes, and dial-in changes easy to revisit after each experiment.</p>
+</div>
+<div class="flex-1 space-y-sm">
+<div class="bg-white rounded-xl p-sm border border-outline-variant/20">
+<div class="font-label-sm text-label-sm text-primary">Recipe</div>
+<div class="h-3 mt-2 rounded bg-surface-container"></div>
+</div>
+<div class="bg-white rounded-xl p-sm border border-outline-variant/20">
+<div class="font-label-sm text-label-sm text-secondary">Taste notes</div>
+<div class="h-3 mt-2 rounded bg-surface-container-high"></div>
+</div>
+<div class="bg-white rounded-xl p-sm border border-outline-variant/20">
+<div class="font-label-sm text-label-sm text-primary">Next change</div>
+<div class="h-3 mt-2 rounded bg-primary-fixed"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sophisticated App Interface Section -->
+<section class="py-xl bg-background-cream">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-xl">
+<div class="w-full lg:w-1/2 space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Designed for the <br/><span class="text-primary">Modern Ritual.</span></h2>
+<div class="space-y-gutter">
+<div class="flex gap-md p-md bg-white rounded-2xl hover:border-primary border-2 border-transparent transition-all cursor-default group">
+<div class="w-12 h-12 bg-accent-soft-gold rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">scale</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Recipe Ratios</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Keep dose, yield, and method notes together for the brew styles you use most.</p>
+</div>
+</div>
+<div class="flex gap-md p-md bg-white rounded-2xl hover:border-primary border-2 border-transparent transition-all cursor-default group">
+<div class="w-12 h-12 bg-accent-soft-gold rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">query_stats</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Taste Notes</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Capture simple impressions after each cup, from balance to body to what you would change next.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="bg-on-secondary-fixed rounded-[40px] p-6 shadow-2xl border-8 border-surface-container-highest">
+<div class="grid grid-cols-2 gap-md">
+<img alt="Better Coffee dashboard screenshot" class="rounded-2xl shadow-lg border border-surface-container-highest/30" src="../assets/product-evidence-v4/perfect-coffee/dashboard.png"/>
+<img alt="Better Coffee new shot screenshot" class="rounded-2xl shadow-lg border border-surface-container-highest/30" src="../assets/product-evidence-v4/perfect-coffee/new-shot.png"/>
+</div>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim mt-4 text-center">Product evidence, not a marketing mockup.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-xl relative">
+<div class="px-margin-mobile md:px-margin-desktop max-w-5xl mx-auto">
+<div class="bg-on-secondary-fixed text-white rounded-[2rem] p-lg md:p-xl text-center space-y-md relative overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-6xl text-primary-fixed-dim">science</span>
+<p class="font-headline-lg text-headline-lg leading-relaxed italic">
+                        Track brew variables, compare recipes, and keep your coffee notes in one focused place.
+                    </p>
+<div class="mt-lg">
+<div class="font-label-lg text-label-lg text-primary-fixed">Precision brewing tools</div>
+<div class="font-body-md text-body-md opacity-60">For repeatable recipes and careful notes</div>
+</div>
+<div class="pt-xl">
+<a class="px-10 py-4 bg-primary-container text-on-tertiary-fixed rounded-full font-headline-md text-headline-md squishy-active hover:brightness-110 transition-all inline-flex" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Better%20Coffee">
+                            Coming soon to the App Store
+                        </a>
+</div>
+</div>
+<!-- Abstract Shader-like Background -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-on-secondary-fixed flex flex-col md:flex-row justify-between items-center px-margin-desktop py-xl w-full border-t border-outline-variant">
+<div class="flex flex-col items-center md:items-start space-y-sm mb-lg md:mb-0">
+<div class="font-headline-md text-headline-md text-primary font-bold">Let's Build Apps</div>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim max-w-xs text-center md:text-left">
+                Crafting digital experiences for the modern lifestyle.
+            </p>
+</div>
+<div class="flex flex-col items-center md:items-end space-y-md">
+<div class="flex gap-lg">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container underline transition-all" href="mailto:support@leary.cloud">Support</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container underline transition-all" href="../privacy/">Privacy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container underline transition-all" href="mailto:support@leary.cloud">Contact Us</a>
+</div>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim opacity-60">
+                © 2026 Let's Build Apps. All rights reserved.
+            </div>
+</div>
+</footer>
+<!-- Interactive Elements Scripts -->
+<script>
+        // Micro-interaction for scroll reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+
+        // Simple parallax for hero image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('header img');
+            if(heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.05}px)`;
+            }
+        });
+    </script>
+</body></html>
