@@ -24,7 +24,7 @@ const forbiddenPatterns = [
 ];
 
 for (const page of pages) {
-  const html = readFileSync(new URL(`../${page}`, import.meta.url), 'utf8');
+  const html = readFileSync(new URL(`../public/${page}`, import.meta.url), 'utf8');
   const visibleText = html
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')

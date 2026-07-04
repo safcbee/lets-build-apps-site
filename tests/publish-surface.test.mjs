@@ -42,19 +42,6 @@ const forbiddenTopLevelEntries = new Set([
   'docs',
 ]);
 
-const forbiddenFileNames = new Set([
-  'CONTENT_AUDIT_REPORT.md',
-  'DESIGN_POLISH_REPORT.md',
-  'OWNER_REVIEW_NOTES.md',
-  'README.md',
-  'VALIDATION.md',
-  'master-goal.md',
-  'v4-goal.md',
-  'v4-publish.md',
-  'v5goal.md',
-  'v5live.md',
-]);
-
 assert.equal(existsSync(publishPath), true, 'public/ publish folder exists');
 assert.equal(statSync(publishPath).isDirectory(), true, 'public/ is a directory');
 
@@ -80,8 +67,6 @@ function walk(dir) {
 
 for (const fullPath of walk(publishPath)) {
   const rel = relative(publishPath, fullPath);
-  const name = rel.split('/').at(-1);
-  assert.equal(forbiddenFileNames.has(name), false, `forbidden internal/planning file copied to public/: ${rel}`);
   assert.notEqual(extname(fullPath), '.md', `Markdown/internal note copied to public/: ${rel}`);
   assert.equal(rel.startsWith('assets/stitch-screenshots/'), false, `Stitch screenshot asset copied to public/: ${rel}`);
   assert.equal(rel.startsWith('reports/'), false, `report copied to public/: ${rel}`);

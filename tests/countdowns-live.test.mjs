@@ -2,8 +2,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const appStoreUrl = 'https://apps.apple.com/gb/app/lets-build-countdowns/id6777798794';
-const home = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-const countdowns = readFileSync(new URL('../countdowns/index.html', import.meta.url), 'utf8');
+const home = readFileSync(new URL('../public/index.html', import.meta.url), 'utf8');
+const countdowns = readFileSync(new URL('../public/countdowns/index.html', import.meta.url), 'utf8');
 
 assert.match(home, /id=["']countdowns["']/, 'Countdowns appears as a product-led homepage section');
 assert.match(home, /Available on App Store/, 'Countdowns has an available status');

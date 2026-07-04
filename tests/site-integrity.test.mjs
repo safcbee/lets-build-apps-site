@@ -22,7 +22,7 @@ const appPages = [
   'travel-plans/index.html',
 ];
 
-const root = new URL('../', import.meta.url);
+const root = new URL('../public/', import.meta.url);
 
 function read(page) {
   return readFileSync(new URL(page, root), 'utf8');
@@ -84,7 +84,7 @@ for (const page of appPages) {
 const home = read('index.html');
 assert.match(home, /mailto:support@leary\.cloud/, 'homepage links to support');
 assert.match(home, /href=["']\.\/privacy\/["']/, 'homepage links to Privacy');
-assert.match(home, /Beautiful tools for real family life\./, 'homepage uses the promoted V5 experience');
+assert.match(home, /Beautiful tools for real family life\./, 'homepage uses the expected production experience');
 assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 5, 'homepage has a visible product page link for each product section');
 
 const privacy = read('privacy/index.html');
@@ -96,7 +96,7 @@ const allText = pages.map((page) => visibleText(read(page))).join(' ');
 assert.doesNotMatch(allText, /support@letsbuildapps\.io/i, 'old support email is removed');
 assert.doesNotMatch(allText, /Portaflow cards|Portaflow navigation/i, 'Portaflow does not appear as primary product content');
 assert.doesNotMatch(allText, /Future Projects|Concept Stage/i, 'placeholder homepage sections are removed');
-assert.doesNotMatch(home, /V5 experimental|Production V4|View V4 page/i, 'production homepage has no preview or V4 promotion copy');
+assert.doesNotMatch(home, /experimental|View preview page/i, 'production homepage has no preview promotion copy');
 
 const portaflow = read('portaflow/index.html');
 assert.match(portaflow, /http-equiv=["']refresh["']/i, 'Portaflow legacy route redirects');
