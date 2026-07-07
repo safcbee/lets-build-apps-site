@@ -17,12 +17,14 @@ const requiredFiles = [
   'privacy/index.html',
   'travel-plans/index.html',
   'travel-plans/privacy/index.html',
+  'family-trips/privacy/index.html',
 ];
 
 const allowedTopLevelEntries = new Set([
   'CNAME',
   'assets',
   'countdowns',
+  'family-trips',
   'good-habits',
   'index.html',
   'perfect-coffee',
