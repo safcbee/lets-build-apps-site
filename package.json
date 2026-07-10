@@ -2,6 +2,6 @@
   "name": "apps-leary-cloud",
   "private": true,
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp -R public/. dist/"
+    "build": "rm -rf dist && mkdir -p dist/server dist/.openai && cp -R public/. dist/ && cp server/index.js dist/server/index.js && cp .openai/hosting.json dist/.openai/hosting.json"
   }
 }
