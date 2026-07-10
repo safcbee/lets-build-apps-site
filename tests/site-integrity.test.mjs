@@ -94,6 +94,17 @@ assert.match(privacy, /Last updated:\s*10 July 2026/, 'privacy policy shows its 
 assert.match(privacy, /mailto:privacy@leary\.cloud/, 'privacy page exposes privacy contact');
 assert.match(privacy, /mailto:support@leary\.cloud/, 'privacy page exposes support contact');
 
+const travelPlans = read('travel-plans/index.html');
+assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');
+assert.match(travelPlans, /First trip free/, 'Travel Plans explains the V2 free experience');
+assert.match(travelPlans, /Each person who wants Plus subscribes individually/, 'Travel Plans does not repeat the retired family-wide entitlement claim');
+assert.match(travelPlans, /build 26 is the latest upload explicitly verified/, 'Travel Plans distinguishes uploaded and development builds');
+
+const travelPrivacy = read('travel-plans/privacy/index.html');
+assert.match(travelPrivacy, /does not require a Let’s Build Apps account, Sign in with Apple login or Supabase account/, 'Travel Plans privacy reflects the mounted V2 app');
+assert.match(travelPrivacy, /Apple CloudKit/, 'Travel Plans privacy discloses Plus sync');
+assert.match(travelPrivacy, /Apple Foundation Models/, 'Travel Plans privacy discloses on-device assistance');
+
 const allText = pages.map((page) => visibleText(read(page))).join(' ');
 assert.doesNotMatch(allText, /support@letsbuildapps\.io/i, 'old support email is removed');
 assert.doesNotMatch(allText, /Portaflow cards|Portaflow navigation/i, 'Portaflow does not appear as primary product content');

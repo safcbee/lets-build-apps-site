@@ -38,12 +38,17 @@ const imageAssets = [
   'coffee-log.jpg',
   'coffee-history.jpg',
   'coffee-beans.jpg',
+  'travel-plans-trips.jpg',
+  'travel-plans-ready.jpg',
+  'travel-plans-itinerary.jpg',
+  'travel-plans-plus.jpg',
 ].map((name) => ({ directory: 'site-v3', name, mime: 'image/jpeg' }))).concat([
   'icon-sentences.png',
   'icon-countdowns.png',
   'icon-family-trips.png',
   'icon-good-habits.png',
   'icon-coffee.png',
+  'icon-travel-plans.png',
 ].map((name) => ({ directory: 'site-v3', name, mime: 'image/png' })));
 
 await rm('dist', { recursive: true, force: true });

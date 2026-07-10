@@ -17,7 +17,7 @@
     <p><strong>Last updated: 10 July 2026</strong></p>
 
     <nav class="policyNav" aria-label="Privacy policy sections">
-      <a href="#website">This website</a><a href="#sentences-privacy">Let’s Build Sentences</a><a href="#countdowns-privacy">Let’s Build Countdowns</a><a href="#family-trips-privacy">Family Trips &amp; Travel Plans</a><a href="#good-habits-privacy">Let’s Build Good Habits</a><a href="#coffee-privacy">Let’s Build Better Coffee</a>
+      <a href="#website">This website</a><a href="#sentences-privacy">Let’s Build Sentences</a><a href="#countdowns-privacy">Let’s Build Countdowns</a><a href="#family-trips-privacy">Let’s Build Family Trips</a><a href="#travel-plans-privacy">Let’s Build Travel Plans</a><a href="#good-habits-privacy">Let’s Build Good Habits</a><a href="#coffee-privacy">Let’s Build Better Coffee</a>
     </nav>
 
     <article class="policy" id="apps">
@@ -55,15 +55,26 @@
       </section>
 
       <section id="family-trips-privacy">
-        <h2>Let’s Build Family Trips and Let’s Build Travel Plans</h2>
-        <p>These shared planning apps need an account and online service so invited family members can see the same trip. Their dedicated policies contain the full details:</p>
-        <div class="policyNav"><a href="../family-trips/privacy/">Family Trips privacy policy</a><a href="../travel-plans/privacy/">Travel Plans privacy policy</a></div>
+        <h2>Let’s Build Family Trips</h2>
+        <p>Family Trips needs an account and online service so invited family members can see the same trip. Its <a href="../family-trips/privacy/">dedicated privacy policy</a> contains the full details.</p>
         <ul>
           <li><strong>Authentication:</strong> Sign in with Apple provides a secure account identifier and, when shared, profile information. We never receive your Apple password.</li>
           <li><strong>Storage and sync:</strong> Supabase hosts account and trip data, messages, costs, itineraries, photos and documents in its EU region. Access controls restrict shared content to authenticated members of the relevant family space.</li>
           <li><strong>Notifications:</strong> Apple Push Notification service processes a device token when notifications are enabled.</li>
           <li><strong>Family sharing:</strong> information added to a shared family space is visible to its invited members. Removing an account does not automatically remove content that other family members still need in their shared space; the dedicated policies explain deletion and retention.</li>
-          <li><strong>Payments:</strong> Travel Plans premium subscriptions are processed by Apple. Family Trips currently has no subscription or in-app purchase.</li>
+          <li><strong>No purchases:</strong> Family Trips currently has no subscription, paywall or in-app purchase.</li>
+        </ul>
+      </section>
+
+      <section id="travel-plans-privacy">
+        <h2>Let’s Build Travel Plans</h2>
+        <p>The current Travel Plans V2 product is local-first and does not use the Family Trips account or Supabase backend. Its <a href="../travel-plans/privacy/">dedicated privacy policy</a> explains the current development implementation.</p>
+        <ul>
+          <li><strong>Local data:</strong> the free trip and its planning information are stored in the app’s private Application Support area.</li>
+          <li><strong>Plus iCloud features:</strong> the latest development build uses Apple CloudKit and CKShare for sync, family trip sharing, chat and document-vault assets.</li>
+          <li><strong>Documents:</strong> files, photos and scans are added only when you choose them. Apple Vision and PDFKit recognise text on the device.</li>
+          <li><strong>On-device assistance:</strong> supported iOS 26 devices use Apple Foundation Models locally for note import and grounded trip checks.</li>
+          <li><strong>Purchases:</strong> monthly or annual Plus is processed by Apple StoreKit and is an individual entitlement, not a family-wide Supabase subscription.</li>
         </ul>
       </section>
 
@@ -90,7 +101,7 @@
 
       <section id="choices">
         <h2>Your choices and controls</h2>
-        <p>You can manage microphone, camera, HealthKit, notifications, Personal Voice and iCloud permissions in iOS Settings. You can delete locally stored information by using the relevant in-app controls or deleting the app. For Family Trips and Travel Plans, use the in-app account deletion and export controls or contact us for help.</p>
+        <p>You can manage microphone, camera, HealthKit, notifications, Personal Voice and iCloud permissions in iOS Settings. You can delete locally stored information using the relevant in-app controls or by deleting the app. Family Trips provides account deletion and export controls; Travel Plans provides trip archive, export and “Delete forever” controls.</p>
         <h2>Children and families</h2>
         <p>Our family and learning apps avoid behavioural advertising and cross-app tracking. Parents and guardians should supervise the information children create or share, especially in shared family spaces and voice recordings.</p>
         <h2>Changes and contact</h2>
