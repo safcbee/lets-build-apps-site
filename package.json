@@ -1,0 +1,7 @@
+{
+  "name": "apps-leary-cloud",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -R public/. dist/"
+  }
+}
