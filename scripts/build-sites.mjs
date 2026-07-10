@@ -6,13 +6,14 @@ const pages = {
   '/countdowns/': 'public/countdowns/index.html',
   '/good-habits/': 'public/good-habits/index.html',
   '/perfect-coffee/': 'public/perfect-coffee/index.html',
+  '/family-trips/': 'public/family-trips/index.html',
   '/travel-plans/': 'public/travel-plans/index.html',
   '/privacy/': 'public/privacy/index.html',
   '/travel-plans/privacy/': 'public/travel-plans/privacy/index.html',
   '/family-trips/privacy/': 'public/family-trips/privacy/index.html',
 };
 
-const imageNames = [
+const imageAssets = [
   'iphone-1-portrait-intro.jpg',
   'iphone-2-portrait-trace-off.jpg',
   '01-hero-your-moments-next-up.jpg',
@@ -24,7 +25,26 @@ const imageNames = [
   'dashboard.jpg',
   'new-shot.jpg',
   'good-habits-preview.jpg',
-];
+].map((name) => ({ directory: 'site-v2', name, mime: 'image/jpeg' })).concat([
+  'good-habits-dashboard.jpg',
+  'good-habits-diary.jpg',
+  'family-trips-trips.jpg',
+  'family-trips-costs.jpg',
+  'family-trips-itinerary.jpg',
+  'family-trips-chat.jpg',
+  'sentences-promo-1.jpg',
+  'sentences-promo-2.jpg',
+  'coffee-dashboard.jpg',
+  'coffee-log.jpg',
+  'coffee-history.jpg',
+  'coffee-beans.jpg',
+].map((name) => ({ directory: 'site-v3', name, mime: 'image/jpeg' }))).concat([
+  'icon-sentences.png',
+  'icon-countdowns.png',
+  'icon-family-trips.png',
+  'icon-good-habits.png',
+  'icon-coffee.png',
+].map((name) => ({ directory: 'site-v3', name, mime: 'image/png' })));
 
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist/server', { recursive: true });
@@ -32,17 +52,17 @@ await mkdir('dist/.openai', { recursive: true });
 
 const css = await readFile('public/assets/site-v2.css', 'utf8');
 const images = {};
-for (const name of imageNames) {
-  const data = await readFile(`public/assets/site-v2/${name}`);
-  images[name] = `data:image/jpeg;base64,${data.toString('base64')}`;
+for (const asset of imageAssets) {
+  const data = await readFile(`public/assets/${asset.directory}/${asset.name}`);
+  images[`${asset.directory}/${asset.name}`] = `data:${asset.mime};base64,${data.toString('base64')}`;
 }
 
 const builtPages = {};
 for (const [route, file] of Object.entries(pages)) {
   let html = await readFile(file, 'utf8');
-  html = html.replace(/<link rel="stylesheet" href="(?:\.\.\/|\.\/)assets\/site-v2\.css">/g, `<style>${css}</style>`);
-  for (const [name, dataUrl] of Object.entries(images)) {
-    html = html.replaceAll(`../assets/site-v2/${name}`, dataUrl).replaceAll(`./assets/site-v2/${name}`, dataUrl);
+  html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/site-v2\.css">/g, `<style>${css}</style>`);
+  for (const [assetPath, dataUrl] of Object.entries(images)) {
+    html = html.replaceAll(`../assets/${assetPath}`, dataUrl).replaceAll(`./assets/${assetPath}`, dataUrl);
   }
   builtPages[route] = html;
 }

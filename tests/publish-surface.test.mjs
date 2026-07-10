@@ -13,6 +13,7 @@ const requiredFiles = [
   'countdowns/index.html',
   'good-habits/index.html',
   'perfect-coffee/index.html',
+  'family-trips/index.html',
   'portaflow/index.html',
   'privacy/index.html',
   'travel-plans/index.html',

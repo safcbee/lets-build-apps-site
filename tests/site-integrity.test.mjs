@@ -8,6 +8,7 @@ const pages = [
   'countdowns/index.html',
   'good-habits/index.html',
   'perfect-coffee/index.html',
+  'family-trips/index.html',
   'travel-plans/index.html',
   'travel-plans/privacy/index.html',
   'privacy/index.html',
@@ -19,6 +20,7 @@ const appPages = [
   'countdowns/index.html',
   'good-habits/index.html',
   'perfect-coffee/index.html',
+  'family-trips/index.html',
   'travel-plans/index.html',
 ];
 
@@ -73,10 +75,10 @@ for (const page of pages) {
 for (const page of appPages) {
   const html = read(page);
   assert.match(html, /href=["']\.\.\/["']/, `${page} links back to the homepage`);
-  if (page === 'travel-plans/index.html') {
+  if (page === 'travel-plans/index.html' || page === 'family-trips/index.html') {
     assert.match(html, /href=["']\.\/privacy\/["']/, `${page} links to its app-specific Privacy policy`);
   } else {
-    assert.match(html, /href=["']\.\.\/privacy\/["']/, `${page} links to Privacy`);
+    assert.match(html, /href=["']\.\.\/privacy\/(?:#[^"']+)?["']/, `${page} links to Privacy`);
   }
   assert.match(html, /mailto:support@leary\.cloud/, `${page} links to support`);
 }
@@ -85,10 +87,10 @@ const home = read('index.html');
 assert.match(home, /mailto:support@leary\.cloud/, 'homepage links to support');
 assert.match(home, /href=["']\.\/privacy\/["']/, 'homepage links to Privacy');
 assert.match(home, /Beautiful tools for real family life\./, 'homepage uses the expected production experience');
-assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 5, 'homepage has a visible product page link for each product section');
+assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 6, 'homepage has a visible product page link for each product section');
 
 const privacy = read('privacy/index.html');
-assert.match(privacy, /Effective:\s*February 2026/, 'privacy policy effective date is February 2026');
+assert.match(privacy, /Last updated:\s*10 July 2026/, 'privacy policy shows its current revision date');
 assert.match(privacy, /mailto:privacy@leary\.cloud/, 'privacy page exposes privacy contact');
 assert.match(privacy, /mailto:support@leary\.cloud/, 'privacy page exposes support contact');
 

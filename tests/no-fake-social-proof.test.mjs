@@ -7,6 +7,7 @@ const pages = [
   'countdowns/index.html',
   'good-habits/index.html',
   'perfect-coffee/index.html',
+  'family-trips/index.html',
   'travel-plans/index.html',
   'privacy/index.html',
 ];
@@ -35,4 +36,3 @@ for (const page of pages) {
     assert.doesNotMatch(visibleText, pattern, `${page} contains fake social proof: ${pattern}`);
   }
 }
-
