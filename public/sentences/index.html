@@ -1,424 +1,421 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Let’s Build Sentences gives children calm, guided practice with letter sounds, handwriting and complete sentences on iPhone and iPad.">
+  <meta name="theme-color" content="#fff9ef">
+  <title>Let’s Build Sentences — Calm handwriting practice for children</title>
+  <style>
+    :root {
+      --ink: #26342f;
+      --muted: #5f6f68;
+      --cream: #fff9ef;
+      --paper: #fffdf9;
+      --sage: #2f6b59;
+      --sage-dark: #214d40;
+      --mint: #dff1e6;
+      --peach: #ffd6ba;
+      --peach-dark: #a94f28;
+      --sun: #f7c95c;
+      --lavender: #e5dff5;
+      --line: #d8ded8;
+      --shadow: 0 18px 50px rgba(38, 52, 47, .10);
+      --radius: 28px;
+    }
 
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Let's Build Sentences - Digital Playground for Learning</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "primary-fixed": "#ffdcbc",
-                    "inverse-primary": "#ffb86b",
-                    "background": "#fbf9f8",
-                    "on-tertiary-fixed": "#2a1700",
-                    "primary-container": "#f69600",
-                    "surface-container-high": "#eae8e7",
-                    "surface-container-highest": "#e4e2e1",
-                    "primary": "#895100",
-                    "on-secondary-fixed": "#1a1a2e",
-                    "on-primary-fixed": "#2c1700",
-                    "error": "#ba1a1a",
-                    "on-primary-fixed-variant": "#683d00",
-                    "primary-fixed-dim": "#ffb86b",
-                    "inverse-surface": "#303030",
-                    "secondary": "#5d5c74",
-                    "surface-white": "#FFFFFF",
-                    "on-secondary-container": "#63627a",
-                    "secondary-container": "#e2e0fc",
-                    "on-surface": "#1b1c1c",
-                    "inverse-on-surface": "#f3f0f0",
-                    "tertiary-container": "#e49e3c",
-                    "secondary-fixed": "#e2e0fc",
-                    "on-tertiary-fixed-variant": "#653e00",
-                    "outline": "#877461",
-                    "on-error-container": "#93000a",
-                    "on-primary-container": "#5f3700",
-                    "tertiary-fixed-dim": "#ffb95c",
-                    "on-error": "#ffffff",
-                    "error-container": "#ffdad6",
-                    "outline-variant": "#dac2ad",
-                    "surface-dim": "#dcd9d9",
-                    "on-secondary": "#ffffff",
-                    "surface-bright": "#fbf9f8",
-                    "surface-container-lowest": "#ffffff",
-                    "secondary-fixed-dim": "#c6c4df",
-                    "tertiary": "#855400",
-                    "surface-tint": "#895100",
-                    "accent-soft-gold": "#FFF1D6",
-                    "surface-container": "#f0eded",
-                    "on-primary": "#ffffff",
-                    "on-surface-variant": "#544434",
-                    "on-secondary-fixed-variant": "#45455b",
-                    "surface-variant": "#e4e2e1",
-                    "on-background": "#1b1c1c",
-                    "background-cream": "#FFFAF2",
-                    "surface-container-low": "#f6f3f2",
-                    "tertiary-fixed": "#ffddb7",
-                    "surface": "#fbf9f8",
-                    "on-tertiary": "#ffffff"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "xl": "64px",
-                    "sm": "12px",
-                    "lg": "40px",
-                    "margin-mobile": "20px",
-                    "margin-desktop": "48px",
-                    "gutter": "16px",
-                    "xs": "4px",
-                    "md": "24px",
-                    "base": "8px"
-            },
-            "fontFamily": {
-                    "headline-md": ["Plus Jakarta Sans"],
-                    "label-lg": ["Be Vietnam Pro"],
-                    "headline-lg-mobile": ["Plus Jakarta Sans"],
-                    "display-lg": ["Plus Jakarta Sans"],
-                    "body-lg": ["Be Vietnam Pro"],
-                    "body-md": ["Be Vietnam Pro"],
-                    "headline-lg": ["Plus Jakarta Sans"],
-                    "label-sm": ["Be Vietnam Pro"]
-            },
-            "fontSize": {
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
-                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .squishy-button {
-            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .squishy-button:active {
-            transform: scale(0.92);
-        }
-        .soft-shadow {
-            box-shadow: 0 20px 40px -15px rgba(93, 92, 116, 0.1);
-        }
-        .bento-card {
-            transition: all 0.3s ease;
-        }
-        .bento-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 24px 48px -12px rgba(137, 81, 0, 0.12);
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-    </style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: ui-rounded, "SF Pro Rounded", "Avenir Next", Avenir, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    button, a { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { line-height: 1.1; letter-spacing: -.035em; }
+    h1 { font-size: clamp(2.7rem, 10vw, 5.5rem); margin-bottom: 24px; }
+    h2 { font-size: clamp(2rem, 7vw, 3.7rem); margin-bottom: 20px; }
+    h3 { font-size: 1.35rem; margin-bottom: 10px; }
+    p { color: var(--muted); }
+    section { padding: 76px 20px; }
+    .wrap { width: min(1160px, 100%); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
+      color: var(--sage-dark); font-weight: 800; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--sun); }
+    .lede { font-size: clamp(1.08rem, 3vw, 1.28rem); max-width: 650px; }
+    .center { text-align: center; }
+    .center .lede { margin-left: auto; margin-right: auto; }
+    .skip-link { position: fixed; left: 12px; top: 12px; z-index: 100; transform: translateY(-150%); padding: 10px 16px; background: #fff; border-radius: 12px; }
+    .skip-link:focus { transform: none; }
+    :focus-visible { outline: 3px solid #a94f28; outline-offset: 4px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(47,107,89,.12);
+      background: rgba(255,249,239,.92); backdrop-filter: blur(16px);
+    }
+    .nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 900; letter-spacing: -.02em; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--peach); color: var(--peach-dark); font-size: 20px; transform: rotate(-4deg); }
+    .nav-links { display: none; align-items: center; gap: 28px; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: .92rem; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border-radius: 999px; color: white; background: var(--sage); text-decoration: none; font-weight: 800; font-size: .9rem; }
+
+    .hero { position: relative; padding-top: 54px; padding-bottom: 94px; isolation: isolate; }
+    .hero::before { content: ""; position: absolute; z-index: -1; width: 330px; height: 330px; border-radius: 50%; right: -180px; top: 25px; background: var(--lavender); filter: blur(2px); }
+    .hero-grid { display: grid; gap: 48px; align-items: center; }
+    .hero-copy p { font-size: 1.16rem; max-width: 600px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 22px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 11px; min-height: 56px; padding: 14px 21px; border: 0; border-radius: 17px; background: var(--sage); color: white; text-decoration: none; font-weight: 850; box-shadow: 0 10px 26px rgba(47,107,89,.2); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(47,107,89,.25); }
+    .button.secondary { color: var(--sage-dark); background: white; border: 1px solid var(--line); box-shadow: none; }
+    .apple { width: 23px; height: 27px; fill: currentColor; }
+    .store-text { display: grid; line-height: 1.05; text-align: left; }
+    .store-text small { font-size: .64rem; font-weight: 650; letter-spacing: .03em; }
+    .store-text strong { font-size: 1.06rem; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 9px; }
+    .trust-row span { padding: 7px 11px; border-radius: 999px; background: rgba(255,255,255,.72); border: 1px solid var(--line); color: var(--muted); font-size: .82rem; font-weight: 750; }
+
+    .hero-art { position: relative; min-height: 470px; display: grid; place-items: center; }
+    .blob { position: absolute; inset: 7% 1% 2%; border-radius: 44% 56% 43% 57% / 58% 39% 61% 42%; background: var(--mint); transform: rotate(4deg); }
+    .phone { position: relative; z-index: 2; width: min(270px, 70vw); padding: 10px; border-radius: 42px; background: #26342f; box-shadow: 0 28px 70px rgba(38,52,47,.22); transform: rotate(3deg); }
+    .phone img { border-radius: 33px; width: 100%; }
+    .word-float { position: absolute; z-index: 3; padding: 10px 17px; border: 2px solid var(--ink); border-radius: 15px; background: var(--paper); font-weight: 900; box-shadow: 5px 6px 0 rgba(38,52,47,.12); }
+    .word-float.one { left: 2%; top: 17%; transform: rotate(-8deg); }
+    .word-float.two { right: 0; top: 25%; transform: rotate(7deg); background: var(--sun); }
+    .word-float.three { left: 5%; bottom: 8%; transform: rotate(5deg); background: var(--peach); }
+    .pencil { position: absolute; z-index: 3; right: 5%; bottom: 4%; width: 26px; height: 155px; border: 3px solid var(--ink); border-radius: 10px 10px 5px 5px; background: linear-gradient(90deg,#ed9b57 0 33%,#ffc477 33% 66%,#ed9b57 66%); transform: rotate(38deg); }
+    .pencil::after { content: ""; position: absolute; width: 20px; height: 20px; left: 0; bottom: -14px; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); background: #f1d0a7; transform: rotate(45deg); }
+    .asset-note { position: absolute; z-index: 4; right: 4%; top: 3%; max-width: 130px; padding: 8px 10px; border-radius: 10px; background: #fff; color: var(--muted); font-size: .69rem; line-height: 1.3; box-shadow: var(--shadow); }
+
+    .demo-section { background: #f5efe4; }
+    .demo-shell { margin-top: 34px; padding: 22px; border-radius: var(--radius); background: var(--paper); box-shadow: var(--shadow); border: 1px solid rgba(47,107,89,.12); }
+    .demo-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+    .demo-top p { margin: 0; font-size: .92rem; }
+    .sentence-line { min-height: 92px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 16px; border: 2px dashed #9bb7aa; border-radius: 20px; background: #f4faf6; }
+    .sentence-line:empty::before { content: "Choose a word below to begin"; color: var(--muted); }
+    .word-bank { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 18px; }
+    .word-card { min-height: 50px; padding: 10px 17px; border: 2px solid var(--ink); border-radius: 14px; background: white; box-shadow: 3px 4px 0 #bfcac4; font-weight: 850; cursor: pointer; }
+    .word-card:hover { transform: translateY(-2px); }
+    .word-card.in-line { background: var(--peach); }
+    .word-card:disabled { opacity: .38; cursor: default; transform: none; }
+    .demo-message { min-height: 30px; margin: 18px 0 0; color: var(--sage-dark); font-weight: 800; }
+    .reset { padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; background: white; font-weight: 800; cursor: pointer; }
+
+    .practice-grid { display: grid; gap: 34px; align-items: center; }
+    .trace-card { position: relative; padding: 24px; border-radius: 34px; background: white; box-shadow: var(--shadow); }
+    .trace-paper { position: relative; aspect-ratio: 1.15 / 1; display: grid; place-items: center; overflow: hidden; border: 2px solid #c8d3cc; border-radius: 26px; background: repeating-linear-gradient(to bottom,#fff 0,#fff 31%,#e3e9e5 31.5%,#fff 32.5%,#fff 64%,#e3e9e5 64.5%,#fff 65.5%); }
+    .trace-letter { width: 62%; overflow: visible; }
+    .trace-base { fill: none; stroke: #d3d9d5; stroke-width: 28; stroke-linecap: round; }
+    .trace-guide { fill: none; stroke: var(--sage); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 420; stroke-dashoffset: 420; animation: trace 3.5s ease-in-out infinite; }
+    @keyframes trace { 0%,10% { stroke-dashoffset: 420; } 70%,100% { stroke-dashoffset: 0; } }
+    .trace-paper.paused .trace-guide { animation: none; stroke-dashoffset: 420; }
+    .trace-dot { fill: var(--peach-dark); offset-path: path("M 80 260 L 170 40 L 260 260 M 115 175 L 225 175"); animation: follow 3.5s ease-in-out infinite; }
+    @keyframes follow { 0%,10% { offset-distance: 0%; opacity: 1; } 70%,100% { offset-distance: 100%; opacity: 1; } }
+    .trace-paper.paused .trace-dot { animation: none; opacity: 0; }
+    .trace-caption { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding-top: 16px; }
+    .trace-caption span { color: var(--muted); font-size: .9rem; }
+
+    .confidence { background: var(--sage-dark); color: white; }
+    .confidence p { color: #dce9e2; }
+    .confidence-grid { display: grid; gap: 28px; align-items: center; }
+    .confidence-points { display: grid; gap: 12px; }
+    .confidence-point { display: grid; grid-template-columns: 50px 1fr; gap: 14px; padding: 18px; border: 1px solid rgba(255,255,255,.17); border-radius: 20px; background: rgba(255,255,255,.07); }
+    .point-number { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; background: var(--sun); color: var(--ink); font-weight: 900; }
+    .confidence-point h3 { margin: 3px 0 5px; font-size: 1.08rem; letter-spacing: -.02em; }
+    .confidence-point p { margin: 0; font-size: .92rem; }
+
+    .feature-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 34px; }
+    .feature-card { padding: 22px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.7); }
+    .feature-icon { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 20px; border-radius: 14px; background: var(--mint); font-size: 1.3rem; }
+    .feature-card p { margin: 0; font-size: .94rem; }
+
+    .pricing { background: #f5efe4; }
+    .plans { display: grid; gap: 18px; margin-top: 34px; align-items: stretch; }
+    .plan { position: relative; padding: 28px; border: 1px solid var(--line); border-radius: 28px; background: var(--paper); }
+    .plan.premium { border: 2px solid var(--sage); box-shadow: var(--shadow); }
+    .plan-label { display: inline-block; margin-bottom: 14px; padding: 6px 10px; border-radius: 999px; background: var(--mint); color: var(--sage-dark); font-size: .78rem; font-weight: 900; }
+    .plan ul { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 12px; }
+    .plan li { display: flex; gap: 10px; color: var(--muted); }
+    .plan li::before { content: "✓"; color: var(--sage); font-weight: 900; }
+    .price-note { color: var(--sage-dark); font-weight: 900; }
+
+    .quotes { background: var(--lavender); }
+    .placeholder-grid { display: grid; gap: 16px; margin-top: 34px; }
+    .quote-placeholder { min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; padding: 26px; border: 2px dashed #9d94b1; border-radius: 24px; background: rgba(255,255,255,.55); }
+    .placeholder-label { width: fit-content; padding: 6px 10px; border-radius: 999px; background: white; color: #4d4661; font-size: .76rem; font-weight: 900; text-transform: uppercase; letter-spacing: .07em; }
+    .quote-placeholder p { color: #5e5674; }
+
+    .privacy-card { display: grid; gap: 28px; padding: 30px; border-radius: 34px; background: var(--peach); }
+    .privacy-card p { color: #70422e; }
+    .privacy-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .privacy-chip { min-height: 94px; display: grid; place-items: center; padding: 14px; border-radius: 20px; background: rgba(255,255,255,.65); text-align: center; color: #633924; font-weight: 850; }
+
+    .faq-list { display: grid; gap: 12px; max-width: 820px; margin: 34px auto 0; }
+    details { border: 1px solid var(--line); border-radius: 19px; background: rgba(255,255,255,.72); }
+    summary { padding: 19px 54px 19px 20px; font-weight: 850; cursor: pointer; position: relative; }
+    summary::after { content: "+"; position: absolute; right: 20px; top: 17px; font-size: 1.35rem; color: var(--sage); }
+    details[open] summary::after { content: "−"; }
+    details p { padding: 0 20px 20px; margin: 0; }
+
+    .final-cta { padding-top: 40px; }
+    .final-card { position: relative; overflow: hidden; padding: 50px 24px; border-radius: 36px; background: var(--sage); color: white; text-align: center; }
+    .final-card::before, .final-card::after { content: ""; position: absolute; width: 150px; height: 150px; border-radius: 50%; opacity: .35; }
+    .final-card::before { left: -65px; top: -60px; background: var(--sun); }
+    .final-card::after { right: -50px; bottom: -70px; background: var(--peach); }
+    .final-card p { color: #e3eee8; margin-left: auto; margin-right: auto; max-width: 560px; }
+    .final-card .button { background: white; color: var(--sage-dark); box-shadow: none; }
+
+    footer { padding: 34px 20px 46px; }
+    .footer-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+
+    @media (min-width: 720px) {
+      section { padding: 100px 32px; }
+      .hero { padding-top: 80px; padding-bottom: 118px; }
+      .hero-grid, .practice-grid, .confidence-grid { grid-template-columns: 1fr 1fr; }
+      .hero-grid { gap: 72px; }
+      .feature-grid { grid-template-columns: repeat(2,1fr); }
+      .plans, .placeholder-grid { grid-template-columns: repeat(2,1fr); }
+      .privacy-card { grid-template-columns: 1.2fr .8fr; padding: 48px; align-items: center; }
+      .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+    }
+    @media (min-width: 980px) {
+      .nav-links { display: flex; }
+      .feature-grid { grid-template-columns: repeat(4,1fr); }
+      .demo-shell { padding: 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .trace-guide { stroke-dashoffset: 0; }
+    }
+  </style>
 </head>
-<body class="bg-background-cream text-on-surface font-body-md overflow-x-hidden">
-<!-- Top Navigation -->
-<nav class="sticky top-0 z-50 bg-background-cream/80 backdrop-blur-md">
-<div class="flex justify-between items-center px-margin-desktop py-4 w-full max-w-7xl mx-auto">
-<a class="font-headline-md text-headline-md font-bold text-primary" href="../">Let's Build Apps</a>
-<div class="hidden md:flex items-center gap-base">
-<a class="text-primary border-b-2 border-primary font-bold pb-1 font-label-lg text-label-lg transition-colors duration-200" href="../">Home</a>
-<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200 px-4" href="#features">Features</a>
-<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200 px-4" href="#about">About</a>
-<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200 px-4" href="../privacy/">Privacy</a>
-<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200 px-4" href="#testflight">TestFlight</a>
-<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary-container transition-colors duration-200 px-4" href="mailto:support@leary.cloud">Support</a>
-</div>
-<a class="bg-primary-container text-on-primary text-label-lg font-label-lg px-6 py-3 rounded-full squishy-button shadow-lg" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051" target="_blank" rel="noopener">Download on App Store</a>
-</div>
-</nav>
-<!-- Hero Section -->
-<section class="relative overflow-hidden pt-12 pb-24 md:pt-24 md:pb-32 px-margin-mobile md:px-margin-desktop" id="home">
-<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-md items-center">
-<div class="z-10 text-center md:text-left">
-<div class="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
-<span class="inline-block px-4 py-1.5 rounded-full bg-accent-soft-gold text-primary font-label-sm text-label-sm">Designed for Little Hands</span>
-<span class="inline-block px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm" data-status-pill>Available on App Store</span>
-</div>
-<h1 class="font-display-lg text-display-lg text-on-surface leading-tight mb-6">
-                    Master Sentences <br/> Through <span class="text-primary-container">Playful Writing.</span>
-</h1>
-<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-lg">
-                    Helping children build confidence with language through calm sentence-building practice.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-<a class="bg-primary-container text-on-primary font-headline-md text-headline-md py-4 px-8 rounded-2xl squishy-button flex items-center justify-center gap-2 shadow-xl" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051">
-<span class="material-symbols-outlined">download</span>
-                        Download on App Store
-                    </a>
-<a class="bg-surface-white border-2 border-outline-variant text-primary font-headline-md text-headline-md py-4 px-8 rounded-2xl squishy-button flex items-center justify-center gap-2" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Sentences">
-                        Register interest in TestFlight
-                    </a>
-</div>
-</div>
-<div class="relative mt-12 md:mt-0">
-<div class="relative bg-surface-white rounded-[2.5rem] p-4 soft-shadow border border-surface-container-highest">
-<div class="grid grid-cols-2 gap-md">
-<img alt="Let's Build Sentences screenshot showing sentence introduction" class="rounded-[2rem] w-full shadow-lg border border-outline-variant/20" src="../assets/product-evidence-v4/sentences/iphone-1-portrait-intro.png"/>
-<img alt="Let's Build Sentences screenshot showing tracing practice" class="rounded-[2rem] w-full shadow-lg border border-outline-variant/20" src="../assets/product-evidence-v4/sentences/iphone-2-portrait-trace-off.png"/>
-</div>
-<div class="mt-4 grid grid-cols-3 gap-sm text-center">
-<div class="bg-background-cream rounded-2xl p-3">
-<div class="font-label-sm text-label-sm text-primary">Hear</div>
-<div class="font-label-sm text-label-sm text-secondary">Letter sounds</div>
-</div>
-<div class="bg-secondary-container rounded-2xl p-3">
-<div class="font-label-sm text-label-sm text-on-secondary-fixed">Build</div>
-<div class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Sentence board</div>
-</div>
-<div class="bg-accent-soft-gold rounded-2xl p-3">
-<div class="font-label-sm text-label-sm text-primary">Trace</div>
-<div class="font-label-sm text-label-sm text-secondary">Writing mode</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Product Evidence Section -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop bg-background" id="availability">
-<div class="max-w-7xl mx-auto space-y-12">
-<div class="text-center max-w-3xl mx-auto">
-<span class="inline-block px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm mb-4" data-status-pill>Available on App Store</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Download, try, and follow future versions</h2>
-<p class="font-body-md text-body-md text-secondary">Sentences is available now on the App Store. A public TestFlight link has not been verified, so early-access interest opens an email to support.</p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg items-start">
-<div class="bg-surface-white rounded-[2rem] p-md soft-shadow border border-surface-container-high">
-<div class="grid grid-cols-2 gap-md">
-<img alt="Let's Build Sentences app screenshot showing sentence introduction" class="rounded-[1.5rem] w-full shadow-lg border border-outline-variant/20" src="../assets/product-evidence-v4/sentences/iphone-1-portrait-intro.png"/>
-<img alt="Let's Build Sentences app screenshot showing tracing practice" class="rounded-[1.5rem] w-full shadow-lg border border-outline-variant/20" src="../assets/product-evidence-v4/sentences/iphone-2-portrait-trace-off.png"/>
-</div>
-<p class="font-label-sm text-label-sm text-secondary mt-4">Real app screenshots from the current App Store screenshot set.</p>
-</div>
-<div class="grid gap-md">
-<div class="bg-surface-white rounded-[2rem] p-lg soft-shadow border border-surface-container-high">
-<h3 class="font-headline-md text-headline-md mb-4">Availability</h3>
-<ul class="space-y-3 font-body-md text-body-md text-secondary">
-<li><strong class="text-on-surface">App Store:</strong> Verified for iPhone and iPad.</li>
-<li><strong class="text-on-surface">TestFlight:</strong> No public invite link verified.</li>
-<li><strong class="text-on-surface">Support:</strong> <a class="underline text-primary" href="mailto:support@leary.cloud">support@leary.cloud</a></li>
-</ul>
-</div>
-<div class="bg-surface-white rounded-[2rem] p-lg soft-shadow border border-surface-container-high">
-<h3 class="font-headline-md text-headline-md mb-4">Key verified features</h3>
-<ul class="space-y-3 font-body-md text-body-md text-secondary">
-<li>Parent-led sentence setup and one-tap sentence generation.</li>
-<li>Child-friendly sentence board with letter sounds.</li>
-<li>Type mode, writing mode, and trace letters mode.</li>
-<li>Parent voice recording and iCloud-backed progress sync.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Why Built Section -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop">
-<div class="max-w-5xl mx-auto bg-surface-white rounded-[3rem] p-12 md:p-20 soft-shadow border border-surface-container-high">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Why we built this</h2>
-<p class="font-body-lg text-body-lg text-secondary">Learning apps can easily become noisy, distracting, or over-complicated. Sentences is designed to stay calm, focused, and child-friendly.</p>
-</div>
-</section>
-<!-- TestFlight Interest Section -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop" id="testflight">
-<div class="max-w-4xl mx-auto text-center bg-secondary-container rounded-[3rem] p-12 md:p-20 soft-shadow">
-<h2 class="font-headline-lg text-headline-lg text-on-secondary-fixed mb-6">Help shape Let's Build Sentences</h2>
-<p class="font-body-lg text-body-lg text-on-secondary-fixed-variant mb-10">Want to try upcoming versions before release? Register your interest in TestFlight and help improve the app before it reaches everyone.</p>
-<a class="bg-primary text-on-primary font-headline-md text-headline-md py-4 px-8 rounded-2xl squishy-button inline-flex items-center justify-center gap-2 shadow-xl" href="mailto:support@leary.cloud?subject=TestFlight%20Interest%20-%20Let%27s%20Build%20Sentences">
-<span class="material-symbols-outlined">mail</span>
-                    Register interest in TestFlight
-                </a>
-</div>
-</section>
-<!-- Bento Features Section -->
-<section class="py-24 bg-background px-margin-mobile md:px-margin-desktop" id="features">
-<div class="max-w-7xl mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Why Children Love It</h2>
-<p class="font-body-md text-body-md text-secondary max-w-2xl mx-auto">Designed from the ground up to respect a child's pace and cognitive development.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-md auto-rows-[200px]">
-<!-- Large Feature -->
-<div class="md:col-span-2 md:row-span-2 bg-surface-white rounded-[2rem] p-10 soft-shadow bento-card border border-surface-container-high flex flex-col justify-between">
-<div>
-<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center text-primary mb-8">
-<span class="material-symbols-outlined" style="font-size: 32px;">edit_note</span>
-</div>
-<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Tactile Handwriting</h3>
-<p class="font-body-md text-body-md text-secondary">Instead of just tapping buttons, children physically trace letters to construct sentences, reinforcing motor skills and memory retention in an organic, flowing way.</p>
-</div>
-<div class="mt-8 flex gap-4">
-<div class="h-12 w-full bg-surface-container rounded-full animate-pulse"></div>
-<div class="h-12 w-1/2 bg-primary-fixed rounded-full"></div>
-</div>
-</div>
-<!-- Voice Support -->
-<div class="md:col-span-1 md:row-span-2 bg-secondary-container rounded-[2rem] p-10 soft-shadow bento-card border border-white/20 flex flex-col items-center text-center">
-<div class="w-20 h-20 bg-surface-white rounded-full flex items-center justify-center text-primary-container shadow-inner mb-6">
-<span class="material-symbols-outlined" data-weight="fill" style="font-size: 40px;">record_voice_over</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-secondary-fixed mb-4">Hear Every Word</h3>
-<p class="font-body-md text-body-md text-on-secondary-fixed-variant">Integrated voice support reads sentences back to children, bridging the gap between written and spoken language for better comprehension.</p>
-<div class="mt-auto w-full pt-8">
-<div class="flex justify-center gap-1">
-<div class="w-2 h-8 bg-primary-container rounded-full"></div>
-<div class="w-2 h-12 bg-primary-container rounded-full"></div>
-<div class="w-2 h-10 bg-primary-container rounded-full"></div>
-<div class="w-2 h-14 bg-primary-container rounded-full"></div>
-<div class="w-2 h-8 bg-primary-container rounded-full"></div>
-</div>
-</div>
-</div>
-<!-- Child-Friendly UI -->
-<div class="md:col-span-1 md:row-span-1 bg-surface-white rounded-[2rem] p-8 soft-shadow bento-card border border-surface-container-high flex gap-4 items-center">
-<span class="material-symbols-outlined text-primary-container" style="font-size: 48px;">grid_view</span>
-<div>
-<h4 class="font-label-lg text-label-lg text-on-surface">Safe Boxes</h4>
-<p class="font-label-sm text-label-sm text-secondary">Intuitive letter boxes guide writing without frustration.</p>
-</div>
-</div>
-<!-- Progress -->
-<div class="md:col-span-1 md:row-span-1 bg-tertiary-fixed rounded-[2rem] p-8 soft-shadow bento-card border border-white/20 flex flex-col justify-center">
-<div class="font-label-sm text-label-sm text-on-tertiary-fixed mb-2 uppercase tracking-wider font-bold">Practice Flow</div>
-<div class="font-headline-md text-headline-md text-on-tertiary-fixed mb-4">Step-by-step writing</div>
-<div class="w-full bg-white/30 h-3 rounded-full overflow-hidden">
-<div class="w-2/3 h-full bg-primary-container"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Calming Environment Section -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop overflow-hidden" id="about">
-<div class="max-w-7xl mx-auto bg-surface-white rounded-[3rem] soft-shadow overflow-hidden border border-surface-container-high">
-<div class="grid grid-cols-1 lg:grid-cols-2">
-<div class="p-12 md:p-20 flex flex-col justify-center">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">A Breath of Fresh Air in Education</h2>
-<p class="font-body-lg text-body-lg text-secondary mb-8">
-                        We believe learning happens best in a state of calm. "Let's Build Sentences" features a minimalist, "Digital Playground" aesthetic—a sophisticated take on child-friendly design that avoids over-stimulation.
-                    </p>
-<ul class="space-y-4 mb-10">
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-container">check_circle</span>
-<span class="font-body-md text-body-md text-on-surface">Soft, pastel palette to reduce cognitive load</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-container">check_circle</span>
-<span class="font-body-md text-body-md text-on-surface">No gamification "dark patterns" or timers</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-container">check_circle</span>
-<span class="font-body-md text-body-md text-on-surface">100% focused on the writing experience</span>
-</li>
-</ul>
-<div class="p-6 bg-background-cream rounded-2xl border border-primary-fixed">
-<p class="font-body-md text-body-md italic text-primary">Built around calm repetition, large writing spaces, and sentence-building steps that keep the focus on practice.</p>
-</div>
-</div>
-<div class="relative min-h-[400px] bg-secondary-container p-8 md:p-12 flex items-center">
-<div class="w-full space-y-md">
-<div class="bg-surface-white rounded-2xl p-md shadow-lg border border-white/70">
-<div class="flex items-center justify-between mb-sm">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Practice flow</span>
-<span class="material-symbols-outlined text-primary">edit_note</span>
-</div>
-<div class="grid grid-cols-5 gap-xs">
-<div class="h-16 rounded-xl bg-primary-fixed flex items-center justify-center font-headline-md text-headline-md text-primary">T</div>
-<div class="h-16 rounded-xl bg-accent-soft-gold flex items-center justify-center font-headline-md text-headline-md text-primary">R</div>
-<div class="h-16 rounded-xl bg-surface-white border border-outline-variant flex items-center justify-center font-headline-md text-headline-md text-secondary">A</div>
-<div class="h-16 rounded-xl bg-surface-white border border-outline-variant flex items-center justify-center font-headline-md text-headline-md text-secondary">C</div>
-<div class="h-16 rounded-xl bg-surface-white border border-outline-variant flex items-center justify-center font-headline-md text-headline-md text-secondary">E</div>
-</div>
-</div>
-<div class="bg-surface-white/80 rounded-2xl p-md border border-white/70">
-<div class="h-3 bg-primary-container rounded-full w-2/3 mb-3"></div>
-<div class="h-3 bg-white rounded-full w-full mb-3"></div>
-<div class="h-3 bg-white rounded-full w-4/5"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Download CTA -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop">
-<div class="max-w-4xl mx-auto text-center bg-primary-container rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
-<div class="absolute top-0 left-0 w-full h-full opacity-10">
-<div class="absolute top-0 left-10 w-24 h-24 border-8 border-white rounded-full"></div>
-<div class="absolute bottom-10 right-10 w-32 h-32 border-8 border-white rounded-xl rotate-45"></div>
-</div>
-<h2 class="font-display-lg text-display-lg text-white mb-8 relative z-10">Ready to start building?</h2>
-<p class="font-body-lg text-body-lg text-white/90 mb-12 max-w-xl mx-auto relative z-10">
-                Give your child a calm space for handwriting and sentence construction, without ads or distracting extras.
-            </p>
-<div class="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-<a class="bg-white text-primary-container font-headline-md text-headline-md py-5 px-10 rounded-2xl squishy-button shadow-xl flex items-center justify-center gap-3" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051">
-<span class="material-symbols-outlined">apps</span>
-                    App Store
-                </a>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-surface-container-low border-t border-outline-variant">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-xl w-full max-w-7xl mx-auto gap-8">
-<div class="flex flex-col items-center md:items-start">
-<div class="font-headline-md text-headline-md font-bold text-primary mb-2">Let's Build Apps</div>
-<p class="text-secondary font-body-md text-body-md">© 2026 Let's Build Apps. All rights reserved.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-lg">
-<a class="text-secondary font-body-md text-body-md hover:text-primary-container underline transition-all" href="mailto:support@leary.cloud">Support</a>
-<a class="text-secondary font-body-md text-body-md hover:text-primary-container underline transition-all" href="../privacy/">Privacy</a>
-<a class="text-secondary font-body-md text-body-md hover:text-primary-container underline transition-all" href="mailto:support@leary.cloud">Contact Us</a>
-</div>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary hover:bg-primary-container hover:text-white transition-all" href="../" aria-label="Back to Let's Build Apps">
-<span class="material-symbols-outlined">home</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary hover:bg-primary-container hover:text-white transition-all" href="mailto:support@leary.cloud" aria-label="Email support">
-<span class="material-symbols-outlined">mail</span>
-</a>
-</div>
-</div>
-</footer>
-<script>
-        // Simple scroll reveal interaction
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                threshold: 0.1
-            };
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../" aria-label="Let’s Build Apps home"><span class="brand-mark" aria-hidden="true">Aa</span><span>Let’s Build Apps</span></a>
+      <div class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#questions">Questions</a>
+      </div>
+      <a class="nav-cta" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051">Get the app</a>
+    </div>
+  </nav>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-10');
-                    }
-                });
-            }, observerOptions);
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">For early writers on iPhone &amp; iPad</span>
+          <h1>Writing their first sentences should feel <span style="color:var(--peach-dark)">exciting.</span></h1>
+          <p>Let’s Build Sentences gives children a calm place to hear letters, build words, trace shapes and practise complete sentences—one friendly writing box at a time.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051" aria-label="Download Let’s Build Sentences on the App Store">
+              <svg class="apple" viewBox="0 0 24 29" aria-hidden="true"><path d="M20.2 15.4c0-3.7 3-5.5 3.1-5.6a6.7 6.7 0 0 0-5.3-2.9c-2.2-.2-4.4 1.3-5.5 1.3-1.2 0-2.9-1.3-4.8-1.2a7 7 0 0 0-5.9 3.6c-2.5 4.3-.6 10.7 1.8 14.2 1.2 1.7 2.6 3.6 4.5 3.5 1.8-.1 2.5-1.2 4.7-1.2s2.8 1.2 4.7 1.1c2-.1 3.2-1.7 4.4-3.5a15.6 15.6 0 0 0 2-4.2 6.4 6.4 0 0 1-3.7-5.1ZM16.6 4.6A6.4 6.4 0 0 0 18.1 0a6.6 6.6 0 0 0-4.3 2.2 6.1 6.1 0 0 0-1.6 4.4 5.5 5.5 0 0 0 4.4-2Z"/></svg>
+              <span class="store-text"><small>DOWNLOAD ON THE</small><strong>App Store</strong></span>
+            </a>
+            <a class="button secondary" href="#try-it">Try the sentence activity</a>
+          </div>
+          <div class="trust-row" aria-label="Purchase and privacy highlights">
+            <span>Free starter experience</span><span>One-time premium</span><span>No adverts</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Verified in-app screenshot surrounded by illustrated word cards">
+          <div class="blob"></div>
+          <div class="word-float one">The</div><div class="word-float two">fox</div><div class="word-float three">jumps!</div>
+          <div class="phone"><img src="../assets/product-evidence-v4/sentences/iphone-1-portrait-intro.png" alt="Let’s Build Sentences screen introducing a child to a sentence"></div>
+          <div class="pencil" aria-hidden="true"></div>
+          <span class="asset-note">Verified app screenshot. App icon placeholder pending.</span>
+        </div>
+      </div>
+    </section>
 
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-                observer.observe(section);
-            });
+    <section class="demo-section" id="try-it">
+      <div class="wrap">
+        <div class="center">
+          <span class="eyebrow">Try it together</span>
+          <h2>Build a sentence, one word at a time.</h2>
+          <p class="lede">Choose the words in the right order. Every word is a real button, so the activity works with a keyboard as well as touch.</p>
+        </div>
+        <div class="demo-shell" id="sentence-demo">
+          <div class="demo-top">
+            <div><h3>Make: “The fox jumps over the log.”</h3><p>Select a word to add it. Select it again in the sentence to return it.</p></div>
+            <button class="reset" type="button" id="reset-sentence">Reset</button>
+          </div>
+          <div class="sentence-line" id="sentence-line" aria-label="Your sentence" aria-live="polite"></div>
+          <div class="word-bank" id="word-bank" aria-label="Available words"></div>
+          <p class="demo-message" id="demo-message" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="wrap practice-grid">
+        <div class="trace-card">
+          <div class="trace-paper" id="trace-paper" aria-label="Animated preview tracing a capital letter A">
+            <svg class="trace-letter" viewBox="0 0 340 310" role="img" aria-label="Capital letter A tracing path">
+              <path class="trace-base" d="M 80 260 L 170 40 L 260 260 M 115 175 L 225 175"/>
+              <path class="trace-guide" d="M 80 260 L 170 40 L 260 260 M 115 175 L 225 175"/>
+              <circle class="trace-dot" r="13" cx="0" cy="0"/>
+            </svg>
+          </div>
+          <div class="trace-caption"><span>Visual demonstration — not the live app</span><button class="reset" id="replay-trace" type="button">Replay trace</button></div>
+        </div>
+        <div>
+          <span class="eyebrow">Handwriting practice</span>
+          <h2>A clear path from sound to sentence.</h2>
+          <p class="lede">Optional tracing gives a gentle starting point. Large writing boxes leave room to form each letter, while supportive feedback shows which letters need another try.</p>
+          <p>Children can tap letters to hear their sounds, then move between typing and handwriting when they are ready.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="confidence">
+      <div class="wrap confidence-grid">
+        <div>
+          <span class="eyebrow" style="color:#fff">Confidence without pressure</span>
+          <h2>Small steps. Calm feedback. A sentence they made.</h2>
+          <p class="lede">The app keeps attention on one achievable action at a time. Parents choose the sentence and settings; children get the space to practise at their own pace.</p>
+        </div>
+        <div class="confidence-points">
+          <div class="confidence-point"><span class="point-number">1</span><div><h3>Choose something meaningful</h3><p>Create a sentence yourself or use child-friendly sentence generation.</p></div></div>
+          <div class="confidence-point"><span class="point-number">2</span><div><h3>Practise with support</h3><p>Hear sounds, trace when helpful, and see which letters need another try.</p></div></div>
+          <div class="confidence-point"><span class="point-number">3</span><div><h3>Celebrate the whole sentence</h3><p>Calm encouragement marks progress without turning practice into pressure.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <span class="eyebrow">Made for families</span>
+        <h2>Everything needed for focused sentence practice.</h2>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-icon" aria-hidden="true">✎</span><h3>Write with room</h3><p>Large child-friendly boxes, guided handwriting and optional letter tracing.</p></article>
+          <article class="feature-card"><span class="feature-icon" aria-hidden="true">♪</span><h3>Hear the sounds</h3><p>Tap letters for sounds and add familiar parent voice recordings.</p></article>
+          <article class="feature-card"><span class="feature-icon" aria-hidden="true">Aa</span><h3>Make it fit</h3><p>Typing and handwriting modes, with controls for spacing, capitals and speech style.</p></article>
+          <article class="feature-card"><span class="feature-icon" aria-hidden="true">☁</span><h3>Keep it in sync</h3><p>iCloud sync keeps the experience available across supported Apple devices.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="wrap">
+        <div class="center"><span class="eyebrow">Simple purchase</span><h2>Start free. Unlock once.</h2><p class="lede">Explore the starter experience before deciding. Premium is a one-time purchase—there is no subscription.</p></div>
+        <div class="plans">
+          <article class="plan"><span class="plan-label">Free starter experience</span><h3>A gentle way to begin</h3><p>Try the core learning flow before purchasing.</p><ul><li>Starter sentence practice</li><li>Child-friendly writing experience</li><li>No advertising</li></ul></article>
+          <article class="plan premium"><span class="plan-label">One-time premium unlock</span><h3>More ways to make practice personal</h3><p class="price-note">Pay once. No subscription.</p><ul><li>Full guided sentence practice</li><li>Custom sentences and one-tap generation</li><li>Typing, handwriting and tracing options</li><li>Parent voice and presentation controls</li><li>iCloud sync</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quotes" id="testimonials">
+      <div class="wrap">
+        <div class="center"><span class="eyebrow">Parent voices</span><h2>A space reserved for real family feedback.</h2><p class="lede">No parent comments have been supplied or verified for this preview, so these cards are intentionally left as placeholders.</p></div>
+        <div class="placeholder-grid">
+          <article class="quote-placeholder"><span class="placeholder-label">Placeholder</span><p>Verified parent feedback can appear here in a future version.</p><strong>— Name withheld until supplied</strong></article>
+          <article class="quote-placeholder"><span class="placeholder-label">Placeholder</span><p>A second verified comment can appear here without changing the page layout.</p><strong>— Name withheld until supplied</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap privacy-card">
+        <div><span class="eyebrow">A quieter kind of app</span><h2>No advertising. No subscription.</h2><p class="lede">Let’s Build Sentences is designed around the child’s activity—not adverts. The starter experience is free, and premium is a one-time purchase.</p><a href="../privacy/" style="font-weight:850;color:#633924">Read the privacy policy →</a></div>
+        <div class="privacy-list" aria-label="Privacy and purchase highlights"><div class="privacy-chip">No advertising</div><div class="privacy-chip">No sign-in on this website</div><div class="privacy-chip">No website tracking added</div><div class="privacy-chip">One-time premium</div></div>
+      </div>
+    </section>
+
+    <section id="questions">
+      <div class="wrap">
+        <div class="center"><span class="eyebrow">Frequently asked questions</span><h2>Good to know before you begin.</h2></div>
+        <div class="faq-list">
+          <details><summary>Who is Let’s Build Sentences for?</summary><p>It is for children beginning to recognise letter sounds, form letters and write complete sentences, with a parent or caregiver helping to choose suitable practice.</p></details>
+          <details><summary>Can I create my own sentences?</summary><p>Yes. Parents can create custom sentences or use one-tap child-friendly sentence generation.</p></details>
+          <details><summary>Does my child have to trace every letter?</summary><p>No. Letter tracing is optional, and the app also includes typing and handwriting modes.</p></details>
+          <details><summary>Can letters and sentences be spoken aloud?</summary><p>Children can tap letters to hear sounds. Parents can also add voice recordings and adjust speech style.</p></details>
+          <details><summary>Is there a subscription or advertising?</summary><p>No. There is a free starter experience and a one-time premium purchase, with no subscription and no advertising.</p></details>
+          <details><summary>Does it work on iPhone and iPad?</summary><p>Yes. Let’s Build Sentences is available for iPhone and iPad and supports iCloud sync.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap final-card">
+        <h2>Ready to build their next sentence?</h2>
+        <p>Begin with the free starter experience, then unlock premium once if it feels right for your family.</p>
+        <a class="button" href="https://apps.apple.com/gb/app/lets-build-sentences/id6761413051" aria-label="Download Let’s Build Sentences on the App Store">
+          <svg class="apple" viewBox="0 0 24 29" aria-hidden="true"><path d="M20.2 15.4c0-3.7 3-5.5 3.1-5.6a6.7 6.7 0 0 0-5.3-2.9c-2.2-.2-4.4 1.3-5.5 1.3-1.2 0-2.9-1.3-4.8-1.2a7 7 0 0 0-5.9 3.6c-2.5 4.3-.6 10.7 1.8 14.2 1.2 1.7 2.6 3.6 4.5 3.5 1.8-.1 2.5-1.2 4.7-1.2s2.8 1.2 4.7 1.1c2-.1 3.2-1.7 4.4-3.5a15.6 15.6 0 0 0 2-4.2 6.4 6.4 0 0 1-3.7-5.1ZM16.6 4.6A6.4 6.4 0 0 0 18.1 0a6.6 6.6 0 0 0-4.3 2.2 6.1 6.1 0 0 0-1.6 4.4 5.5 5.5 0 0 0 4.4-2Z"/></svg>
+          <span class="store-text"><small>DOWNLOAD ON THE</small><strong>App Store</strong></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner"><span>© 2026 Let’s Build Apps</span><div class="footer-links"><a href="../">All apps</a><a href="../privacy/">Privacy</a><a href="mailto:support@leary.cloud">Support</a></div></div>
+  </footer>
+
+  <script>
+    (() => {
+      const target = ['The', 'fox', 'jumps', 'over', 'the', 'log.'];
+      const shuffled = ['jumps', 'the', 'The', 'log.', 'over', 'fox'];
+      let chosen = [];
+      const line = document.querySelector('#sentence-line');
+      const bank = document.querySelector('#word-bank');
+      const message = document.querySelector('#demo-message');
+
+      function button(word, index, inLine) {
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = `word-card${inLine ? ' in-line' : ''}`;
+        el.textContent = word;
+        el.setAttribute('aria-label', inLine ? `Remove ${word} from the sentence` : `Add ${word} to the sentence`);
+        el.addEventListener('click', () => {
+          if (inLine) chosen.splice(index, 1); else chosen.push(index);
+          render();
         });
-    </script>
-</body></html>
+        return el;
+      }
+
+      function render() {
+        line.replaceChildren();
+        bank.replaceChildren();
+        chosen.forEach((bankIndex, lineIndex) => line.append(button(shuffled[bankIndex], lineIndex, true)));
+        shuffled.forEach((word, index) => {
+          const el = button(word, index, false);
+          el.disabled = chosen.includes(index);
+          bank.append(el);
+        });
+        const words = chosen.map(index => shuffled[index]);
+        if (words.length === target.length) {
+          message.textContent = words.every((word, index) => word === target[index]) ? 'You built it! The fox jumps over the log.' : 'Nearly there — try moving a word back and choosing again.';
+        } else {
+          message.textContent = words.length ? `${target.length - words.length} word${target.length - words.length === 1 ? '' : 's'} to go.` : '';
+        }
+      }
+
+      document.querySelector('#reset-sentence').addEventListener('click', () => { chosen = []; render(); bank.querySelector('button')?.focus(); });
+      const tracePaper = document.querySelector('#trace-paper');
+      document.querySelector('#replay-trace').addEventListener('click', () => {
+        tracePaper.classList.add('paused');
+        requestAnimationFrame(() => requestAnimationFrame(() => tracePaper.classList.remove('paused')));
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>
