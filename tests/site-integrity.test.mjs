@@ -99,12 +99,13 @@ const travelPlans = read('travel-plans/index.html');
 assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');
 assert.match(travelPlans, /First trip free/, 'Travel Plans explains the V2 free experience');
 assert.match(travelPlans, /Each person who wants Plus subscribes individually/, 'Travel Plans does not repeat the retired family-wide entitlement claim');
-assert.match(travelPlans, /build 26 is the latest upload explicitly verified/, 'Travel Plans distinguishes uploaded and development builds');
+assert.match(travelPlans, /build 37 is the current verified TestFlight upload/, 'Travel Plans identifies the current verified TestFlight build');
 
 const travelPrivacy = read('travel-plans/privacy/index.html');
 assert.match(travelPrivacy, /does not require a Let’s Build Apps account, Sign in with Apple login or Supabase account/, 'Travel Plans privacy reflects the mounted V2 app');
 assert.match(travelPrivacy, /Apple CloudKit/, 'Travel Plans privacy discloses Plus sync');
 assert.match(travelPrivacy, /Apple Foundation Models/, 'Travel Plans privacy discloses on-device assistance');
+assert.match(travelPrivacy, /Build 37 is the current verified TestFlight upload/, 'Travel Plans privacy reflects the shipped TestFlight implementation');
 
 const allText = pages.map((page) => visibleText(read(page))).join(' ');
 assert.doesNotMatch(allText, /support@letsbuildapps\.io/i, 'old support email is removed');
