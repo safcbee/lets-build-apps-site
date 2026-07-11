@@ -4,7 +4,8 @@ const pages = {
   '/': 'public/index.html',
   '/sentences/': 'public/sentences/index.html',
   '/countdowns/': 'public/countdowns/index.html',
-  '/good-habits/': 'public/good-habits/index.html',
+  '/paw-care/': 'public/paw-care/index.html',
+  '/paw-care/privacy/': 'public/paw-care/privacy/index.html',
   '/perfect-coffee/': 'public/perfect-coffee/index.html',
   '/family-trips/': 'public/family-trips/index.html',
   '/travel-plans/': 'public/travel-plans/index.html',
@@ -24,10 +25,7 @@ const imageAssets = [
   'chat.jpg',
   'dashboard.jpg',
   'new-shot.jpg',
-  'good-habits-preview.jpg',
 ].map((name) => ({ directory: 'site-v2', name, mime: 'image/jpeg' })).concat([
-  'good-habits-dashboard.jpg',
-  'good-habits-diary.jpg',
   'family-trips-trips.jpg',
   'family-trips-costs.jpg',
   'family-trips-itinerary.jpg',
@@ -46,7 +44,6 @@ const imageAssets = [
   'icon-sentences.png',
   'icon-countdowns.png',
   'icon-family-trips.png',
-  'icon-good-habits.png',
   'icon-coffee.png',
   'icon-travel-plans.png',
 ].map((name) => ({ directory: 'site-v3', name, mime: 'image/png' })));
