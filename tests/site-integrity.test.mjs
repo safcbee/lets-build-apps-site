@@ -116,7 +116,7 @@ assert.match(travelPrivacy, /Apple Foundation Models/, 'Travel Plans privacy dis
 assert.match(travelPrivacy, /Build 37 is the current verified TestFlight upload/, 'Travel Plans privacy reflects the shipped TestFlight implementation');
 
 const betterPics = read('better-pics/index.html');
-assert.match(betterPics, /Preparing for private TestFlight/, 'Better Pics does not imply public availability');
+assert.match(betterPics, /Private TestFlight/, 'Better Pics reports its private TestFlight availability');
 assert.match(betterPics, /There is no public App Store listing yet/, 'Better Pics states the verified release status');
 assert.match(betterPics, /what you are photographing, which lens is mounted/i, 'Better Pics explains the guided settings workflow');
 assert.match(betterPics, /selected original is not uploaded/i, 'Better Pics explains its on-device photo handling');
