@@ -13,6 +13,6 @@ assert.match(visibleText, /Beautiful tools for real family life\./, 'production 
 assert.match(html, /href=["']#products["']/, 'homepage has a products anchor CTA');
 assert.match(html, /href=["']#testflight["']/, 'homepage has a TestFlight anchor CTA');
 
-for (const id of ['sentences', 'countdowns', 'family-trips', 'travel-plans', 'paw-care', 'perfect-coffee']) {
+for (const id of ['sentences', 'countdowns', 'family-trips', 'travel-plans', 'paw-care', 'perfect-coffee', 'better-pics']) {
   assert.match(html, new RegExp(`id=["']${id}["']`), `homepage exposes ${id} product section`);
 }
