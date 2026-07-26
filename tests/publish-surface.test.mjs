@@ -20,11 +20,14 @@ const requiredFiles = [
   'travel-plans/index.html',
   'travel-plans/privacy/index.html',
   'family-trips/privacy/index.html',
+  'better-pics/index.html',
+  'better-pics/privacy/index.html',
 ];
 
 const allowedTopLevelEntries = new Set([
   'CNAME',
   'assets',
+  'better-pics',
   'countdowns',
   'family-trips',
   'paw-care',

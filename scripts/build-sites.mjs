@@ -9,6 +9,8 @@ const pages = {
   '/perfect-coffee/': 'public/perfect-coffee/index.html',
   '/family-trips/': 'public/family-trips/index.html',
   '/travel-plans/': 'public/travel-plans/index.html',
+  '/better-pics/': 'public/better-pics/index.html',
+  '/better-pics/privacy/': 'public/better-pics/privacy/index.html',
   '/privacy/': 'public/privacy/index.html',
   '/travel-plans/privacy/': 'public/travel-plans/privacy/index.html',
   '/family-trips/privacy/': 'public/family-trips/privacy/index.html',
@@ -40,12 +42,14 @@ const imageAssets = [
   'travel-plans-ready.jpg',
   'travel-plans-itinerary.jpg',
   'travel-plans-plus.jpg',
+  'better-pics-home.jpg',
 ].map((name) => ({ directory: 'site-v3', name, mime: 'image/jpeg' }))).concat([
   'icon-sentences.png',
   'icon-countdowns.png',
   'icon-family-trips.png',
   'icon-coffee.png',
   'icon-travel-plans.png',
+  'icon-better-pics.png',
 ].map((name) => ({ directory: 'site-v3', name, mime: 'image/png' })));
 
 await rm('dist', { recursive: true, force: true });
@@ -53,6 +57,7 @@ await mkdir('dist/server', { recursive: true });
 await mkdir('dist/.openai', { recursive: true });
 
 const css = await readFile('public/assets/site-v2.css', 'utf8');
+const betterPicsSocialCard = await readFile('public/assets/site-v3/better-pics-social.jpg');
 const images = {};
 for (const asset of imageAssets) {
   const data = await readFile(`public/assets/${asset.directory}/${asset.name}`);
@@ -64,13 +69,17 @@ for (const [route, file] of Object.entries(pages)) {
   let html = await readFile(file, 'utf8');
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/site-v2\.css">/g, `<style>${css}</style>`);
   for (const [assetPath, dataUrl] of Object.entries(images)) {
-    html = html.replaceAll(`../assets/${assetPath}`, dataUrl).replaceAll(`./assets/${assetPath}`, dataUrl);
+    html = html
+      .replaceAll(`../../assets/${assetPath}`, dataUrl)
+      .replaceAll(`../assets/${assetPath}`, dataUrl)
+      .replaceAll(`./assets/${assetPath}`, dataUrl);
   }
   builtPages[route] = html;
 }
 
 const worker = `
 const PAGES = ${JSON.stringify(builtPages)};
+const BETTER_PICS_SOCIAL_CARD = ${JSON.stringify(betterPicsSocialCard.toString('base64'))};
 const headers = {
   'content-type': 'text/html; charset=UTF-8',
   'cache-control': 'private, no-cache',
@@ -80,6 +89,17 @@ const headers = {
 export default {
   async fetch(request) {
     const url = new URL(request.url);
+    if (url.pathname === '/assets/site-v3/better-pics-social.jpg') {
+      const bytes = Uint8Array.from(atob(BETTER_PICS_SOCIAL_CARD), (character) => character.charCodeAt(0));
+      return new Response(bytes, {
+        status: 200,
+        headers: {
+          'content-type': 'image/jpeg',
+          'cache-control': 'public, max-age=86400',
+          'x-content-type-options': 'nosniff',
+        },
+      });
+    }
     if (url.pathname === '/portaflow' || url.pathname === '/portaflow/') {
       return Response.redirect(new URL('/perfect-coffee/', url), 302);
     }
