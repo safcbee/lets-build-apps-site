@@ -11,6 +11,7 @@ const pages = {
   '/travel-plans/': 'public/travel-plans/index.html',
   '/better-pics/': 'public/better-pics/index.html',
   '/better-pics/privacy/': 'public/better-pics/privacy/index.html',
+  '/support/': 'public/support/index.html',
   '/privacy/': 'public/privacy/index.html',
   '/travel-plans/privacy/': 'public/travel-plans/privacy/index.html',
   '/family-trips/privacy/': 'public/family-trips/privacy/index.html',
@@ -50,6 +51,8 @@ const imageAssets = [
   'icon-coffee.png',
   'icon-travel-plans.png',
   'icon-better-pics.png',
+  'icon-weddings.png',
+  'weddings-today.png',
 ].map((name) => ({ directory: 'site-v3', name, mime: 'image/png' })));
 
 await rm('dist', { recursive: true, force: true });

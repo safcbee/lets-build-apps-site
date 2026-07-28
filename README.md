@@ -1,6 +1,6 @@
-# apps.leary.cloud
+# letsbuildhq.com
 
-Production static website for `apps.leary.cloud`.
+Production static website for `letsbuildhq.com`.
 
 ## Public repository contents
 

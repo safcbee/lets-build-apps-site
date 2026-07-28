@@ -22,6 +22,7 @@ const requiredFiles = [
   'family-trips/privacy/index.html',
   'better-pics/index.html',
   'better-pics/privacy/index.html',
+  'support/index.html',
 ];
 
 const allowedTopLevelEntries = new Set([
@@ -36,6 +37,7 @@ const allowedTopLevelEntries = new Set([
   'portaflow',
   'privacy',
   'sentences',
+  'support',
   'travel-plans',
 ]);
 
@@ -110,4 +112,4 @@ for (const htmlFile of htmlFiles) {
 }
 
 const cname = readFileSync(join(publishPath, 'CNAME'), 'utf8').trim();
-assert.equal(cname, 'apps.leary.cloud', 'published CNAME keeps apps.leary.cloud');
+assert.equal(cname, 'letsbuildhq.com', 'published CNAME keeps letsbuildhq.com');
