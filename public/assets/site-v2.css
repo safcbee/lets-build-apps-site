@@ -51,3 +51,4 @@ body[data-theme="photography"]{--ink:#122225;--muted:#647276;--paper:#fffaf1;--c
 
 .compactFeatures{grid-template-columns:repeat(2,1fr)}
 @media(max-width:719px){.compactFeatures{grid-template-columns:1fr}.product.world{background:linear-gradient(160deg,#fffefa,#ecf8f0)}}
+@media(min-width:940px){.coffeeEvidence{grid-template-columns:repeat(3,1fr)}}
