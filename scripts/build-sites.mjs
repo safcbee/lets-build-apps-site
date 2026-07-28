@@ -1,5 +1,7 @@
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 
+const canonicalAssetOrigin = 'https://letsbuildhq.com/assets/';
+
 const pages = {
   '/': 'public/index.html',
   '/sentences/': 'public/sentences/index.html',
@@ -31,29 +33,14 @@ const sourcePages = Object.fromEntries(
     ]),
   ),
 );
-const referencedAssets = new Set();
-for (const html of Object.values(sourcePages)) {
-  for (const match of html.matchAll(/(?:(?:\.\.\/)+|\.\/)assets\/([^"'?#\s>]+)/g)) {
-    if (!match[1].endsWith('.css')) referencedAssets.add(match[1]);
-  }
-}
-const images = {};
-for (const assetPath of referencedAssets) {
-  const data = await readFile(`public/assets/${assetPath}`);
-  const mime = assetPath.endsWith('.png') ? 'image/png' : 'image/jpeg';
-  images[assetPath] = `data:${mime};base64,${data.toString('base64')}`;
-}
-
 const builtPages = {};
 for (const [route, sourceHTML] of Object.entries(sourcePages)) {
   let html = sourceHTML;
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/site-v2\.css">/g, `<style>${css}</style>`);
-  for (const [assetPath, dataUrl] of Object.entries(images)) {
-    html = html
-      .replaceAll(`../../assets/${assetPath}`, dataUrl)
-      .replaceAll(`../assets/${assetPath}`, dataUrl)
-      .replaceAll(`./assets/${assetPath}`, dataUrl);
-  }
+  html = html.replace(
+    /(?:(?:\.\.\/)+|\.\/)assets\/([^"'?#\s>]+)/g,
+    (_, assetPath) => `${canonicalAssetOrigin}${assetPath}`,
+  );
   builtPages[route] = html;
 }
 
