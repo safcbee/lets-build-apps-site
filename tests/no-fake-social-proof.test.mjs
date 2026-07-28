@@ -16,7 +16,7 @@ const pages = [
 const forbiddenPatterns = [
   /5\.0\s*Rating/i,
   /\b\d+(?:\.\d+)?\s*star(?:s)?\b/i,
-  /\b(?:review|testimonial)\b/i,
+  /\b(?:testimonial|five-star review|verified customer review)\b/i,
   /\b(?:joined by|join over|join thousands|thousands of|happy learners|happy families)\b/i,
   /\b(?:50,000|10,000|4,000|\+4k)\b/i,
   /\b(?:98%|85%|92%)\b/,

@@ -22,6 +22,7 @@ const requiredFiles = [
   'family-trips/privacy/index.html',
   'better-pics/index.html',
   'better-pics/privacy/index.html',
+  'my-world/index.html',
   'support/index.html',
 ];
 
@@ -31,8 +32,10 @@ const allowedTopLevelEntries = new Set([
   'better-pics',
   'countdowns',
   'family-trips',
+  'my-world',
   'paw-care',
   'index.html',
+  'og.png',
   'perfect-coffee',
   'portaflow',
   'privacy',
