@@ -14,7 +14,7 @@ test('product pages describe the verified commercial models', () => {
     ['family-trips/index.html', /Free for the whole family/i, /without a subscription or paywall/i],
     ['travel-plans/index.html', /first trip is free/i, /£2\.99 monthly or £19\.99 annually/i],
     ['paw-care/index.html', /no subscription/i, /no account/i],
-    ['perfect-coffee/index.html', /paid App Store download/i, /no recurring subscription/i],
+    ['perfect-coffee/index.html', /essentials stay free/i, /monthly, annually or with one lifetime purchase/i],
   ];
 
   for (const [relativePath, ...patterns] of expectations) {
@@ -25,11 +25,11 @@ test('product pages describe the verified commercial models', () => {
   }
 });
 
-test('Better Coffee never implies that its download is free', () => {
+test('Better Coffee describes its free and Pro boundary accurately', () => {
   const coffee = read('perfect-coffee/index.html');
   const privacy = read('privacy/index.html');
 
   assert.doesNotMatch(coffee, /No extras to buy/i);
-  assert.doesNotMatch(coffee, /free (?:app|download)/i);
-  assert.match(privacy, /paid App Store download/i);
+  assert.match(coffee, /Manual logging, manual beans, every experience level, basic coaching and full backup stay free/i);
+  assert.match(privacy, /Better Coffee Pro monthly, annual and lifetime options are processed by Apple through StoreKit/i);
 });

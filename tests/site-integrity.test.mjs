@@ -106,15 +106,15 @@ assert.match(privacy, /Last updated:\s*28 July 2026/, 'privacy policy shows its 
 assert.match(privacy, /mailto:support@letsbuildhq\.com/, 'privacy page exposes the new support contact');
 assert.match(
   privacy,
-  /Better Coffee will be offered as a paid App Store download/,
-  'privacy page describes Better Coffee as a paid download',
+  /Better Coffee Pro monthly, annual and lifetime options are processed by Apple through StoreKit/,
+  'privacy page describes the optional Better Coffee Pro purchase model',
 );
 
 const coffee = read('perfect-coffee/index.html');
-assert.match(coffee, /paid App Store (?:release|download)/i, 'Better Coffee describes its paid App Store model');
-assert.match(coffee, /no recurring subscription/i, 'Better Coffee distinguishes its paid download from a subscription');
+assert.match(coffee, /Essentials stay free/i, 'Better Coffee describes its free essentials');
+assert.match(coffee, /Optional Better Coffee Pro/i, 'Better Coffee describes its optional Pro model');
 assert.doesNotMatch(coffee, /No extras to buy/i, 'Better Coffee does not imply there is no purchase');
-assert.match(home, /Paid App Store release/, 'homepage describes Better Coffee as a paid App Store release');
+assert.match(home, /Optional Better Coffee Pro/, 'homepage describes the Better Coffee Pro model');
 
 const travelPlans = read('travel-plans/index.html');
 assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');
