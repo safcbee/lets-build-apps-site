@@ -113,8 +113,12 @@ assert.match(
 const coffee = read('perfect-coffee/index.html');
 assert.match(coffee, /Essentials stay free/i, 'Better Coffee describes its free essentials');
 assert.match(coffee, /Optional Better Coffee Pro/i, 'Better Coffee describes its optional Pro model');
+assert.match(coffee, /Submitted to the App Store/i, 'Better Coffee reports its current App Store submission state');
+assert.match(coffee, /£2\.99 monthly, £19\.99 annually or £39\.99 lifetime/i, 'Better Coffee publishes its confirmed UK Pro prices');
+assert.match(coffee, /34 roaster sources/i, 'Better Coffee publishes the current roaster discovery breadth');
 assert.doesNotMatch(coffee, /No extras to buy/i, 'Better Coffee does not imply there is no purchase');
 assert.match(home, /Optional Better Coffee Pro/, 'homepage describes the Better Coffee Pro model');
+assert.match(home, /Let’s Build Better Coffee[\s\S]*?In App Store review/, 'homepage reports Better Coffee is in App Store review');
 
 const travelPlans = read('travel-plans/index.html');
 assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');
