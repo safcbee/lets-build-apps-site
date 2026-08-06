@@ -100,6 +100,16 @@ assert.match(home, /href=["']\.\/support\/["']/, 'homepage links to support');
 assert.match(home, /href=["']\.\/privacy\/["']/, 'homepage links to Privacy');
 assert.match(home, /Beautiful tools for real family life\./, 'homepage uses the expected production experience');
 assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 8, 'homepage has a visible product page link for each product page');
+assert.match(
+  home,
+  /Let’s Build My World[\s\S]*?Available on App Store[\s\S]*?https:\/\/apps\.apple\.com\/gb\/app\/lets-build-my-world\/id6790905052/,
+  'homepage reports My World as live and links to its verified listing',
+);
+assert.match(
+  home,
+  /Let’s Build Better Pictures[\s\S]*?Available on App Store[\s\S]*?https:\/\/apps\.apple\.com\/gb\/app\/lets-build-better-pictures\/id6794868739/,
+  'homepage reports Better Pictures as live and links to its verified listing',
+);
 
 const privacy = read('privacy/index.html');
 assert.match(privacy, /Last updated:\s*28 July 2026/, 'privacy policy shows its current revision date');
@@ -133,7 +143,8 @@ assert.match(travelPrivacy, /Apple Foundation Models/, 'Travel Plans privacy dis
 assert.match(travelPrivacy, /Build 37 is the current verified TestFlight upload/, 'Travel Plans privacy reflects the shipped TestFlight implementation');
 
 const betterPics = read('better-pics/index.html');
-assert.match(betterPics, /In App Store review/, 'Better Pictures reports its current review availability');
+assert.match(betterPics, /Available on App Store/, 'Better Pictures reports its live availability');
+assert.match(betterPics, /https:\/\/apps\.apple\.com\/gb\/app\/lets-build-better-pictures\/id6794868739/, 'Better Pictures links to its verified App Store listing');
 assert.match(betterPics, /Canon, Nikon, Sony, Fujifilm, OM System and Panasonic/, 'Better Pictures reflects its current multi-brand kit');
 assert.match(betterPics, /one lifetime purchase/i, 'Better Pictures describes the current one-time Pro model');
 assert.match(betterPics, /what you(?:’|')re photographing, which lens is mounted/i, 'Better Pictures explains the guided settings workflow');
@@ -143,7 +154,8 @@ assert.match(betterPics, /href=["']\.\/privacy\/["']/, 'Better Pics links to its
 assert.match(betterPics, /https:\/\/letsbuildhq\.com\/og\.png/, 'Better Pictures publishes the refreshed Let’s Build HQ social card');
 
 const myWorld = read('my-world/index.html');
-assert.match(myWorld, /In App Store review/, 'My World reports its current App Store review state');
+assert.match(myWorld, /Available on App Store/, 'My World reports its live availability');
+assert.match(myWorld, /https:\/\/apps\.apple\.com\/gb\/app\/lets-build-my-world\/id6790905052/, 'My World links to its verified App Store listing');
 assert.match(myWorld, /countries, regions, cities, airports and all 50 US states/i, 'My World describes the current place coverage');
 assert.match(myWorld, /Photo Discovery analyses dates and locations on-device/i, 'My World explains on-device Photo Discovery');
 assert.match(myWorld, /href=["']\.\.\/privacy\/#my-world-privacy["']/, 'My World links to its privacy summary');
