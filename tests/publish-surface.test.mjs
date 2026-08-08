@@ -35,6 +35,7 @@ const allowedTopLevelEntries = new Set([
   'my-world',
   'paw-care',
   'index.html',
+  'og-editorial.png',
   'og.png',
   'perfect-coffee',
   'portaflow',

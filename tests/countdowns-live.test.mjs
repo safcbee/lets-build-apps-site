@@ -8,7 +8,7 @@ const countdowns = readFileSync(new URL('../public/countdowns/index.html', impor
 assert.match(home, /id=["']countdowns["']/, 'Countdowns appears as a product-led homepage section');
 assert.match(home, /Available on App Store/, 'Countdowns has an available status');
 assert.match(home, /href="\.\/countdowns\/"/, 'homepage Countdowns card links to the Countdowns page');
-assert.match(home, new RegExp(`<a class="btn" href="${appStoreUrl}">Download Countdowns</a>`), 'homepage final CTA includes the Countdowns download');
+assert.match(home, new RegExp(`<a href="${appStoreUrl}">[\\s\\S]*?<b>Countdowns</b>`), 'homepage final CTA includes the Countdowns download');
 assert.doesNotMatch(home, /Coming Soon/, 'homepage no longer separates active products into Coming Soon');
 assert.doesNotMatch(home, /Future Projects/, 'homepage no longer contains placeholder future projects');
 

@@ -98,7 +98,7 @@ for (const page of appPages) {
 const home = read('index.html');
 assert.match(home, /href=["']\.\/support\/["']/, 'homepage links to support');
 assert.match(home, /href=["']\.\/privacy\/["']/, 'homepage links to Privacy');
-assert.match(home, /Beautiful tools for real family life\./, 'homepage uses the expected production experience');
+assert.match(home, /Thoughtful apps for <em>real life\.<\/em>/, 'homepage uses the refreshed editorial experience');
 assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 8, 'homepage has a visible product page link for each product page');
 assert.match(
   home,
@@ -128,7 +128,7 @@ assert.match(coffee, /£2\.99 monthly, £19\.99 annually or £39\.99 lifetime/i,
 assert.match(coffee, /34 roaster sources/i, 'Better Coffee publishes the current roaster discovery breadth');
 assert.doesNotMatch(coffee, /No extras to buy/i, 'Better Coffee does not imply there is no purchase');
 assert.match(home, /Optional Better Coffee Pro/, 'homepage describes the Better Coffee Pro model');
-assert.match(home, /Let’s Build Better Coffee[\s\S]*?In App Store review/, 'homepage reports Better Coffee is in App Store review');
+assert.match(home, /id=["']perfect-coffee["'][\s\S]*?In App Store review[\s\S]*?Let’s Build Better Coffee/, 'homepage reports Better Coffee is in App Store review');
 
 const travelPlans = read('travel-plans/index.html');
 assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');
@@ -151,7 +151,7 @@ assert.match(betterPics, /what you(?:’|')re photographing, which lens is mount
 assert.match(betterPics, /original is not uploaded/i, 'Better Pics explains its on-device photo handling');
 assert.match(betterPics, /not endorsed by Canon, Nikon, Sony, Fujifilm, OM System or Panasonic/i, 'Better Pictures includes its manufacturer independence disclaimer');
 assert.match(betterPics, /href=["']\.\/privacy\/["']/, 'Better Pics links to its dedicated privacy policy');
-assert.match(betterPics, /https:\/\/letsbuildhq\.com\/og\.png/, 'Better Pictures publishes the refreshed Let’s Build HQ social card');
+assert.match(betterPics, /https:\/\/letsbuildhq\.com\/og-editorial\.png/, 'Better Pictures publishes the refreshed Let’s Build HQ social card');
 
 const myWorld = read('my-world/index.html');
 assert.match(myWorld, /Available on App Store/, 'My World reports its live availability');

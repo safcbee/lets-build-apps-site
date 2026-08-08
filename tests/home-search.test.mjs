@@ -9,9 +9,10 @@ const visibleText = html
   .replace(/\s+/g, ' ');
 
 assert.doesNotMatch(html, /data-app-search|Search apps/i, 'production homepage has no dead search control');
-assert.match(visibleText, /Beautiful tools for real family life\./, 'production homepage has the expected hero');
+assert.match(visibleText, /Thoughtful apps for real life\./, 'production homepage has the refreshed editorial hero');
 assert.match(html, /href=["']#products["']/, 'homepage has a products anchor CTA');
-assert.match(html, /href=["']#testflight["']/, 'homepage has a TestFlight anchor CTA');
+assert.match(html, /href=["']#in-the-works["']/, 'homepage links to the pre-release catalogue');
+assert.match(html, /href=["']#download["']|id=["']download["']/, 'homepage has a live-app download section');
 
 for (const id of ['sentences', 'countdowns', 'my-world', 'family-trips', 'travel-plans', 'paw-care', 'perfect-coffee', 'better-pics', 'weddings']) {
   assert.match(html, new RegExp(`id=["']${id}["']`), `homepage exposes ${id} product section`);
