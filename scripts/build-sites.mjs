@@ -6,6 +6,7 @@ const pages = {
   '/': 'public/index.html',
   '/sentences/': 'public/sentences/index.html',
   '/countdowns/': 'public/countdowns/index.html',
+  '/my-world/': 'public/my-world/index.html',
   '/paw-care/': 'public/paw-care/index.html',
   '/paw-care/privacy/': 'public/paw-care/privacy/index.html',
   '/perfect-coffee/': 'public/perfect-coffee/index.html',
@@ -14,6 +15,7 @@ const pages = {
   '/better-pics/': 'public/better-pics/index.html',
   '/better-pics/privacy/': 'public/better-pics/privacy/index.html',
   '/support/': 'public/support/index.html',
+  '/press/': 'public/press/index.html',
   '/privacy/': 'public/privacy/index.html',
   '/travel-plans/privacy/': 'public/travel-plans/privacy/index.html',
   '/family-trips/privacy/': 'public/family-trips/privacy/index.html',
@@ -25,6 +27,8 @@ await mkdir('dist/.openai', { recursive: true });
 
 const css = await readFile('public/assets/site-v2.css', 'utf8');
 const betterPicsSocialCard = await readFile('public/assets/site-v3/better-pics-social.jpg');
+const robots = await readFile('public/robots.txt', 'utf8');
+const sitemap = await readFile('public/sitemap.xml', 'utf8');
 const sourcePages = Object.fromEntries(
   await Promise.all(
     Object.entries(pages).map(async ([route, file]) => [
@@ -47,6 +51,10 @@ for (const [route, sourceHTML] of Object.entries(sourcePages)) {
 const worker = `
 const PAGES = ${JSON.stringify(builtPages)};
 const BETTER_PICS_SOCIAL_CARD = ${JSON.stringify(betterPicsSocialCard.toString('base64'))};
+const TEXT_FILES = ${JSON.stringify({
+  '/robots.txt': { body: robots, type: 'text/plain; charset=UTF-8' },
+  '/sitemap.xml': { body: sitemap, type: 'application/xml; charset=UTF-8' },
+})};
 const headers = {
   'content-type': 'text/html; charset=UTF-8',
   'cache-control': 'private, no-cache',
@@ -56,6 +64,17 @@ const headers = {
 export default {
   async fetch(request) {
     const url = new URL(request.url);
+    const textFile = TEXT_FILES[url.pathname];
+    if (textFile) {
+      return new Response(textFile.body, {
+        status: 200,
+        headers: {
+          'content-type': textFile.type,
+          'cache-control': 'private, no-cache',
+          'x-content-type-options': 'nosniff',
+        },
+      });
+    }
     if (url.pathname === '/assets/site-v3/better-pics-social.jpg') {
       const bytes = Uint8Array.from(atob(BETTER_PICS_SOCIAL_CARD), (character) => character.charCodeAt(0));
       return new Response(bytes, {

@@ -1,0 +1,62 @@
+name: Monitor public App Store listings
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: app-store-monitor
+  cancel-in-progress: true
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check Apple’s GB public storefront
+        run: |
+          node scripts/check-app-store-status.mjs \
+            --json "$RUNNER_TEMP/app-store-status.json" \
+            --markdown "$RUNNER_TEMP/app-store-status.md"
+          cat "$RUNNER_TEMP/app-store-status.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open or resolve the deduplicated alert
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="App Store monitor · action needed"
+          count=$(jq -r '.alertCount' "$RUNNER_TEMP/app-store-status.json")
+
+          gh label create app-store-monitor \
+            --color EF5B3F \
+            --description "Public App Store state differs from the verified catalogue" \
+            --force
+
+          number=$(gh issue list \
+            --state open \
+            --label app-store-monitor \
+            --limit 10 \
+            --json number,title \
+            | jq -r --arg title "$title" '.[] | select(.title == $title) | .number' \
+            | head -n 1)
+
+          if [ "$count" -gt 0 ]; then
+            if [ -n "$number" ]; then
+              gh issue edit "$number" --body-file "$RUNNER_TEMP/app-store-status.md"
+            else
+              gh issue create \
+                --title "$title" \
+                --body-file "$RUNNER_TEMP/app-store-status.md" \
+                --label app-store-monitor
+            fi
+          elif [ -n "$number" ]; then
+            gh issue comment "$number" --body "Apple’s public storefront matches the verified catalogue again. Closing this alert."
+            gh issue close "$number"
+          fi

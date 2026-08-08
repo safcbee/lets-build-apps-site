@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-sites.mjs"
+    "build": "node scripts/build-sites.mjs",
+    "test": "set -e; for test in tests/*.test.mjs; do node \"$test\"; done",
+    "marketing:pack": "node scripts/generate-marketing-pack.mjs",
+    "marketing:check": "node scripts/check-app-store-status.mjs"
   }
 }

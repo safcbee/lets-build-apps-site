@@ -23,6 +23,9 @@ const requiredFiles = [
   'better-pics/index.html',
   'better-pics/privacy/index.html',
   'my-world/index.html',
+  'press/index.html',
+  'robots.txt',
+  'sitemap.xml',
   'support/index.html',
 ];
 
@@ -34,6 +37,7 @@ const allowedTopLevelEntries = new Set([
   'family-trips',
   'my-world',
   'paw-care',
+  'press',
   'index.html',
   'og-editorial.png',
   'og.png',
@@ -41,6 +45,8 @@ const allowedTopLevelEntries = new Set([
   'portaflow',
   'privacy',
   'sentences',
+  'robots.txt',
+  'sitemap.xml',
   'support',
   'travel-plans',
 ]);

@@ -15,6 +15,7 @@ const pages = [
   'better-pics/index.html',
   'better-pics/privacy/index.html',
   'my-world/index.html',
+  'press/index.html',
   'privacy/index.html',
   'support/index.html',
   'portaflow/index.html',
@@ -98,6 +99,7 @@ for (const page of appPages) {
 const home = read('index.html');
 assert.match(home, /href=["']\.\/support\/["']/, 'homepage links to support');
 assert.match(home, /href=["']\.\/privacy\/["']/, 'homepage links to Privacy');
+assert.match(home, /href=["']\.\/press\/["']/, 'homepage links to the press and creator desk');
 assert.match(home, /Thoughtful apps for <em>real life\.<\/em>/, 'homepage uses the refreshed editorial experience');
 assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 8, 'homepage has a visible product page link for each product page');
 assert.match(

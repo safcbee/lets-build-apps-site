@@ -252,6 +252,33 @@ footer { padding: 50px 0; border-top: 1px solid var(--line); }
 .footlinks a { font-weight: 700; }
 .pawIcon { width: 60px; height: 60px; display: grid; place-items: center; border: 1px solid var(--line); background: #e5dff2; font-size: 1.55rem; box-shadow: 4px 5px 0 rgba(23,23,19,.12); }
 
+/* Press and creator desk */
+.pressHero { position: relative; min-height: 780px; display: flex; align-items: center; overflow: hidden; padding: 78px 0 92px; border-bottom: 1px solid var(--line); isolation: isolate; }
+.pressHero::before { position: absolute; z-index: -2; inset: 0; content: ""; background: repeating-linear-gradient(115deg, transparent 0 26px, rgba(23,23,19,.035) 26px 27px); }
+.pressHero h1 { max-width: 830px; }
+.pressHero h1 em { color: var(--signal); font-weight: inherit; }
+.pressHero .lead { max-width: 670px; font-size: clamp(1.08rem, 2vw, 1.35rem); }
+.pressLineup { padding-top: 128px; }
+.pressAppGrid { display: grid; gap: 20px; }
+.pressApp { padding: 28px; border: 1px solid var(--line); background: var(--paper-2); box-shadow: 6px 7px 0 rgba(23,23,19,.1); }
+.pressApp h3 { font-size: clamp(2.3rem, 4.4vw, 4rem); }
+.pressAppDark { color: #f7f3e9; background: #11191b; }
+.pressAppDark p { color: #bdc5c4; }
+.pressAppDark .kicker, .pressAppDark .textLink { color: #f2ad50; }
+.pressAppDark .chips span { border-color: rgba(255,255,255,.25); color: #d1d7d5; }
+.assetDesk { border-block: 1px solid var(--line); background: #e7dfce; }
+.assetGrid { display: grid; gap: 20px; }
+.assetCard { margin: 0; padding: 14px; border: 1px solid var(--line); background: var(--paper-2); box-shadow: 6px 7px 0 rgba(23,23,19,.12); }
+.assetImage { position: relative; overflow: hidden; height: 500px; border: 1px solid var(--line); background: var(--ink); }
+.assetImage img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.assetImage span { position: absolute; right: 10px; bottom: 10px; left: 10px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.4); color: white; background: rgba(17,17,15,.84); font-size: .68rem; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; backdrop-filter: blur(10px); }
+.assetCard figcaption { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 4px 4px; }
+.assetCard figcaption b { font-size: .86rem; }
+.assetCard figcaption a { font-size: .72rem; font-weight: 800; }
+.pressBoilerplate { margin-bottom: 32px; padding: 25px; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.07); }
+.pressBoilerplate p { margin: 0; color: #e3dfd4; font-family: var(--display); font-size: clamp(1.45rem, 2.7vw, 2.2rem); line-height: 1.2; letter-spacing: -.03em; }
+.pressContact > p:not(.edition) { max-width: 750px; }
+
 @media (min-width: 720px) {
   .wrap { width: min(1260px, calc(100% - 72px)); }
   .homeHeroGrid, .heroGrid, .split { grid-template-columns: 1.02fr .98fr; }
@@ -267,6 +294,7 @@ footer { padding: 50px 0; border-top: 1px solid var(--line); }
   .manifestoGrid { grid-template-columns: .9fr 1.1fr; }
   .featureGrid, .valueGrid, .steps { grid-template-columns: repeat(3,1fr); }
   .evidenceGrid { grid-template-columns: repeat(2,1fr); }
+  .pressAppGrid, .assetGrid { grid-template-columns: repeat(2,1fr); }
   .foot { grid-template-columns: 1fr 1fr auto; }
   .policy { padding: 50px; }
 }
@@ -288,7 +316,9 @@ footer { padding: 50px 0; border-top: 1px solid var(--line); }
   body { font-size: 16px; }
   .navcta { padding-inline: 12px; font-size: .72rem; }
   .homeHero { min-height: auto; padding-top: 58px; }
+  .pressHero { min-height: auto; padding-top: 58px; }
   .homeHero h1 { font-size: clamp(3.9rem, 20vw, 6.1rem); }
+  .pressHero h1 { font-size: clamp(3.9rem, 18vw, 6.1rem); }
   .homeHeroGrid { gap: 52px; }
   .coverStory { min-height: 500px; }
   .coverCaption { right: 0; }

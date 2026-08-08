@@ -1,0 +1,79 @@
+name: Prepare weekly marketing pack
+
+on:
+  schedule:
+    - cron: '17 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      week:
+        description: Campaign Monday in YYYY-MM-DD format; leave blank for the next Monday
+        required: false
+        type: string
+      app:
+        description: Optional app key from marketing/apps.json
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: weekly-marketing-pack
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Generate approval pack
+        env:
+          APPLE_PROVIDER_TOKEN: ${{ vars.APPLE_PROVIDER_TOKEN }}
+          INPUT_WEEK: ${{ inputs.week }}
+          INPUT_APP: ${{ inputs.app }}
+        run: |
+          args=(--out-dir "$RUNNER_TEMP/marketing")
+          if [ -n "$INPUT_WEEK" ]; then args+=(--week "$INPUT_WEEK"); fi
+          if [ -n "$INPUT_APP" ]; then args+=(--app "$INPUT_APP"); fi
+          node scripts/generate-marketing-pack.mjs "${args[@]}"
+
+      - name: Upload scheduler pack
+        uses: actions/upload-artifact@v7
+        with:
+          name: weekly-marketing-pack
+          path: ${{ runner.temp }}/marketing
+          retention-days: 90
+
+      - name: Create or refresh the review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          manifest="$RUNNER_TEMP/marketing/manifest.json"
+          title=$(jq -r '.title' "$manifest")
+          body=$(jq -r '.markdownPath' "$manifest")
+
+          gh label create marketing-pack \
+            --color DFFC69 \
+            --description "Approval-gated weekly campaign pack" \
+            --force
+
+          number=$(gh issue list \
+            --state all \
+            --label marketing-pack \
+            --limit 100 \
+            --json number,title \
+            | jq -r --arg title "$title" '.[] | select(.title == $title) | .number' \
+            | head -n 1)
+
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --title "$title" --body-file "$body"
+            gh issue reopen "$number" || true
+          else
+            gh issue create --title "$title" --body-file "$body" --label marketing-pack
+          fi
+
+          cat "$body" >> "$GITHUB_STEP_SUMMARY"
+

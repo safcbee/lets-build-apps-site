@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-08-08",
+  "brand": {
+    "name": "Let’s Build HQ",
+    "siteUrl": "https://letsbuildhq.com/",
+    "supportEmail": "support@letsbuildhq.com",
+    "owner": "Brian Leary",
+    "copyright": "© 2026 Brian Leary"
+  },
+  "guardrails": {
+    "humanApprovalRequired": true,
+    "forbiddenClaims": [
+      "awards that have not been verified",
+      "user or download numbers that have not been verified",
+      "educational, clinical or professional endorsements that have not been verified",
+      "diagnosis, treatment or guaranteed outcome claims",
+      "testimonials or ratings that have not been verified",
+      "invented launch dates or manufactured urgency"
+    ]
+  },
+  "apps": [
+    {
+      "key": "sentences",
+      "name": "Let’s Build Sentences",
+      "storefrontName": "Let's Build Sentences",
+      "appleId": "6761413051",
+      "publicVersion": "1.0.7",
+      "stage": "live",
+      "stageLabel": "Available on the App Store",
+      "sitePath": "/sentences/",
+      "appStoreUrl": "https://apps.apple.com/gb/app/lets-build-sentences/id6761413051",
+      "category": "Learning",
+      "audience": "Parents of children beginning to recognise letter sounds, form letters and write complete sentences",
+      "promise": "Calm, guided practice that moves from letter sounds to a complete sentence one letter at a time.",
+      "commercialModel": "Free starter experience with one-time Premium; no subscription and no advertising.",
+      "ctaLabel": "Download on the App Store",
+      "claims": [
+        "Children can hear letters, build words, trace shapes and practise complete sentences.",
+        "Large child-friendly writing boxes and supportive feedback show which letters need another try.",
+        "Parents can create custom sentences and record prompts, encouragement and letter audio.",
+        "Typing and handwriting modes include controls for spacing, capitals and speech style."
+      ],
+      "angles": [
+        {
+          "hook": "One letter at a time. One whole sentence at the end.",
+          "body": "A child can hear the sound, trace when it helps and practise the complete sentence in large writing boxes."
+        },
+        {
+          "hook": "Make handwriting practice about something they already care about.",
+          "body": "Create a sentence yourself, record your own voice and let the app guide each letter calmly."
+        }
+      ],
+      "hashtags": ["EarlyWriting", "HandwritingPractice", "ParentingTools"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v4/sentences-1.jpg",
+          "alt": "Let’s Build Sentences letter-sound handwriting practice on iPhone"
+        },
+        {
+          "path": "/assets/site-v4/sentences-5.jpg",
+          "alt": "Let’s Build Sentences narrator voice chooser"
+        }
+      ]
+    },
+    {
+      "key": "my-world",
+      "name": "Let’s Build My World",
+      "storefrontName": "Let's Build My World",
+      "appleId": "6790905052",
+      "publicVersion": "1.0",
+      "stage": "live",
+      "stageLabel": "Available on the App Store",
+      "sitePath": "/my-world/",
+      "appStoreUrl": "https://apps.apple.com/gb/app/lets-build-my-world/id6790905052",
+      "category": "Travel memories",
+      "audience": "Travellers and families who want a private, visual record of the places and journeys that shaped their story",
+      "promise": "Turn visited places into routes, timelines, miles, memories and private travel stories.",
+      "commercialModel": "Free core experience with optional My World+ monthly, annual and lifetime options.",
+      "ctaLabel": "Download on the App Store",
+      "claims": [
+        "Map countries, regions, cities, airports and all 50 US states.",
+        "Build routes, timelines, yearbooks and private stories from visited places.",
+        "Photo Discovery analyses dates and locations on the device.",
+        "The app has no account and keeps its core experience local-first."
+      ],
+      "angles": [
+        {
+          "hook": "Your world is more than a pin count.",
+          "body": "Connect places to routes, dates, companions, photographs and the story behind the distance."
+        },
+        {
+          "hook": "Turn summer travel into a story you can keep.",
+          "body": "Build a private map, retrace the route and see how the places fit together over time."
+        }
+      ],
+      "hashtags": ["TravelMemories", "TravelMap", "iPhoneApps"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v4/my-world-01-world.jpg",
+          "alt": "Let’s Build My World personal travel map"
+        },
+        {
+          "path": "/assets/site-v4/my-world-02-story.jpg",
+          "alt": "Let’s Build My World travel story and mileage overview"
+        },
+        {
+          "path": "/assets/site-v4/my-world-03-globe.jpg",
+          "alt": "Let’s Build My World interactive travel globe"
+        }
+      ]
+    },
+    {
+      "key": "countdowns",
+      "name": "Let’s Build Countdowns",
+      "storefrontName": "Let's Build Countdowns",
+      "appleId": "6777798794",
+      "publicVersion": "1.1",
+      "stage": "live",
+      "stageLabel": "Available on the App Store",
+      "sitePath": "/countdowns/",
+      "appStoreUrl": "https://apps.apple.com/gb/app/lets-build-countdowns/id6777798794",
+      "category": "Anticipation",
+      "audience": "Families who want birthdays, trips, holidays and meaningful milestones to feel visible and special",
+      "promise": "Make waiting tangible with visual Moments, widgets and memories after the date.",
+      "commercialModel": "Free starter experience with one-time Countdowns Plus; no subscription and no advertising.",
+      "ctaLabel": "Download on the App Store",
+      "claims": [
+        "Create clear visual countdowns with a date, icon and colour.",
+        "Keep the nearest Moment visible with Next Up and Home or Lock Screen widgets.",
+        "Memory Mode keeps photos and notes with a Moment after its date.",
+        "Countdowns Plus adds iCloud sync and shared Moments with one purchase."
+      ],
+      "angles": [
+        {
+          "hook": "The wait is part of the memory.",
+          "body": "Give the next birthday, trip or milestone a clear visual Moment, then keep it after the date."
+        },
+        {
+          "hook": "What is your family looking forward to next?",
+          "body": "Put it on the Home or Lock Screen so the anticipation stays close without taking over the day."
+        }
+      ],
+      "hashtags": ["FamilyMoments", "CountdownApp", "LookingForwardTo"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v4/countdowns-next.jpg",
+          "alt": "Let’s Build Countdowns showing Your Moments and Next Up"
+        },
+        {
+          "path": "/assets/site-v4/countdowns-list.jpg",
+          "alt": "Let’s Build Countdowns visual Moment list"
+        }
+      ]
+    },
+    {
+      "key": "better-pictures",
+      "name": "Let’s Build Better Pictures",
+      "storefrontName": "Let’s Build Better Pictures",
+      "appleId": "6794868739",
+      "publicVersion": "1.0",
+      "stage": "live",
+      "stageLabel": "Available on the App Store",
+      "sitePath": "/better-pics/",
+      "appStoreUrl": "https://apps.apple.com/gb/app/lets-build-better-pictures/id6794868739",
+      "category": "Photography",
+      "audience": "Camera owners who want a practical starting setup they understand before they press the shutter",
+      "promise": "Turn subject, lens and light into a clear starting setup, then privately review a frame to improve the next one.",
+      "commercialModel": "Free core coach with one-time Better Pictures Pro; no subscription.",
+      "ctaLabel": "Download on the App Store",
+      "claims": [
+        "Shot Coach builds a practical starting setup from the subject, lens, light, movement and intended result.",
+        "The offline kit catalogue supports Canon, Nikon, Sony, Fujifilm, OM System and Panasonic.",
+        "Photo review analyses the selected frame on the device and does not upload the original.",
+        "Free includes one camera, three lenses, unlimited photo imports and the most useful review recommendation."
+      ],
+      "angles": [
+        {
+          "hook": "Walk up to the shot with a plan.",
+          "body": "Choose the subject, lens and light, get a practical starting setup and understand why it works."
+        },
+        {
+          "hook": "Changing light does not need to mean random settings.",
+          "body": "Start with a guided camera plan, take the frame and privately review what to change next."
+        }
+      ],
+      "hashtags": ["PhotographyTips", "CameraSettings", "LearnPhotography"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v4/better-pics-01-never-guess.jpg",
+          "alt": "Let’s Build Better Pictures Shot Coach home screen"
+        },
+        {
+          "path": "/assets/site-v4/better-pics-03-camera-plan.jpg",
+          "alt": "Let’s Build Better Pictures guided camera plan"
+        },
+        {
+          "path": "/assets/site-v4/better-pics-05-real-kit.jpg",
+          "alt": "Let’s Build Better Pictures multi-brand camera kit"
+        }
+      ]
+    },
+    {
+      "key": "better-coffee",
+      "name": "Let’s Build Better Coffee",
+      "storefrontName": "Let's Build Better Coffee",
+      "appleId": "6785081962",
+      "publicVersion": null,
+      "stage": "review",
+      "stageLabel": "In App Store review",
+      "sitePath": "/perfect-coffee/",
+      "appStoreUrl": null,
+      "category": "Coffee",
+      "audience": "Home espresso makers who want to understand and repeat a better shot",
+      "promise": "Move from bean shelf to guided pull, then make one explainable adjustment using successful same-bean history.",
+      "commercialModel": "Manual logging and core guidance stay free; optional Better Coffee Pro is monthly, annual or lifetime.",
+      "ctaLabel": "Follow the release",
+      "claims": [
+        "Choose an experience level and follow a complete espresso setup and shot workflow.",
+        "Successful same-bean history supports one clear next adjustment.",
+        "Manual logging, manual beans, every experience level, basic coaching and full backup stay free.",
+        "UK Pro prices are £2.99 monthly, £19.99 annually or £39.99 lifetime; Apple presents local terms before purchase."
+      ],
+      "angles": [
+        {
+          "hook": "One shot. One explainable adjustment.",
+          "body": "Better Coffee keeps the bean, recipe and result together so the next change has a reason."
+        }
+      ],
+      "hashtags": ["HomeBarista", "Espresso", "CoffeeJournal"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v5/coffee-home.jpg",
+          "alt": "Let’s Build Better Coffee dial-in home screen"
+        },
+        {
+          "path": "/assets/site-v5/coffee-log.jpg",
+          "alt": "Let’s Build Better Coffee guided shot workflow"
+        },
+        {
+          "path": "/assets/site-v5/coffee-history.jpg",
+          "alt": "Let’s Build Better Coffee shot history"
+        }
+      ]
+    },
+    {
+      "key": "family-trips",
+      "name": "Let’s Build Family Trips",
+      "storefrontName": "Let's Build Family Trips",
+      "appleId": "6787775479",
+      "publicVersion": null,
+      "stage": "private-testflight",
+      "stageLabel": "Private TestFlight",
+      "sitePath": "/family-trips/",
+      "appStoreUrl": null,
+      "category": "Shared travel",
+      "audience": "Families who want itineraries, costs, chat, photos and documents in one invited space",
+      "promise": "Plan once and keep the whole family on the same live trip.",
+      "commercialModel": "The current private TestFlight has no subscription, paywall or in-app purchase.",
+      "ctaLabel": "Register TestFlight interest",
+      "claims": [
+        "Shared family spaces keep itineraries, costs, chat, photos and documents together.",
+        "The app uses Sign in with Apple and an EU-hosted Supabase backend.",
+        "Trip content is visible to authenticated members of the invited family space.",
+        "The current private TestFlight has no advertising or tracking SDK."
+      ],
+      "angles": [
+        {
+          "hook": "Every trip detail. Everyone together.",
+          "body": "Keep the itinerary, costs, chat, photographs and documents beside the family trip they belong to."
+        }
+      ],
+      "hashtags": ["FamilyTravel", "TripPlanning", "TestFlight"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v4/family-trips-trips.jpg",
+          "alt": "Let’s Build Family Trips upcoming trips"
+        },
+        {
+          "path": "/assets/site-v4/family-trips-itinerary.jpg",
+          "alt": "Let’s Build Family Trips shared itinerary"
+        }
+      ]
+    },
+    {
+      "key": "travel-plans",
+      "name": "Let’s Build Travel Plans",
+      "storefrontName": "Let's Build Travel Plans",
+      "appleId": "6770116855",
+      "publicVersion": null,
+      "stage": "private-testflight",
+      "stageLabel": "Private TestFlight",
+      "sitePath": "/travel-plans/",
+      "appStoreUrl": null,
+      "category": "Trip readiness",
+      "audience": "Family trip planners who want to know what is sorted and what still needs attention",
+      "promise": "Bring Plan, Pack, Pay, Paperwork and People into one calm Trip Ready view.",
+      "commercialModel": "The first trip is free; optional individual Plus is £2.99 monthly or £19.99 annually in the current plan.",
+      "ctaLabel": "Register TestFlight interest",
+      "claims": [
+        "The first trip works locally without a Travel Plans account.",
+        "Five planning pillars feed one honest Trip Ready view and next action.",
+        "Plus adds Apple CloudKit sync, sharing, chat and document storage.",
+        "Each person who wants Plus subscribes individually through Apple."
+      ],
+      "angles": [
+        {
+          "hook": "Know what is sorted—and what still needs attention.",
+          "body": "Plan, Pack, Pay, Paperwork and People become one clear Trip Ready view."
+        }
+      ],
+      "hashtags": ["TravelPlanning", "FamilyTravel", "TestFlight"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v4/travel-plans-ready.jpg",
+          "alt": "Let’s Build Travel Plans Trip Ready dashboard"
+        },
+        {
+          "path": "/assets/site-v4/travel-plans-itinerary.jpg",
+          "alt": "Let’s Build Travel Plans day-by-day itinerary"
+        }
+      ]
+    },
+    {
+      "key": "paw-care",
+      "name": "Paw Care",
+      "storefrontName": "Paw Care",
+      "appleId": "6774757257",
+      "publicVersion": null,
+      "stage": "private-testflight",
+      "stageLabel": "Private TestFlight",
+      "sitePath": "/paw-care/",
+      "appStoreUrl": null,
+      "category": "Dog care",
+      "audience": "Dog households that need a clear handover for meals, medication, notes and walks",
+      "promise": "Keep the next care need visible in one private local iPhone log.",
+      "commercialModel": "The current private TestFlight has no subscription or advertising.",
+      "ctaLabel": "Register TestFlight interest",
+      "claims": [
+        "Meals, medication, reminders, notes and walks stay together in one Today view.",
+        "Care data is stored in the app’s private local storage without an app account.",
+        "GPS records a route only during a walk the user chooses to start.",
+        "Local reminders are scheduled through iOS on the device."
+      ],
+      "angles": [
+        {
+          "hook": "Everyone knows what your dog needs next.",
+          "body": "Keep meals, medication, notes and walks in one calm local care log on iPhone."
+        }
+      ],
+      "hashtags": ["DogCare", "PetCare", "TestFlight"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v4/icon-paw-care.png",
+          "alt": "Paw Care app icon"
+        }
+      ]
+    },
+    {
+      "key": "weddings",
+      "name": "Let’s Build Weddings",
+      "storefrontName": "Let's Build Weddings",
+      "appleId": "6789977243",
+      "publicVersion": null,
+      "stage": "preparation",
+      "stageLabel": "App Store preparation",
+      "sitePath": "https://weddings.letsbuildhq.com/",
+      "appStoreUrl": null,
+      "category": "Weddings",
+      "audience": "Couples who want timelines, budgets, guests, tables, suppliers and documents in one planning home",
+      "promise": "Bring the wedding plan and a private Planning Circle into one Wedding HQ.",
+      "commercialModel": "Public purchase terms will be stated only when the App Store listing is ready.",
+      "ctaLabel": "Visit the wedding site",
+      "claims": [
+        "Wedding HQ brings timelines, budgets, guests, tables, suppliers and documents together.",
+        "The Planning Circle is designed for private collaboration around the wedding plan.",
+        "The dedicated wedding site carries the current public information."
+      ],
+      "angles": [
+        {
+          "hook": "Plan beautifully, together.",
+          "body": "Bring the practical wedding plan and the people helping with it into one calm Wedding HQ."
+        }
+      ],
+      "hashtags": ["WeddingPlanning", "WeddingApp", "PlanningTogether"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v4/weddings-today.jpg",
+          "alt": "Let’s Build Weddings Today planning view"
+        },
+        {
+          "path": "/assets/site-v4/weddings-budget.jpg",
+          "alt": "Let’s Build Weddings budget view"
+        }
+      ]
+    }
+  ]
+}
