@@ -123,7 +123,7 @@ assert.match(
 const coffee = read('perfect-coffee/index.html');
 assert.match(coffee, /Essentials stay free/i, 'Better Coffee describes its free essentials');
 assert.match(coffee, /Optional Better Coffee Pro/i, 'Better Coffee describes its optional Pro model');
-assert.match(coffee, /Submitted to the App Store/i, 'Better Coffee reports its current App Store submission state');
+assert.match(coffee, /currently in App Store review/i, 'Better Coffee reports its current App Store review state');
 assert.match(coffee, /£2\.99 monthly, £19\.99 annually or £39\.99 lifetime/i, 'Better Coffee publishes its confirmed UK Pro prices');
 assert.match(coffee, /34 roaster sources/i, 'Better Coffee publishes the current roaster discovery breadth');
 assert.doesNotMatch(coffee, /No extras to buy/i, 'Better Coffee does not imply there is no purchase');
@@ -134,13 +134,13 @@ const travelPlans = read('travel-plans/index.html');
 assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');
 assert.match(travelPlans, /First trip free/, 'Travel Plans explains the V2 free experience');
 assert.match(travelPlans, /Each person who wants Plus subscribes individually/, 'Travel Plans does not repeat the retired family-wide entitlement claim');
-assert.match(travelPlans, /build 37 is the current verified TestFlight upload/, 'Travel Plans identifies the current verified TestFlight build');
+assert.match(travelPlans, /Travel Plans Plus/, 'Travel Plans explains the optional Plus experience');
 
 const travelPrivacy = read('travel-plans/privacy/index.html');
 assert.match(travelPrivacy, /does not require an account, Sign in with Apple login or Supabase account/, 'Travel Plans privacy reflects the mounted V2 app');
 assert.match(travelPrivacy, /Apple CloudKit/, 'Travel Plans privacy discloses Plus sync');
 assert.match(travelPrivacy, /Apple Foundation Models/, 'Travel Plans privacy discloses on-device assistance');
-assert.match(travelPrivacy, /Build 37 is the current verified TestFlight upload/, 'Travel Plans privacy reflects the shipped TestFlight implementation');
+assert.match(travelPrivacy, /covers the current private TestFlight version/, 'Travel Plans privacy reflects the private TestFlight implementation');
 
 const betterPics = read('better-pics/index.html');
 assert.match(betterPics, /Available on App Store/, 'Better Pictures reports its live availability');
@@ -173,6 +173,11 @@ assert.match(allText, /© 2026 Brian Leary/, 'copyright is attributed to Brian L
 assert.doesNotMatch(allText, /Good Habits/i, 'retired Good Habits product is removed');
 assert.doesNotMatch(allText, /Portaflow cards|Portaflow navigation/i, 'Portaflow does not appear as primary product content');
 assert.doesNotMatch(allText, /Future Projects|Concept Stage/i, 'placeholder homepage sections are removed');
+assert.doesNotMatch(
+  allText,
+  /No pretend launch dates|invented claims|The house rules|not a marketing mock-up|Generated from the submitted app|Name withheld until supplied/i,
+  'internal audit and placeholder language is not published',
+);
 assert.doesNotMatch(home, /experimental|View preview page/i, 'production homepage has no preview promotion copy');
 
 const portaflow = read('portaflow/index.html');

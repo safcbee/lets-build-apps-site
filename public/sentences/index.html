@@ -150,12 +150,6 @@
     .plan li::before { content: "✓"; color: var(--sage); font-weight: 900; }
     .price-note { color: var(--sage-dark); font-weight: 900; }
 
-    .quotes { background: var(--lavender); }
-    .placeholder-grid { display: grid; gap: 16px; margin-top: 34px; }
-    .quote-placeholder { min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; padding: 26px; border: 2px dashed #9d94b1; border-radius: 24px; background: rgba(255,255,255,.55); }
-    .placeholder-label { width: fit-content; padding: 6px 10px; border-radius: 999px; background: white; color: #4d4661; font-size: .76rem; font-weight: 900; text-transform: uppercase; letter-spacing: .07em; }
-    .quote-placeholder p { color: #5e5674; }
-
     .privacy-card { display: grid; gap: 28px; padding: 30px; border-radius: 34px; background: var(--peach); }
     .privacy-card p { color: #70422e; }
     .privacy-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
@@ -186,7 +180,7 @@
       .hero-grid, .practice-grid, .confidence-grid { grid-template-columns: 1fr 1fr; }
       .hero-grid { gap: 72px; }
       .feature-grid { grid-template-columns: repeat(2,1fr); }
-      .plans, .placeholder-grid { grid-template-columns: repeat(2,1fr); }
+      .plans { grid-template-columns: repeat(2,1fr); }
       .privacy-card { grid-template-columns: 1.2fr .8fr; padding: 48px; align-items: center; }
       .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; }
     }
@@ -235,7 +229,7 @@
             <span>Free starter experience</span><span>One-time premium</span><span>No adverts</span>
           </div>
         </div>
-        <div class="hero-art" aria-label="Verified in-app screenshot surrounded by illustrated word cards">
+        <div class="hero-art" aria-label="Let’s Build Sentences screenshot surrounded by illustrated word cards">
           <div class="blob"></div>
           <div class="word-float one">The</div><div class="word-float two">fox</div><div class="word-float three">jumps!</div>
           <div class="phone"><img src="../assets/site-v4/sentences-1.jpg" alt="Let’s Build Sentences promotional screen showing letter-sound practice"></div>
@@ -319,16 +313,6 @@
         <div class="plans">
           <article class="plan"><span class="plan-label">Free starter experience</span><h3>A gentle way to begin</h3><p>Try the core learning flow before purchasing.</p><ul><li>Starter sentence practice</li><li>Child-friendly writing experience</li><li>No advertising</li></ul></article>
           <article class="plan premium"><span class="plan-label">One-time premium unlock</span><h3>More ways to make practice personal</h3><p class="price-note">Pay once. No subscription.</p><ul><li>Every current sentence pack and custom sentences</li><li>Parent-recorded prompts, encouragement and letter audio</li><li>Natural system voices and optional iOS Personal Voice</li><li>Richer progress rewards</li><li>iCloud sync</li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="quotes" id="testimonials">
-      <div class="wrap">
-        <div class="center"><span class="eyebrow">Parent voices</span><h2>A space reserved for real family feedback.</h2><p class="lede">No parent comments have been supplied or verified for this preview, so these cards are intentionally left as placeholders.</p></div>
-        <div class="placeholder-grid">
-          <article class="quote-placeholder"><span class="placeholder-label">Placeholder</span><p>Verified parent feedback can appear here in a future version.</p><strong>— Name withheld until supplied</strong></article>
-          <article class="quote-placeholder"><span class="placeholder-label">Placeholder</span><p>A second verified comment can appear here without changing the page layout.</p><strong>— Name withheld until supplied</strong></article>
         </div>
       </div>
     </section>

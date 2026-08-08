@@ -54,7 +54,7 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.35rem); }
 section { padding-block: 96px; }
 .center { max-width: 900px; }
 .demo-section { border-bottom: 1px solid var(--ink); background: #e6e0d4; }
-.demo-shell, .trace-card, .feature-card, .plan, .quote-placeholder, .privacy-card, .faq-list details { border: 1px solid var(--ink); border-radius: 0; background: var(--paper); box-shadow: 6px 7px 0 rgba(23,23,19,.10); }
+.demo-shell, .trace-card, .feature-card, .plan, .privacy-card, .faq-list details { border: 1px solid var(--ink); border-radius: 0; background: var(--paper); box-shadow: 6px 7px 0 rgba(23,23,19,.10); }
 .demo-shell { padding: 28px; }
 .reset { border: 1px solid var(--ink); border-radius: 0; color: var(--ink); background: var(--sun); }
 .sentence-line { border: 1px solid var(--ink); border-radius: 0; background: transparent; }
@@ -76,10 +76,7 @@ section { padding-block: 96px; }
 .plans { gap: 0; border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
 .plan { border-top: 0; border-left: 0; box-shadow: none; }
 .plan.premium { color: var(--paper); background: var(--ink); transform: none; }
-.plan-label, .placeholder-label { border-radius: 0; }
-.quotes { background: var(--cream); }
-.placeholder-grid { gap: 0; border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
-.quote-placeholder { border-top: 0; border-left: 0; box-shadow: none; }
+.plan-label { border-radius: 0; }
 .privacy-card { padding: 40px; background: #efddcf; }
 .privacy-chip { border: 1px solid var(--ink); border-radius: 0; background: var(--paper); }
 .faq-list { gap: 0; border-top: 1px solid var(--ink); }
