@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-08-08",
+  "updated": "2026-08-09",
   "brand": {
-    "name": "Let’s Build HQ",
-    "siteUrl": "https://letsbuildhq.com/",
-    "supportEmail": "support@letsbuildhq.com",
+    "name": "Let’s Build Apps HQ",
+    "siteUrl": "https://letsbuildappshq.com/",
+    "supportEmail": "support@letsbuildappshq.com",
     "owner": "Brian Leary",
     "copyright": "© 2026 Brian Leary"
   },
@@ -364,7 +364,7 @@
       "publicVersion": null,
       "stage": "preparation",
       "stageLabel": "App Store preparation",
-      "sitePath": "https://weddings.letsbuildhq.com/",
+      "sitePath": "https://weddings.letsbuildappshq.com/",
       "appStoreUrl": null,
       "category": "Weddings",
       "audience": "Couples who want timelines, budgets, guests, tables, suppliers and documents in one planning home",

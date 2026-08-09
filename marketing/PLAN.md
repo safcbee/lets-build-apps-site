@@ -1,4 +1,4 @@
-# Let’s Build HQ — 90-day marketing plan
+# Let’s Build Apps HQ — 90-day marketing plan
 
 Start date: 10 August 2026  
 Owner: Brian Leary  

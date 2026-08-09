@@ -14,13 +14,13 @@ test('robots exposes the root sitemap', () => {
   const robots = readFileSync(new URL('robots.txt', root), 'utf8');
   assert.match(robots, /^User-agent: \*/m);
   assert.match(robots, /^Allow: \/$/m);
-  assert.match(robots, /^Sitemap: https:\/\/letsbuildhq\.com\/sitemap\.xml$/m);
+  assert.match(robots, /^Sitemap: https:\/\/letsbuildappshq\.com\/sitemap\.xml$/m);
 });
 
 test('sitemap lists canonical public pages and excludes the legacy redirect', () => {
   const sitemap = readFileSync(new URL('sitemap.xml', root), 'utf8');
   for (const route of ['/', '/sentences/', '/countdowns/', '/my-world/', '/better-pics/', '/press/', '/privacy/', '/support/']) {
-    assert.match(sitemap, new RegExp(`<loc>https://letsbuildhq\\.com${route.replaceAll('/', '\\/')}</loc>`));
+    assert.match(sitemap, new RegExp(`<loc>https://letsbuildappshq\\.com${route.replaceAll('/', '\\/')}</loc>`));
   }
   assert.doesNotMatch(sitemap, /\/portaflow\//);
 });
@@ -28,7 +28,7 @@ test('sitemap lists canonical public pages and excludes the legacy redirect', ()
 test('every live app page has canonical, social, Smart App Banner and software metadata', () => {
   for (const [page, appleId] of livePages) {
     const html = readFileSync(new URL(page, root), 'utf8');
-    assert.match(html, /<link rel="canonical" href="https:\/\/letsbuildhq\.com\//);
+    assert.match(html, /<link rel="canonical" href="https:\/\/letsbuildappshq\.com\//);
     assert.match(html, /<meta property="og:title"/);
     assert.match(html, /<meta property="og:image"/);
     assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);

@@ -42,7 +42,7 @@ button, a { font: inherit; }
 .nav { position: sticky; z-index: 60; top: 0; border-bottom: 1px solid var(--line); background: rgba(244, 240, 231, .92); backdrop-filter: blur(16px); }
 .navin { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .logo { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); font-size: .93rem; font-weight: 760; letter-spacing: -.025em; text-decoration: none; }
-.logo i { width: 46px; height: 46px; flex: 0 0 46px; overflow: hidden; border: 0; border-radius: 50%; color: transparent; background: #020817 url("/assets/brand/lets-build-hq-mark.webp") center / cover no-repeat; box-shadow: 0 0 0 1px rgba(23,23,19,.16); font-size: 0; font-style: normal; }
+.logo i { width: 46px; height: 46px; flex: 0 0 46px; overflow: hidden; border: 0; border-radius: 50%; color: transparent; background: #020817 url("/assets/brand/lets-build-apps-hq-mark.webp") center / cover no-repeat; box-shadow: 0 0 0 1px rgba(23,23,19,.16); font-size: 0; font-style: normal; }
 .logo i::before, .logo i::after { content: none; }
 .logo strong { color: var(--ink); font-weight: 850; }
 .navlinks { display: none; align-items: center; gap: 28px; }
@@ -337,6 +337,10 @@ footer { padding: 50px 0; border-top: 1px solid var(--line); }
   .bpVisual { min-height: 530px; }
   .bpPhone { width: min(278px, 76%); height: 520px; }
   .featureGrid.compactFeatures { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .nav .logo span { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

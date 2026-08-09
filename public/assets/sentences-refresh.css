@@ -27,11 +27,15 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.35rem); }
 .nav { border-bottom: 1px solid var(--ink); background: rgba(244,240,231,.92); }
 .nav-inner { min-height: 72px; }
 .brand { font-size: .93rem; letter-spacing: -.02em; }
-.brand-mark { width: 42px; height: 42px; border: 0; border-radius: 0; color: var(--paper); background: var(--ink); font-family: var(--sans); font-size: .72rem; letter-spacing: .05em; transform: none; }
+.brand-mark { width: 44px; height: 44px; border: 0; border-radius: 50%; color: transparent; background: #020817 url("/assets/brand/lets-build-apps-hq-mark.webp") center / cover no-repeat; box-shadow: 0 0 0 1px rgba(23,23,19,.16); font-family: var(--sans); font-size: 0; letter-spacing: 0; transform: none; }
 .nav-links a { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
 .nav-cta, .button { min-height: 50px; padding: 12px 18px; border: 1px solid var(--ink); border-radius: 0; color: var(--paper); background: var(--ink); box-shadow: 4px 5px 0 var(--peach-dark); }
 .nav-cta:hover, .button:hover { box-shadow: 1px 2px 0 var(--peach-dark); transform: translate(3px,3px); }
 .button.secondary { border-color: var(--ink); color: var(--ink); background: transparent; box-shadow: none; }
+
+@media (max-width: 420px) {
+  .nav .brand > span:last-child { display: none; }
+}
 .eyebrow { color: var(--ink); font-size: .72rem; letter-spacing: .12em; }
 .eyebrow::before { width: 28px; height: 3px; border-radius: 0; background: var(--peach-dark); }
 

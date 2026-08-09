@@ -1,6 +1,6 @@
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 
-const canonicalAssetOrigin = 'https://letsbuildhq.com/assets/';
+const canonicalAssetOrigin = 'https://letsbuildappshq.com/assets/';
 
 const pages = {
   '/': 'public/index.html',
@@ -25,7 +25,15 @@ await rm('dist', { recursive: true, force: true });
 await mkdir('dist/server', { recursive: true });
 await mkdir('dist/.openai', { recursive: true });
 
-const css = await readFile('public/assets/site-v2.css', 'utf8');
+const brandMark = await readFile('public/assets/brand/lets-build-apps-hq-mark.webp');
+const css = (await readFile('public/assets/site-v2.css', 'utf8')).replace(
+  'url("/assets/brand/lets-build-apps-hq-mark.webp")',
+  `url("data:image/webp;base64,${brandMark.toString('base64')}")`,
+);
+const sentencesCss = (await readFile('public/assets/sentences-refresh.css', 'utf8')).replace(
+  'url("/assets/brand/lets-build-apps-hq-mark.webp")',
+  `url("data:image/webp;base64,${brandMark.toString('base64')}")`,
+);
 const betterPicsSocialCard = await readFile('public/assets/site-v3/better-pics-social.jpg');
 const robots = await readFile('public/robots.txt', 'utf8');
 const sitemap = await readFile('public/sitemap.xml', 'utf8');
@@ -41,6 +49,7 @@ const builtPages = {};
 for (const [route, sourceHTML] of Object.entries(sourcePages)) {
   let html = sourceHTML;
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/site-v2\.css">/g, `<style>${css}</style>`);
+  html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/sentences-refresh\.css">/g, `<style>${sentencesCss}</style>`);
   html = html.replace(
     /(?:(?:\.\.\/)+|\.\/)assets\/([^"'?#\s>]+)/g,
     (_, assetPath) => `${canonicalAssetOrigin}${assetPath}`,

@@ -11,7 +11,7 @@ const requiredFiles = [
   'CNAME',
   'apple-touch-icon.png',
   'favicon.ico',
-  'assets/brand/lets-build-hq-mark.webp',
+  'assets/brand/lets-build-apps-hq-mark.webp',
   'sentences/index.html',
   'countdowns/index.html',
   'paw-care/index.html',
@@ -127,4 +127,4 @@ for (const htmlFile of htmlFiles) {
 }
 
 const cname = readFileSync(join(publishPath, 'CNAME'), 'utf8').trim();
-assert.equal(cname, 'letsbuildhq.com', 'published CNAME keeps letsbuildhq.com');
+assert.equal(cname, 'letsbuildappshq.com', 'published CNAME keeps letsbuildappshq.com');

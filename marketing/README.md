@@ -1,6 +1,6 @@
 # Marketing automation
 
-This folder is the source of truth and approval layer for Let’s Build HQ marketing.
+This folder is the source of truth and approval layer for Let’s Build Apps HQ marketing.
 
 ## What is stored
 

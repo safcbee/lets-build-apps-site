@@ -125,7 +125,7 @@ function buildCopy({ app, angle, links, brand }) {
     pinterestDescription: `${angle.body} ${commercial} ${links.pinterest.url}`,
     emailSubject: angle.hook,
     emailPreheader: app.promise,
-    emailBody: `Hello,\n\n${angle.hook}\n\n${angle.body}\n\n${secondClaim}\n\n${commercial}\n\n${app.ctaLabel}: ${links.email.url}\n\nBrian\nLet’s Build HQ`,
+    emailBody: `Hello,\n\n${angle.hook}\n\n${angle.body}\n\n${secondClaim}\n\n${commercial}\n\n${app.ctaLabel}: ${links.email.url}\n\nBrian\nLet’s Build Apps HQ`,
   };
 }
 

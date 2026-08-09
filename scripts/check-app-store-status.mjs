@@ -34,7 +34,7 @@ async function lookupApp(appleId, storefront = 'gb') {
   url.searchParams.set('id', appleId);
   url.searchParams.set('country', storefront);
   const response = await fetch(url, {
-    headers: { 'user-agent': 'LetsBuildHQ-AppStoreMonitor/1.0' },
+    headers: { 'user-agent': 'LetsBuildAppsHQ-AppStoreMonitor/1.0' },
     signal: AbortSignal.timeout(15_000),
   });
   if (!response.ok) throw new Error(`Apple lookup failed for ${appleId}: HTTP ${response.status}`);

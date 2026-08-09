@@ -48,7 +48,7 @@ function visibleText(html) {
 
 for (const page of pages) {
   const html = read(page);
-  assert.match(html, /Let(?:'|&apos;|’)s Build HQ/, `${page} keeps site branding`);
+  assert.match(html, /Let(?:'|&apos;|’)s Build Apps/, `${page} keeps site branding`);
 
   for (const match of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
     const target = match[1];
@@ -93,7 +93,7 @@ for (const page of appPages) {
   } else {
     assert.match(html, /href=["']\.\.\/privacy\/(?:#[^"']+)?["']/, `${page} links to Privacy`);
   }
-  assert.match(html, /mailto:support@letsbuildhq\.com/, `${page} links to support`);
+  assert.match(html, /mailto:support@letsbuildappshq\.com/, `${page} links to support`);
 }
 
 const home = read('index.html');
@@ -115,7 +115,7 @@ assert.match(
 
 const privacy = read('privacy/index.html');
 assert.match(privacy, /Last updated:\s*28 July 2026/, 'privacy policy shows its current revision date');
-assert.match(privacy, /mailto:support@letsbuildhq\.com/, 'privacy page exposes the new support contact');
+assert.match(privacy, /mailto:support@letsbuildappshq\.com/, 'privacy page exposes the new support contact');
 assert.match(
   privacy,
   /Better Coffee Pro monthly, annual and lifetime options are processed by Apple through StoreKit/,
@@ -153,7 +153,7 @@ assert.match(betterPics, /what you(?:’|')re photographing, which lens is mount
 assert.match(betterPics, /original is not uploaded/i, 'Better Pics explains its on-device photo handling');
 assert.match(betterPics, /not endorsed by Canon, Nikon, Sony, Fujifilm, OM System or Panasonic/i, 'Better Pictures includes its manufacturer independence disclaimer');
 assert.match(betterPics, /href=["']\.\/privacy\/["']/, 'Better Pics links to its dedicated privacy policy');
-assert.match(betterPics, /https:\/\/letsbuildhq\.com\/og-editorial\.png/, 'Better Pictures publishes the refreshed Let’s Build HQ social card');
+assert.match(betterPics, /https:\/\/letsbuildappshq\.com\/og-editorial\.png/, 'Better Pictures publishes the refreshed Let’s Build Apps HQ social card');
 
 const myWorld = read('my-world/index.html');
 assert.match(myWorld, /Available on App Store/, 'My World reports its live availability');
@@ -166,7 +166,7 @@ const betterPicsPrivacy = read('better-pics/privacy/index.html');
 assert.match(betterPicsPrivacy, /Last updated:\s*28 July 2026/, 'Better Pics privacy shows its current revision date');
 assert.match(betterPicsPrivacy, /up to 20 small review summaries/i, 'Better Pics privacy describes local review history');
 assert.match(betterPicsPrivacy, /GPS coordinates and camera serial number are not displayed or written to review history/, 'Better Pics privacy excludes sensitive metadata from history');
-assert.match(betterPicsPrivacy, /mailto:support@letsbuildhq\.com/, 'Better Pics privacy exposes the privacy contact');
+assert.match(betterPicsPrivacy, /mailto:support@letsbuildappshq\.com/, 'Better Pics privacy exposes the privacy contact');
 
 const allText = pages.map((page) => visibleText(read(page))).join(' ');
 assert.doesNotMatch(allText, /support@letsbuildapps\.io/i, 'old support email is removed');

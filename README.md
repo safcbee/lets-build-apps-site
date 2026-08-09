@@ -1,6 +1,6 @@
-# letsbuildhq.com
+# letsbuildappshq.com
 
-Production static website for `letsbuildhq.com`.
+Production static website for `letsbuildappshq.com`.
 
 ## Public repository contents
 
