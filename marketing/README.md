@@ -20,7 +20,7 @@ The optional repository variable `APPLE_PROVIDER_TOKEN` is the public provider t
 
 App Store Connect Analytics export, mailing-list storage and social auto-posting are intentionally not connected. Each would require new credentials, processors and approval rules.
 
-The public brand profiles are `@letsbuildappshq` on X and Instagram. Generated weekly packs now include copy for both profiles, but publishing remains human-approved; this repository stores no social login or access token.
+The public brand profiles are `@letsbuildappshq` on X, Instagram and YouTube. Generated weekly packs currently include copy for X and Instagram; YouTube production is connected through the campaign plan. Publishing remains human-approved, and this repository stores no social login or access token.
 
 ## Commands
 

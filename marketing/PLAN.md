@@ -8,7 +8,7 @@ Primary outcome: verified first-time App Store downloads and paid-feature conver
 
 Market one useful moment at a time: show a real workflow from one current app, match the message to the first App Store screenshots, and measure the resulting App Store action.
 
-The portfolio is broad, so the brand should provide trust while each app supplies the specific reason to act. A parent looking for calm handwriting practice should never have to decode a general “nine apps” campaign; a photographer should land directly on Better Pictures. The owned social profiles are [@letsbuildappshq on Instagram](https://www.instagram.com/letsbuildappshq/) and [@letsbuildappshq on X](https://x.com/letsbuildappshq).
+The portfolio is broad, so the brand should provide trust while each app supplies the specific reason to act. A parent looking for calm handwriting practice should never have to decode a general “nine apps” campaign; a photographer should land directly on Better Pictures. The owned social profiles are [@letsbuildappshq on Instagram](https://www.instagram.com/letsbuildappshq/), [@letsbuildappshq on X](https://x.com/letsbuildappshq) and [@letsbuildappshq on YouTube](https://www.youtube.com/@letsbuildappshq).
 
 ## The operating rhythm
 
@@ -59,7 +59,7 @@ Never publish a launch date before Apple makes the listing public. A detected li
 | App Store | Primary conversion surface; first three screenshots must continue the campaign promise |
 | Instagram · @letsbuildappshq | Show family, travel and everyday workflows clearly and visually |
 | X · @letsbuildappshq | Share concise release notes, product details and independent-building context |
-| YouTube Shorts | Demonstrate a complete app workflow without requiring a following |
+| [YouTube · @letsbuildappshq](https://www.youtube.com/@letsbuildappshq) | Demonstrate a complete app workflow through Shorts and longer walkthroughs |
 | Pinterest | Capture planning and inspiration intent for Countdowns, My World, Sentences and Weddings |
 | LinkedIn | Brian’s decisions on focus, privacy, pricing and independent product development |
 | Photography / coffee communities | Participate manually with useful examples and respect each community’s promotion rules |
