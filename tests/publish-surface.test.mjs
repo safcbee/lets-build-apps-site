@@ -9,6 +9,9 @@ const publishPath = fileURLToPath(new URL('../public/', import.meta.url));
 const requiredFiles = [
   'index.html',
   'CNAME',
+  'apple-touch-icon.png',
+  'favicon.ico',
+  'assets/brand/lets-build-hq-mark.webp',
   'sentences/index.html',
   'countdowns/index.html',
   'paw-care/index.html',
@@ -31,10 +34,12 @@ const requiredFiles = [
 
 const allowedTopLevelEntries = new Set([
   'CNAME',
+  'apple-touch-icon.png',
   'assets',
   'better-pics',
   'countdowns',
   'family-trips',
+  'favicon.ico',
   'my-world',
   'paw-care',
   'press',
