@@ -172,7 +172,7 @@ export function createMarketingPack({ catalog, week, appKey, providerToken = '' 
   const rows = [
     {
       date: isoDate(addDays(monday, 1)), time: '19:30', timezone: 'Europe/London',
-      channel: 'Instagram + Facebook', format: '20–30 second Reel', status: 'Needs approval',
+      channel: 'Instagram', format: '20–30 second Reel', status: 'Needs approval',
       copy: copy.instagram, url: links.instagram.url, asset: assetUrl(primaryAsset), alt_text: primaryAsset.alt,
     },
     {
@@ -189,7 +189,7 @@ export function createMarketingPack({ catalog, week, appKey, providerToken = '' 
     },
     {
       date: isoDate(addDays(monday, 3)), time: '19:30', timezone: 'Europe/London',
-      channel: 'Instagram + Facebook', format: 'Four-panel carousel', status: 'Needs approval',
+      channel: 'Instagram', format: 'Four-panel carousel', status: 'Needs approval',
       copy: copy.instagram, url: links.instagram.url, asset: assetUrl(secondaryAsset), alt_text: secondaryAsset.alt,
     },
     {
@@ -243,7 +243,7 @@ Do not add awards, user counts, endorsements, testimonials, diagnostic or treatm
 
 ## Ready-to-review copy
 
-### Instagram + Facebook
+### Instagram · ${catalog.brand.social.instagramHandle}
 
 ${copy.instagram}
 

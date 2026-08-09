@@ -42,7 +42,7 @@ test('the first campaign week is deterministic, current and approval-gated', () 
   assert.match(pack.markdown, /Free starter experience with one-time Premium/);
   assert.match(pack.markdown, /A person has approved every post before scheduling/);
   assert.match(pack.markdown, /untracked fallback/i);
-  assert.match(pack.csv, /Instagram \+ Facebook/);
+  assert.match(pack.csv, /"Instagram"/);
   assert.match(pack.csv, /"X"/);
   assert.match(pack.csv, /Europe\/London/);
   assert.doesNotMatch(pack.markdown, /five-star|award-winning|thousands of|guaranteed improvement/i);
