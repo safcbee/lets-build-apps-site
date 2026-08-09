@@ -173,9 +173,11 @@ assert.match(betterPicsPrivacy, /GPS coordinates and camera serial number are no
 assert.match(betterPicsPrivacy, /mailto:support@letsbuildappshq\.com/, 'Better Pics privacy exposes the privacy contact');
 
 const allText = pages.map((page) => visibleText(read(page))).join(' ');
+const allHtml = pages.map((page) => read(page)).join(' ');
 assert.doesNotMatch(allText, /support@letsbuildapps\.io/i, 'old support email is removed');
 assert.doesNotMatch(allText, /leary\.cloud|SAFCMedia/i, 'legacy domains and company references are removed');
-assert.match(allText, /© 2026 Brian Leary/, 'copyright is attributed to Brian Leary');
+assert.match(allText, /© 2026 Let’s Build Apps HQ/, 'copyright is attributed to Let’s Build Apps HQ');
+assert.doesNotMatch(allHtml, /Brian Leary/i, 'personal name is removed from public pages and structured metadata');
 assert.doesNotMatch(allText, /Good Habits/i, 'retired Good Habits product is removed');
 assert.doesNotMatch(allText, /Portaflow cards|Portaflow navigation/i, 'Portaflow does not appear as primary product content');
 assert.doesNotMatch(allText, /Future Projects|Concept Stage/i, 'placeholder homepage sections are removed');
