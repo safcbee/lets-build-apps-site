@@ -52,4 +52,10 @@ test('press desk contains only current public App Store links and current approv
   ]) {
     assert.match(press, new RegExp(asset.replaceAll('/', '\\/')));
   }
+  for (const asset of [
+    'assets/social/lets-build-apps-hq-x-header.png',
+    'assets/social/lets-build-apps-hq-instagram-banner-4x5.png',
+  ]) {
+    assert.match(press, new RegExp(asset.replaceAll('/', '\\/')));
+  }
 });

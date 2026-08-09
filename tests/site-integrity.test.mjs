@@ -100,6 +100,9 @@ const home = read('index.html');
 assert.match(home, /href=["']\.\/support\/["']/, 'homepage links to support');
 assert.match(home, /href=["']\.\/privacy\/["']/, 'homepage links to Privacy');
 assert.match(home, /href=["']\.\/press\/["']/, 'homepage links to the press and creator desk');
+assert.match(home, /href=["']https:\/\/x\.com\/letsbuildappshq["']/, 'homepage links to the verified X profile');
+assert.match(home, /href=["']https:\/\/www\.instagram\.com\/letsbuildappshq\/["']/, 'homepage links to the verified Instagram profile');
+assert.match(home, /"sameAs":\["https:\/\/x\.com\/letsbuildappshq","https:\/\/www\.instagram\.com\/letsbuildappshq\/"\]/, 'homepage publishes social identity metadata');
 assert.match(home, /Thoughtful apps for <em>real life\.<\/em>/, 'homepage uses the refreshed editorial experience');
 assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 8, 'homepage has a visible product page link for each product page');
 assert.match(

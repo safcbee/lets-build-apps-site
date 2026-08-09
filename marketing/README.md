@@ -20,6 +20,8 @@ The optional repository variable `APPLE_PROVIDER_TOKEN` is the public provider t
 
 App Store Connect Analytics export, mailing-list storage and social auto-posting are intentionally not connected. Each would require new credentials, processors and approval rules.
 
+The public brand profiles are `@letsbuildappshq` on X and Instagram. Generated weekly packs now include copy for both profiles, but publishing remains human-approved; this repository stores no social login or access token.
+
 ## Commands
 
 Generate the next scheduled live-app pack:
@@ -41,4 +43,3 @@ npm run marketing:check
 ```
 
 Generated local files go to `marketing/generated/` and are ignored by Git. The scheduled workflow keeps its reviewable copy in a GitHub Issue and the CSV in the workflow artifact.
-

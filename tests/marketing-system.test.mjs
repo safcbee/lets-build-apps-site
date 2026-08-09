@@ -43,6 +43,7 @@ test('the first campaign week is deterministic, current and approval-gated', () 
   assert.match(pack.markdown, /A person has approved every post before scheduling/);
   assert.match(pack.markdown, /untracked fallback/i);
   assert.match(pack.csv, /Instagram \+ Facebook/);
+  assert.match(pack.csv, /"X"/);
   assert.match(pack.csv, /Europe\/London/);
   assert.doesNotMatch(pack.markdown, /five-star|award-winning|thousands of|guaranteed improvement/i);
 });
@@ -57,6 +58,7 @@ test('an optional Apple provider token produces channel-specific campaign links'
   assert.equal(pack.trackingReady, true);
   assert.match(pack.markdown, /pt=123456/);
   assert.match(pack.markdown, /ct=count_260810_ig/);
+  assert.match(pack.markdown, /ct=count_260810_x/);
   assert.match(pack.markdown, /ct=count_260810_email/);
 });
 
@@ -93,4 +95,3 @@ test('similarly named travel products retain separate storage and purchase facts
   assert.match(travelPlans.commercialModel, /first trip is free.*monthly.*annually/i);
   assert.match(travelPlans.claims.join(' '), /CloudKit/i);
 });
-

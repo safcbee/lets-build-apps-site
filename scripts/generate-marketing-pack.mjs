@@ -117,7 +117,7 @@ function buildCopy({ app, angle, links, brand }) {
 
   return {
     instagram: `${angle.hook}\n\n${angle.body}\n\n${secondClaim}\n\n${commercial}\n\n${app.ctaLabel}: ${links.instagram.url}\n\n${tagLine}`,
-    short: `${angle.hook} ${angle.body} ${app.ctaLabel}: ${links.short.url}`,
+    x: `${angle.hook} ${angle.body} ${app.ctaLabel}: ${links.x.url}`,
     linkedin: `I built ${app.name} around one focused moment: ${app.promise.charAt(0).toLowerCase()}${app.promise.slice(1)}\n\nThat focus shaped the product: ${claim}\n\n${commercial}\n\nSee the current app and its privacy details: ${siteUrl}`,
     youtubeTitle: `${angle.hook} | ${app.name}`,
     youtubeDescription: `${angle.body}\n\n${claim}\n\n${commercial}\n\n${app.ctaLabel}: ${links.youtube.url}`,
@@ -159,7 +159,7 @@ export function createMarketingPack({ catalog, week, appKey, providerToken = '' 
   const supportEmail = catalog.brand.supportEmail;
   const links = {
     instagram: trackedDestination(app, supportEmail, providerToken, monday, 'ig'),
-    short: trackedDestination(app, supportEmail, providerToken, monday, 'short'),
+    x: trackedDestination(app, supportEmail, providerToken, monday, 'x'),
     youtube: trackedDestination(app, supportEmail, providerToken, monday, 'yt'),
     pinterest: trackedDestination(app, supportEmail, providerToken, monday, 'pin'),
     email: trackedDestination(app, supportEmail, providerToken, monday, 'email'),
@@ -194,8 +194,8 @@ export function createMarketingPack({ catalog, week, appKey, providerToken = '' 
     },
     {
       date: isoDate(addDays(monday, 4)), time: '12:30', timezone: 'Europe/London',
-      channel: 'Threads + Bluesky', format: 'Short post', status: 'Needs approval',
-      copy: copy.short, url: links.short.url, asset: assetUrl(primaryAsset), alt_text: primaryAsset.alt,
+      channel: 'X', format: 'Short post', status: 'Needs approval',
+      copy: copy.x, url: links.x.url, asset: assetUrl(primaryAsset), alt_text: primaryAsset.alt,
     },
     {
       date: isoDate(addDays(monday, 5)), time: '10:30', timezone: 'Europe/London',
@@ -247,9 +247,9 @@ Do not add awards, user counts, endorsements, testimonials, diagnostic or treatm
 
 ${copy.instagram}
 
-### Threads + Bluesky
+### X · ${catalog.brand.social.xHandle}
 
-${copy.short}
+${copy.x}
 
 ### LinkedIn founder note
 

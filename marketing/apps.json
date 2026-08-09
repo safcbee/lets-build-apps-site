@@ -5,6 +5,12 @@
     "name": "Let’s Build Apps HQ",
     "siteUrl": "https://letsbuildappshq.com/",
     "supportEmail": "support@letsbuildappshq.com",
+    "social": {
+      "xHandle": "@letsbuildappshq",
+      "xUrl": "https://x.com/letsbuildappshq",
+      "instagramHandle": "@letsbuildappshq",
+      "instagramUrl": "https://www.instagram.com/letsbuildappshq/"
+    },
     "owner": "Brian Leary",
     "copyright": "© 2026 Brian Leary"
   },
