@@ -126,6 +126,23 @@ assert.match(
   'privacy page describes the optional Better Coffee Pro purchase model',
 );
 
+const sentences = read('sentences/index.html');
+const sentencesPrivacySection = privacy.match(
+  /<section\s+id=["']sentences-privacy["'][^>]*>[\s\S]*?<\/section>/i,
+);
+assert.ok(sentencesPrivacySection, 'privacy page contains the Let’s Build Sentences section');
+const sentencesPersonalVoiceClaims = [
+  ['sentences/index.html', visibleText(sentences)],
+  ['privacy/index.html#sentences-privacy', visibleText(sentencesPrivacySection[0])],
+]
+  .filter(([, text]) => /\bPersonal Voice\b/i.test(text))
+  .map(([page]) => page);
+assert.deepEqual(
+  sentencesPersonalVoiceClaims,
+  [],
+  'Sentences product and privacy copy stays fail-closed against Personal Voice claims until authoritative current source and entitlement evidence explicitly enable the feature',
+);
+
 const coffee = read('perfect-coffee/index.html');
 assert.match(coffee, /Essentials stay free/i, 'Better Coffee describes its free essentials');
 assert.match(coffee, /Optional Better Coffee Pro/i, 'Better Coffee describes its optional Pro model');
