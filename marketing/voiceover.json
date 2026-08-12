@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "approvedAt": "2026-08-12",
+  "provider": "ElevenLabs via Abacus AI",
+  "voiceName": "Alice",
+  "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+  "submodel": "multilingual",
+  "locale": "en-GB",
+  "direction": "Warm, contemporary British female; conversational, calm and confident; never theatrical, posh or announcer-like.",
+  "keychain": {
+    "service": "abacus-ai-api",
+    "account": "letsbuildappshq"
+  }
+}
