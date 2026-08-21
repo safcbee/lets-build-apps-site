@@ -139,6 +139,9 @@ section { padding: 100px 0; }
 .worksGrid .product.travelPlans { background: #e8ecdc; }
 .worksGrid .product.habits { background: #e5dff2; }
 .worksGrid .product.wedding { background: #efe1dc; }
+.worksGrid .product.memories { background: #f8f5ef; }
+.worksGrid .product.memories::before { background: #347cf2; }
+.worksGrid .product.memories .miniShots { background: #ffd05a; }
 
 /* Principles and CTA */
 .manifesto { border-block: 1px solid var(--line); color: var(--paper-2); background: var(--ink); }
@@ -307,6 +310,8 @@ footer { padding: 50px 0; border-top: 1px solid var(--line); }
   .liveGrid .product.countdown { grid-template-columns: .9fr 1.1fr; }
   .liveGrid .product.countdown .wideShot { align-self: center; }
   .worksGrid .product.coffee { grid-column: span 2; grid-template-columns: 1fr .8fr; }
+  .worksGrid .product.memories { grid-column: span 2; grid-template-columns: 1.05fr .95fr; align-items: stretch; padding: 34px; }
+  .worksGrid .product.memories .miniShots { align-self: stretch; }
   .worksGrid .product.coffee .productMeta, .worksGrid .product.coffee .appIdentity, .worksGrid .product.coffee h3, .worksGrid .product.coffee p, .worksGrid .product.coffee .actions { grid-column: 1; }
   .worksGrid .product.coffee .wideShot { grid-column: 2; grid-row: 1 / span 6; align-self: stretch; }
   .worksGrid .product.coffee .wideShot img { height: 100%; object-fit: cover; object-position: top; }
@@ -326,6 +331,7 @@ footer { padding: 50px 0; border-top: 1px solid var(--line); }
   .liveGrid .product.featured, .liveGrid .product.world, .liveGrid .product.photography { grid-column: span 12; }
   .liveGrid .product.countdown { grid-column: 2 / span 10; }
   .worksGrid .product { grid-column: span 4; }
+  .worksGrid .product.memories { grid-column: span 12; }
   .worksGrid .product.coffee { grid-column: span 8; }
   .worksGrid .product.wedding { grid-column: span 8; }
   .worksGrid .product.habits { grid-column: span 4; }

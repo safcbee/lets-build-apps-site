@@ -10,6 +10,8 @@ const pages = {
   '/paw-care/': 'public/paw-care/index.html',
   '/paw-care/privacy/': 'public/paw-care/privacy/index.html',
   '/perfect-coffee/': 'public/perfect-coffee/index.html',
+  '/family-memories/': 'public/family-memories/index.html',
+  '/family-memories/privacy/': 'public/family-memories/privacy/index.html',
   '/family-trips/': 'public/family-trips/index.html',
   '/travel-plans/': 'public/travel-plans/index.html',
   '/better-pics/': 'public/better-pics/index.html',
@@ -24,6 +26,10 @@ const pages = {
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist/server', { recursive: true });
 await mkdir('dist/.openai', { recursive: true });
+await cp('public/assets', 'dist/assets', { recursive: true });
+for (const asset of ['og.png', 'og-editorial.png', 'favicon.ico', 'apple-touch-icon.png']) {
+  await cp(`public/${asset}`, `dist/${asset}`);
+}
 
 const brandMark = await readFile('public/assets/brand/lets-build-apps-hq-mark.webp');
 const css = (await readFile('public/assets/site-v2.css', 'utf8')).replace(
@@ -34,6 +40,7 @@ const sentencesCss = (await readFile('public/assets/sentences-refresh.css', 'utf
   'url("/assets/brand/lets-build-apps-hq-mark.webp")',
   `url("data:image/webp;base64,${brandMark.toString('base64')}")`,
 );
+const familyMemoriesCss = await readFile('public/assets/family-memories.css', 'utf8');
 const betterPicsSocialCard = await readFile('public/assets/site-v3/better-pics-social.jpg');
 const robots = await readFile('public/robots.txt', 'utf8');
 const sitemap = await readFile('public/sitemap.xml', 'utf8');
@@ -50,6 +57,7 @@ for (const [route, sourceHTML] of Object.entries(sourcePages)) {
   let html = sourceHTML;
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/site-v2\.css">/g, `<style>${css}</style>`);
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/sentences-refresh\.css">/g, `<style>${sentencesCss}</style>`);
+  html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/family-memories\.css">/g, `<style>${familyMemoriesCss}</style>`);
   html = html.replace(
     /(?:(?:\.\.\/)+|\.\/)assets\/([^"'?#\s>]+)/g,
     (_, assetPath) => `${canonicalAssetOrigin}${assetPath}`,

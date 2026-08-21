@@ -19,7 +19,7 @@ test('robots exposes the root sitemap', () => {
 
 test('sitemap lists canonical public pages and excludes the legacy redirect', () => {
   const sitemap = readFileSync(new URL('sitemap.xml', root), 'utf8');
-  for (const route of ['/', '/sentences/', '/countdowns/', '/my-world/', '/better-pics/', '/press/', '/privacy/', '/support/']) {
+  for (const route of ['/', '/sentences/', '/countdowns/', '/my-world/', '/better-pics/', '/family-memories/', '/family-memories/privacy/', '/press/', '/privacy/', '/support/']) {
     assert.match(sitemap, new RegExp(`<loc>https://letsbuildappshq\\.com${route.replaceAll('/', '\\/')}</loc>`));
   }
   assert.doesNotMatch(sitemap, /\/portaflow\//);

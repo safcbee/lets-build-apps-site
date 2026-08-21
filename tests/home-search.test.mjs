@@ -15,6 +15,6 @@ assert.match(html, /href=["']#in-the-works["']/, 'homepage links to the pre-rele
 assert.match(html, /href=["']#download["']|id=["']download["']/, 'homepage has a live-app download section');
 assert.match(html, /href=["']\.\/press\/["']/, 'homepage exposes the press and creator desk');
 
-for (const id of ['sentences', 'countdowns', 'my-world', 'family-trips', 'travel-plans', 'paw-care', 'perfect-coffee', 'better-pics', 'weddings']) {
+for (const id of ['sentences', 'countdowns', 'my-world', 'family-memories', 'family-trips', 'travel-plans', 'paw-care', 'perfect-coffee', 'better-pics', 'weddings']) {
   assert.match(html, new RegExp(`id=["']${id}["']`), `homepage exposes ${id} product section`);
 }

@@ -9,6 +9,8 @@ const pages = [
   'paw-care/index.html',
   'paw-care/privacy/index.html',
   'perfect-coffee/index.html',
+  'family-memories/index.html',
+  'family-memories/privacy/index.html',
   'family-trips/index.html',
   'travel-plans/index.html',
   'travel-plans/privacy/index.html',
@@ -26,6 +28,7 @@ const appPages = [
   'countdowns/index.html',
   'paw-care/index.html',
   'perfect-coffee/index.html',
+  'family-memories/index.html',
   'family-trips/index.html',
   'travel-plans/index.html',
   'better-pics/index.html',
@@ -85,6 +88,7 @@ for (const page of appPages) {
   assert.match(html, /href=["']\.\.\/["']/, `${page} links back to the homepage`);
   if (
     page === 'travel-plans/index.html' ||
+    page === 'family-memories/index.html' ||
     page === 'family-trips/index.html' ||
     page === 'paw-care/index.html' ||
     page === 'better-pics/index.html'
@@ -105,7 +109,7 @@ assert.match(home, /href=["']https:\/\/www\.instagram\.com\/letsbuildappshq\/["'
 assert.match(home, /href=["']https:\/\/www\.youtube\.com\/@letsbuildappshq["']/, 'homepage links to the verified YouTube channel');
 assert.match(home, /"sameAs":\["https:\/\/x\.com\/letsbuildappshq","https:\/\/www\.instagram\.com\/letsbuildappshq\/","https:\/\/www\.youtube\.com\/@letsbuildappshq"\]/, 'homepage publishes social identity metadata');
 assert.match(home, /Thoughtful apps for <em>real life\.<\/em>/, 'homepage uses the refreshed editorial experience');
-assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 8, 'homepage has a visible product page link for each product page');
+assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 9, 'homepage has a visible product page link for each product page');
 assert.match(
   home,
   /Let’s Build My World[\s\S]*?Available on App Store[\s\S]*?https:\/\/apps\.apple\.com\/gb\/app\/lets-build-my-world\/id6790905052/,
@@ -118,7 +122,7 @@ assert.match(
 );
 
 const privacy = read('privacy/index.html');
-assert.match(privacy, /Last updated:\s*28 July 2026/, 'privacy policy shows its current revision date');
+assert.match(privacy, /Last updated:\s*21 August 2026/, 'privacy policy shows its current revision date');
 assert.match(privacy, /mailto:support@letsbuildappshq\.com/, 'privacy page exposes the new support contact');
 assert.match(
   privacy,
@@ -164,6 +168,18 @@ assert.match(travelPrivacy, /does not require an account, Sign in with Apple log
 assert.match(travelPrivacy, /Apple CloudKit/, 'Travel Plans privacy discloses Plus sync');
 assert.match(travelPrivacy, /Apple Foundation Models/, 'Travel Plans privacy discloses on-device assistance');
 assert.match(travelPrivacy, /covers the current private TestFlight version/, 'Travel Plans privacy reflects the private TestFlight implementation');
+
+const familyMemories = read('family-memories/index.html');
+assert.match(familyMemories, /Keep the <em>little things\.<\/em>/, 'Family Memories uses the approved Design 1 headline');
+assert.match(familyMemories, /Art Alive/, 'Family Memories explains Art Alive');
+assert.match(familyMemories, /voice or video/i, 'Family Memories keeps voice and video with artwork');
+assert.match(familyMemories, /Journaling Suggestions/, 'Family Memories explains the explicit Apple suggestion flow');
+assert.match(familyMemories, /Private TestFlight/, 'Family Memories reports its current private distribution state');
+
+const familyMemoriesPrivacy = read('family-memories/privacy/index.html');
+assert.match(familyMemoriesPrivacy, /Last updated:\s*21 August 2026/, 'Family Memories privacy shows its current revision date');
+assert.match(familyMemoriesPrivacy, /Apple CloudKit and CKShare/, 'Family Memories privacy explains optional Apple family sharing');
+assert.match(familyMemoriesPrivacy, /does not send this information to a developer server or an external language-model provider/i, 'Family Memories privacy explains Day Weave processing');
 
 const betterPics = read('better-pics/index.html');
 assert.match(betterPics, /Available on App Store/, 'Better Pictures reports its live availability');

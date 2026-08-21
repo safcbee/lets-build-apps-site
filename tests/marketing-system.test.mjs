@@ -7,9 +7,9 @@ import { evaluateStatuses } from '../scripts/check-app-store-status.mjs';
 const catalog = JSON.parse(readFileSync(new URL('../marketing/apps.json', import.meta.url), 'utf8'));
 
 test('portfolio catalogue has one verified entry for every current app', () => {
-  assert.equal(catalog.apps.length, 9);
-  assert.equal(new Set(catalog.apps.map((app) => app.key)).size, 9, 'app keys are unique');
-  assert.equal(new Set(catalog.apps.map((app) => app.appleId)).size, 9, 'Apple IDs are unique');
+  assert.equal(catalog.apps.length, 10);
+  assert.equal(new Set(catalog.apps.map((app) => app.key)).size, 10, 'app keys are unique');
+  assert.equal(new Set(catalog.apps.map((app) => app.appleId)).size, 10, 'Apple IDs are unique');
   assert.equal(catalog.apps.filter((app) => app.stage === 'live').length, 4, 'exactly four apps are currently public');
 
   for (const app of catalog.apps) {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-08-09",
+  "updated": "2026-08-21",
   "brand": {
     "name": "Let’s Build Apps HQ",
     "siteUrl": "https://letsbuildappshq.com/",
@@ -205,6 +205,53 @@
         {
           "path": "/assets/site-v4/better-pics-05-real-kit.jpg",
           "alt": "Let’s Build Better Pictures multi-brand camera kit"
+        }
+      ]
+    },
+    {
+      "key": "family-memories",
+      "name": "Let’s Build Family Memories",
+      "storefrontName": "Family Memories",
+      "appleId": "6803706718",
+      "publicVersion": null,
+      "stage": "private-testflight",
+      "stageLabel": "Private TestFlight",
+      "sitePath": "/family-memories/",
+      "appStoreUrl": null,
+      "category": "Family memories",
+      "audience": "Families who want to keep photographs, voices, quotes and children’s artwork together in a private shared collection",
+      "promise": "Catch the little things as Memory Drops, bring artwork to life and make family memories worth returning to.",
+      "commercialModel": "The current private TestFlight has no advertising, tracking or in-app purchase.",
+      "ctaLabel": "Explore the private preview",
+      "claims": [
+        "Memory Drops can hold photos, videos, voice notes, quotes and multi-page scanned artwork.",
+        "Art Alive uses on-device Apple Vision and can keep a child’s voice or video explanation attached to the original scan.",
+        "Day Weave begins with one user-selected Apple Journaling Suggestion and builds an editable local log from the supplied facts.",
+        "Optional Family Circle sharing uses Apple CloudKit and Apple-managed invitations."
+      ],
+      "angles": [
+        {
+          "hook": "Keep the little things.",
+          "body": "Catch the laugh, the sentence, the scribble and the ordinary Tuesday before they disappear."
+        },
+        {
+          "hook": "Don’t just file the picture. Keep the story of it.",
+          "body": "Scan a child’s artwork, create an on-device Art Alive loop and attach the artist’s voice or video."
+        }
+      ],
+      "hashtags": ["FamilyMemories", "KidsArt", "TestFlight"],
+      "approvedAssets": [
+        {
+          "path": "/assets/site-v6/family-memories-today.jpg",
+          "alt": "Let’s Build Family Memories Today screen"
+        },
+        {
+          "path": "/assets/site-v6/family-memories-capture.jpg",
+          "alt": "Let’s Build Family Memories capture screen"
+        },
+        {
+          "path": "/assets/site-v6/family-memories-family.jpg",
+          "alt": "Let’s Build Family Memories Family Circle screen"
         }
       ]
     },

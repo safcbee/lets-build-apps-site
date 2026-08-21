@@ -8,6 +8,8 @@ const pages = [
   'paw-care/index.html',
   'paw-care/privacy/index.html',
   'perfect-coffee/index.html',
+  'family-memories/index.html',
+  'family-memories/privacy/index.html',
   'family-trips/index.html',
   'travel-plans/index.html',
   'privacy/index.html',

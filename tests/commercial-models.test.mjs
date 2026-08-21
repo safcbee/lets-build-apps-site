@@ -11,6 +11,7 @@ test('product pages describe the verified commercial models', () => {
     ['countdowns/index.html', /Start free\. Unlock once\./i, /one-time purchase/i],
     ['my-world/index.html', /essentials stay free/i, /monthly, annual and lifetime/i],
     ['better-pics/index.html', /Free core\. One-time Pro\./i, /one lifetime purchase/i],
+    ['family-memories/index.html', /Private TestFlight/i, /no public App Store or public TestFlight link/i],
     ['family-trips/index.html', /Free for the whole family/i, /without a subscription or paywall/i],
     ['travel-plans/index.html', /first trip is free/i, /£2\.99 monthly or £19\.99 annually/i],
     ['paw-care/index.html', /no subscription/i, /no account/i],
