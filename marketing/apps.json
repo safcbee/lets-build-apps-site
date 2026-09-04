@@ -341,7 +341,7 @@
       "key": "travel-plans",
       "name": "Let’s Build Travel Plans",
       "storefrontName": "Let's Build Travel Plans",
-      "appleId": "6770116855",
+      "appleId": "6808593913",
       "publicVersion": null,
       "stage": "private-testflight",
       "stageLabel": "Private TestFlight",
@@ -350,13 +350,13 @@
       "category": "Trip readiness",
       "audience": "Family trip planners who want to know what is sorted and what still needs attention",
       "promise": "Bring Plan, Pack, Pay, Paperwork and People into one calm Trip Ready view.",
-      "commercialModel": "The first trip is free; optional individual Plus is £2.99 monthly or £19.99 annually in the current plan.",
+      "commercialModel": "Unlimited local trips with no account, subscription or in-app purchase in Travel Plans 2.0.",
       "ctaLabel": "Register TestFlight interest",
       "claims": [
-        "The first trip works locally without a Travel Plans account.",
-        "Five planning pillars feed one honest Trip Ready view and next action.",
-        "Plus adds Apple CloudKit sync, sharing, chat and document storage.",
-        "Each person who wants Plus subscribes individually through Apple."
+        "Unlimited trips work locally without a Travel Plans account.",
+        "Five planning pillars feed one qualitative Trip Ready status and next action.",
+        "Optional iCloud Drive storage applies to booking files only; trip facts stay on the device.",
+        "Travel Plans 2.0 is an iPhone app for iOS 18 or later."
       ],
       "angles": [
         {
@@ -367,12 +367,12 @@
       "hashtags": ["TravelPlanning", "FamilyTravel", "TestFlight"],
       "approvedAssets": [
         {
-          "path": "/assets/site-v4/travel-plans-ready.jpg",
-          "alt": "Let’s Build Travel Plans Trip Ready dashboard"
+          "path": "/assets/site-v4/travel-plans-2-trips.jpg",
+          "alt": "Let’s Build Travel Plans cinematic Trips screen"
         },
         {
-          "path": "/assets/site-v4/travel-plans-itinerary.jpg",
-          "alt": "Let’s Build Travel Plans day-by-day itinerary"
+          "path": "/assets/site-v4/travel-plans-2-canvas.jpg",
+          "alt": "Let’s Build Travel Plans day-by-day trip canvas"
         }
       ]
     },

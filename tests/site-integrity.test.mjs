@@ -122,7 +122,7 @@ assert.match(
 );
 
 const privacy = read('privacy/index.html');
-assert.match(privacy, /Last updated:\s*21 August 2026/, 'privacy policy shows its current revision date');
+assert.match(privacy, /Last updated:\s*4 September 2026/, 'privacy policy shows its current revision date');
 assert.match(privacy, /mailto:support@letsbuildappshq\.com/, 'privacy page exposes the new support contact');
 assert.match(
   privacy,
@@ -159,15 +159,16 @@ assert.match(home, /id=["']perfect-coffee["'][\s\S]*?In App Store review[\s\S]*?
 
 const travelPlans = read('travel-plans/index.html');
 assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');
-assert.match(travelPlans, /First trip free/, 'Travel Plans explains the V2 free experience');
-assert.match(travelPlans, /Each person who wants Plus subscribes individually/, 'Travel Plans does not repeat the retired family-wide entitlement claim');
-assert.match(travelPlans, /Travel Plans Plus/, 'Travel Plans explains the optional Plus experience');
+assert.match(travelPlans, /Unlimited local trips/, 'Travel Plans reflects the current unlimited local experience');
+assert.match(travelPlans, /No account required/, 'Travel Plans explains the current account-free experience');
+assert.match(travelPlans, /never a misleading percentage/, 'Travel Plans describes the qualitative readiness model');
+assert.doesNotMatch(travelPlans, /Travel Plans Plus|first trip is free|£2\.99 monthly/i, 'Travel Plans removes claims from the retired subscription build');
 
 const travelPrivacy = read('travel-plans/privacy/index.html');
 assert.match(travelPrivacy, /does not require an account, Sign in with Apple login or Supabase account/, 'Travel Plans privacy reflects the mounted V2 app');
-assert.match(travelPrivacy, /Apple CloudKit/, 'Travel Plans privacy discloses Plus sync');
-assert.match(travelPrivacy, /Apple Foundation Models/, 'Travel Plans privacy discloses on-device assistance');
-assert.match(travelPrivacy, /covers the current private TestFlight version/, 'Travel Plans privacy reflects the private TestFlight implementation');
+assert.match(travelPrivacy, /booking files only: trip facts remain stored locally/, 'Travel Plans privacy describes the optional iCloud Drive boundary');
+assert.match(travelPrivacy, /moves the unreadable store files into a dated recovery folder/, 'Travel Plans privacy explains safe local-store recovery');
+assert.match(travelPrivacy, /covers Travel Plans 2\.0 build 1/, 'Travel Plans privacy identifies the current private TestFlight implementation');
 
 const familyMemories = read('family-memories/index.html');
 assert.match(familyMemories, /Keep the <em>little things\.<\/em>/, 'Family Memories uses the approved Design 1 headline');

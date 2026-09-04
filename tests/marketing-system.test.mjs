@@ -92,6 +92,6 @@ test('similarly named travel products retain separate storage and purchase facts
   const travelPlans = catalog.apps.find((app) => app.key === 'travel-plans');
   assert.match(familyTrips.commercialModel, /no subscription, paywall or in-app purchase/i);
   assert.match(familyTrips.claims.join(' '), /Sign in with Apple.*Supabase/i);
-  assert.match(travelPlans.commercialModel, /first trip is free.*monthly.*annually/i);
-  assert.match(travelPlans.claims.join(' '), /CloudKit/i);
+  assert.match(travelPlans.commercialModel, /unlimited local trips.*no account.*subscription/i);
+  assert.match(travelPlans.claims.join(' '), /iCloud Drive.*booking files only.*trip facts stay on the device/i);
 });

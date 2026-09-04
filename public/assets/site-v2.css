@@ -203,6 +203,12 @@ section { padding: 100px 0; }
 .proofFrame img { width: 100%; }
 .proofLabel { position: absolute; right: 10px; bottom: 10px; left: 10px; padding: 12px 14px; border: 1px solid rgba(255,255,255,.34); color: white; background: rgba(17,17,15,.86); backdrop-filter: blur(10px); font-size: .74rem; font-weight: 850; }
 .proofLabel small { display: block; margin-top: 3px; color: rgba(255,255,255,.7); font-weight: 600; }
+.screenGallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.screenCard { margin: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.24); background: #111; box-shadow: 7px 8px 0 rgba(0,0,0,.28); }
+.screenCard img { width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; object-position: top; }
+.screenCard figcaption { display: grid; gap: 4px; padding: 15px 16px 17px; color: white; border-top: 1px solid rgba(255,255,255,.18); }
+.screenCard figcaption b { font-size: .86rem; }
+.screenCard figcaption small { color: rgba(255,255,255,.68); font-size: .74rem; }
 .caption { margin: 12px 4px 2px; font-size: .75rem; }
 .featureGrid, .valueGrid, .steps { display: grid; gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .feature, .value, .step { padding: 26px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.22); }
@@ -319,6 +325,7 @@ footer { padding: 50px 0; border-top: 1px solid var(--line); }
   .socialDeskGrid { grid-template-columns: 1.08fr .92fr; }
   .featureGrid, .valueGrid, .steps { grid-template-columns: repeat(3,1fr); }
   .evidenceGrid { grid-template-columns: repeat(2,1fr); }
+  .screenGallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .pressAppGrid, .assetGrid { grid-template-columns: repeat(2,1fr); }
   .foot { grid-template-columns: 1fr 1fr auto; }
   .policy { padding: 50px; }
@@ -362,6 +369,7 @@ footer { padding: 50px 0; border-top: 1px solid var(--line); }
   .bpVisual { min-height: 530px; }
   .bpPhone { width: min(278px, 76%); height: 520px; }
   .featureGrid.compactFeatures { grid-template-columns: 1fr; }
+  .screenGallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 420px) {
