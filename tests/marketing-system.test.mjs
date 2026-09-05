@@ -96,3 +96,11 @@ test('similarly named travel products retain separate storage and purchase facts
   assert.match(travelPlans.commercialModel, /unlimited local trips.*no account.*subscription/i);
   assert.match(travelPlans.claims.join(' '), /iCloud Drive.*booking files only.*trip facts stay on the device/i);
 });
+
+test('every pre-release campaign routes enquiries through the support form', () => {
+  for (const app of catalog.apps.filter(app => app.stage !== 'live' && app.key !== 'weddings')) {
+    const pack = createMarketingPack({catalog, week: '2026-09-07', appKey: app.key});
+    assert.doesNotMatch(pack.markdown + pack.csv, /mailto:|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+    assert.match(pack.markdown, new RegExp(`https://letsbuildappshq\\.com/support/\\?app=${app.key}&topic=feedback`));
+  }
+});

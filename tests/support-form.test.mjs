@@ -53,9 +53,9 @@ test('native form submissions get a readable response and preflight allows only 
  const preflight=await handleSupport(new Request(req.url,{method:'OPTIONS',headers:{Origin:'https://letsbuildappshq.com'}}),t.env,t.fetcher);assert.equal(preflight.status,204);assert.equal(preflight.headers.get('access-control-allow-methods'),'POST, OPTIONS');
 });
 function walk(dir){return readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(join(dir,e.name)):[join(dir,e.name)]);}
-test('the published website and generated homepage do not expose an inbox address',()=>{
+test('the published website and generated homepage do not expose personal contact details',()=>{
  for(const file of walk('public').filter(f=>/\.(html|js|json|css|txt|xml)$/.test(f))){
-  assert.doesNotMatch(readFileSync(file,'utf8'),/support@letsbuildappshq\.com|mailto:/i,`${file}: no scrapable destination`);
+  assert.doesNotMatch(readFileSync(file,'utf8'),/brian[\s\u00a0]+leary|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}|mailto:/i,`${file}: no scrapable destination`);
  }
  const support=readFileSync('public/support/index.html','utf8');
  assert.match(support,/<form[^>]*action="https:\/\/support\.letsbuildappshq\.com\/submit"[^>]*method="post"/);

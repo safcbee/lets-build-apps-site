@@ -76,13 +76,13 @@ function getRotatingApp(apps, monday) {
   return app;
 }
 
-function destinationFor(app, supportEmail) {
+function destinationFor(app, supportUrl) {
   if (app.stage === 'live') return app.appStoreUrl;
   if (app.key === 'weddings') return app.sitePath;
-  const subject = app.stage === 'review'
-    ? `${app.name} release`
-    : `TestFlight interest — ${app.name}`;
-  return `mailto:${supportEmail}?subject=${encodeURIComponent(subject)}`;
+  const url = new URL(supportUrl);
+  url.searchParams.set('app', app.key);
+  url.searchParams.set('topic', 'feedback');
+  return url.toString();
 }
 
 function campaignToken(app, monday, channel) {
@@ -91,8 +91,8 @@ function campaignToken(app, monday, channel) {
   return `${stem}_${compactDate}_${channel}`.slice(0, 30);
 }
 
-function trackedDestination(app, supportEmail, providerToken, monday, channel) {
-  const fallback = destinationFor(app, supportEmail);
+function trackedDestination(app, supportUrl, providerToken, monday, channel) {
+  const fallback = destinationFor(app, supportUrl);
   if (app.stage !== 'live' || !providerToken) return { url: fallback, tracked: false, token: null };
   const url = new URL(app.appStoreUrl);
   const token = campaignToken(app, monday, channel);
@@ -156,13 +156,13 @@ export function createMarketingPack({ catalog, week, appKey, providerToken = '' 
 
   const weeksSinceAnchor = Math.floor((monday - rotationAnchor) / (7 * 24 * 60 * 60 * 1000));
   const angle = app.angles[((weeksSinceAnchor % app.angles.length) + app.angles.length) % app.angles.length];
-  const supportEmail = catalog.brand.supportEmail;
+  const supportUrl = catalog.brand.supportUrl;
   const links = {
-    instagram: trackedDestination(app, supportEmail, providerToken, monday, 'ig'),
-    x: trackedDestination(app, supportEmail, providerToken, monday, 'x'),
-    youtube: trackedDestination(app, supportEmail, providerToken, monday, 'yt'),
-    pinterest: trackedDestination(app, supportEmail, providerToken, monday, 'pin'),
-    email: trackedDestination(app, supportEmail, providerToken, monday, 'email'),
+    instagram: trackedDestination(app, supportUrl, providerToken, monday, 'ig'),
+    x: trackedDestination(app, supportUrl, providerToken, monday, 'x'),
+    youtube: trackedDestination(app, supportUrl, providerToken, monday, 'yt'),
+    pinterest: trackedDestination(app, supportUrl, providerToken, monday, 'pin'),
+    email: trackedDestination(app, supportUrl, providerToken, monday, 'email'),
   };
   const copy = buildCopy({ app, angle, links, brand: catalog.brand });
   const primaryAsset = app.approvedAssets[0];

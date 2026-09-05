@@ -4,7 +4,7 @@
   "brand": {
     "name": "Let’s Build Apps HQ",
     "siteUrl": "https://letsbuildappshq.com/",
-    "supportEmail": "support@letsbuildappshq.com",
+    "supportUrl": "https://letsbuildappshq.com/support/",
     "social": {
       "xHandle": "@letsbuildappshq",
       "xUrl": "https://x.com/letsbuildappshq",
@@ -13,8 +13,8 @@
       "youtubeHandle": "@letsbuildappshq",
       "youtubeUrl": "https://www.youtube.com/@letsbuildappshq"
     },
-    "owner": "Brian Leary",
-    "copyright": "© 2026 Brian Leary"
+    "owner": "Let’s Build Apps HQ",
+    "copyright": "© 2026 Let’s Build Apps HQ"
   },
   "guardrails": {
     "humanApprovalRequired": true,
