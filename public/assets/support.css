@@ -1,0 +1,37 @@
+body.nightfall .support-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;width:min(1180px,90%);margin:auto;padding:62px 0 90px;align-items:start}
+body.nightfall .support-intro h1{font-size:clamp(2.9rem,4.7vw,4.6rem);line-height:1.08;margin:20px 0 26px}
+body.nightfall .support-intro>p{font-size:1.05rem;line-height:1.7;max-width:410px}
+body.nightfall .support-note{margin-top:30px;padding-top:25px;border-top:1px solid var(--hq-line);font-size:.95rem;max-width:400px}
+body.nightfall .support-note h2{font-size:1.4rem;margin-bottom:10px;letter-spacing:-.03em}
+body.nightfall .support-note p{font-size:.9rem;line-height:1.7}
+body.nightfall .support-note a{color:var(--hq-accent);text-decoration:underline;text-underline-offset:4px}
+body.nightfall .support-form,body.nightfall .support-success{padding:32px;border:1px solid var(--hq-line);border-radius:20px;background:var(--hq-panel)}
+body.nightfall .support-form h2{font-size:1.7rem;margin-bottom:8px}
+body.nightfall .support-form .form-intro{font-size:.875rem;margin-bottom:26px}
+body.nightfall .support-fields{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+body.nightfall .support-field{display:flex;flex-direction:column;gap:8px;min-width:0}
+body.nightfall .support-field.wide{grid-column:1/-1}
+body.nightfall .support-field label{font-size:.875rem;color:var(--hq-ink);font-weight:500}
+body.nightfall .support-field label span{color:var(--hq-muted);font-weight:400;font-size:.8rem}
+body.nightfall .support-field :is(input,select,textarea){font:inherit;font-size:16px;color:var(--hq-ink);background:#080c10;border:1px solid #46545b;border-radius:9px;padding:12px 13px;width:100%;min-height:48px;box-sizing:border-box;box-shadow:none}
+body.nightfall .support-field textarea{min-height:180px;line-height:1.6;resize:vertical}
+body.nightfall .support-field ::placeholder{color:#85969f}
+body.nightfall .support-field :is(input,select,textarea):focus-visible{outline:2px solid var(--hq-accent);outline-offset:3px}
+body.nightfall .support-field small{color:var(--hq-muted);font-size:.78rem;line-height:1.6}
+body.nightfall .support-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+body.nightfall .support-security{margin-top:24px;min-height:65px}
+body.nightfall #security-status{font-size:.75rem;color:var(--hq-muted);margin:8px 0}
+body.nightfall #security-retry{font-size:.8rem;margin:4px 0 12px;color:var(--hq-accent);border:0;background:none;min-height:44px;text-decoration:underline}
+body.nightfall .support-submit{width:100%;margin-top:18px;font-size:1rem}
+body.nightfall .support-submit:disabled{opacity:.55;cursor:wait;transform:none;box-shadow:none}
+body.nightfall .support-consent{font-size:.75rem;line-height:1.7;margin-top:16px}
+body.nightfall .support-consent a{color:var(--hq-ink);text-decoration:underline}
+body.nightfall .form-status{margin-top:18px;padding:14px;border-radius:10px;border:1px solid #435b37;font-size:.9rem;line-height:1.6;color:var(--hq-ink);background:#15211c}
+body.nightfall .form-status.is-error{border-color:#b78264;background:#302119;color:#ffe0cc}
+body.nightfall .support-success h2{font-size:2.5rem;margin:20px 0}
+body.nightfall .support-success .success-check{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--hq-accent);color:#17210a;font-size:28px}
+body.nightfall .support-success p{margin:16px 0;line-height:1.7}
+body.nightfall .support-success code{font:13px ui-monospace,monospace;overflow-wrap:anywhere;color:var(--hq-ink)}
+body.nightfall .support-success button{margin-top:18px}
+@media(max-width:850px){body.nightfall .support-layout{grid-template-columns:1fr;gap:32px;padding-top:35px}body.nightfall .support-intro>p{max-width:600px}body.nightfall .support-note{display:none}}
+@media(max-width:560px){body.nightfall .support-layout{width:88%;padding-top:24px}body.nightfall .support-intro h1{font-size:clamp(2.65rem,11vw,3.6rem)}body.nightfall .support-form,body.nightfall .support-success{padding:22px 18px;border-radius:15px}body.nightfall .support-fields{grid-template-columns:1fr;gap:19px}}

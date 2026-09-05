@@ -97,7 +97,7 @@ for (const page of appPages) {
   } else {
     assert.match(html, /href=["']\.\.\/privacy\/(?:#[^"']+)?["']/, `${page} links to Privacy`);
   }
-  assert.match(html, /mailto:support@letsbuildappshq\.com/, `${page} links to support`);
+  assert.match(html, /href=["'][^"']*support\//g, `${page} links to support`);
 }
 
 const home = read('index.html');
@@ -122,8 +122,8 @@ assert.match(
 );
 
 const privacy = read('privacy/index.html');
-assert.match(privacy, /Last updated:\s*4 September 2026/, 'privacy policy shows its current revision date');
-assert.match(privacy, /mailto:support@letsbuildappshq\.com/, 'privacy page exposes the new support contact');
+assert.match(privacy, /Last updated:\s*5 September 2026/, 'privacy policy shows its current revision date');
+assert.match(privacy, /href=["'][^"']*support\//g, 'privacy page exposes the private support form');
 assert.match(
   privacy,
   /Better Coffee Pro monthly, annual and lifetime options are processed by Apple through StoreKit/,
@@ -178,7 +178,7 @@ assert.match(familyMemories, /Journaling Suggestions/, 'Family Memories explains
 assert.match(familyMemories, /Private TestFlight/, 'Family Memories reports its current private distribution state');
 
 const familyMemoriesPrivacy = read('family-memories/privacy/index.html');
-assert.match(familyMemoriesPrivacy, /Last updated:\s*21 August 2026/, 'Family Memories privacy shows its current revision date');
+assert.match(familyMemoriesPrivacy, /Last updated:\s*5 September 2026/, 'Family Memories privacy shows its current revision date');
 assert.match(familyMemoriesPrivacy, /Apple CloudKit and CKShare/, 'Family Memories privacy explains optional Apple family sharing');
 assert.match(familyMemoriesPrivacy, /does not send this information to a developer server or an external language-model provider/i, 'Family Memories privacy explains Day Weave processing');
 
@@ -201,10 +201,10 @@ assert.match(myWorld, /Photo Discovery analyses dates and locations on-device/i,
 assert.match(myWorld, /href=["']\.\.\/privacy\/#my-world-privacy["']/, 'My World links to its privacy summary');
 
 const betterPicsPrivacy = read('better-pics/privacy/index.html');
-assert.match(betterPicsPrivacy, /Last updated:\s*28 July 2026/, 'Better Pics privacy shows its current revision date');
+assert.match(betterPicsPrivacy, /Last updated:\s*5 September 2026/, 'Better Pics privacy shows its current revision date');
 assert.match(betterPicsPrivacy, /up to 20 small review summaries/i, 'Better Pics privacy describes local review history');
 assert.match(betterPicsPrivacy, /GPS coordinates and camera serial number are not displayed or written to review history/, 'Better Pics privacy excludes sensitive metadata from history');
-assert.match(betterPicsPrivacy, /mailto:support@letsbuildappshq\.com/, 'Better Pics privacy exposes the privacy contact');
+assert.match(betterPicsPrivacy, /href=["'][^"']*support\//g, 'Better Pics privacy exposes the privacy contact');
 
 const allText = pages.map((page) => visibleText(read(page))).join(' ');
 const allHtml = pages.map((page) => read(page)).join(' ');

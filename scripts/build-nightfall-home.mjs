@@ -44,7 +44,7 @@ const html = `<!doctype html>
   <meta property="og:type" content="website"><meta property="og:url" content="https://letsbuildappshq.com/"><meta property="og:title" content="Let’s Build Apps HQ — Small Apps. Big Everyday."><meta property="og:description" content="Independent apps for the places you go, the things you make and the little rituals in between."><meta property="og:image" content="https://letsbuildappshq.com/og-editorial.png">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@letsbuildappshq">
   <link rel="stylesheet" href="./assets/nightfall.css"><link rel="stylesheet" href="./assets/nightfall-pages.css"><script src="./assets/nightfall.js" defer></script>
-  <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:catalogue.brand.name,url:catalogue.brand.siteUrl,email:catalogue.brand.supportEmail,sameAs:[catalogue.brand.social.xUrl,catalogue.brand.social.instagramUrl,catalogue.brand.social.youtubeUrl]})}</script>
+  <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:catalogue.brand.name,url:catalogue.brand.siteUrl,sameAs:[catalogue.brand.social.xUrl,catalogue.brand.social.instagramUrl,catalogue.brand.social.youtubeUrl]})}</script>
 </head>
 <body class="nightfall homePage"><a class="skip" href="#products">Skip to the apps</a><div class="hq-page">
 ${nav}
@@ -56,7 +56,7 @@ ${nav}
 <section class="hq-download" id="download"><div class="hq-sectionhead"><h2>Make one of them yours.</h2><p>Available now on the App Store.</p></div><div class="downloadList">${live.map(a=>`<a href="${a.appStoreUrl}"><span>${escape(a.category)}</span><b>${a.short}</b><i aria-hidden="true">↗</i></a>`).join('')}</div></section>
 <section class="hq-follow" id="follow"><p class="hq-eyebrow">Follow the build</p><h2>The small details. As they happen.</h2><div><a href="https://x.com/letsbuildappshq" rel="me">X ↗</a><a href="https://www.instagram.com/letsbuildappshq/" rel="me">Instagram ↗</a><a href="https://www.youtube.com/@letsbuildappshq" rel="me">YouTube ↗</a></div></section>
 </main>
-<footer class="hq-footer"><span>© 2026 Let’s Build Apps HQ</span><div><a href="./support/">Support</a><a href="./privacy/">Privacy</a><a href="./press/">Press</a><a href="mailto:support@letsbuildappshq.com">Email</a></div></footer>
+<footer class="hq-footer"><span>© 2026 Let’s Build Apps HQ</span><div><a href="./support/">Support</a><a href="./privacy/">Privacy</a><a href="./press/">Press</a></div></footer>
 </div><dialog class="hq-dialog" aria-labelledby="hq-detail-title"><div class="hq-dialogbar"><span>A closer look</span><button type="button" class="hq-close" aria-label="Close product preview">×</button></div><div class="hq-detail"></div></dialog>
 <script type="application/json" id="site-catalogue">${json}</script>
 </body></html>`;

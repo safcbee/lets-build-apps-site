@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lets-build-support",
+  "account_id": "bd90020e411d9c3cf5a15df37d8af0c9",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-05",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{"pattern": "support.letsbuildappshq.com", "custom_domain": true}],
+  "send_email": [{"name": "SUPPORT_EMAIL"}],
+  "ratelimits": [
+    {"name": "ATTEMPTS", "namespace_id": "2026090501", "simple": {"limit": 10, "period": 60}},
+    {"name": "DELIVERIES", "namespace_id": "2026090502", "simple": {"limit": 3, "period": 60}}
+  ],
+  "observability": {"enabled": true, "head_sampling_rate": 1}
+}
