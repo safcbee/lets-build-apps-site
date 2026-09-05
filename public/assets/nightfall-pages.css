@@ -1,0 +1,129 @@
+/* Nightfall: shared product, help and policy surfaces. */
+body.nightfall {
+  --ink:#f4f7f3;--muted:#a6b1b8;--paper:#080c10;--paper-2:#131b20;--cream:#080c10;
+  --line:#2b343a;--signal:#d6ff79;--acid:#d6ff79;--blue:#182723;--mint:#acd9c4;
+  --display:'Manrope',sans-serif;--sans:'DM Sans',sans-serif;--shadow:0 24px 65px #0004;
+  --memory-ink:#f4f7f3;--memory-canvas:#080c10;--memory-blue:#d6ff79;--memory-coral:#d6ff79;
+  --memory-yellow:#d6ff79;--sage:#d6ff79;--sage-dark:#17210a;--peach-dark:#d6ff79;
+  color:var(--hq-ink);background:var(--hq-bg);font-family:var(--sans);line-height:1.6;
+}
+body.nightfall main{overflow:clip}body.nightfall .wrap{width:min(1220px,90%);margin-inline:auto}
+body.nightfall :is(h1,h2,h3){font-family:var(--display);font-weight:600;color:var(--hq-ink);letter-spacing:-.045em;line-height:1.1;overflow-wrap:break-word}
+body.nightfall h1{font-size:clamp(2.75rem,5.4vw,4.9rem);max-width:850px}
+body.nightfall h2{font-size:clamp(2rem,3.7vw,3.5rem)}body.nightfall h3{font-size:clamp(1.4rem,2.2vw,2rem)}
+body.nightfall :is(p,li){color:var(--hq-muted)}body.nightfall :is(p,li)>a{text-decoration:underline;text-underline-offset:4px;color:var(--hq-ink)}
+body.nightfall section{padding-block:70px}body.nightfall .hq-nav{position:sticky;top:0;z-index:50;background:#080c10f5;backdrop-filter:blur(16px);min-height:82px}
+body.nightfall .hq-logo{color:var(--hq-ink)}body.nightfall .hq-logo small{color:var(--hq-muted)}
+body.nightfall .hq-navlinks a{font-size:.9rem}body.nightfall .hq-navcta{color:var(--hq-accent);background:#19251d;border-color:#4b6340!important}
+body.nightfall .hq-mobile-nav{display:none;position:relative}body.nightfall .hq-mobile-nav summary{list-style:none;min-height:44px;border:1px solid var(--hq-line);border-radius:25px;padding:10px 16px;cursor:pointer;font-size:.9rem;display:flex;gap:16px;align-items:center;background:var(--hq-panel);color:var(--hq-ink)}
+body.nightfall .hq-mobile-nav summary::-webkit-details-marker{display:none}body.nightfall .hq-mobile-nav[open] summary span{transform:rotate(45deg)}
+body.nightfall .hq-mobile-nav nav{position:absolute;right:0;top:55px;width:min(320px,85vw);padding:12px 20px;background:#121b20;border:1px solid var(--hq-line);box-shadow:0 25px 60px #0009;border-radius:14px}
+body.nightfall .hq-mobile-nav a{display:block;padding:13px 0;border-bottom:1px solid var(--hq-line);font-size:1rem}body.nightfall .hq-mobile-nav a:last-child{border:0}
+body.nightfall .hq-subnav{width:min(1220px,90%);margin:0 auto;display:flex;flex-wrap:wrap;gap:6px 24px;border-bottom:1px solid var(--hq-line);padding:10px 0;font-size:.875rem;color:var(--hq-muted)}body.nightfall .hq-subnav a{padding:8px 0}
+body.nightfall :is(.hero,.memoryHero,.pressHero){padding-block:52px;min-height:0;background:var(--hq-bg);border-bottom:1px solid var(--hq-line)}
+body.nightfall :is(.heroGrid,.hero-grid,.memoryHeroGrid){display:grid;grid-template-columns:1.08fr 1fr;gap:54px;align-items:center}
+body.nightfall :is(.hero::before,.memoryHero::before,.memoryHero::after,.homeHero::before,.heroType,.blob::after,.memoryCta::before){display:none}
+body.nightfall :is(.heroCopy,.hero-copy) :is(.lead,p),body.nightfall .memoryHero .lead{font-size:1.0625rem;max-width:580px;color:var(--hq-muted)}
+body.nightfall :is(.heroCopy,.hero-copy) h1,body.nightfall .memoryHero h1{margin:20px 0 24px;font-size:clamp(2.65rem,5.2vw,4.75rem);line-height:1.06;color:var(--hq-ink)}
+body.nightfall :is(.hero h1 span,.memoryHero h1 em){color:var(--hq-accent)!important;font-style:normal}
+body.nightfall :is(.hero h1 span::after,.memoryHero h1 em::after){display:none}
+body.nightfall .actions{gap:20px;margin-top:25px}
+body.nightfall :is(.btn,.button,.navcta,.nav-cta){border-radius:32px;border:1px solid var(--hq-accent);background:var(--hq-accent);color:#17210a;box-shadow:none;font-size:.9375rem;font-weight:600;min-height:48px;transition:transform .2s,background .2s;padding:13px 22px;letter-spacing:0}
+body.nightfall :is(.btn,.button):hover{transform:translateY(-3px);box-shadow:0 8px 28px #b8ff6020}
+body.nightfall :is(.btn.alt,.button.secondary){background:transparent;border-color:var(--hq-line);color:var(--hq-ink);box-shadow:none}
+body.nightfall :is(.kicker,.edition,.eyebrow,.memoryKicker){color:var(--hq-accent);font-size:.8rem;letter-spacing:.11em;font-weight:500}
+body.nightfall :is(.kicker,.edition,.eyebrow){margin-bottom:18px}body.nightfall .kicker::before{background:var(--hq-accent)}
+body.nightfall :is(.status,.memoryStatus){font-size:.8rem;border-radius:24px;color:#d6ff79;background:#21331b;border:1px solid #486338;padding:6px 12px;letter-spacing:.02em;font-weight:500;text-transform:none}
+body.nightfall :is(.chips span,.memoryProof span){font-size:.8rem;border:1px solid var(--hq-line);border-radius:6px;background:transparent;color:var(--hq-muted);font-weight:400;padding:6px 10px}
+body.nightfall :is(.appIcon,.memoryIdentity img){width:52px;height:52px;border:0;border-radius:14px;box-shadow:none}
+body.nightfall :is(.appIdentity,.memoryIdentity){margin-bottom:16px}body.nightfall .memoryIdentity :is(b,small){color:var(--hq-muted);font-size:.85rem}
+body.nightfall :is(.heroVisual,.hero-art,.bpVisual,.memoryVisual){min-height:490px;height:490px}
+body.nightfall :is(.halo,.blob,.bpLensGlow){inset:8%;border:1px solid #304537;border-radius:50%;background:transparent;box-shadow:0 0 0 32px #080c10,0 0 0 33px #24332c,0 0 0 66px #080c10,0 0 0 67px #1b2825;transform:none}
+body.nightfall :is(.shot,.phone,.bpPhone,.memoryPhone){box-shadow:0 25px 65px #0008;border:1px solid #43504b;background:#101a17}
+body.nightfall .shot{width:min(205px,46%);padding:0;border-radius:22px}body.nightfall .shot img{border-radius:21px;aspect-ratio:900/1955;object-fit:cover;object-position:top}
+body.nightfall .phone{width:210px;padding:0;border-radius:24px}body.nightfall .phone img{border-radius:23px}
+body.nightfall .bpPhone{width:215px;height:467px;padding:0;border-radius:24px}body.nightfall .bpPhone img{border-radius:23px;width:100%;height:100%;object-fit:cover;object-position:top}
+body.nightfall .memoryPhone.primary{width:205px;top:0;left:12%;padding:0}body.nightfall .memoryPhone.secondary{width:155px;top:auto;bottom:0;right:4%;padding:0}
+body.nightfall :is(.sticker,.word-float,.asset-note,.memoryDropBubble){display:none}
+body.nightfall :is(.sectionHead,.memorySectionHead){margin-bottom:35px;max-width:1000px}body.nightfall .sectionHead h2{margin-bottom:18px}
+body.nightfall :is(.evidence,.values,.bpDarkSection,.memoryRail,.memorySection,.memoryArt,.memoryIpad,.memoryPrivacy,.demo-section,.privacy-band,.features-section){background:#0d1419;color:var(--hq-ink);border-color:var(--hq-line)}
+body.nightfall :is(.evidence,.values,.bpDarkSection,.memoryArt,.memoryIpad,.memoryPrivacy,.privacy-band) :is(h2,h3,.kicker){color:var(--hq-ink)}
+body.nightfall :is(.evidence,.values,.bpDarkSection,.memoryArt,.memoryIpad,.memoryPrivacy,.privacy-band) p{color:var(--hq-muted)}
+body.nightfall :is(.featureGrid,.valueGrid,.steps,.memoryFeatureGrid){gap:14px;border:0}
+body.nightfall :is(.feature,.value,.step,.feature-card,.memoryFeature,.plan,.privacy-card,.memoryPrivacyPoint){border:1px solid var(--hq-line);border-radius:16px;background:var(--hq-panel);box-shadow:none;padding:25px}
+body.nightfall :is(.feature,.value,.step,.feature-card,.memoryFeature,.plan,.privacy-card,.memoryPrivacyPoint) :is(p,li,span){color:var(--hq-muted);font-size:1rem}
+body.nightfall .icon{color:var(--hq-accent);background:#243322;border:0;border-radius:12px;font-family:var(--sans);margin-bottom:24px}
+body.nightfall :is(.proofFrame,.evidenceCard,.screenCard,.memoryScreenCard,.memoryIpadFrame,.bpPlan,.factbox){background:var(--hq-panel);border:1px solid var(--hq-line);border-radius:18px;box-shadow:none;overflow:hidden;color:var(--hq-ink)}
+body.nightfall .screenGallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+body.nightfall :is(.screenCard,.memoryScreenCard){padding:16px;display:flex;flex-direction:column;align-items:center}
+body.nightfall :is(.screenCard,.memoryScreenCard) img{width:100%;max-width:265px;max-height:570px;object-fit:contain;border-radius:14px}
+body.nightfall :is(.screenCard,.memoryScreenCard) figcaption{width:100%;padding:18px 0 4px;border:0;background:transparent}
+body.nightfall :is(.screenCard,.memoryScreenCard) :is(b,h3){color:var(--hq-ink)}body.nightfall :is(.screenCard,.memoryScreenCard) :is(p,small){color:var(--hq-muted);font-size:.9375rem}
+body.nightfall .memoryArtImage{min-height:0;border:1px solid var(--hq-line);border-radius:18px;background:var(--hq-panel)}
+body.nightfall .memoryArtImage img{max-height:600px;object-fit:contain}
+body.nightfall .memoryIpadFrame{transform:none}body.nightfall .memoryFeatureIcon{color:#17210a}
+body.nightfall .memoryRailInner{color:var(--hq-muted)}body.nightfall .memoryCta :is(h2,p){color:var(--hq-ink)}
+body.nightfall .memoryCta{background:var(--hq-bg)}body.nightfall .memoryStatus::before{box-shadow:none}
+body.nightfall :is(.trust-row,.demo-shell,.trace-card,.faq-list details,.bpFaq details){border-color:var(--hq-line);border-radius:14px;background:var(--hq-panel);box-shadow:none}
+body.nightfall .trust-row{padding:0;background:transparent}body.nightfall .trust-row span{color:var(--hq-muted);border-color:var(--hq-line);font-size:.9rem}
+body.nightfall :is(.sentence-line,.trace-paper){background:#edf4ed;border-radius:12px;border:1px solid #638270;color:#173329}
+body.nightfall :is(.word-card,.reset){border-radius:10px;border:1px solid #475948;background:#1d2a24;color:var(--hq-ink);box-shadow:none}
+body.nightfall .word-card.in-line{color:#17210a;background:#d6ff79}
+body.nightfall :is(.demo-message,.demo-hint,.trace-caption,.trace-card p){color:var(--hq-muted)}
+body.nightfall :is(.price,.price span,.plan h3){color:var(--hq-ink)}body.nightfall .plan.highlight{border-color:#79994d;background:#172318}
+body.nightfall :is(.faq-list summary,.bpFaq summary){padding:20px;color:var(--hq-ink);font-size:1rem}body.nightfall :is(.faq-list details,.bpFaq details) p{padding:0 20px 20px;margin:0}
+body.nightfall .privacyWrap{width:min(950px,90%);padding:55px 0 75px}
+body.nightfall .policy{padding:35px;border:1px solid var(--hq-line);border-radius:18px;background:var(--hq-panel);box-shadow:none}
+body.nightfall .policy h1{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:22px}
+body.nightfall .policy h2{font-size:clamp(1.6rem,3vw,2.25rem);margin-top:38px;padding-top:25px;border-color:var(--hq-line)}
+body.nightfall .policy :is(p,li){font-size:1rem;line-height:1.8}body.nightfall .policy p{margin:16px 0}
+body.nightfall .policyNav a{color:var(--hq-ink);border-color:var(--hq-line);font-size:.95rem;padding:16px 0}
+body.nightfall :is(.notice,.legalNote){background:#19231b;border:1px solid #48613f;border-radius:10px;color:var(--hq-ink)}
+body.nightfall :is(.ctaSection,.ctaBox,.cta-panel){background:#14201a;color:var(--hq-ink);border-color:#364c39;box-shadow:none;border-radius:18px}
+body.nightfall .ctaSection{border-radius:0;background:var(--hq-bg)}body.nightfall .ctaBox{padding:42px}
+body.nightfall :is(.pressHero,.pressApp,.assetCard,.pressBoilerplate){background:var(--hq-panel);border-color:var(--hq-line);box-shadow:none;border-radius:16px}
+body.nightfall .pressHero{border-radius:0;background:var(--hq-bg)}body.nightfall .pressHero h1{max-width:800px;font-size:clamp(2.8rem,5.2vw,4.8rem)}
+body.nightfall .pressStatus{color:var(--hq-accent);background:#1b2b1b;border-color:#476039}body.nightfall .pressBoilerplate p{font-family:var(--sans);font-size:1.1rem;color:var(--hq-muted)}
+body.nightfall .assetImage{background:#141d21;border-color:var(--hq-line)}body.nightfall .assetImage img{object-fit:contain}
+body.nightfall footer{background:var(--hq-bg);border-color:var(--hq-line)}body.nightfall .foot{font-size:.9375rem;color:var(--hq-muted)}
+body.nightfall .logo{color:var(--hq-ink)}body.nightfall .logo i{display:none}body.nightfall .logo strong{color:var(--hq-ink)}
+body.nightfall .hq-support-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:25px 0}
+body.nightfall .hq-support-grid a{display:block;padding:15px 18px;border:1px solid var(--hq-line);border-radius:10px;background:var(--hq-bg);color:var(--hq-ink);text-decoration:none}
+body.nightfall .hq-support-grid a:hover{border-color:var(--hq-accent)}
+@media(max-width:850px){
+ body.nightfall .hq-navlinks{display:none}body.nightfall .hq-mobile-nav{display:block}
+ body.nightfall :is(.heroGrid,.hero-grid,.memoryHeroGrid){grid-template-columns:1fr;gap:35px}
+ body.nightfall :is(.heroCopy,.hero-copy) h1,body.nightfall .memoryHero h1{font-size:clamp(2.6rem,8vw,4.25rem);max-width:700px}
+ body.nightfall :is(.heroVisual,.hero-art,.bpVisual,.memoryVisual){max-width:480px;width:100%;margin:auto}
+ body.nightfall .screenGallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.nightfall .hq-subnav{display:none}
+}
+@media(max-width:560px){
+ body.nightfall .hq-nav{width:88%;min-height:74px}body.nightfall .wrap{width:88%}
+ body.nightfall section{padding-block:44px}body.nightfall :is(.hero,.memoryHero,.pressHero){padding-block:32px}
+ body.nightfall :is(.heroCopy,.hero-copy) h1,body.nightfall .memoryHero h1{font-size:clamp(2.45rem,10.7vw,3.5rem);line-height:1.1}
+ body.nightfall h2{font-size:clamp(1.9rem,8vw,2.6rem)}
+ body.nightfall :is(.heroVisual,.hero-art,.bpVisual,.memoryVisual){height:445px;min-height:445px}
+ body.nightfall .phone{width:185px}body.nightfall .bpPhone{width:190px;height:413px}
+ body.nightfall .memoryPhone.primary{width:180px;left:3%}body.nightfall .memoryPhone.secondary{width:140px;right:0}
+ body.nightfall .screenGallery{grid-template-columns:1fr}body.nightfall :is(.screenCard,.memoryScreenCard) img{max-width:240px}
+ body.nightfall .policy{padding:22px}body.nightfall .privacyWrap{padding-top:30px;width:90%}
+ body.nightfall .ctaBox{padding:28px}body.nightfall .hq-support-grid{grid-template-columns:1fr}
+}
+/* Keep intrinsic image dimensions from stretching responsive previews. */
+body.nightfall img{max-width:100%;height:auto}
+body.nightfall .wrap{padding-inline:0}
+body.nightfall .hero::before,body.nightfall .hero::after,body.nightfall .memoryHero::before,body.nightfall .memoryHero::after,body.nightfall .homeHero::before,body.nightfall .blob::after,body.nightfall .memoryCta::before,body.nightfall .hero h1 span::after,body.nightfall .memoryHero h1 em::after{display:none}
+body.nightfall .hero-art .phone{position:relative;top:auto;left:auto;transform:rotate(5deg);height:auto}
+body.nightfall .hero-art .pencil{display:none}body.nightfall .hero-art .phone img{height:auto}
+body.nightfall :is(.confidence,.pricing,.final-card){background:#142019;color:var(--hq-ink);border-color:var(--hq-line);box-shadow:none}
+body.nightfall .confidence h2,body.nightfall .final-card h2{color:var(--hq-ink)}body.nightfall .final-card{border-radius:20px;padding:40px}
+body.nightfall .plan.premium{background:#172318;border-color:#5d793e}body.nightfall .plan-label{background:#bfd6b5;color:#17210a}
+body.nightfall .feature-icon,body.nightfall .point-number{background:#d6ff79;color:#17210a;border-radius:12px;border:0}
+body.nightfall .feature-grid,body.nightfall .plans{gap:14px;border:0}body.nightfall .feature-card,body.nightfall .plan{border:1px solid var(--hq-line)}
+body.nightfall .trust-row span{border:0;border-bottom:1px solid var(--hq-line);padding:8px 0;background:none}
+body.nightfall .sentence-line:empty::before{color:#466352}body.nightfall .trace-guide{stroke:#526e20}body.nightfall .trace-dot{fill:#526e20}
+body.nightfall .hero .appIcon{width:52px;height:52px}body.nightfall .hq-appicon{width:52px;height:52px}
+body.nightfall .hero-actions{gap:18px;margin:24px 0}
+body.nightfall .nf-phone img{height:100%}
+@media(max-width:560px){body.nightfall .final-card{padding:26px}body.nightfall .demo-top{flex-wrap:wrap}body.nightfall .trust-row{display:flex;gap:10px 18px}}

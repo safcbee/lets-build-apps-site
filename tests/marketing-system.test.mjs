@@ -10,7 +10,7 @@ test('portfolio catalogue has one verified entry for every current app', () => {
   assert.equal(catalog.apps.length, 10);
   assert.equal(new Set(catalog.apps.map((app) => app.key)).size, 10, 'app keys are unique');
   assert.equal(new Set(catalog.apps.map((app) => app.appleId)).size, 10, 'Apple IDs are unique');
-  assert.equal(catalog.apps.filter((app) => app.stage === 'live').length, 4, 'exactly four apps are currently public');
+  assert.equal(catalog.apps.filter((app) => app.stage === 'live').length, 5, 'exactly five apps are currently public');
 
   for (const app of catalog.apps) {
     assert.ok(app.audience.length > 30, `${app.key} has a useful audience definition`);
@@ -75,16 +75,17 @@ test('public storefront differences are detected without guessing internal revie
   const matching = evaluateStatuses(catalog, matchingObservations);
   assert.equal(matching.alerts.length, 0);
 
-  matchingObservations['6785081962'] = {
-    name: "Let's Build Better Coffee",
+  const upcoming = catalog.apps.find(app => app.stage !== 'live');
+  matchingObservations[upcoming.appleId] = {
+    name: upcoming.storefrontName,
     version: '1.0',
-    url: 'https://apps.apple.com/gb/app/id6785081962',
+    url: `https://apps.apple.com/gb/app/id${upcoming.appleId}`,
     price: 'Free',
   };
   const launch = evaluateStatuses(catalog, matchingObservations);
   assert.equal(launch.alerts.length, 1);
   assert.equal(launch.alerts[0].type, 'launch-detected');
-  assert.equal(launch.alerts[0].appKey, 'better-coffee');
+  assert.equal(launch.alerts[0].appKey, upcoming.key);
 });
 
 test('similarly named travel products retain separate storage and purchase facts', () => {

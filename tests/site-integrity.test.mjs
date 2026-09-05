@@ -108,7 +108,7 @@ assert.match(home, /href=["']https:\/\/x\.com\/letsbuildappshq["']/, 'homepage l
 assert.match(home, /href=["']https:\/\/www\.instagram\.com\/letsbuildappshq\/["']/, 'homepage links to the verified Instagram profile');
 assert.match(home, /href=["']https:\/\/www\.youtube\.com\/@letsbuildappshq["']/, 'homepage links to the verified YouTube channel');
 assert.match(home, /"sameAs":\["https:\/\/x\.com\/letsbuildappshq","https:\/\/www\.instagram\.com\/letsbuildappshq\/","https:\/\/www\.youtube\.com\/@letsbuildappshq"\]/, 'homepage publishes social identity metadata');
-assert.match(home, /Thoughtful apps for <em>real life\.<\/em>/, 'homepage uses the refreshed editorial experience');
+assert.match(home, /Small apps\.<br><em>Big everyday\.<\/em>/, 'homepage uses the selected Nightfall experience');
 assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 9, 'homepage has a visible product page link for each product page');
 assert.match(
   home,
@@ -150,12 +150,12 @@ assert.deepEqual(
 const coffee = read('perfect-coffee/index.html');
 assert.match(coffee, /Essentials stay free/i, 'Better Coffee describes its free essentials');
 assert.match(coffee, /Optional Better Coffee Pro/i, 'Better Coffee describes its optional Pro model');
-assert.match(coffee, /currently in App Store review/i, 'Better Coffee reports its current App Store review state');
+assert.match(coffee, /Available on (?:the )?App Store/i, 'Better Coffee reports its verified public release');
 assert.match(coffee, /£2\.99 monthly, £19\.99 annually or £39\.99 lifetime/i, 'Better Coffee publishes its confirmed UK Pro prices');
 assert.match(coffee, /34 roaster sources/i, 'Better Coffee publishes the current roaster discovery breadth');
 assert.doesNotMatch(coffee, /No extras to buy/i, 'Better Coffee does not imply there is no purchase');
 assert.match(home, /Optional Better Coffee Pro/, 'homepage describes the Better Coffee Pro model');
-assert.match(home, /id=["']perfect-coffee["'][\s\S]*?In App Store review[\s\S]*?Let’s Build Better Coffee/, 'homepage reports Better Coffee is in App Store review');
+assert.match(home, /id=["']perfect-coffee["'][\s\S]*?Available on App Store[\s\S]*?Let’s Build Better Coffee/, 'homepage reports Better Coffee is live');
 
 const travelPlans = read('travel-plans/index.html');
 assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');

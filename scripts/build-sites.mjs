@@ -1,4 +1,6 @@
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+await import('./build-nightfall-home.mjs');
+await import('./apply-nightfall-assets.mjs');
 
 const canonicalAssetOrigin = 'https://letsbuildappshq.com/assets/';
 
@@ -41,6 +43,9 @@ const sentencesCss = (await readFile('public/assets/sentences-refresh.css', 'utf
   `url("data:image/webp;base64,${brandMark.toString('base64')}")`,
 );
 const familyMemoriesCss = await readFile('public/assets/family-memories.css', 'utf8');
+const nightfallCss = (await readFile('public/assets/nightfall.css', 'utf8')).replaceAll('./nightfall/fonts/', canonicalAssetOrigin + 'nightfall/fonts/');
+const nightfallPagesCss = await readFile('public/assets/nightfall-pages.css', 'utf8');
+const nightfallJs = await readFile('public/assets/nightfall.js', 'utf8');
 const betterPicsSocialCard = await readFile('public/assets/site-v3/better-pics-social.jpg');
 const robots = await readFile('public/robots.txt', 'utf8');
 const sitemap = await readFile('public/sitemap.xml', 'utf8');
@@ -58,6 +63,10 @@ for (const [route, sourceHTML] of Object.entries(sourcePages)) {
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/site-v2\.css">/g, `<style>${css}</style>`);
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/sentences-refresh\.css">/g, `<style>${sentencesCss}</style>`);
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/family-memories\.css">/g, `<style>${familyMemoriesCss}</style>`);
+  html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/nightfall\.css">/g, `<style>${nightfallCss}</style>`);
+  html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/nightfall-pages\.css">/g, `<style>${nightfallPagesCss}</style>`);
+  html = html.replace(/<script src="(?:(?:\.\.\/)+|\.\/)assets\/nightfall\.js" defer><\/script>/g, '');
+  html = html.replace('</body>', `<script>${nightfallJs}</script></body>`);
   html = html.replace(
     /(?:(?:\.\.\/)+|\.\/)assets\/([^"'?#\s>]+)/g,
     (_, assetPath) => `${canonicalAssetOrigin}${assetPath}`,

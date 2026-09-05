@@ -9,7 +9,7 @@ const visibleText = html
   .replace(/\s+/g, ' ');
 
 assert.doesNotMatch(html, /data-app-search|Search apps/i, 'production homepage has no dead search control');
-assert.match(visibleText, /Thoughtful apps for real life\./, 'production homepage has the refreshed editorial hero');
+assert.match(visibleText, /Small apps\. Big everyday\./, 'production homepage has the selected Nightfall hero');
 assert.match(html, /href=["']#products["']/, 'homepage has a products anchor CTA');
 assert.match(html, /href=["']#in-the-works["']/, 'homepage links to the pre-release catalogue');
 assert.match(html, /href=["']#download["']|id=["']download["']/, 'homepage has a live-app download section');

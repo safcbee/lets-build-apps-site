@@ -1,0 +1,727 @@
+{
+  "assets/site-v3/icon-countdowns.png": {
+    "width": 320,
+    "height": 320,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v3-icon-countdowns-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 1714
+      }
+    ],
+    "originalBytes": 47146
+  },
+  "assets/site-v4/better-pics-01-never-guess.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-better-pics-01-never-guess-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 32152
+      },
+      {
+        "path": "assets/nightfall/site-v4-better-pics-01-never-guess-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 69684
+      }
+    ],
+    "originalBytes": 209543
+  },
+  "assets/site-v4/better-pics-03-camera-plan.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-better-pics-03-camera-plan-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 32898
+      },
+      {
+        "path": "assets/nightfall/site-v4-better-pics-03-camera-plan-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 70360
+      }
+    ],
+    "originalBytes": 204906
+  },
+  "assets/site-v4/better-pics-05-real-kit.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-better-pics-05-real-kit-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 26614
+      },
+      {
+        "path": "assets/nightfall/site-v4-better-pics-05-real-kit-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 56874
+      }
+    ],
+    "originalBytes": 165743
+  },
+  "assets/site-v4/better-pics-07-practical-guides.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-better-pics-07-practical-guides-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 30360
+      },
+      {
+        "path": "assets/nightfall/site-v4-better-pics-07-practical-guides-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 64054
+      }
+    ],
+    "originalBytes": 176744
+  },
+  "assets/site-v4/countdowns-list.jpg": {
+    "width": 900,
+    "height": 1951,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-countdowns-list-480.webp",
+        "width": 480,
+        "height": 1041,
+        "bytes": 34924
+      },
+      {
+        "path": "assets/nightfall/site-v4-countdowns-list-900.webp",
+        "width": 900,
+        "height": 1951,
+        "bytes": 73600
+      }
+    ],
+    "originalBytes": 246897
+  },
+  "assets/site-v4/countdowns-next.jpg": {
+    "width": 900,
+    "height": 1951,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-countdowns-next-480.webp",
+        "width": 480,
+        "height": 1041,
+        "bytes": 39886
+      },
+      {
+        "path": "assets/nightfall/site-v4-countdowns-next-900.webp",
+        "width": 900,
+        "height": 1951,
+        "bytes": 82768
+      }
+    ],
+    "originalBytes": 278796
+  },
+  "assets/site-v4/family-trips-chat.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-family-trips-chat-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 19212
+      },
+      {
+        "path": "assets/nightfall/site-v4-family-trips-chat-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 42344
+      }
+    ],
+    "originalBytes": 125530
+  },
+  "assets/site-v4/family-trips-costs.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-family-trips-costs-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 25684
+      },
+      {
+        "path": "assets/nightfall/site-v4-family-trips-costs-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 55724
+      }
+    ],
+    "originalBytes": 165366
+  },
+  "assets/site-v4/family-trips-itinerary.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-family-trips-itinerary-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 26346
+      },
+      {
+        "path": "assets/nightfall/site-v4-family-trips-itinerary-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 55650
+      }
+    ],
+    "originalBytes": 163552
+  },
+  "assets/site-v4/family-trips-trips.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-family-trips-trips-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 23588
+      },
+      {
+        "path": "assets/nightfall/site-v4-family-trips-trips-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 53478
+      }
+    ],
+    "originalBytes": 162411
+  },
+  "assets/site-v4/icon-better-pics.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-icon-better-pics-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 2510
+      }
+    ],
+    "originalBytes": 309413
+  },
+  "assets/site-v4/icon-family-trips.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-icon-family-trips-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 9368
+      }
+    ],
+    "originalBytes": 324670
+  },
+  "assets/site-v4/icon-my-world.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-icon-my-world-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 5570
+      }
+    ],
+    "originalBytes": 369597
+  },
+  "assets/site-v4/icon-paw-care.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-icon-paw-care-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 3876
+      }
+    ],
+    "originalBytes": 93766
+  },
+  "assets/site-v4/icon-sentences.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-icon-sentences-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 8230
+      }
+    ],
+    "originalBytes": 317363
+  },
+  "assets/site-v4/icon-travel-plans.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-icon-travel-plans-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 10000
+      }
+    ],
+    "originalBytes": 343523
+  },
+  "assets/site-v4/my-world-01-world.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-my-world-01-world-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 34120
+      },
+      {
+        "path": "assets/nightfall/site-v4-my-world-01-world-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 75418
+      }
+    ],
+    "originalBytes": 232474
+  },
+  "assets/site-v4/my-world-02-story.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-my-world-02-story-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 37360
+      },
+      {
+        "path": "assets/nightfall/site-v4-my-world-02-story-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 79646
+      }
+    ],
+    "originalBytes": 230029
+  },
+  "assets/site-v4/my-world-03-globe.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-my-world-03-globe-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 31134
+      },
+      {
+        "path": "assets/nightfall/site-v4-my-world-03-globe-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 67146
+      }
+    ],
+    "originalBytes": 212191
+  },
+  "assets/site-v4/my-world-04-routes.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-my-world-04-routes-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 39590
+      },
+      {
+        "path": "assets/nightfall/site-v4-my-world-04-routes-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 88126
+      }
+    ],
+    "originalBytes": 274346
+  },
+  "assets/site-v4/my-world-05-together.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-my-world-05-together-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 29136
+      },
+      {
+        "path": "assets/nightfall/site-v4-my-world-05-together-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 63402
+      }
+    ],
+    "originalBytes": 194791
+  },
+  "assets/site-v4/sentences-1.jpg": {
+    "width": 900,
+    "height": 1947,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-sentences-1-480.webp",
+        "width": 480,
+        "height": 1038,
+        "bytes": 22162
+      },
+      {
+        "path": "assets/nightfall/site-v4-sentences-1-900.webp",
+        "width": 900,
+        "height": 1947,
+        "bytes": 47866
+      }
+    ],
+    "originalBytes": 178633
+  },
+  "assets/site-v4/travel-plans-2-canvas.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-canvas-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 55518
+      },
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-canvas-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 111742
+      }
+    ],
+    "originalBytes": 357104
+  },
+  "assets/site-v4/travel-plans-2-current.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-current-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 46838
+      },
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-current-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 87102
+      }
+    ],
+    "originalBytes": 286454
+  },
+  "assets/site-v4/travel-plans-2-me-dark.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-me-dark-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 22496
+      },
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-me-dark-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 40738
+      }
+    ],
+    "originalBytes": 154281
+  },
+  "assets/site-v4/travel-plans-2-me.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-me-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 21178
+      },
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-me-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 37690
+      }
+    ],
+    "originalBytes": 149237
+  },
+  "assets/site-v4/travel-plans-2-paperwork.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-paperwork-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 37168
+      },
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-paperwork-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 69264
+      }
+    ],
+    "originalBytes": 247779
+  },
+  "assets/site-v4/travel-plans-2-trips.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-trips-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 56904
+      },
+      {
+        "path": "assets/nightfall/site-v4-travel-plans-2-trips-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 110512
+      }
+    ],
+    "originalBytes": 373468
+  },
+  "assets/site-v5/coffee-beans.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v5-coffee-beans-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 15136
+      },
+      {
+        "path": "assets/nightfall/site-v5-coffee-beans-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 33178
+      }
+    ],
+    "originalBytes": 153459
+  },
+  "assets/site-v5/coffee-home.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v5-coffee-home-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 26804
+      },
+      {
+        "path": "assets/nightfall/site-v5-coffee-home-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 55762
+      }
+    ],
+    "originalBytes": 228298
+  },
+  "assets/site-v5/coffee-onboarding.jpg": {
+    "width": 900,
+    "height": 1955,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v5-coffee-onboarding-480.webp",
+        "width": 480,
+        "height": 1043,
+        "bytes": 32546
+      },
+      {
+        "path": "assets/nightfall/site-v5-coffee-onboarding-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 68744
+      }
+    ],
+    "originalBytes": 266914
+  },
+  "assets/site-v5/icon-coffee.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v5-icon-coffee-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 3902
+      }
+    ],
+    "originalBytes": 265341
+  },
+  "assets/site-v6/family-memories-capture.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v6-family-memories-capture-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 51180
+      },
+      {
+        "path": "assets/nightfall/site-v6-family-memories-capture-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 102768
+      }
+    ],
+    "originalBytes": 326684
+  },
+  "assets/site-v6/family-memories-family.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v6-family-memories-family-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 39834
+      },
+      {
+        "path": "assets/nightfall/site-v6-family-memories-family-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 70454
+      }
+    ],
+    "originalBytes": 267379
+  },
+  "assets/site-v6/family-memories-ipad.jpg": {
+    "width": 1032,
+    "height": 1376,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v6-family-memories-ipad-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 28220
+      },
+      {
+        "path": "assets/nightfall/site-v6-family-memories-ipad-960.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 72052
+      }
+    ],
+    "originalBytes": 265263
+  },
+  "assets/site-v6/family-memories-replays.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v6-family-memories-replays-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 45030
+      },
+      {
+        "path": "assets/nightfall/site-v6-family-memories-replays-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 80878
+      }
+    ],
+    "originalBytes": 290357
+  },
+  "assets/site-v6/family-memories-today.jpg": {
+    "width": 804,
+    "height": 1748,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v6-family-memories-today-480.webp",
+        "width": 480,
+        "height": 1044,
+        "bytes": 51712
+      },
+      {
+        "path": "assets/nightfall/site-v6-family-memories-today-804.webp",
+        "width": 804,
+        "height": 1748,
+        "bytes": 97272
+      }
+    ],
+    "originalBytes": 324387
+  },
+  "assets/site-v6/icon-family-memories.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v6-icon-family-memories-160.webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 2696
+      }
+    ],
+    "originalBytes": 146326
+  },
+  "assets/social/lets-build-apps-hq-instagram-banner-4x5.png": {
+    "width": 1080,
+    "height": 1350,
+    "variants": [
+      {
+        "path": "assets/nightfall/social-lets-build-apps-hq-instagram-banner-4x5-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 31228
+      },
+      {
+        "path": "assets/nightfall/social-lets-build-apps-hq-instagram-banner-4x5-960.webp",
+        "width": 960,
+        "height": 1200,
+        "bytes": 83936
+      }
+    ],
+    "originalBytes": 1525316
+  },
+  "assets/social/lets-build-apps-hq-x-header.png": {
+    "width": 1500,
+    "height": 500,
+    "variants": [
+      {
+        "path": "assets/nightfall/social-lets-build-apps-hq-x-header-480.webp",
+        "width": 480,
+        "height": 160,
+        "bytes": 9850
+      },
+      {
+        "path": "assets/nightfall/social-lets-build-apps-hq-x-header-960.webp",
+        "width": 960,
+        "height": 320,
+        "bytes": 24530
+      }
+    ],
+    "originalBytes": 587721
+  }
+}
