@@ -79,9 +79,8 @@ function getRotatingApp(apps, monday) {
 function destinationFor(app, supportUrl) {
   if (app.stage === 'live') return app.appStoreUrl;
   if (app.key === 'weddings') return app.sitePath;
-  const url = new URL(supportUrl);
+  const url = new URL('/testflight/', supportUrl);
   url.searchParams.set('app', app.key);
-  url.searchParams.set('topic', 'feedback');
   return url.toString();
 }
 

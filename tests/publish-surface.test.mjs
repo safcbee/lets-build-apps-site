@@ -32,6 +32,7 @@ const requiredFiles = [
   'robots.txt',
   'sitemap.xml',
   'support/index.html',
+  'testflight/index.html',
 ];
 
 const allowedTopLevelEntries = new Set([
@@ -56,6 +57,7 @@ const allowedTopLevelEntries = new Set([
   'robots.txt',
   'sitemap.xml',
   'support',
+  'testflight',
   'travel-plans',
 ]);
 

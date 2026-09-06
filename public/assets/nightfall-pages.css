@@ -127,3 +127,7 @@ body.nightfall .hero .appIcon{width:52px;height:52px}body.nightfall .hq-appicon{
 body.nightfall .hero-actions{gap:18px;margin:24px 0}
 body.nightfall .nf-phone img{height:100%}
 @media(max-width:560px){body.nightfall .final-card{padding:26px}body.nightfall .demo-top{flex-wrap:wrap}body.nightfall .trust-row{display:flex;gap:10px 18px}}
+
+.hq-coming-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px;flex-shrink:0}.hq-coming-actions a:first-child{color:var(--hq-accent)}
+
+.hq-cardlinks{flex-wrap:wrap;gap:12px}.hq-cardlinks a[href*="testflight"]{flex-basis:100%;order:3;font-size:.8rem;color:var(--hq-muted)}

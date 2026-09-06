@@ -1,3 +1,4 @@
+import {queueRequest,handleReview,processQueue} from './testflight.js';
 const ORIGINS = new Set([
   'https://letsbuildappshq.com',
   'https://www.letsbuildappshq.com',
@@ -19,7 +20,7 @@ export const APPS = {
 };
 export const TOPICS = {
   help: 'App help', bug: 'Something is not working', purchase: 'Purchase or restore',
-  feedback: 'Feedback / feature idea', privacy: 'Privacy / data request', press: 'Press enquiry',
+  testflight: 'TestFlight access request', feedback: 'Feedback / feature idea', privacy: 'Privacy / data request', press: 'Press enquiry',
 };
 const MAX_BYTES = 24_000;
 const EMAIL = /^[A-Za-z0-9.!#$%&'*+\/=\?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?\.[A-Za-z]{2,63}$/;
@@ -71,7 +72,13 @@ export function validate(data) {
   if (!EMAIL.test(email) || email.includes('..') || /[\r\n]/.test(email)) throw new FormError('Please enter a valid reply email address.');
   const message=text('message',6000,true);
   if (message.length<20) throw new FormError('Please add a little more detail (at least 20 characters).');
-  return {app,topic,email,message,name:text('name',80),device:text('device',180),token:text('cf-turnstile-response',2048,true)};
+  const result={app,topic,email,message,name:text('name',80),device:text('device',180),token:text('cf-turnstile-response',2048,true)};
+  if(topic==='testflight') {
+    if(app==='general' || text('consent',8,true)!=='yes')throw new FormError('Choose an app and agree to the TestFlight invitation notice.');
+    result.firstName=text('firstName',80,true);result.lastName=text('lastName',80);
+    if(!result.device)throw new FormError('Please tell us which device you would use to test.');
+  }
+  return result;
 }
 async function verifyToken(token, ip, secret, fetcher) {
   const body = new URLSearchParams({secret,response:token,remoteip:ip});
@@ -102,9 +109,11 @@ function respond(request, status, body) {
 /** Dependencies can be supplied by unit tests; no request or environment can bypass verification. */
 export async function handleSupport(request, env, fetcher=fetch) {
   const url=new URL(request.url);
+  if(url.pathname.startsWith('/testflight/'))return handleReview(request,env);
   if (url.pathname==='/health' && request.method==='GET') {
     const ready=Boolean(env.TURNSTILE_SECRET && env.SUPPORT_TO && env.SUPPORT_FROM && env.SUPPORT_EMAIL && env.ATTEMPTS && env.DELIVERIES);
-    return Response.json({ready},{status:ready?200:503,headers:{'cache-control':'no-store'}});
+    const testflightReady=Boolean(ready && env.TESTFLIGHT_DB && env.TESTFLIGHT_REVIEW_SECRET && env.ASC_KEY_ID && env.ASC_ISSUER_ID && env.ASC_PRIVATE_KEY);
+    return Response.json({ready,testflightReady},{status:ready?200:503,headers:{'cache-control':'no-store'}});
   }
   if (request.method==='GET' && url.pathname==='/') return Response.redirect('https://letsbuildappshq.com/support/',302);
   if (url.pathname!=='/submit') return new Response('Not found',{status:404});
@@ -123,6 +132,7 @@ export async function handleSupport(request, env, fetcher=fetch) {
     const data=validate(await readBody(request));
     await verifyToken(data.token,ip,env.TURNSTILE_SECRET,fetcher);
     if (!(await env.DELIVERIES.limit({key})).success) throw new FormError('You have sent several requests. Please wait a minute before sending another.',429);
+    if(data.topic==='testflight')return respond(request,200,await queueRequest(data,env));
     const reference='HQ-'+crypto.randomUUID().replaceAll('-','').slice(0,16).toUpperCase();
     await env.SUPPORT_EMAIL.send({
       from:{email:env.SUPPORT_FROM,name:'Let’s Build Apps HQ support form'},
@@ -139,4 +149,4 @@ export async function handleSupport(request, env, fetcher=fetch) {
     return respond(request,503,{ok:false,message:'We could not confirm delivery. Your message is still in the form; please try again shortly.'});
   }
 }
-export default {fetch(request,env) { return handleSupport(request,env); }};
+export default {fetch(request,env) { return handleSupport(request,env); },async scheduled(event,env){await processQueue(env);}};

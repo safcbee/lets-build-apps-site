@@ -19,6 +19,7 @@ const pages = {
   '/better-pics/': 'public/better-pics/index.html',
   '/better-pics/privacy/': 'public/better-pics/privacy/index.html',
   '/support/': 'public/support/index.html',
+  '/testflight/': 'public/testflight/index.html',
   '/press/': 'public/press/index.html',
   '/privacy/': 'public/privacy/index.html',
   '/travel-plans/privacy/': 'public/travel-plans/privacy/index.html',

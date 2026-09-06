@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Request an invitation to help test apps from Let’s Build Apps HQ.">
+  <title>TestFlight access — Let’s Build Apps HQ</title>
+  <link rel="stylesheet" href="../assets/site-v2.css">
+<link rel="stylesheet" href="../assets/nightfall.css"><link rel="stylesheet" href="../assets/nightfall-pages.css"><script src="../assets/nightfall.js" defer></script><link rel="canonical" href="https://letsbuildappshq.com/testflight/"><meta name="theme-color" content="#080c10"><meta property="og:title" content="TestFlight access — Let’s Build Apps HQ"><meta property="og:description" content="Request an invitation to help test apps from Let’s Build Apps HQ.">
+<link rel="stylesheet" href="../assets/support.css"><script src="../assets/support.js" defer></script>
+</head>
+<body class="nightfall">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hq-nav"><a class="hq-logo" href="../" aria-label="Let’s Build Apps HQ home"><span class="hq-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>let’s build<small>apps hq</small></span></a><nav class="hq-navlinks" aria-label="Primary navigation"><a href="../#products">The apps</a><a href="../#philosophy">Our story</a><a href="../support/">Support</a><a class="hq-navcta" href="#support-form">Request access</a></nav><details class="hq-mobile-nav"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="../#products">Apps</a><a href="../privacy/">Privacy</a><a href="#support-form">Request access</a><a href="../#products">All apps</a><a href="../support/">Support</a></nav></details></header><nav class="hq-subnav" aria-label="On this page"><a href="../#products">Apps</a><a href="../privacy/">Privacy</a></nav>
+  <main id="main" class="support-layout"><div class="support-intro"><p class="hq-eyebrow"><span class="hq-dot"></span>A first look. A little feedback.</p><h1>Help shape<br><span style="color:var(--hq-accent)">what’s next.</span></h1><p>Try upcoming apps and early versions of the ones you love. Tell us which app you’d like to test and we’ll review your request.</p><div class="support-note"><h2>One request. Three simple steps.</h2><p>1. Tell us a little about yourself.<br>2. We review and approve access.<br>3. Apple sends your TestFlight invitation when an external build is ready.</p></div><div class="support-note"><h2>A work in progress</h2><p>Test builds can have bugs and features can change. An invitation depends on approval and an available test build. Your request doesn’t guarantee a place.</p></div></div>
+<form id="support-form" class="support-form" action="https://support.letsbuildappshq.com/submit" method="post" data-config="../assets/support-config.json">
+<input type="hidden" name="topic" value="testflight"><h2>Request tester access</h2><p class="form-intro">Fields marked optional can be left blank.</p>
+<div class="support-fields">
+<div class="support-field"><label for="app">Which app?</label><select id="app" name="app" required><option value="" disabled selected>Choose an app</option><option value="sentences">Let’s Build Sentences</option><option value="my-world">Let’s Build My World</option><option value="countdowns">Let’s Build Countdowns</option><option value="better-pictures">Let’s Build Better Pictures</option><option value="family-memories">Let’s Build Family Memories</option><option value="better-coffee">Let’s Build Better Coffee</option><option value="family-trips">Let’s Build Family Trips</option><option value="travel-plans">Let’s Build Travel Plans</option><option value="paw-care">Paw Care</option><option value="weddings">Let’s Build Weddings</option></select></div>
+<div class="support-field"><label for="firstName">First name</label><input id="firstName" name="firstName" autocomplete="given-name" maxlength="80" required></div>
+<div class="support-field"><label for="lastName">Last name <span>(optional)</span></label><input id="lastName" name="lastName" autocomplete="family-name" maxlength="80"></div>
+<div class="support-field"><label for="email">Invitation email</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required placeholder="Where Apple can send your invitation"></div>
+<div class="support-field wide"><label for="message">What would you like to help test?</label><textarea id="message" name="message" rows="6" minlength="20" maxlength="6000" required aria-describedby="message-hint" placeholder="Tell us how you would use the app and what interests you about testing it."></textarea><small id="message-hint">At least 20 characters. Please leave out passwords, payment details, and private documents.</small></div>
+<div class="support-field wide"><label for="device">Your device and iOS version</label><input id="device" name="device" maxlength="180" required placeholder="e.g. iPhone 16, iOS 26"></div>
+</div>
+<div class="support-trap" aria-hidden="true"><label for="website">Leave this blank</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="250"></div>
+<label class="testflight-consent"><input type="checkbox" name="consent" value="yes" required><span>I understand this is prerelease software and agree to receive a TestFlight invitation for this app. My name and email will be shared with Apple if access is approved.</span></label>
+<div id="support-security" class="support-security"></div><p id="security-status" role="status">Loading security check…</p><button id="security-retry" type="button" hidden>Retry security check</button>
+<button type="submit" class="hq-primary support-submit" disabled>Request access ↗</button><p id="form-status" class="form-status" role="status" tabindex="-1" hidden></p>
+<p class="support-consent">We’ll use these details to review your request and manage your invitation. The form is protected by Cloudflare Turnstile. <a href="../privacy/#testflight-requests">How we handle tester requests</a>.</p><noscript><p class="form-status">Please enable JavaScript for the security check, then reload this page.</p></noscript>
+</form>
+<div class="support-success" id="support-success" tabindex="-1" hidden><span class="success-check" aria-hidden="true">✓</span><p class="hq-eyebrow">Request received</p><h2>You’re on the list to review.</h2><p>Your request is saved for review. If approved, Apple will send your invitation when an external test build is available. Please check your inbox and junk folder.</p><p>Your reference<br><code id="request-reference"></code></p><button class="hq-primary" type="button" id="another-request">Request another app ↗</button></div>
+</main>
+  <footer class="hq-footer"><span>© 2026 Let’s Build Apps HQ</span><div><a href="../#products">All apps</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../press/">Press</a><a href="../support/">Contact</a></div></footer>
+</body>
+</html>

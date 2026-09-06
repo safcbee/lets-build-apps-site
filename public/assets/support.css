@@ -35,3 +35,5 @@ body.nightfall .support-success code{font:13px ui-monospace,monospace;overflow-w
 body.nightfall .support-success button{margin-top:18px}
 @media(max-width:850px){body.nightfall .support-layout{grid-template-columns:1fr;gap:32px;padding-top:35px}body.nightfall .support-intro>p{max-width:600px}body.nightfall .support-note{display:none}}
 @media(max-width:560px){body.nightfall .support-layout{width:88%;padding-top:24px}body.nightfall .support-intro h1{font-size:clamp(2.65rem,11vw,3.6rem)}body.nightfall .support-form,body.nightfall .support-success{padding:22px 18px;border-radius:15px}body.nightfall .support-fields{grid-template-columns:1fr;gap:19px}}
+
+body.nightfall .testflight-consent{display:flex;gap:12px;align-items:flex-start;margin-top:24px;font-size:.85rem;line-height:1.6;color:var(--hq-muted)}body.nightfall .testflight-consent input{flex:0 0 22px;width:22px;height:22px;margin:3px 0;accent-color:var(--hq-accent)}

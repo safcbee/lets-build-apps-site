@@ -3,6 +3,7 @@
   if (!form) return;
   const status=document.getElementById('form-status');
   const submit=form.querySelector('[type="submit"]');
+  const submitLabel=submit.textContent;
   const securityStatus=document.getElementById('security-status');
   const retry=document.getElementById('security-retry');
   let widget, configured=false, busy=false;
@@ -14,7 +15,7 @@
   const query=new URLSearchParams(location.search);
   for (const key of ['app','topic']) {
     const select=form.elements.namedItem(key), value=query.get(key);
-    if (value && [...select.options].some(o=>o.value===value)) select.value=value;
+    if (value && select?.options && [...select.options].some(o=>o.value===value)) select.value=value;
   }
   form.hidden=false;
   submit.disabled=true;
@@ -68,7 +69,7 @@
       state(error.name==='TimeoutError' || error.name==='TypeError'?'We could not confirm delivery. Your message is still here; please try again shortly.':error.message,true);
       if (widget!==undefined) window.turnstile.reset(widget);
     } finally {
-      busy=false;submit.textContent='Send request ↗';form.removeAttribute('aria-busy');
+      busy=false;submit.textContent=submitLabel;form.removeAttribute('aria-busy');
       submit.disabled=!window.turnstile?.getResponse(widget);
     }
   });

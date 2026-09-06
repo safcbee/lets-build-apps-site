@@ -12,7 +12,7 @@ Run `npm run check`, then `npm run deploy`. Regenerate types after binding chang
 
 Every delivery requires a server-validated Turnstile token with the expected action and hostname. The Worker checks origins, field lengths and types, total streamed request size, email header injection, and a honeypot. It allows 10 attempts and 3 verified deliveries per minute per hashed IP at each Cloudflare location. Distributed attacks may need additional Cloudflare rules. The recipient and subject are server-controlled; the customer's email is used only for Reply-To.
 
-Delivery is awaited before returning a reference. If delivery cannot be confirmed, the frontend retains the message for retry. There is no separate ticket database or automatic customer acknowledgement. Application logs contain event names and successful request references, not message contents, reply addresses or tokens. Cloudflare and the destination mailbox process the request as described in the website privacy notice.
+Delivery is awaited before returning a reference. If delivery cannot be confirmed, the frontend retains the message for retry. General support messages have no separate ticket database or automatic customer acknowledgement. TestFlight requests use the private approval queue described in [TESTFLIGHT.md](./TESTFLIGHT.md). Application logs contain event names and successful request references, not message contents, reply addresses or tokens. Cloudflare and the destination mailbox process the request as described in the website privacy notice.
 
 ## Checks
 

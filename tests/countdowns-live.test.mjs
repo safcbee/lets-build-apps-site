@@ -14,7 +14,7 @@ assert.doesNotMatch(home, /Future Projects/, 'homepage no longer contains placeh
 
 assert.match(countdowns, new RegExp(appStoreUrl), 'Countdowns page links to the App Store');
 assert.match(countdowns, /Download on App Store/, 'Countdowns page has a download CTA');
-assert.match(countdowns, /Help shape Let's Build Countdowns/, 'Countdowns page has a TestFlight interest section');
+assert.match(countdowns, /href="\.\.\/testflight\/\?app=countdowns">Request TestFlight access/, 'Countdowns requests tester access through its app-specific form');
 const retiredSignupCopy = new RegExp([
   ['Get', 'Notified'].join(' '),
   ['yourname', 'email.com'].join('@').replace('.', '\\.'),
