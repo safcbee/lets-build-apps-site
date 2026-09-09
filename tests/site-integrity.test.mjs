@@ -230,5 +230,11 @@ assert.match(portaflow, /url=\.\.\/perfect-coffee\//i, 'Portaflow redirects to P
 
 assert.match(travelPlans, /£3\.99, paid once/, 'Travel Plans has the approved paid-upfront price');
 assert.match(travelPlans, /public release is still being prepared/, 'Travel Plans does not claim to be live');
-assert.equal((travelPlans.match(/<figure class="screenCard">/g) || []).length, 8, 'Eight genuine release screens are published');
+assert.equal((travelPlans.match(/<figure class="screenCard">/g) || []).length, 11, 'Eight release screens plus three genuine discovery screens are published');
+for (const image of ['activity-discovery.png', 'alvor-photo-preview.png', 'place-map-preview.png']) {
+  assert.ok(travelPlans.includes(`travel-plans-discovery/${image}`), `Discovery screenshot is published: ${image}`);
+}
+assert.match(travelPrivacy, /Wikimedia Commons/, 'Optional photo search provider is disclosed');
+assert.match(travelPrivacy, /IP address/, 'Photo search network information is disclosed');
+assert.match(travelPrivacy, /not generative AI/, 'Guides are not misrepresented as AI');
 assert.match(travelPrivacy, /not an encrypted vault/, 'Backup privacy warning is explicit');
