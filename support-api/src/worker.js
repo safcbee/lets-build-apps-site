@@ -1,3 +1,4 @@
+import testflightApps from './testflight-apps.json' with {type:'json'};
 import {queueRequest,handleReview,processQueue} from './testflight.js';
 const ORIGINS = new Set([
   'https://letsbuildappshq.com',
@@ -74,6 +75,7 @@ export function validate(data) {
   if (message.length<20) throw new FormError('Please add a little more detail (at least 20 characters).');
   const result={app,topic,email,message,name:text('name',80),device:text('device',180),token:text('cf-turnstile-response',2048,true)};
   if(topic==='testflight') {
+    if(testflightApps[app]?.retired)throw new FormError('Family Trips is retired and no longer accepts testers. Please see Let’s Build Travel Plans.',410);
     if(app==='general' || text('consent',8,true)!=='yes')throw new FormError('Choose an app and agree to the TestFlight invitation notice.');
     result.firstName=text('firstName',80,true);result.lastName=text('lastName',80);
     if(!result.device)throw new FormError('Please tell us which device you would use to test.');

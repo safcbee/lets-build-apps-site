@@ -5,6 +5,10 @@ import { createMarketingPack } from '../scripts/generate-marketing-pack.mjs';
 import { evaluateStatuses } from '../scripts/check-app-store-status.mjs';
 
 const catalog = JSON.parse(readFileSync(new URL('../marketing/apps.json', import.meta.url), 'utf8'));
+test('retired Family Trips cannot generate a promotional campaign',()=>{
+ assert.equal(catalog.apps.find(app=>app.key==='family-trips').stage,'retired');
+ assert.throws(()=>createMarketingPack({catalog,week:'2026-09-07',appKey:'family-trips'}),/Retired app/);
+});
 
 test('portfolio catalogue has one verified entry for every current app', () => {
   assert.equal(catalog.apps.length, 10);
@@ -98,7 +102,7 @@ test('similarly named travel products retain separate storage and purchase facts
 });
 
 test('every pre-release campaign routes enquiries through the tester request form', () => {
-  for (const app of catalog.apps.filter(app => app.stage !== 'live' && app.key !== 'weddings')) {
+  for (const app of catalog.apps.filter(app => app.stage !== 'live' && app.stage !== 'retired' && app.key !== 'weddings')) {
     const pack = createMarketingPack({catalog, week: '2026-09-07', appKey: app.key});
     assert.doesNotMatch(pack.markdown + pack.csv, /mailto:|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
     assert.ok(pack.markdown.includes(`https://letsbuildappshq.com/testflight/?app=${app.key}`));

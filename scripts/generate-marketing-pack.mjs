@@ -150,8 +150,9 @@ export function createMarketingPack({ catalog, week, appKey, providerToken = '' 
 
   const app = appKey
     ? catalog.apps.find((candidate) => candidate.key === appKey)
-    : getRotatingApp(catalog.apps, monday);
+    : getRotatingApp(catalog.apps.filter(candidate => candidate.stage !== 'retired'), monday);
   if (!app) throw new Error(`Unknown app key: ${appKey}`);
+  if (app.stage === 'retired') throw new Error(`Retired app: ${app.key}. No campaign may be generated.`);
 
   const weeksSinceAnchor = Math.floor((monday - rotationAnchor) / (7 * 24 * 60 * 60 * 1000));
   const angle = app.angles[((weeksSinceAnchor % app.angles.length) + app.angles.length) % app.angles.length];

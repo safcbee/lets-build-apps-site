@@ -40,6 +40,7 @@ export function usableBuild(build,detail,now=Date.now()){
 /** Read-only readiness check. Never submits builds for Apple review or enables public links. */
 export async function readiness(api,appKey){
   const app=apps[appKey];if(!app)throw new AppleError('unknown_app');
+  if(app.retired)return {ready:false,code:'app_retired'};
   const groups=await allPages(api,`/v1/apps/${app.appleId}/betaGroups?limit=200`);
   const matches=groups.filter(g=>g.attributes.name===GROUP_NAME && g.attributes.isInternalGroup===false && !g.attributes.publicLinkEnabled);
   if(matches.length!==1)return {ready:false,code:matches.length?'ambiguous_external_group':'external_setup_required'};
@@ -54,6 +55,7 @@ export async function readiness(api,appKey){
 }
 /** Called only after a persisted owner approval and a fresh external-build check. */
 export async function addApprovedTester(api,row,ready,recordProgress){
+  if(apps[row.app_key]?.retired)throw new AppleError('app_retired');
   if(!row.approved_at || !['approved','waiting_build','processing'].includes(row.state))throw new AppleError('approval_required');
   if(!ready?.ready || !ready.groupId || !ready.buildId)throw new AppleError('external_build_required');
   const testers=await allPages(api,`/v1/betaTesters?filter[email]=${encodeURIComponent(row.email)}&limit=200`);

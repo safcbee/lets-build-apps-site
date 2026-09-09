@@ -12,6 +12,23 @@ function setup(){
  return {env,emails,sqlite,rows:()=>sqlite.prepare('SELECT * FROM testflight_requests').all()};
 }
 const data={app:'paw-care',email:'tester@example.test',firstName:'Example',lastName:'Tester',device:'iPhone 16, iOS 26',message:'I would like to test routines and walk recording.'};
+test('retired Family Trips rejects intake and never accesses Apple or invites queued testers',async()=>{
+ const t=setup();
+ const retired={...data,app:'family-trips',topic:'testflight',consent:'yes','cf-turnstile-response':'test-token'};
+ assert.throws(()=>validate(retired),error=>error.status===410);
+ assert.equal(validate({...retired,topic:'help'}).app,'family-trips','support remains available');
+ await assert.rejects(queueRequest(retired,t.env),/retired/);
+ assert.equal(t.rows().length,0);
+ let calls=0;const api=async()=>{calls++;throw new Error('No Apple calls allowed');};
+ assert.deepEqual(await readiness(api,'family-trips'),{ready:false,code:'app_retired'});
+ await queueRequest(data,t.env);
+ const row=t.rows()[0];
+ t.sqlite.prepare("UPDATE testflight_requests SET app_key='family-trips'").run();
+ assert.equal((await handleReview(body(row,await reviewToken(t.env,row),'approve'),t.env)).status,410);
+ t.sqlite.prepare("UPDATE testflight_requests SET state='approved',approved_at=?").run(Date.now());
+ await processQueue(t.env,api);
+ assert.equal(calls,0);assert.equal(t.rows()[0].state,'approved');
+});
 const body=(row,token,action)=>new Request('https://support.letsbuildappshq.com/testflight/'+(action?'decision':'review'),{method:'POST',headers:{Origin:'https://support.letsbuildappshq.com','Content-Type':'application/json'},body:JSON.stringify({id:row.id,token,...(action?{action}:{})})});
 function apple({ready=true,failWrite=false}={}){
  const writes=[];let member=false;

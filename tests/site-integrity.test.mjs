@@ -110,7 +110,8 @@ assert.match(home, /href=["']https:\/\/www\.instagram\.com\/letsbuildappshq\/["'
 assert.match(home, /href=["']https:\/\/www\.youtube\.com\/@letsbuildappshq["']/, 'homepage links to the verified YouTube channel');
 assert.match(home, /"sameAs":\["https:\/\/x\.com\/letsbuildappshq","https:\/\/www\.instagram\.com\/letsbuildappshq\/","https:\/\/www\.youtube\.com\/@letsbuildappshq"\]/, 'homepage publishes social identity metadata');
 assert.match(home, /Small apps\.<br><em>Big everyday\.<\/em>/, 'homepage uses the selected Nightfall experience');
-assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 9, 'homepage has a visible product page link for each product page');
+assert.equal((visibleText(home).match(/\bView product page\b/g) || []).length, 8, 'homepage has a visible product page link for each active product page');
+assert.doesNotMatch(home, /testflight\/\?app=family-trips/, 'retired Family Trips is not promoted for testing');
 assert.match(
   home,
   /Let’s Build My World[\s\S]*?Available on App Store[\s\S]*?https:\/\/apps\.apple\.com\/gb\/app\/lets-build-my-world\/id6790905052/,
@@ -169,7 +170,7 @@ const travelPrivacy = read('travel-plans/privacy/index.html');
 assert.match(travelPrivacy, /does not require an account, Sign in with Apple login or Supabase account/, 'Travel Plans privacy reflects the mounted V2 app');
 assert.match(travelPrivacy, /booking files only: trip facts remain stored locally/, 'Travel Plans privacy describes the optional iCloud Drive boundary');
 assert.match(travelPrivacy, /moves the unreadable store files into a dated recovery folder/, 'Travel Plans privacy explains safe local-store recovery');
-assert.match(travelPrivacy, /covers Travel Plans 2\.0 build 1/, 'Travel Plans privacy identifies the current private TestFlight implementation');
+assert.match(travelPrivacy, /covers Travel Plans 2\.0/, 'Travel Plans privacy identifies the current implementation');
 
 const familyMemories = read('family-memories/index.html');
 assert.match(familyMemories, /Keep the <em>little things\.<\/em>/, 'Family Memories uses the approved Design 1 headline');
@@ -226,3 +227,8 @@ assert.doesNotMatch(home, /experimental|View preview page/i, 'production homepag
 const portaflow = read('portaflow/index.html');
 assert.match(portaflow, /http-equiv=["']refresh["']/i, 'Portaflow legacy route redirects');
 assert.match(portaflow, /url=\.\.\/perfect-coffee\//i, 'Portaflow redirects to Perfect Coffee');
+
+assert.match(travelPlans, /£3\.99, paid once/, 'Travel Plans has the approved paid-upfront price');
+assert.match(travelPlans, /public release is still being prepared/, 'Travel Plans does not claim to be live');
+assert.equal((travelPlans.match(/<figure class="screenCard">/g) || []).length, 8, 'Eight genuine release screens are published');
+assert.match(travelPrivacy, /not an encrypted vault/, 'Backup privacy warning is explicit');

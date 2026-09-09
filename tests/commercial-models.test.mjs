@@ -12,7 +12,7 @@ test('product pages describe the verified commercial models', () => {
     ['my-world/index.html', /essentials stay free/i, /monthly, annual and lifetime/i],
     ['better-pics/index.html', /Free core\. One-time Pro\./i, /one lifetime purchase/i],
     ['family-memories/index.html', /Private TestFlight/i, /no public App Store or public TestFlight link/i],
-    ['family-trips/index.html', /Free for the whole family/i, /without a subscription or paywall/i],
+    ['family-trips/index.html', /Retired/i, /no longer accepts testers/i],
     ['travel-plans/index.html', /unlimited local trips/i, /no account required/i],
     ['paw-care/index.html', /no subscription/i, /no account/i],
     ['perfect-coffee/index.html', /essentials stay free/i, /monthly, annually or with one lifetime purchase/i],

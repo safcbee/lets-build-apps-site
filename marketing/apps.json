@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-05",
+  "updated": "2026-09-09",
   "brand": {
     "name": "Let’s Build Apps HQ",
     "siteUrl": "https://letsbuildappshq.com/",
@@ -59,7 +59,11 @@
           "body": "Create a sentence yourself, record your own voice and let the app guide each letter calmly."
         }
       ],
-      "hashtags": ["EarlyWriting", "HandwritingPractice", "ParentingTools"],
+      "hashtags": [
+        "EarlyWriting",
+        "HandwritingPractice",
+        "ParentingTools"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v4/sentences-1.jpg",
@@ -102,7 +106,11 @@
           "body": "Build a private map, retrace the route and see how the places fit together over time."
         }
       ],
-      "hashtags": ["TravelMemories", "TravelMap", "iPhoneApps"],
+      "hashtags": [
+        "TravelMemories",
+        "TravelMap",
+        "iPhoneApps"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v4/my-world-01-world.jpg",
@@ -149,7 +157,11 @@
           "body": "Put it on the Home or Lock Screen so the anticipation stays close without taking over the day."
         }
       ],
-      "hashtags": ["FamilyMoments", "CountdownApp", "LookingForwardTo"],
+      "hashtags": [
+        "FamilyMoments",
+        "CountdownApp",
+        "LookingForwardTo"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v4/countdowns-next.jpg",
@@ -192,7 +204,11 @@
           "body": "Start with a guided camera plan, take the frame and privately review what to change next."
         }
       ],
-      "hashtags": ["PhotographyTips", "CameraSettings", "LearnPhotography"],
+      "hashtags": [
+        "PhotographyTips",
+        "CameraSettings",
+        "LearnPhotography"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v4/better-pics-01-never-guess.jpg",
@@ -239,7 +255,11 @@
           "body": "Scan a child’s artwork, create an on-device Art Alive loop and attach the artist’s voice or video."
         }
       ],
-      "hashtags": ["FamilyMemories", "KidsArt", "TestFlight"],
+      "hashtags": [
+        "FamilyMemories",
+        "KidsArt",
+        "TestFlight"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v6/family-memories-today.jpg",
@@ -282,7 +302,11 @@
           "body": "Better Coffee keeps the bean, recipe and result together so the next change has a reason."
         }
       ],
-      "hashtags": ["HomeBarista", "Espresso", "CoffeeJournal"],
+      "hashtags": [
+        "HomeBarista",
+        "Espresso",
+        "CoffeeJournal"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v5/coffee-home.jpg",
@@ -304,15 +328,15 @@
       "storefrontName": "Let's Build Family Trips",
       "appleId": "6787775479",
       "publicVersion": null,
-      "stage": "private-testflight",
-      "stageLabel": "Private TestFlight",
+      "stage": "retired",
+      "stageLabel": "Retired 9 September 2026",
       "sitePath": "/family-trips/",
       "appStoreUrl": null,
       "category": "Shared travel",
       "audience": "Families who want itineraries, costs, chat, photos and documents in one invited space",
       "promise": "Plan once and keep the whole family on the same live trip.",
       "commercialModel": "The current private TestFlight has no subscription, paywall or in-app purchase.",
-      "ctaLabel": "Register TestFlight interest",
+      "ctaLabel": "Read legacy support information",
       "claims": [
         "Shared family spaces keep itineraries, costs, chat, photos and documents together.",
         "The app uses Sign in with Apple and an EU-hosted Supabase backend.",
@@ -325,7 +349,11 @@
           "body": "Keep the itinerary, costs, chat, photographs and documents beside the family trip they belong to."
         }
       ],
-      "hashtags": ["FamilyTravel", "TripPlanning", "TestFlight"],
+      "hashtags": [
+        "FamilyTravel",
+        "TripPlanning",
+        "TestFlight"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v4/family-trips-trips.jpg",
@@ -335,7 +363,12 @@
           "path": "/assets/site-v4/family-trips-itinerary.jpg",
           "alt": "Let’s Build Family Trips shared itinerary"
         }
-      ]
+      ],
+      "retirement": {
+        "date": "2026-09-09",
+        "successor": "travel-plans",
+        "automaticDataMigration": false
+      }
     },
     {
       "key": "travel-plans",
@@ -350,13 +383,15 @@
       "category": "Trip readiness",
       "audience": "Family trip planners who want to know what is sorted and what still needs attention",
       "promise": "Bring Plan, Pack, Pay, Paperwork and People into one calm Trip Ready view.",
-      "commercialModel": "Unlimited local trips with no account, subscription or in-app purchase in Travel Plans 2.0.",
+      "commercialModel": "Planned App Store release: £3.99 paid upfront in the UK, with Apple-equivalent prices elsewhere. Unlimited local trips with no account, subscription or in-app purchase. Private TestFlight testing is free.",
       "ctaLabel": "Register TestFlight interest",
       "claims": [
         "Unlimited trips work locally without a Travel Plans account.",
         "Five planning pillars feed one qualitative Trip Ready status and next action.",
         "Optional iCloud Drive storage applies to booking files only; trip facts stay on the device.",
-        "Travel Plans 2.0 is an iPhone app for iOS 18 or later."
+        "Travel Plans 2.0 is an iPhone app for iOS 18 or later.",
+        "Full trip backups include attachments and restore as new local copies.",
+        "Document expiry reminders and editable cost due dates are included in the September update."
       ],
       "angles": [
         {
@@ -364,15 +399,47 @@
           "body": "Plan, Pack, Pay, Paperwork and People become one clear Trip Ready view."
         }
       ],
-      "hashtags": ["TravelPlanning", "FamilyTravel", "TestFlight"],
+      "hashtags": [
+        "TravelPlanning",
+        "FamilyTravel",
+        "TestFlight"
+      ],
       "approvedAssets": [
         {
-          "path": "/assets/site-v4/travel-plans-2-trips.jpg",
-          "alt": "Let’s Build Travel Plans cinematic Trips screen"
+          "path": "/assets/travel-plans-sep2026/store-01-trips.jpg",
+          "alt": "Travel Plans Trips screen with example data"
         },
         {
-          "path": "/assets/site-v4/travel-plans-2-canvas.jpg",
-          "alt": "Let’s Build Travel Plans day-by-day trip canvas"
+          "path": "/assets/travel-plans-sep2026/store-02-current.jpg",
+          "alt": "Travel Plans Current screen with example data"
+        },
+        {
+          "path": "/assets/travel-plans-sep2026/store-03-plan.jpg",
+          "alt": "Travel Plans Plan screen with example data"
+        },
+        {
+          "path": "/assets/travel-plans-sep2026/store-04-pack.jpg",
+          "alt": "Travel Plans Pack screen with example data"
+        },
+        {
+          "path": "/assets/travel-plans-sep2026/store-05-pay.jpg",
+          "alt": "Travel Plans Pay screen with example data"
+        },
+        {
+          "path": "/assets/travel-plans-sep2026/store-06-paperwork.jpg",
+          "alt": "Travel Plans Paperwork screen with example data"
+        },
+        {
+          "path": "/assets/travel-plans-sep2026/store-07-people.jpg",
+          "alt": "Travel Plans People screen with example data"
+        },
+        {
+          "path": "/assets/travel-plans-sep2026/store-08-notes.jpg",
+          "alt": "Travel Plans Notes screen with example data"
+        },
+        {
+          "path": "/assets/travel-plans-sep2026/campaign.jpg",
+          "alt": "Travel Plans — Less organising. More going. Promotional artwork."
         }
       ]
     },
@@ -403,7 +470,11 @@
           "body": "Keep meals, medication, notes and walks in one calm local care log on iPhone."
         }
       ],
-      "hashtags": ["DogCare", "PetCare", "TestFlight"],
+      "hashtags": [
+        "DogCare",
+        "PetCare",
+        "TestFlight"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v4/icon-paw-care.png",
@@ -437,7 +508,11 @@
           "body": "Bring the practical wedding plan and the people helping with it into one calm Wedding HQ."
         }
       ],
-      "hashtags": ["WeddingPlanning", "WeddingApp", "PlanningTogether"],
+      "hashtags": [
+        "WeddingPlanning",
+        "WeddingApp",
+        "PlanningTogether"
+      ],
       "approvedAssets": [
         {
           "path": "/assets/site-v4/weddings-today.jpg",

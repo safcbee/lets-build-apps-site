@@ -11,7 +11,7 @@ const presentation = {
 };
 const live = Object.keys(presentation).map(key => ({ ...catalogue.apps.find(a => a.key === key), ...presentation[key] }));
 if (live.some(a => a.stage !== 'live' || !a.appStoreUrl)) throw new Error('Every featured app must have a verified live listing.');
-const upcoming = catalogue.apps.filter(a => a.stage !== 'live');
+const upcoming = catalogue.apps.filter(a => a.stage !== 'live' && a.stage !== 'retired');
 const route = a => a.sitePath.startsWith('https:') ? a.sitePath : `.${a.sitePath}`;
 const appId = a => a.sitePath.startsWith('https:') ? a.key : a.sitePath.replaceAll('/', '');
 const nav = `<header class="hq-nav">
@@ -52,7 +52,7 @@ ${nav}
 <section class="hq-catalogue" id="products" aria-labelledby="apps-title"><div class="hq-sectionhead" id="live-now"><div><p class="hq-eyebrow">The everyday collection</p><h2 id="apps-title">Find your everyday favourite.</h2></div><p>Five independent apps.<br>A little help with the things you love.</p></div>
 <div class="hq-filters" role="group" aria-label="Filter available apps" hidden><button type="button" class="hq-filter" data-filter="all" aria-pressed="true">All apps</button><button type="button" class="hq-filter" data-filter="create" aria-pressed="false">Learn & create</button><button type="button" class="hq-filter" data-filter="life" aria-pressed="false">Everyday life</button></div><p class="hq-sr-only" id="filter-status" aria-live="polite"></p><div class="hq-cards">${cards}</div></section>
 <section class="hq-about" id="philosophy"><div><p class="hq-eyebrow">Independent by choice</p><h2>Small details.<br>Personal care.</h2></div><div><p>Let’s Build Apps HQ is an independent maker of Apple apps for real life. Each starts with one everyday need, from remembering a journey to finding a better coffee recipe.</p><p>Useful things, made with care. Clear choices about purchases and privacy, explained app by app.</p><a class="hq-textlink" href="./privacy/">Our approach to privacy <span aria-hidden="true">↗</span></a></div></section>
-<section class="hq-coming" id="in-the-works"><div class="hq-sectionhead"><div><p class="hq-eyebrow">In the works</p><h2>More good things.</h2></div><p>Five more apps in private testing and release preparation.</p></div><div class="hq-cominglist">${future}</div></section>
+<section class="hq-coming" id="in-the-works"><div class="hq-sectionhead"><div><p class="hq-eyebrow">In the works</p><h2>More good things.</h2></div><p>Four more apps in private testing and release preparation.</p></div><div class="hq-cominglist">${future}</div></section>
 <section class="hq-download" id="download"><div class="hq-sectionhead"><h2>Make one of them yours.</h2><p>Available now on the App Store.</p></div><div class="downloadList">${live.map(a=>`<a href="${a.appStoreUrl}"><span>${escape(a.category)}</span><b>${a.short}</b><i aria-hidden="true">↗</i></a>`).join('')}</div></section>
 <section class="hq-follow" id="follow"><p class="hq-eyebrow">Follow the build</p><h2>The small details. As they happen.</h2><div><a href="https://x.com/letsbuildappshq" rel="me">X ↗</a><a href="https://www.instagram.com/letsbuildappshq/" rel="me">Instagram ↗</a><a href="https://www.youtube.com/@letsbuildappshq" rel="me">YouTube ↗</a></div></section>
 </main>

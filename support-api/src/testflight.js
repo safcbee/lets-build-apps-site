@@ -17,6 +17,7 @@ async function validToken(env,row,token){
 }
 const event=(db,id,type)=>db.prepare('INSERT INTO testflight_events(request_id,event,created_at) VALUES(?,?,?)').bind(id,type,now()).run();
 export async function queueRequest(data,env){
+  if(apps[data.app]?.retired)throw new Error('App retired');
   if(!env.TESTFLIGHT_DB || !env.TESTFLIGHT_REVIEW_SECRET)throw new Error('TestFlight requests are unavailable');
   const db=env.TESTFLIGHT_DB,time=now(),id='TF-'+crypto.randomUUID().replaceAll('-','').toUpperCase();
   const emailHash=await hash(data.email.toLowerCase());
@@ -37,6 +38,7 @@ async function notifyOwner(env,row){
   }catch(error){await db.prepare('UPDATE testflight_requests SET notification_lease=? WHERE id=?').bind(time+60*60_000,row.id).run();throw error;}
 }
 function statusText(row){
+  if(apps[row.app_key]?.retired && row.state!=='invited')return 'App retired — no new TestFlight invitations';
   return {pending:'Waiting for your decision',approved:'Approved — queued for onboarding',waiting_build:'Approved — waiting for an Apple-approved external build',processing:'Onboarding in progress',invited:'Added to the external TestFlight group',declined:'Declined — no invitation sent',needs_attention:'Approved — onboarding needs attention',expired:'Request expired'}[row.state]||'Request unavailable';
 }
 async function authenticate(request,env){
@@ -62,6 +64,7 @@ export async function handleReview(request,env){
     const auth=await authenticate(request,env);if(!auth)return json({ok:false,message:'This private review link is invalid or expired.'},403);
     const {row,data}=auth,db=env.TESTFLIGHT_DB;
     if(url.pathname==='/testflight/decision'){
+      if(data.action==='approve' && apps[row.app_key]?.retired)return json({ok:false,message:'This app is retired. No new invitations can be approved.'},410);
       if(!['approve','decline'].includes(data.action))return json({ok:false,message:'Choose Approve or Decline.'},400);
       const time=now(),state=data.action==='approve'?'approved':'declined';
       const changed=await db.prepare("UPDATE testflight_requests SET state=?,approved_at=?,updated_at=?,next_attempt_at=0 WHERE id=? AND state='pending' AND created_at>=?").bind(state,data.action==='approve'?time:null,time,row.id,time-REVIEW_DAYS*DAY).run();
@@ -88,6 +91,7 @@ export async function processQueue(env,providedApi){
   let api;try{api=providedApi||appleClient(await appleToken(env));}catch{console.error(JSON.stringify({event:'testflight_apple_configuration_required'}));return;}
   const readinessCache=new Map();
   for(const row of rows){
+    if(apps[row.app_key]?.retired)continue;
     const claim=await db.prepare("UPDATE testflight_requests SET state='processing',lease_until=?,attempts=attempts+1,updated_at=? WHERE id=? AND state IN ('approved','waiting_build') AND approved_at IS NOT NULL").bind(time+10*60_000,time,row.id).run();
     if(!claim.meta.changes)continue;
     try{

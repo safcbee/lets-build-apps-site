@@ -1,34 +1,35 @@
 {
   "sentences": {
-    "name": "Let\u2019s Build Sentences",
+    "name": "Let’s Build Sentences",
     "appleId": "6761413051"
   },
   "my-world": {
-    "name": "Let\u2019s Build My World",
+    "name": "Let’s Build My World",
     "appleId": "6790905052"
   },
   "countdowns": {
-    "name": "Let\u2019s Build Countdowns",
+    "name": "Let’s Build Countdowns",
     "appleId": "6777798794"
   },
   "better-pictures": {
-    "name": "Let\u2019s Build Better Pictures",
+    "name": "Let’s Build Better Pictures",
     "appleId": "6794868739"
   },
   "family-memories": {
-    "name": "Let\u2019s Build Family Memories",
+    "name": "Let’s Build Family Memories",
     "appleId": "6803706718"
   },
   "better-coffee": {
-    "name": "Let\u2019s Build Better Coffee",
+    "name": "Let’s Build Better Coffee",
     "appleId": "6785081962"
   },
   "family-trips": {
-    "name": "Let\u2019s Build Family Trips",
-    "appleId": "6787775479"
+    "name": "Let’s Build Family Trips",
+    "appleId": "6787775479",
+    "retired": true
   },
   "travel-plans": {
-    "name": "Let\u2019s Build Travel Plans",
+    "name": "Let’s Build Travel Plans",
     "appleId": "6808593913"
   },
   "paw-care": {
@@ -36,7 +37,7 @@
     "appleId": "6774757257"
   },
   "weddings": {
-    "name": "Let\u2019s Build Weddings",
+    "name": "Let’s Build Weddings",
     "appleId": "6789977243"
   }
 }
