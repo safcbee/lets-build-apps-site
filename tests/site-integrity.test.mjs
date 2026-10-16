@@ -238,5 +238,12 @@ for (const image of ['journal-home-shelf.png', 'journal-plan-day-switching.png',
 }
 assert.match(travelPrivacy, /Wikimedia Commons/, 'Optional photo search provider is disclosed');
 assert.match(travelPrivacy, /IP address/, 'Photo search network information is disclosed');
+assert.match(travelPrivacy, /collection and retention of search terms, IP addresses, User-Agent information and technical request metadata/, 'Optional photo-search collection is disclosed, not only transmission');
+assert.match(travelPrivacy, /coarse geographical location derived from the IP address, not GPS location/, 'Provider-derived coarse location is distinct from device GPS');
+assert.match(travelPrivacy, /service operation, security, diagnostics and analytics/, 'Provider processing purposes are disclosed');
+assert.match(travelPrivacy, /may be associated with your IP address before later deletion, aggregation or de-identification/, 'Raw request linkage is not confused with a Travel Plans account');
+assert.match(travelPrivacy, /generally provide for deletion, aggregation or de-identification of IP and search-term records within 90 days/, 'Provider retention is accurately qualified');
+assert.match(travelPrivacy, /occasional 180-day web-request retention and longer retention for backups, legal or security needs/, 'Provider retention exceptions remain explicit');
+assert.match(travelPrivacy, /not a guarantee that every request is kept for exactly 90 days or that all copies disappear within 90 days/, 'Privacy does not promise universal 90-day deletion');
 assert.match(travelPrivacy, /not generative AI/, 'Guides are not misrepresented as AI');
 assert.match(travelPrivacy, /not an encrypted vault/, 'Backup privacy warning is explicit');
