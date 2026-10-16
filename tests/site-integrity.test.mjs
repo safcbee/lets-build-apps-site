@@ -160,16 +160,18 @@ assert.match(home, /Optional Better Coffee Pro/, 'homepage describes the Better 
 assert.match(home, /id=["']perfect-coffee["'][\s\S]*?Available on App Store[\s\S]*?Let’s Build Better Coffee/, 'homepage reports Better Coffee is live');
 
 const travelPlans = read('travel-plans/index.html');
-assert.match(travelPlans, /Plan, Pack, Pay, Paperwork, People/, 'Travel Plans reflects the verified V2 pillars');
+assert.match(travelPlans, /Plan · Ideas · Essentials/, 'Travel Plans reflects the journal navigation');
 assert.match(travelPlans, /Unlimited local trips/, 'Travel Plans reflects the current unlimited local experience');
 assert.match(travelPlans, /No account required/, 'Travel Plans explains the current account-free experience');
-assert.match(travelPlans, /never a misleading percentage/, 'Travel Plans describes the qualitative readiness model');
-assert.doesNotMatch(travelPlans, /Travel Plans Plus|first trip is free|£2\.99 monthly/i, 'Travel Plans removes claims from the retired subscription build');
+assert.match(travelPlans, /photo-covered trips/, 'Travel Plans describes its photo-led journal shelf');
+assert.match(travelPlans, /tapping their dates/, 'Travel Plans describes tappable day dates');
+assert.doesNotMatch(travelPlans, /Travel Plans Plus|first trip is free|£2\.99 monthly|Trip Ready|Trips, Current and Me/i, 'Travel Plans removes retired subscription and navigation claims');
 
 const travelPrivacy = read('travel-plans/privacy/index.html');
 assert.match(travelPrivacy, /does not require an account, Sign in with Apple login or Supabase account/, 'Travel Plans privacy reflects the mounted V2 app');
 assert.match(travelPrivacy, /booking files only: trip facts remain stored locally/, 'Travel Plans privacy describes the optional iCloud Drive boundary');
-assert.match(travelPrivacy, /moves the unreadable store files into a dated recovery folder/, 'Travel Plans privacy explains safe local-store recovery');
+assert.match(travelPrivacy, /stops loading trips and preserves the existing store and files/, 'Travel Plans privacy describes fail-closed local-store access');
+assert.match(travelPrivacy, /does not automatically move, delete or replace an unreadable database/, 'Travel Plans never promises automatic database replacement');
 assert.match(travelPrivacy, /covers Travel Plans 2\.0/, 'Travel Plans privacy identifies the current implementation');
 
 const familyMemories = read('family-memories/index.html');
@@ -230,9 +232,9 @@ assert.match(portaflow, /url=\.\.\/perfect-coffee\//i, 'Portaflow redirects to P
 
 assert.match(travelPlans, /£3\.99, paid once/, 'Travel Plans has the approved paid-upfront price');
 assert.match(travelPlans, /public release is still being prepared/, 'Travel Plans does not claim to be live');
-assert.equal((travelPlans.match(/<figure class="screenCard">/g) || []).length, 11, 'Eight release screens plus three genuine discovery screens are published');
-for (const image of ['activity-discovery.png', 'alvor-photo-preview.png', 'place-map-preview.png']) {
-  assert.ok(travelPlans.includes(`travel-plans-discovery/${image}`), `Discovery screenshot is published: ${image}`);
+assert.equal((travelPlans.match(/<figure class="screenCard">/g) || []).length, 6, 'Four journal screens plus two convenience screens are published');
+for (const image of ['journal-home-shelf.png', 'journal-plan-day-switching.png', 'journal-ideas-entry.png', 'journal-essentials.png', 'convenience-share-itinerary.png', 'convenience-move-activity.png']) {
+  assert.ok(travelPlans.includes(`travel-plans-journal/${image}`), `Journal screenshot is published: ${image}`);
 }
 assert.match(travelPrivacy, /Wikimedia Commons/, 'Optional photo search provider is disclosed');
 assert.match(travelPrivacy, /IP address/, 'Photo search network information is disclosed');

@@ -380,23 +380,26 @@
       "stageLabel": "Private TestFlight",
       "sitePath": "/travel-plans/",
       "appStoreUrl": null,
-      "category": "Trip readiness",
-      "audience": "Family trip planners who want to know what is sorted and what still needs attention",
-      "promise": "Bring Plan, Pack, Pay, Paperwork and People into one calm Trip Ready view.",
+      "category": "Travel journal",
+      "audience": "Travellers who want a visual day-by-day plan, a place to save ideas and practical trip details close by",
+      "promise": "A photo-led travel journal with Plan, Ideas and Essentials, from the first saved place to each day’s itinerary.",
       "commercialModel": "Planned App Store release: £3.99 paid upfront in the UK, with Apple-equivalent prices elsewhere. Unlimited local trips with no account, subscription or in-app purchase. Private TestFlight testing is free.",
-      "ctaLabel": "Register TestFlight interest",
+      "ctaLabel": "Request TestFlight access",
       "claims": [
         "Unlimited trips work locally without a Travel Plans account.",
-        "Five planning pillars feed one qualitative Trip Ready status and next action.",
+        "The journal update brings a photo-covered trip shelf, tappable day dates and Plan, Ideas and Essentials.",
+        "Ideas supports Apple Maps, manual ideas, HTTPS links and optional photos; saved links are imported only after confirmation.",
+        "Selected itinerary PDFs and day images exclude documents, spending, traveller details and private notes.",
+        "Move or copy an activity with its photo; day and activity deletion offers an eight-second Undo window.",
         "Optional iCloud Drive storage applies to booking files only; trip facts stay on the device.",
         "Travel Plans 2.0 is an iPhone app for iOS 18 or later.",
         "Full trip backups include attachments and restore as new local copies.",
-        "Document expiry reminders and editable cost due dates are included in the September update."
+        "The journal update is in preparation for private TestFlight; features depend on the installed build."
       ],
       "angles": [
         {
-          "hook": "Know what is sorted—and what still needs attention.",
-          "body": "Plan, Pack, Pay, Paperwork and People become one clear Trip Ready view."
+          "hook": "Make room for the journey.",
+          "body": "Start with a photo-covered trip, collect possibilities in Ideas and shape each day in Plan. Essentials keeps the practical details together."
         }
       ],
       "hashtags": [
@@ -406,40 +409,28 @@
       ],
       "approvedAssets": [
         {
-          "path": "/assets/travel-plans-sep2026/store-01-trips.jpg",
-          "alt": "Travel Plans Trips screen with example data"
+          "path": "/assets/travel-plans-journal/journal-home-shelf.png",
+          "alt": "Real Travel Plans photo-covered trip shelf with example data"
         },
         {
-          "path": "/assets/travel-plans-sep2026/store-02-current.jpg",
-          "alt": "Travel Plans Current screen with example data"
+          "path": "/assets/travel-plans-journal/journal-plan-day-switching.png",
+          "alt": "Real Travel Plans journal itinerary with tappable day dates"
         },
         {
-          "path": "/assets/travel-plans-sep2026/store-03-plan.jpg",
-          "alt": "Travel Plans Plan screen with example data"
+          "path": "/assets/travel-plans-journal/journal-ideas-entry.png",
+          "alt": "Real Travel Plans Ideas screen with place search and saved ideas"
         },
         {
-          "path": "/assets/travel-plans-sep2026/store-04-pack.jpg",
-          "alt": "Travel Plans Pack screen with example data"
+          "path": "/assets/travel-plans-journal/journal-essentials.png",
+          "alt": "Real Travel Plans Essentials screen with practical trip information"
         },
         {
-          "path": "/assets/travel-plans-sep2026/store-05-pay.jpg",
-          "alt": "Travel Plans Pay screen with example data"
+          "path": "/assets/travel-plans-journal/convenience-share-itinerary.png",
+          "alt": "Real Travel Plans selected itinerary sharing preview"
         },
         {
-          "path": "/assets/travel-plans-sep2026/store-06-paperwork.jpg",
-          "alt": "Travel Plans Paperwork screen with example data"
-        },
-        {
-          "path": "/assets/travel-plans-sep2026/store-07-people.jpg",
-          "alt": "Travel Plans People screen with example data"
-        },
-        {
-          "path": "/assets/travel-plans-sep2026/store-08-notes.jpg",
-          "alt": "Travel Plans Notes screen with example data"
-        },
-        {
-          "path": "/assets/travel-plans-sep2026/campaign.jpg",
-          "alt": "Travel Plans — Less organising. More going. Promotional artwork."
+          "path": "/assets/travel-plans-journal/convenience-move-activity.png",
+          "alt": "Real Travel Plans activity controls for moving or copying to another day"
         }
       ]
     },

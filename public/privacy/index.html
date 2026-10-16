@@ -98,12 +98,14 @@
 
       <section id="travel-plans-privacy">
         <h2>Let’s Build Travel Plans</h2>
-        <p>Travel Plans 2.0 is local-first and does not use the Family Trips account or Supabase backend. Its <a href="../travel-plans/privacy/">dedicated privacy policy</a> explains the current private TestFlight implementation.</p>
+        <p>Travel Plans 2.0 is local-first and does not use the Family Trips account or Supabase backend. Its <a href="../travel-plans/privacy/">dedicated privacy policy, updated 16 October 2026,</a> covers private TestFlight and the journal update in preparation.</p>
         <ul>
           <li><strong>Local data:</strong> unlimited trips and their planning information are stored privately on the iPhone using Apple SwiftData.</li>
           <li><strong>Optional iCloud Drive:</strong> only booking files can be moved to the app’s private iCloud Drive container; trip facts stay on the device.</li>
           <li><strong>Documents:</strong> files and photos are added only when you choose them and imports are limited to 50 MB.</li>
-          <li><strong>Recovery:</strong> an unreadable local database is moved into a dated recovery folder rather than silently deleted.</li>
+          <li><strong>Saved links:</strong> the share extension queues a chosen HTTPS link and title with minimal trip metadata in a local App Group. You confirm its import into Ideas; the page is not fetched or scanned.</li>
+          <li><strong>Selected sharing:</strong> itinerary PDFs and day images exclude documents, spending, traveller details and private notes. Full trip backups are a separate export and can contain those private details.</li>
+          <li><strong>Data access:</strong> if the database cannot be opened, the app stops loading trips and preserves the existing store and files without automatically replacing them.</li>
           <li><strong>No account or tracking:</strong> the app has no Travel Plans account, advertising SDK or analytics SDK.</li>
         </ul>
       </section>
