@@ -4,6 +4,7 @@ const catalogue = JSON.parse(await readFile('marketing/apps.json', 'utf8'));
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const presentation = {
   'my-world': { short: 'My World', icon: '◎', colour: '#bddfd2', group: 'life', image: 'site-v4/my-world-01-world.jpg', line: 'Every journey, part of your story.', price: 'Free core · Optional My World+' },
+  'travel-plans': { short: 'Travel Plans', icon: '◇', colour: '#ffad95', group: 'life', image: 'duo/travel-plans-standard.jpg', line: 'See your trip take shape, one day at a time.', price: '£3.99 in the UK · One-time purchase' },
   'sentences': { short: 'Sentences', icon: 'Aa', colour: '#ffe266', group: 'create', image: 'site-v4/sentences-1.jpg', line: 'Their next sentence starts here.', price: 'Free starter · One-time Premium' },
   'better-coffee': { short: 'Better Coffee', icon: '≋', colour: '#dfc6ae', group: 'life', image: 'site-v5/coffee-home.jpg', line: 'Make your next shot a better one.', price: 'Essentials stay free · Optional Better Coffee Pro' },
   'better-pictures': { short: 'Better Pictures', icon: '⊙', colour: '#d0c9fa', group: 'create', image: 'site-v4/better-pics-01-never-guess.jpg', line: 'Walk up to the shot with a plan.', price: 'Free core · One-time Pro' },
@@ -16,18 +17,19 @@ const route = a => a.sitePath.startsWith('https:') ? a.sitePath : `.${a.sitePath
 const appId = a => a.sitePath.startsWith('https:') ? a.key : a.sitePath.replaceAll('/', '');
 const nav = `<header class="hq-nav">
   <a class="hq-logo" href="./" aria-label="Let’s Build Apps HQ home"><span class="hq-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>let’s build<small>apps hq</small></span></a>
-  <nav class="hq-navlinks" aria-label="Primary navigation"><a href="#products">The apps</a><a href="#philosophy">Our story</a><a href="./support/">Support</a><a class="hq-navcta" href="#products">Find your app ↗</a></nav>
-  <details class="hq-mobile-nav"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="#products">The apps</a><a href="#philosophy">Our story</a><a href="#in-the-works">In the works</a><a href="./support/">Support</a><a href="./privacy/">Privacy</a></nav></details>
+  <nav class="hq-navlinks" aria-label="Primary navigation"><a href="#products">The apps</a><a href="#iphone-duo">iPhone Duo</a><a href="#philosophy">Our story</a><a href="./support/">Support</a><a class="hq-navcta" href="#products">Find your app ↗</a></nav>
+  <details class="hq-mobile-nav"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="#products">The apps</a><a href="#iphone-duo">iPhone Duo</a><a href="#philosophy">Our story</a><a href="#in-the-works">In the works</a><a href="./support/">Support</a><a href="./privacy/">Privacy</a></nav></details>
 </header>`;
 let hero = await readFile('scripts/templates/nightfall-hero.html', 'utf8');
 hero = hero.replace(/<div class="nf-dock"[\s\S]*$/, '');
 hero = hero.replaceAll('class="hq-badge"', 'class="hq-badge"').replace(/data-scroll="[^"]*"/g, '');
 hero = hero.replace('<div class="nf-caption">', '<a class="nf-caption" href="./my-world/" aria-label="Explore My World">').replace('<b>My World ↗</b></div>', '<b>My World ↗</b></a>');
 hero = hero.replace('</section>', '<button class="hq-motion" type="button" aria-pressed="false" hidden>Pause motion</button></section>');
+const duo = await readFile('scripts/templates/nightfall-duo.html', 'utf8');
 const dock = `<div class="nf-dock" role="group" aria-label="Choose a featured app">${live.map((a,i) => `<button type="button" data-feature="${a.key}" aria-pressed="${i === 0}" aria-controls="featured-screen"><span class="hq-miniicon" aria-hidden="true">${a.icon}</span>${a.short}</button>`).join('')}</div>`;
 hero = hero.replace('class="nf-phone"', 'class="nf-phone" id="featured-screen"');
 const cards = live.map(a => `<article class="hq-appcard" id="${appId(a)}" data-category="${a.group}" style="--hq-card-color:${a.colour}">
-  <div class="hq-cardtop"><img class="hq-appicon" src="./assets/${a.key === 'better-coffee' ? 'site-v5/icon-coffee.png' : a.key === 'countdowns' ? 'site-v3/icon-countdowns.png' : 'site-v4/icon-' + ({'better-pictures':'better-pics'}[a.key] || a.key) + '.png'}" alt="${escape(a.name)} app icon" width="60" height="60" loading="lazy"><small>${escape(a.category)}</small></div>
+  <div class="hq-cardtop"><img class="hq-appicon" src="./assets/${a.key === 'travel-plans' ? 'duo/travel-plans-icon.jpg' : a.key === 'better-coffee' ? 'site-v5/icon-coffee.png' : a.key === 'countdowns' ? 'site-v3/icon-countdowns.png' : 'site-v4/icon-' + ({'better-pictures':'better-pics'}[a.key] || a.key) + '.png'}" alt="${escape(a.name)} app icon" width="60" height="60" loading="lazy"><small>${escape(a.category)}</small></div>
   <p class="hq-availability">Available on App Store</p><h3><a href="${route(a)}">${escape(a.name)}</a></h3><p>${escape(a.line)}</p><p class="hq-price">${escape(a.price)}</p>
   <div class="hq-cardlinks"><a href="${route(a)}">View product page <span aria-hidden="true">↗</span></a><a href="./testflight/?app=${a.key}">Test upcoming versions ↗</a><button type="button" data-preview="${a.key}" aria-label="Preview ${a.short}" hidden>Quick look <span aria-hidden="true">+</span></button></div>
 </article>`).join('\n');
@@ -50,10 +52,11 @@ const html = `<!doctype html>
 <body class="nightfall homePage"><a class="skip" href="#products">Skip to the apps</a><div class="hq-page">
 ${nav}
 <main id="main">${hero}${dock}
-<section class="hq-catalogue" id="products" aria-labelledby="apps-title"><div class="hq-sectionhead" id="live-now"><div><p class="hq-eyebrow">The everyday collection</p><h2 id="apps-title">Find your everyday favourite.</h2></div><p>Five independent apps.<br>A little help with the things you love.</p></div>
+${duo}
+<section class="hq-catalogue" id="products" aria-labelledby="apps-title"><div class="hq-sectionhead" id="live-now"><div><p class="hq-eyebrow">The everyday collection</p><h2 id="apps-title">Find your everyday favourite.</h2></div><p>Six independent apps.<br>A little help with the things you love.</p></div>
 <div class="hq-filters" role="group" aria-label="Filter available apps" hidden><button type="button" class="hq-filter" data-filter="all" aria-pressed="true">All apps</button><button type="button" class="hq-filter" data-filter="create" aria-pressed="false">Learn & create</button><button type="button" class="hq-filter" data-filter="life" aria-pressed="false">Everyday life</button></div><p class="hq-sr-only" id="filter-status" aria-live="polite"></p><div class="hq-cards">${cards}</div></section>
 <section class="hq-about" id="philosophy"><div><p class="hq-eyebrow">Independent by choice</p><h2>Small details.<br>Personal care.</h2></div><div><p>Let’s Build Apps HQ is an independent maker of Apple apps for real life. Each starts with one everyday need, from remembering a journey to finding a better coffee recipe.</p><p>Useful things, made with care. Clear choices about purchases and privacy, explained app by app.</p><a class="hq-textlink" href="./privacy/">Our approach to privacy <span aria-hidden="true">↗</span></a></div></section>
-<section class="hq-coming" id="in-the-works"><div class="hq-sectionhead"><div><p class="hq-eyebrow">In the works</p><h2>More good things.</h2></div><p>Four more apps in private testing and release preparation.</p></div><div class="hq-cominglist">${future}</div></section>
+<section class="hq-coming" id="in-the-works"><div class="hq-sectionhead"><div><p class="hq-eyebrow">In the works</p><h2>More good things.</h2></div><p>Three more apps in private testing and release preparation.</p></div><div class="hq-cominglist">${future}</div></section>
 <section class="hq-download" id="download"><div class="hq-sectionhead"><h2>Make one of them yours.</h2><p>Available now on the App Store.</p></div><div class="downloadList">${live.map(a=>`<a href="${a.appStoreUrl}"><span>${escape(a.category)}</span><b>${a.short}</b><i aria-hidden="true">↗</i></a>`).join('')}</div></section>
 <section class="hq-follow" id="follow"><p class="hq-eyebrow">Follow the build</p><h2>The small details. As they happen.</h2><div><a href="https://x.com/letsbuildappshq" rel="me">X ↗</a><a href="https://www.instagram.com/letsbuildappshq/" rel="me">Instagram ↗</a><a href="https://www.youtube.com/@letsbuildappshq" rel="me">YouTube ↗</a></div></section>
 </main>

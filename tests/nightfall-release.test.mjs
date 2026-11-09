@@ -20,7 +20,7 @@ for (const page of pages) {
 const home = readFileSync(join(root,'index.html'),'utf8');
 const catalogue = JSON.parse(readFileSync('marketing/apps.json','utf8')).apps;
 const previews = JSON.parse(home.match(/id="site-catalogue">([\s\S]*?)<\/script>/)[1]);
-assert.equal(previews.length, 5);
+assert.equal(previews.length, 6);
 for (const preview of previews) {
   const verified = catalogue.find(a=>a.key===preview.key);
   assert.equal(verified.stage,'live');
@@ -35,4 +35,4 @@ const manifest = JSON.parse(readFileSync('scripts/nightfall-assets.json','utf8')
 for (const [name,asset] of Object.entries(manifest)) {
   if (name.includes('icon-')) assert.ok(asset.variants[0].bytes < 20_000, `${name}: small display icon`);
 }
-console.log(`Nightfall: ${pages.length} themed pages, 5 verified app previews, ${bytes.toLocaleString()} homepage image bytes.`);
+console.log(`Nightfall: ${pages.length} themed pages, 6 verified app previews, ${bytes.toLocaleString()} homepage image bytes.`);

@@ -375,16 +375,16 @@
       "name": "Let’s Build Travel Plans",
       "storefrontName": "Let's Build Travel Plans",
       "appleId": "6808593913",
-      "publicVersion": null,
-      "stage": "private-testflight",
-      "stageLabel": "Private TestFlight",
+      "publicVersion": "2.0",
+      "stage": "live",
+      "stageLabel": "Available on the App Store",
       "sitePath": "/travel-plans/",
-      "appStoreUrl": null,
+      "appStoreUrl": "https://apps.apple.com/gb/app/lets-build-travel-plans/id6808593913",
       "category": "Travel journal",
       "audience": "Travellers who want a visual day-by-day plan, a place to save ideas and practical trip details close by",
       "promise": "A photo-led travel journal with Plan, Ideas and Essentials, from the first saved place to each day’s itinerary.",
-      "commercialModel": "Planned App Store release: £3.99 paid upfront in the UK, with Apple-equivalent prices elsewhere. Unlimited local trips with no account, subscription or in-app purchase. Private TestFlight testing is free.",
-      "ctaLabel": "Request TestFlight access",
+      "commercialModel": "£3.99 paid upfront in the UK, with local App Store pricing elsewhere. Unlimited local trips with no account, subscription or in-app purchase.",
+      "ctaLabel": "View on App Store",
       "claims": [
         "Unlimited trips work locally without a Travel Plans account.",
         "The journal update brings a photo-covered trip shelf, tappable day dates and Plan, Ideas and Essentials.",
@@ -394,7 +394,7 @@
         "Optional iCloud Drive storage applies to booking files only; trip facts stay on the device.",
         "Travel Plans 2.0 is an iPhone app for iOS 18 or later.",
         "Full trip backups include attachments and restore as new local copies.",
-        "The journal update is in preparation for private TestFlight; features depend on the installed build."
+        "On iPhone Duo, unfold to see the map and selected day together, or fold back to the compact itinerary."
       ],
       "angles": [
         {
@@ -405,7 +405,7 @@
       "hashtags": [
         "TravelPlanning",
         "FamilyTravel",
-        "TestFlight"
+        "iPhoneDuo"
       ],
       "approvedAssets": [
         {
@@ -431,6 +431,14 @@
         {
           "path": "/assets/travel-plans-journal/convenience-move-activity.png",
           "alt": "Real Travel Plans activity controls for moving or copying to another day"
+        },
+        {
+          "path": "/assets/duo/travel-plans-open.jpg",
+          "alt": "Travel Plans App Store artwork with map and itinerary on the inner display"
+        },
+        {
+          "path": "/assets/duo/travel-plans-folded.jpg",
+          "alt": "Travel Plans App Store artwork with the compact itinerary on the outer display"
         }
       ]
     },

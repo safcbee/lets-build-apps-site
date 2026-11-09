@@ -231,7 +231,7 @@ assert.match(portaflow, /http-equiv=["']refresh["']/i, 'Portaflow legacy route r
 assert.match(portaflow, /url=\.\.\/perfect-coffee\//i, 'Portaflow redirects to Perfect Coffee');
 
 assert.match(travelPlans, /£3\.99, paid once/, 'Travel Plans has the approved paid-upfront price');
-assert.match(travelPlans, /public release is still being prepared/, 'Travel Plans does not claim to be live');
+assert.match(travelPlans, /Available on the App Store/, 'Travel Plans shows verified live availability');
 assert.equal((travelPlans.match(/<figure class="screenCard">/g) || []).length, 6, 'Four journal screens plus two convenience screens are published');
 for (const image of ['journal-home-shelf.png', 'journal-plan-day-switching.png', 'journal-ideas-entry.png', 'journal-essentials.png', 'convenience-share-itinerary.png', 'convenience-move-activity.png']) {
   assert.ok(travelPlans.includes(`travel-plans-journal/${image}`), `Journal screenshot is published: ${image}`);

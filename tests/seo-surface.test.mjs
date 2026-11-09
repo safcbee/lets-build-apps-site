@@ -42,8 +42,8 @@ test('every live app page has canonical, social, Smart App Banner and software m
 
 test('press desk contains only current public App Store links and current approved screens', () => {
   const press = readFileSync(new URL('press/index.html', root), 'utf8');
-  assert.match(press, /Five apps are available on the App Store/);
-  assert.equal((press.match(/https:\/\/apps\.apple\.com\/gb\/app\//g) || []).length, 5);
+  assert.match(press, /Six apps are available on the App Store/);
+  assert.equal((press.match(/https:\/\/apps\.apple\.com\/gb\/app\//g) || []).length, 6);
   assert.doesNotMatch(press, /placeholder|award-winning|five-star|testimonial/i);
   for (const asset of [
     'site-v4/sentences-1.jpg',

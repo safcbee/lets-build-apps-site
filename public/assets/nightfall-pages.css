@@ -131,3 +131,119 @@ body.nightfall .nf-phone img{height:100%}
 .hq-coming-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px;flex-shrink:0}.hq-coming-actions a:first-child{color:var(--hq-accent)}
 
 .hq-cardlinks{flex-wrap:wrap;gap:12px}.hq-cardlinks a[href*="testflight"]{flex-basis:100%;order:3;font-size:.8rem;color:var(--hq-muted)}
+
+/* iPhone Duo showcase */
+.duo-showcase {
+  width: min(100% - 2rem, 1160px);
+  margin: clamp(4rem, 8vw, 7rem) auto;
+  scroll-margin-top: 7rem;
+  color: #f4f6ef;
+}
+
+.duo-heading { max-width: 44rem; margin-bottom: 2rem; }
+.duo-heading h2 {
+  margin: .25rem 0 .75rem;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  letter-spacing: -.065em;
+  line-height: 1.02;
+}
+.duo-heading > p:last-child { max-width: 34rem; color: #bdc6c6; }
+.duo-showcase .duo-kicker {
+  margin: 0;
+  color: var(--duo-accent, #d6ff79);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.duo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.duo-card {
+  --duo-accent: #bddfd2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  min-width: 0;
+  padding: clamp(1rem, 2.6vw, 2rem);
+  border: 1px solid #34463f;
+  border-radius: 1.5rem;
+  background: linear-gradient(150deg, #192b26, #10181c 64%);
+}
+.duo-card--sentences {
+  --duo-accent: #ffe48a;
+  border-color: #4a4436;
+  background: linear-gradient(150deg, #30271c, #18191d 64%);
+}
+.duo-card-copy h3 { margin: .45rem 0; font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.12; }
+.duo-card-copy > p:not(.duo-kicker) { margin: .65rem 0; color: #d4dad5; }
+.duo-card-copy .hq-textlink { color: var(--duo-accent); }
+.duo-compare { min-inline-size: 0; padding: 0; margin: auto 0 0; border: 0; }
+.duo-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.duo-compare label {
+  display: inline-grid;
+  place-items: center;
+  min-height: 44px;
+  padding: .5rem 1rem;
+  margin: 0 .2rem .65rem 0;
+  border: 1px solid #626e68;
+  border-radius: 999px;
+  color: #f1f4ef;
+  cursor: pointer;
+  font-size: .9rem;
+}
+.duo-compare input:checked + label {
+  background: var(--duo-accent);
+  border-color: var(--duo-accent);
+  color: #142019;
+  font-weight: 700;
+}
+.duo-compare input:focus-visible + label { outline: 2px solid #fff; outline-offset: 3px; }
+.duo-screen {
+  display: grid;
+  place-items: center;
+  padding: .8rem;
+  border-radius: 1rem;
+  background: #080d10;
+}
+.duo-screen figure { display: grid; justify-items: center; gap: .5rem; margin: 0; }
+.duo-screen img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(210px, 27vw, 365px);
+  object-fit: contain;
+  border-radius: .65rem;
+}
+.duo-screen .duo-outer img { width: auto; max-width: 100%; }
+.duo-screen figcaption { color: #bdc6c6; font-size: .8rem; }
+.duo-compare input[id$="-folded"]:not(:checked) ~ .duo-screen .duo-outer,
+.duo-compare input[id$="-unfolded"]:not(:checked) ~ .duo-screen .duo-inner { display: none; }
+
+.duo-showcase--product .duo-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+  align-items: center;
+}
+.duo-showcase--product .duo-compare { margin: 0; }
+
+@media (max-width: 720px) {
+  .duo-grid, .duo-showcase--product .duo-card { grid-template-columns: minmax(0, 1fr); }
+}
+
+.duo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.duo-card--travel-plans {
+  --duo-accent: #ffbfae;
+  border-color: #584139;
+  background: linear-gradient(150deg, #37271f, #17191e 64%);
+}
+
+@media (max-width: 900px) {
+  .duo-grid { grid-template-columns: minmax(0, 1fr); }
+}

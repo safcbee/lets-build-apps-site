@@ -53,13 +53,15 @@ test('Ideas and conveniences describe explicit user choices', () => {
   assert.match(product, /Documents, spending, traveller details and private notes stay out/);
 });
 
-test('Release status and commercial copy do not promise unverified availability', () => {
-  assert.match(product, /Planned App Store price: <strong>£3\.99, paid once\./);
+test('Travel Plans links to its verified live listing and shows Duo layouts', () => {
+  assert.match(product, /£3\.99, paid once\./);
   assert.match(product, /No subscription/);
-  assert.match(product, /public release is still being prepared/);
-  assert.match(product, /journal update being prepared for TestFlight/);
-  assert.doesNotMatch(product, /Available on (?:the )?App Store|Download now|build 10 (?:is live|available|delivered)|AI-powered|live AI|Travel Plans Plus|first trip free|£2\.99 monthly/i);
-  assert.doesNotMatch(product, /aggregateRating|reviewRating/);
+  assert.match(product, /Available on the App Store/);
+  assert.match(product, /https:\/\/apps\.apple\.com\/gb\/app\/lets-build-travel-plans\/id6808593913/);
+  assert.match(product, /id="iphone-duo"/);
+  assert.match(product, /travel-plans-open\.jpg/);
+  assert.match(product, /travel-plans-folded\.jpg/);
+  assert.doesNotMatch(product, /public release is still being prepared|AI-powered|live AI|Travel Plans Plus|first trip free|£2\.99 monthly|aggregateRating|reviewRating/i);
   assert.match(product, /trip sync is off/);
 });
 
@@ -131,19 +133,19 @@ test('Privacy distinguishes Wikimedia collection from local storage and qualifie
 test('Travel Plans catalogue, homepage and privacy overview stay consistent', () => {
   const travelPlans = catalogue.apps.find(app => app.key === 'travel-plans');
   assert.equal(travelPlans.appleId, '6808593913');
-  assert.equal(travelPlans.stage, 'private-testflight');
-  assert.equal(travelPlans.appStoreUrl, null);
+  assert.equal(travelPlans.stage, 'live');
+  assert.equal(travelPlans.appStoreUrl, 'https://apps.apple.com/gb/app/lets-build-travel-plans/id6808593913');
   assert.match(travelPlans.promise, /photo-led travel journal with Plan, Ideas and Essentials/);
-  assert.match(travelPlans.claims.join(' '), /in preparation for private TestFlight/);
+  assert.match(travelPlans.claims.join(' '), /On iPhone Duo/);
   assert.doesNotMatch(JSON.stringify(travelPlans), /Trip Ready|Five planning pillars|travel-plans-sep2026|store-02-current/);
-  assert.equal(travelPlans.approvedAssets.length, 6);
+  assert.equal(travelPlans.approvedAssets.length, 8);
   for (const asset of travelPlans.approvedAssets) {
-    assert.match(asset.path, /^\/assets\/travel-plans-journal\//);
+    assert.match(asset.path, /^\/assets\/(?:travel-plans-journal|duo)\//);
     assert.ok(product.includes(asset.path.slice(1)), `catalogue asset is shown on the product page: ${asset.path}`);
   }
-  const homeEntry = home.match(/<article id="travel-plans">[\s\S]*?<\/article>/)?.[0];
+  const homeEntry = home.match(/<article[^>]+id="travel-plans"[^>]*>[\s\S]*?<\/article>/)?.[0];
   assert.ok(homeEntry, 'homepage has a Travel Plans entry');
-  assert.ok(homeEntry.includes(travelPlans.promise));
+  assert.match(homeEntry, /Available on App Store/);
   assert.doesNotMatch(homeEntry, /Trip Ready|Plan, Pack, Pay/);
   const overview = privacyOverview.match(/<section id="travel-plans-privacy">[\s\S]*?<\/section>/)?.[0];
   assert.ok(overview, 'privacy overview has a Travel Plans section');

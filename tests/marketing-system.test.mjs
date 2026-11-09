@@ -14,7 +14,7 @@ test('portfolio catalogue has one verified entry for every current app', () => {
   assert.equal(catalog.apps.length, 10);
   assert.equal(new Set(catalog.apps.map((app) => app.key)).size, 10, 'app keys are unique');
   assert.equal(new Set(catalog.apps.map((app) => app.appleId)).size, 10, 'Apple IDs are unique');
-  assert.equal(catalog.apps.filter((app) => app.stage === 'live').length, 5, 'exactly five apps are currently public');
+  assert.equal(catalog.apps.filter((app) => app.stage === 'live').length, 6, 'exactly six apps are currently public');
 
   for (const app of catalog.apps) {
     assert.ok(app.audience.length > 30, `${app.key} has a useful audience definition`);
