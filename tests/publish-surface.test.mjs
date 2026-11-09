@@ -7,6 +7,8 @@ const repoRoot = fileURLToPath(new URL('../', import.meta.url));
 const publishPath = fileURLToPath(new URL('../public/', import.meta.url));
 
 const requiredFiles = [
+  '404.html',
+  '_headers',
   'index.html',
   'CNAME',
   'apple-touch-icon.png',
@@ -36,6 +38,8 @@ const requiredFiles = [
 ];
 
 const allowedTopLevelEntries = new Set([
+  '404.html',
+  '_headers',
   'CNAME',
   'apple-touch-icon.png',
   'assets',

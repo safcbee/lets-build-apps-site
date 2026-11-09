@@ -60,7 +60,7 @@ const sourcePages = Object.fromEntries(
 );
 const builtPages = {};
 for (const [route, sourceHTML] of Object.entries(sourcePages)) {
-  // The analytics property measures the public GitHub Pages hostname only.
+  // The analytics property measures the public custom hostname only.
   let html = sourceHTML.replace(/<!-- Cloudflare Web Analytics -->[\s\S]*?<!-- End Cloudflare Web Analytics -->\n?/g, '');
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/site-v2\.css">/g, `<style>${css}</style>`);
   html = html.replace(/<link rel="stylesheet" href="(?:(?:\.\.\/)+|\.\/)assets\/sentences-refresh\.css">/g, `<style>${sentencesCss}</style>`);

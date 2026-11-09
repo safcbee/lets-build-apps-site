@@ -13,7 +13,9 @@ Production static website for `letsbuildappshq.com`.
 
 ## Deployment
 
-GitHub Pages is configured to deploy through GitHub Actions. The workflow uploads `public/` as the Pages artifact.
+Cloudflare Pages serves `letsbuildappshq.com` from the `letsbuildappshq` project. Run `npm test`, then use Workers & Pages → letsbuildappshq → Create deployment to upload the `public/` directory. Choose Production to update the live site. The `www` host redirects to the same path on the apex domain.
+
+The GitHub Pages workflow also uploads `public/` as a fallback copy. The Cloudflare release uses the existing Web Analytics property and the support and TestFlight forms continue to use the support Worker.
 
 ## Local checks
 
