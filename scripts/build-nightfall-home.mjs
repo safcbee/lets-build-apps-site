@@ -34,6 +34,7 @@ const cards = live.map(a => `<article class="hq-appcard" id="${appId(a)}" data-c
 const future = upcoming.map(a => `<article id="${appId(a)}"><div><span class="hq-availability">${escape(a.stageLabel)}</span><h3>${escape(a.name)}</h3><p>${escape(a.promise)}</p></div><div class="hq-coming-actions"><a class="hq-textlink" href="./testflight/?app=${a.key}">Request TestFlight access ↗</a><a class="hq-textlink" href="${route(a)}">${a.key === 'weddings' ? 'Visit the wedding site' : 'View product page'} <span aria-hidden="true">↗</span></a></div></article>`).join('');
 const data = live.map(a => ({ key: a.key, name: a.short, category: a.category, image: `./assets/${a.image}`, description: a.promise, price: a.price, url: a.appStoreUrl, page: route(a), points: a.claims.slice(0, 3) }));
 const json = JSON.stringify(data).replaceAll('<', '\\u003c');
+const webAnalytics = await readFile('scripts/templates/web-analytics.html', 'utf8');
 const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -59,5 +60,5 @@ ${nav}
 <footer class="hq-footer"><span>© 2026 Let’s Build Apps HQ</span><div><a href="./support/">Support</a><a href="./privacy/">Privacy</a><a href="./press/">Press</a></div></footer>
 </div><dialog class="hq-dialog" aria-labelledby="hq-detail-title"><div class="hq-dialogbar"><span>A closer look</span><button type="button" class="hq-close" aria-label="Close product preview">×</button></div><div class="hq-detail"></div></dialog>
 <script type="application/json" id="site-catalogue">${json}</script>
-</body></html>`;
+${webAnalytics}</body></html>`;
 await writeFile('public/index.html', html);

@@ -124,7 +124,7 @@ assert.match(
 );
 
 const privacy = read('privacy/index.html');
-assert.match(privacy, /Last updated:\s*6 September 2026/, 'privacy policy shows its current revision date');
+assert.match(privacy, /Last updated:\s*9 November 2026/, 'privacy policy shows its current revision date');
 assert.match(privacy, /href=["'][^"']*support\//g, 'privacy page exposes the private support form');
 assert.match(
   privacy,

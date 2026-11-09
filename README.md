@@ -28,4 +28,4 @@ npm run marketing:pack
 npm run marketing:check
 ```
 
-See `marketing/README.md` for storage, authentication and approval boundaries. The system has no customer database, visitor account, website analytics or automatic social publishing.
+See `marketing/README.md` for storage, authentication and approval boundaries. The system has no customer database, visitor account or automatic social publishing. The public GitHub Pages site uses Cloudflare Web Analytics. The public beacon is maintained in `scripts/templates/web-analytics.html` and included once on each canonical HTML page. Private Sites builds strip the beacon.
