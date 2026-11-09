@@ -247,3 +247,15 @@ body.nightfall .nf-phone img{height:100%}
 @media (max-width: 900px) {
   .duo-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+.duo-video {
+  margin: 1.5rem 0 0;
+  padding: clamp(1rem, 2.6vw, 2rem);
+  border: 1px solid #34463f;
+  border-radius: 1.5rem;
+  background: #10181c;
+}
+
+.duo-video h3 { margin: 0 0 .8rem; font-size: clamp(1.35rem, 3vw, 2rem); }
+.duo-video video { display: block; width: 100%; height: auto; background: #080c10; border-radius: .75rem; }
+.duo-video figcaption { margin-top: .7rem; color: #bdc6c6; font-size: .9rem; }
