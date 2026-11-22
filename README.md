@@ -13,9 +13,13 @@ Production static website for `letsbuildappshq.com`.
 
 ## Deployment
 
-Cloudflare Pages serves `letsbuildappshq.com` from the `letsbuildappshq` project. Run `npm test`, then use Workers & Pages → letsbuildappshq → Create deployment to upload the `public/` directory. Choose Production to update the live site. The `www` host redirects to the same path on the apex domain.
+Cloudflare Pages serves `letsbuildappshq.com` from the `letsbuildappshq` project (Production branch: `main`).
 
-The GitHub Pages workflow also uploads `public/` as a fallback copy. The Cloudflare release uses the existing Web Analytics property and the support and TestFlight forms continue to use the support Worker.
+- **Automatic (GitHub Actions):** `.github/workflows/cloudflare-pages.yml` runs `npm test` on every push to `master` and deploys `public/` to Production (`--branch=main`) when `CLOUDFLARE_API_TOKEN` (scoped to `Account → Cloudflare Pages → Edit`) and `CLOUDFLARE_ACCOUNT_ID` are set in repository Actions secrets.
+- **Direct CLI:** Run `npm test`, then `npx wrangler pages deploy public --project-name=letsbuildappshq --branch=main`.
+- **Dashboard fallback:** Use Workers & Pages → `letsbuildappshq` → Create deployment to upload `public/` to Production. The `www` host redirects to the same path on the apex domain.
+
+The GitHub Pages workflow (`.github/workflows/pages.yml`) also uploads `public/` as a fallback copy. The Cloudflare release uses the existing Web Analytics property and the support and TestFlight forms continue to use the support Worker.
 
 ## Local checks
 
