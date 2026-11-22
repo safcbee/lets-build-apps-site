@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-09",
+  "updated": "2026-11-22",
   "brand": {
     "name": "Let’s Build Apps HQ",
     "siteUrl": "https://letsbuildappshq.com/",
@@ -33,21 +33,21 @@
       "name": "Let’s Build Sentences",
       "storefrontName": "Let's Build Sentences",
       "appleId": "6761413051",
-      "publicVersion": "1.0.7",
+      "publicVersion": "1.2.1",
       "stage": "live",
       "stageLabel": "Available on the App Store",
       "sitePath": "/sentences/",
       "appStoreUrl": "https://apps.apple.com/gb/app/lets-build-sentences/id6761413051",
       "category": "Learning",
       "audience": "Parents of children beginning to recognise letter sounds, form letters and write complete sentences",
-      "promise": "Calm, guided practice that moves from letter sounds to a complete sentence one letter at a time.",
+      "promise": "Calm, guided practice with Pip the Pencil—moving from letter sounds to a complete sentence one friendly box at a time.",
       "commercialModel": "Free starter experience with one-time Premium; no subscription and no advertising.",
       "ctaLabel": "Download on the App Store",
       "claims": [
-        "Children can hear letters, build words, trace shapes and practise complete sentences.",
-        "Large child-friendly writing boxes and supportive feedback show which letters need another try.",
-        "Parents can create custom sentences and record prompts, encouragement and letter audio.",
-        "Typing and handwriting modes include controls for spacing, capitals and speech style."
+        "Pip the Pencil cheers on every letter, offers a warm thumbs-up after a slip, giggles when tapped and jumps for joy when a sentence is finished.",
+        "Children can hear letters, build words, trace shapes and practise complete sentences in large child-friendly writing boxes.",
+        "Parents can create custom sentences, choose natural-sounding system voices and record prompts, encouragement and letter audio.",
+        "On iPhone Duo, the writing area adapts as you fold, unfold or rotate while keeping the sentence and handwriting in place."
       ],
       "angles": [
         {
@@ -72,6 +72,14 @@
         {
           "path": "/assets/site-v4/sentences-5.jpg",
           "alt": "Let’s Build Sentences narrator voice chooser"
+        },
+        {
+          "path": "/assets/site-v7/pip-happy.webp",
+          "alt": "Pip the Pencil waving cheerfully in Let’s Build Sentences"
+        },
+        {
+          "path": "/assets/site-v7/pip-celebrating.webp",
+          "alt": "Pip the Pencil celebrating a completed sentence"
         }
       ]
     },
@@ -80,21 +88,21 @@
       "name": "Let’s Build My World",
       "storefrontName": "Let's Build My World",
       "appleId": "6790905052",
-      "publicVersion": "1.0",
+      "publicVersion": "1.1.1",
       "stage": "live",
       "stageLabel": "Available on the App Store",
       "sitePath": "/my-world/",
       "appStoreUrl": "https://apps.apple.com/gb/app/lets-build-my-world/id6790905052",
       "category": "Travel memories",
       "audience": "Travellers and families who want a private, visual record of the places and journeys that shaped their story",
-      "promise": "Turn visited places into routes, timelines, miles, memories and private travel stories.",
+      "promise": "Turn visited places into routes, timelines, miles, memories and private travel stories—with a free On this day card to revisit past trips.",
       "commercialModel": "Free core experience with optional My World+ monthly, annual and lifetime options.",
       "ctaLabel": "Download on the App Store",
       "claims": [
-        "Map countries, regions, cities, airports and all 50 US states.",
-        "Build routes, timelines, yearbooks and private stories from visited places.",
-        "Photo Discovery analyses dates and locations on the device.",
-        "The app has no account and keeps its core experience local-first."
+        "Map countries, regions, cities, airports and all 50 US states, or import countries from a compatible Been export.",
+        "Rediscover past visits with a free On this day card on Home—month-only memories appear as This month.",
+        "Explore Travel Studio in My World+ for travel rhythm, Next Chapter ideas and unfolded iPhone Duo views.",
+        "Photo Discovery analyses dates and locations on the device with no developer account required."
       ],
       "angles": [
         {
@@ -113,16 +121,16 @@
       ],
       "approvedAssets": [
         {
-          "path": "/assets/site-v4/my-world-01-world.jpg",
-          "alt": "Let’s Build My World personal travel map"
+          "path": "/assets/site-v7/my-world-01-on-this-day.jpg",
+          "alt": "Let’s Build My World On this day card and travel atlas"
         },
         {
-          "path": "/assets/site-v4/my-world-02-story.jpg",
-          "alt": "Let’s Build My World travel story and mileage overview"
+          "path": "/assets/site-v7/my-world-02-rhythm.jpg",
+          "alt": "Let’s Build My World Travel Studio travel rhythm view"
         },
         {
-          "path": "/assets/site-v4/my-world-03-globe.jpg",
-          "alt": "Let’s Build My World interactive travel globe"
+          "path": "/assets/site-v7/my-world-03-next-chapter.jpg",
+          "alt": "Let’s Build My World Travel Studio Next Chapter view"
         }
       ]
     },
@@ -375,7 +383,7 @@
       "name": "Let’s Build Travel Plans",
       "storefrontName": "Let's Build Travel Plans",
       "appleId": "6808593913",
-      "publicVersion": "2.0",
+      "publicVersion": "2.1",
       "stage": "live",
       "stageLabel": "Available on the App Store",
       "sitePath": "/travel-plans/",
@@ -383,16 +391,16 @@
       "category": "Travel journal",
       "audience": "Travellers who want a visual day-by-day plan, a place to save ideas and practical trip details close by",
       "promise": "A photo-led travel journal with Plan, Ideas and Essentials, from the first saved place to each day’s itinerary.",
-      "commercialModel": "£3.99 paid upfront in the UK, with local App Store pricing elsewhere. Unlimited local trips with no account, subscription or in-app purchase.",
-      "ctaLabel": "View on App Store",
+      "commercialModel": "Plan one trip for free with maps, saved ideas and packing; a one-time £3.99 UK purchase unlocks unlimited local trips, booking documents, spending and PDF itinerary exports. Earlier paid buyers keep full access automatically. No account or subscription.",
+      "ctaLabel": "Download on the App Store",
       "claims": [
-        "Unlimited trips work locally without a Travel Plans account.",
-        "The journal update brings a photo-covered trip shelf, tappable day dates and Plan, Ideas and Essentials.",
+        "Plan one trip for free locally without a Travel Plans account; a one-time £3.99 UK purchase unlocks unlimited trips, booking documents, spending and PDF itinerary exports.",
+        "The journal experience brings a photo-covered trip shelf, tappable day dates and Plan, Ideas and Essentials.",
         "Ideas supports Apple Maps, manual ideas, HTTPS links and optional photos; saved links are imported only after confirmation.",
         "Selected itinerary PDFs and day images exclude documents, spending, traveller details and private notes.",
         "Move or copy an activity with its photo; day and activity deletion offers an eight-second Undo window.",
         "Optional iCloud Drive storage applies to booking files only; trip facts stay on the device.",
-        "Travel Plans 2.0 is an iPhone app for iOS 18 or later.",
+        "Travel Plans 2.1 is an iPhone app for iOS 18 or later; earlier paid downloads keep full access automatically.",
         "Full trip backups include attachments and restore as new local copies.",
         "On iPhone Duo, unfold to see the map and selected day together, or fold back to the compact itinerary."
       ],

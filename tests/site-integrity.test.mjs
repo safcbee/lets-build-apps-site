@@ -124,7 +124,7 @@ assert.match(
 );
 
 const privacy = read('privacy/index.html');
-assert.match(privacy, /Last updated:\s*9 November 2026/, 'privacy policy shows its current revision date');
+assert.match(privacy, /Last updated:\s*22 November 2026/, 'privacy policy shows its current revision date');
 assert.match(privacy, /href=["'][^"']*support\//g, 'privacy page exposes the private support form');
 assert.match(
   privacy,
@@ -230,7 +230,7 @@ const portaflow = read('portaflow/index.html');
 assert.match(portaflow, /http-equiv=["']refresh["']/i, 'Portaflow legacy route redirects');
 assert.match(portaflow, /url=\.\.\/perfect-coffee\//i, 'Portaflow redirects to Perfect Coffee');
 
-assert.match(travelPlans, /£3\.99, paid once/, 'Travel Plans has the approved paid-upfront price');
+assert.match(travelPlans, /Free to start\. £3\.99 one-time full unlock\./, 'Travel Plans has the verified 2.1 free-first-trip and one-time unlock model');
 assert.match(travelPlans, /Available on the App Store/, 'Travel Plans shows verified live availability');
 assert.equal((travelPlans.match(/<figure class="screenCard">/g) || []).length, 6, 'Four journal screens plus two convenience screens are published');
 for (const image of ['journal-home-shelf.png', 'journal-plan-day-switching.png', 'journal-ideas-entry.png', 'journal-essentials.png', 'convenience-share-itinerary.png', 'convenience-move-activity.png']) {

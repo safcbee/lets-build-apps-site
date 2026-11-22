@@ -44,7 +44,9 @@ const sentencesCss = (await readFile('public/assets/sentences-refresh.css', 'utf
   `url("data:image/webp;base64,${brandMark.toString('base64')}")`,
 );
 const familyMemoriesCss = await readFile('public/assets/family-memories.css', 'utf8');
-const nightfallCss = (await readFile('public/assets/nightfall.css', 'utf8')).replaceAll('./nightfall/fonts/', canonicalAssetOrigin + 'nightfall/fonts/');
+const nightfallCss = (await readFile('public/assets/nightfall.css', 'utf8'))
+  .replaceAll('./nightfall/fonts/', canonicalAssetOrigin + 'nightfall/fonts/')
+  .replaceAll('./brand/', canonicalAssetOrigin + 'brand/');
 const nightfallPagesCss = await readFile('public/assets/nightfall-pages.css', 'utf8');
 const nightfallJs = await readFile('public/assets/nightfall.js', 'utf8');
 const betterPicsSocialCard = await readFile('public/assets/site-v3/better-pics-social.jpg');

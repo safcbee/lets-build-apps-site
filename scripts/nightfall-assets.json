@@ -229,17 +229,14 @@
     "originalBytes": 324670
   },
   "assets/site-v4/icon-my-world.png": {
-    "width": 512,
-    "height": 512,
     "variants": [
       {
         "path": "assets/nightfall/site-v4-icon-my-world-160.webp",
         "width": 160,
         "height": 160,
-        "bytes": 5570
+        "bytes": 2430
       }
-    ],
-    "originalBytes": 369597
+    ]
   },
   "assets/site-v4/icon-paw-care.png": {
     "width": 512,
@@ -281,23 +278,20 @@
     "originalBytes": 343523
   },
   "assets/site-v4/my-world-01-world.jpg": {
-    "width": 900,
-    "height": 1955,
     "variants": [
       {
         "path": "assets/nightfall/site-v4-my-world-01-world-480.webp",
         "width": 480,
-        "height": 1043,
-        "bytes": 34120
+        "height": 1042,
+        "bytes": 19662
       },
       {
         "path": "assets/nightfall/site-v4-my-world-01-world-900.webp",
         "width": 900,
         "height": 1955,
-        "bytes": 75418
+        "bytes": 50780
       }
-    ],
-    "originalBytes": 232474
+    ]
   },
   "assets/site-v4/my-world-02-story.jpg": {
     "width": 900,
@@ -376,23 +370,20 @@
     "originalBytes": 194791
   },
   "assets/site-v4/sentences-1.jpg": {
-    "width": 900,
-    "height": 1947,
     "variants": [
       {
         "path": "assets/nightfall/site-v4-sentences-1-480.webp",
         "width": 480,
-        "height": 1038,
-        "bytes": 22162
+        "height": 1040,
+        "bytes": 23120
       },
       {
         "path": "assets/nightfall/site-v4-sentences-1-900.webp",
         "width": 900,
-        "height": 1947,
-        "bytes": 47866
+        "height": 1951,
+        "bytes": 56174
       }
-    ],
-    "originalBytes": 178633
+    ]
   },
   "assets/site-v4/travel-plans-2-canvas.jpg": {
     "width": 804,
@@ -723,5 +714,85 @@
       }
     ],
     "originalBytes": 587721
+  },
+  "assets/site-v7/my-world-01-on-this-day.jpg": {
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v7-my-world-01-on-this-day-480.webp",
+        "width": 480,
+        "height": 1042,
+        "bytes": 19662
+      },
+      {
+        "path": "assets/nightfall/site-v7-my-world-01-on-this-day-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 50780
+      }
+    ]
+  },
+  "assets/site-v7/my-world-02-rhythm.jpg": {
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v7-my-world-02-rhythm-480.webp",
+        "width": 480,
+        "height": 1042,
+        "bytes": 18134
+      },
+      {
+        "path": "assets/nightfall/site-v7-my-world-02-rhythm-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 49472
+      }
+    ]
+  },
+  "assets/site-v7/my-world-03-next-chapter.jpg": {
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v7-my-world-03-next-chapter-480.webp",
+        "width": 480,
+        "height": 1042,
+        "bytes": 19136
+      },
+      {
+        "path": "assets/nightfall/site-v7-my-world-03-next-chapter-900.webp",
+        "width": 900,
+        "height": 1955,
+        "bytes": 51764
+      }
+    ]
+  },
+  "assets/site-v4/sentences-4.jpg": {
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-sentences-4-480.webp",
+        "width": 480,
+        "height": 1040,
+        "bytes": 28418
+      },
+      {
+        "path": "assets/nightfall/site-v4-sentences-4-900.webp",
+        "width": 900,
+        "height": 1951,
+        "bytes": 70354
+      }
+    ]
+  },
+  "assets/site-v4/sentences-5.jpg": {
+    "variants": [
+      {
+        "path": "assets/nightfall/site-v4-sentences-5-480.webp",
+        "width": 480,
+        "height": 1040,
+        "bytes": 18878
+      },
+      {
+        "path": "assets/nightfall/site-v4-sentences-5-900.webp",
+        "width": 900,
+        "height": 1951,
+        "bytes": 46684
+      }
+    ]
   }
 }

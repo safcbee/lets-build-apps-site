@@ -54,14 +54,15 @@ test('Ideas and conveniences describe explicit user choices', () => {
 });
 
 test('Travel Plans links to its verified live listing and shows Duo layouts', () => {
-  assert.match(product, /£3\.99, paid once\./);
+  assert.match(product, /Free to start\. £3\.99 one-time full unlock\./);
+  assert.match(product, /Plan one trip for free/);
   assert.match(product, /No subscription/);
   assert.match(product, /Available on the App Store/);
   assert.match(product, /https:\/\/apps\.apple\.com\/gb\/app\/lets-build-travel-plans\/id6808593913/);
   assert.match(product, /id="iphone-duo"/);
   assert.match(product, /travel-plans-open\.jpg/);
   assert.match(product, /travel-plans-folded\.jpg/);
-  assert.doesNotMatch(product, /public release is still being prepared|AI-powered|live AI|Travel Plans Plus|first trip free|£2\.99 monthly|aggregateRating|reviewRating/i);
+  assert.doesNotMatch(product, /public release is still being prepared|AI-powered|live AI|Travel Plans Plus|first trip is free|£2\.99 monthly|aggregateRating|reviewRating/i);
   assert.match(product, /trip sync is off/);
 });
 
